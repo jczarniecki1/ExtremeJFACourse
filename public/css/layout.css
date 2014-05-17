@@ -1,3 +1,72 @@
+a:focus {
+  outline: 0; }
+
+.navbar-header {
+  height: 50px; }
+  .navbar-header .navbar-brand {
+    margin-top: -10px;
+    margin-right: 15px;
+    padding-right: 20px;
+    position: relative; }
+    .navbar-header .navbar-brand h6 {
+      color: #aaa;
+      font-style: italic;
+      margin-top: 5px; }
+    .navbar-header .navbar-brand:after, .navbar-header .navbar-brand:before {
+      background-size: 40px 55px;
+      content: "";
+      display: block;
+      height: 50%;
+      margin-top: 10px;
+      position: absolute;
+      right: -15px;
+      top: 0;
+      width: 40px; }
+    .navbar-header .navbar-brand:after {
+      background-position: 0px -7px;
+      background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: -o-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
+    .navbar-header .navbar-brand:before {
+      background-position: 0px 32px;
+      top: 50%;
+      background-image: -moz-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: -o-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: linear-gradient(135deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
+    .navbar-header .navbar-brand:hover h6, .navbar-header .navbar-brand:focus h6 {
+      color: white; }
+    .navbar-header .navbar-brand:hover:after, .navbar-header .navbar-brand:focus:after {
+      background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: -o-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
+    .navbar-header .navbar-brand:hover:before, .navbar-header .navbar-brand:focus:before {
+      background-image: -moz-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: -o-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
+      background-image: linear-gradient(135deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
+  .navbar-header .navbar-collapse {
+    border: none;
+    display: inline-block;
+    float: left;
+    height: 50px; }
+  .navbar-header .navbar-nav > li {
+    display: inline-block; }
+    .navbar-header .navbar-nav > li > a {
+      text-shadow: 0px 1px 5px black !important; }
+
+footer {
+  padding-left: 15px;
+  padding-right: 15px; }
+  footer p {
+    border-top: 1px solid #555;
+    padding-top: 5px;
+    -moz-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3); }
+
 .content {
   display: block;
   min-height: 800px;
@@ -6,74 +75,11 @@
     font-style: normal;
     font-size: 40px; }
 
-.navbar-header {
-  height: 50px; }
-  .navbar-header .navbar-brand {
-    margin-top: -10px;
-    position: relative; }
-    .navbar-header .navbar-brand h6 {
-      color: #aaa;
-      font-style: italic;
-      margin-top: 5px; }
-    .navbar-header .navbar-brand:after, .navbar-header .navbar-brand:before {
-      display: block;
-      content: "";
-      position: absolute;
-      width: 25px;
-      height: 50%;
-      top: 0;
-      right: -7px;
-      pointer-events: none;
-      margin-top: 10px;
-      background-size: 25px 55px; }
-    .navbar-header .navbar-brand:after {
-      background-image: -moz-linear-gradient(35deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 225, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -o-linear-gradient(35deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 225, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -webkit-linear-gradient(35deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 225, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: linear-gradient(55deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 225, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-position: -0px -7px; }
-    .navbar-header .navbar-brand:before {
-      background-image: -moz-linear-gradient(325deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 225, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -o-linear-gradient(325deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 225, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -webkit-linear-gradient(325deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 225, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: linear-gradient(125deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 225, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-position: -0px 32px;
-      top: 50%; }
-    .navbar-header .navbar-brand:hover h6 {
-      color: white; }
-    .navbar-header .navbar-brand:hover:after {
-      background-image: -moz-linear-gradient(35deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffe1 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -o-linear-gradient(35deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffe1 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -webkit-linear-gradient(35deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffe1 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: linear-gradient(55deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffe1 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
-    .navbar-header .navbar-brand:hover:before {
-      background-image: -moz-linear-gradient(325deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffe1 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -o-linear-gradient(325deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffe1 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -webkit-linear-gradient(325deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffe1 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: linear-gradient(125deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffe1 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
-  .navbar-header .navbar-collapse {
-    border: none;
-    display: inline-block;
-    height: 50px; }
-  .navbar-header .navbar-nav > li {
-    display: inline-block; }
-    .navbar-header .navbar-nav > li > a {
-      text-shadow: 0px 1px 5px black !important; }
-
 .navbar-form button,
 .navbar-form .form-group {
   margin-left: 10px; }
 
 .toast-top-right {
   top: 70px; }
-
-footer {
-  padding-left: 15px;
-  padding-right: 15px; }
-  footer p {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    -moz-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3); }
 
 /*# sourceMappingURL=layout.css.map */
