@@ -1,6 +1,22 @@
 extend ../includes/layout
 
 block main-content
+    .navbar.navbar-inverse.navbar-fixed-top
+        .container
+            .navbar-header
+                a.navbar-brand(href="/") Extreme JFA Course
+                    h6 by Grumpy Students
+                .navbar-collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href="/") Home
+                        li
+                            a(href="/About") About
+
+            div(ng-include="'/partials/account/navbar-login'")
+
     section.content
         div(ng-view)
-        h2= mongoMessage
+
+    footer.container.text-center
+        p &copy; 2014 Grumpy Students

@@ -2,40 +2,45 @@
 @import 'compass';
 @import 'settings';
 
-body {
-    font-family: Arial, 'sans serif';
-    /* positioning */
-    position: absolute;
-    padding: 0;
-    height: 100%;
-    width: $page-width;
-    left: -($page-width / 2);
-    margin: 0 0 0 50%;
-    display: table;
-    /* styling */
-    background-color: #1c1c1c;
-}
-h1 {
-    color: white;
-    font-style: normal;
-    font-size: 40px;
-}
-.main {
-    /* positioning */
-    position: relative;
-    margin: 0 auto;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
 .content {
-    /* styling */
-    background-color: #333;
-    border: 1px solid rgba(0,0,0,0.8);
-    @include border-radius(5px);
-    @include box-shadow(0px 0px 15px 1px rgba(0,0,0,0.5) inset);
-    height: $page-width;
-    width: $page-width;
-    display: table-cell;
-    vertical-align: middle;
+    display: block;
+    min-height: 800px;
+    padding-top: 130px;
+
+    h1 {
+        font-style: normal;
+        font-size: 40px;
+    }
+}
+
+.navbar-header {
+    .navbar-brand {
+        margin-top: -10px;
+
+        h6 {
+            color: #aaa;
+            font-style: italic;
+        }
+    }
+    .navbar-collapse {
+        display: inline-block;
+    }
+}
+
+.navbar-form {
+    button,
+    .form-group {
+        margin-left: 10px;
+    }
+}
+
+
+footer {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    p {
+        border-top: 1px solid rgba(255, 255, 255, .3);
+        @include box-shadow(0 -1px 0 0 rgba(0, 0, 0, .3));
+    }
 }

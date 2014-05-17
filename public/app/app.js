@@ -5,13 +5,9 @@
   angular.module('app').config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     return $routeProvider.when('/', {
-      templateUrl: '/partials/main',
+      templateUrl: '/partials/main/main',
       controller: 'mainController'
     });
-  });
-
-  angular.module('app').controller('mainController', function($scope) {
-    return $scope.title = 'Extreme JFA Course';
   });
 
 }).call(this);

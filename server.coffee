@@ -25,24 +25,13 @@ db.on 'error', console.error.bind(console,'connection error...')
 db.once 'open', ->
   console.log 'Database opened successfully'
 
-messageSchema = mongoose.Schema
-  message: String
-
-Message = mongoose.model 'Message', messageSchema
-
-mongoMessage = 'Connecting to database...'
-Message.findOne().exec (err, messageDoc)->
-  mongoMessage = messageDoc.message
-
-
 # configure routing
 #
-app.get '/partials/:partialPath', (req, res) ->
-  res.render 'partials/' + req.params.partialPath
+app.get '/partials/:*', (req, res) ->
+  res.render 'partials/' + req.params
 
 app.get '/', (req, res) ->
-  res.render 'index',
-    mongoMessage: mongoMessage
+  res.render 'index'
 
 # start the server
 #

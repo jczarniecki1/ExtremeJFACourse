@@ -30,7 +30,27 @@ C:\MongoDB\bin\mongod.exe --dbpath C:\MongoDB\data
 // Sign up to MongoLab.com and create a database
 // Connect to the new database and create a message
 
-// mongo ds047468.mongolab.com:47468/jfa-course -u admin -p teach-me
-// db.messages.insert({message: 'Hello from MongoLab'})
+// >mongo ds047468.mongolab.com:47468/jfa-course -u admin -p teach-me
+// >db.messages.insert({message: 'Hello from MongoLab'})
 
-// set NODE_ENV=production (if you want to simulate production env)
+// >set NODE_ENV=production (if you want to simulate production env)
+
+// Log in to Heroku
+// >SET PATH=%PATH%;C:\Git\bin (first login will require access to ssl-keygen.exe in C:\Git\bin)
+// >heroku login
+
+// >heroku create
+// >git remote -v
+// >heroku config:set NODE_ENV=production
+
+// git push heroku master
+// >heroku ps:scale web=1
+// >heroku open
+
+// Trouble shooting
+// >heroku logs
+// >heroku restart
+
+// Adding SSH keys
+// if no ssh key exists just run C:\Git\ssh-keygen.exe
+// >heroku keys:add

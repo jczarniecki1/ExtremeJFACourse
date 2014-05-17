@@ -5,9 +5,5 @@ angular.module 'app'
     $locationProvider.html5Mode true
     $routeProvider
       .when '/',
-        templateUrl: '/partials/main',
+        templateUrl: '/partials/main/main',
         controller: 'mainController'
-
-angular.module 'app'
-  .controller 'mainController', ($scope)->
-    $scope.title = 'Extreme JFA Course'

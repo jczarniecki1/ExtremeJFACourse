@@ -4,11 +4,13 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/server.js" />
         <item url="file://$PROJECT_DIR$/public/app/app.js" />
+        <item url="file://$PROJECT_DIR$/public/app/main/mainController.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/server.js" />
       <root url="file://$PROJECT_DIR$/public/app/app.js" />
+      <root url="file://$PROJECT_DIR$/public/app/main/mainController.js" />
     </CLASSES>
     <SOURCES />
   </library>
