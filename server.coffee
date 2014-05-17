@@ -15,7 +15,11 @@ app.configure ->
 
 # configure database connection
 #
-mongoose.connect 'mongodb://localhost/jfa-course'
+if env == 'development'
+  mongoose.connect 'mongodb://localhost/jfa-course'
+else
+  mongoose.connect 'mongodb://admin:teach-me@ds047468.mongolab.com:47468/jfa-course'
+
 db = mongoose.connection
 db.on 'error', console.error.bind(console,'connection error...')
 db.once 'open', ->
@@ -26,7 +30,7 @@ messageSchema = mongoose.Schema
 
 Message = mongoose.model 'Message', messageSchema
 
-mongoMessage = 'hello'
+mongoMessage = 'Connecting to database...'
 Message.findOne().exec (err, messageDoc)->
   mongoMessage = messageDoc.message
 
@@ -42,6 +46,6 @@ app.get '/', (req, res) ->
 
 # start the server
 #
-port = 3030;
+port = process.env.PORT || 3030;
 app.listen port
 console.log 'Listening on port ' + port + '...'

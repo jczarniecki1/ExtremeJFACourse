@@ -26,3 +26,11 @@ npm install mongoose --save
 
 C:\MongoDB\bin\mongod.exe --dbpath C:\MongoDB\data
 
+// Sign up to Heroku.com and install HerokuToolbelt
+// Sign up to MongoLab.com and create a database
+// Connect to the new database and create a message
+
+// mongo ds047468.mongolab.com:47468/jfa-course -u admin -p teach-me
+// db.messages.insert({message: 'Hello from MongoLab'})
+
+// set NODE_ENV=production (if you want to simulate production env)
