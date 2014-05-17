@@ -1,40 +1,45 @@
 express = require 'express'
 mongoose = require 'mongoose'
+passport = require 'passport'
+LocalStrategy = require('passport-local').Strategy
 
 env = process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
 app = express()
 
-# configure server behaviour
-#
-app.configure ->
-  app.set 'views', __dirname + '/server/views'
-  app.set 'view engine', 'jade'
-  app.use express.logger 'dev'
-  app.use express.static __dirname + '/public'
+config = require('./server/config/config')[env]
 
-# configure database connection
-#
-if env == 'development'
-  mongoose.connect 'mongodb://localhost/jfa-course'
-else
-  mongoose.connect 'mongodb://admin:teach-me@ds047468.mongolab.com:47468/jfa-course'
+require('./server/config/express')(app, config)
 
-db = mongoose.connection
-db.on 'error', console.error.bind(console,'connection error...')
-db.once 'open', ->
-  console.log 'Database opened successfully'
+require('./server/config/mongoose')(config)
 
-# configure routing
-#
-app.get '/partials/:*', (req, res) ->
-  res.render 'partials/' + req.params
+User = mongoose.model 'User'
 
-app.get '/', (req, res) ->
-  res.render 'index'
+passport.use new LocalStrategy(
+  (username, password, done) ->
+    User.findOne({username:username})
+    .exec (err, user) ->
+      if user
+        done null, user
+      else
+        done null, false
+)
+
+passport.serializeUser (user, done) ->
+  if user
+    done null, user.id
+
+passport.deserializeUser (id, done) ->
+  User.findOne({_id:id})
+  .exec (err, user) ->
+    if user
+      done null, user
+    else
+      done null, false
+
+require('./server/config/routes')(app)
 
 # start the server
 #
-port = process.env.PORT || 3030;
-app.listen port
-console.log 'Listening on port ' + port + '...'
+app.listen config.port
+console.log 'Listening on port ' + config.port + '...'

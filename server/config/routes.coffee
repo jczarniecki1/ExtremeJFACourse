@@ -1,7 +1,10 @@
-# configure routing
-#
-app.get '/partials/*', (req, res) ->
-  res.render '../../public/app/' + req.params
+auth = require('./auth')
 
-app.get '/', (req, res) ->
-  res.render 'index'
+module.exports = (app)->
+  app.get '/partials/*', (req, res) ->
+    res.render '../../public/app/' + req.params
+
+  app.post '/login', auth.authenticate
+
+  app.get '/', (req, res) ->
+    res.render 'index'

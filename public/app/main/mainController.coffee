@@ -1,5 +1,4 @@
 
-
 angular.module 'app'
   .controller 'mainController', ($scope)->
     $scope.title = 'Extreme JFA Course'

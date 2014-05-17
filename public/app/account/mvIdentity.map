@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "mvIdentity.js",
+  "sourceRoot": "",
+  "sources": [
+    "mvIdentity.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACE,CAAC,OADH,CACW,YADX,EACyB,SAAA,GAAA;WACrB;AAAA,MACE,WAAA,EAAa,MADf;AAAA,MAEE,eAAA,EAAiB,SAAA,GAAA;AACf,eAAO,CAAA,CAAC,IAAK,CAAC,WAAd,CADe;MAAA,CAFnB;MADqB;EAAA,CADzB,CAAA,CAAA;AAAA"
+}

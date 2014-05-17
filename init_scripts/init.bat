@@ -54,3 +54,7 @@ C:\MongoDB\bin\mongod.exe --dbpath C:\MongoDB\data
 // Adding SSH keys
 // if no ssh key exists just run C:\Git\ssh-keygen.exe
 // >heroku keys:add
+
+npm install passport passport-local --save
+
+
