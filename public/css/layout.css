@@ -25,29 +25,29 @@ a:focus {
       width: 40px; }
     .navbar-header .navbar-brand:after {
       background-position: 0px -7px;
-      background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -o-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
+      background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: -o-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 60%, #000000 60%, rgba(0, 0, 0, 0) 66%); }
     .navbar-header .navbar-brand:before {
       background-position: 0px 32px;
       top: 50%;
-      background-image: -moz-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -o-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: linear-gradient(135deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
+      background-image: -moz-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: -o-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: linear-gradient(135deg, rgba(0, 0, 0, 0) 58%, #000000 58%, rgba(255, 255, 255, 0.5) 60%, #000000 60%, rgba(0, 0, 0, 0) 66%); }
     .navbar-header .navbar-brand:hover h6, .navbar-header .navbar-brand:focus h6 {
       color: white; }
     .navbar-header .navbar-brand:hover:after, .navbar-header .navbar-brand:focus:after {
-      background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -o-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
+      background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: -o-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%); }
     .navbar-header .navbar-brand:hover:before, .navbar-header .navbar-brand:focus:before {
-      background-image: -moz-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -o-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%);
-      background-image: linear-gradient(135deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 58%, #000000 62%, rgba(0, 0, 0, 0) 68%); }
+      background-image: -moz-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: -o-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
+      background-image: linear-gradient(135deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%); }
   .navbar-header .navbar-collapse {
     border: none;
     display: inline-block;

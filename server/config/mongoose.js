@@ -30,7 +30,8 @@
         return {
           firstName: this.firstName,
           lastName: this.lastName,
-          username: this.username
+          username: this.username,
+          roles: this.roles
         };
       }
     };

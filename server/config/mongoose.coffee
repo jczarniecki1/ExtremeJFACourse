@@ -24,6 +24,7 @@ module.exports = (config)->
         firstName: this.firstName
         lastName: this.lastName
         username: this.username
+        roles: this.roles
       }
 
   User = mongoose.model 'User', userSchema

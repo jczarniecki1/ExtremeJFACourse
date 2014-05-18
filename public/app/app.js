@@ -3,10 +3,30 @@
   angular.module('app', ['ngResource', 'ngRoute']);
 
   angular.module('app').config(function($routeProvider, $locationProvider) {
+    var routeRoleCheck;
+    routeRoleCheck = {
+      admin: {
+        auth: function(mvAuth) {
+          return mvAuth.authorizeCurrentUserForRoute('admin');
+        }
+      }
+    };
     $locationProvider.html5Mode(true);
     return $routeProvider.when('/', {
       templateUrl: '/partials/main/main',
       controller: 'mainController'
+    }).when('/admin/users', {
+      templateUrl: '/partials/admin/user-list',
+      controller: 'userListController',
+      resolve: routeRoleCheck.admin
+    });
+  });
+
+  angular.module('app').run(function($rootScope, $location) {
+    return $rootScope.$on('$routeChangeError', function(evt, current, previous, rejection) {
+      if (rejection === 'not authorized') {
+        return $location.path('/');
+      }
     });
   });
 

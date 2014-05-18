@@ -29,6 +29,26 @@
     return auth(req, res, next);
   };
 
+  exports.requireLogin = function(req, res, next) {
+    if (!req.isAuthenticated()) {
+      res.status(404);
+      return res.end();
+    } else {
+      return next();
+    }
+  };
+
+  exports.requireRole = function(role) {
+    return function(req, res, next) {
+      if (!(req.isAuthenticated() && req.user.roles.indexOf(role) > -1)) {
+        res.status(404);
+        return res.end();
+      } else {
+        return next();
+      }
+    };
+  };
+
 }).call(this);
 
 //# sourceMappingURL=auth.map

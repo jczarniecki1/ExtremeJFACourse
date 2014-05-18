@@ -26,4 +26,10 @@ angular.module 'app'
           deferred.resolve()
 
         deferred.promise
+
+      authorizeCurrentUserForRoute: (role) ->
+        if mvIdentity.isAuthorized role
+          true
+        else
+          $q.reject 'not authorized'
     }
