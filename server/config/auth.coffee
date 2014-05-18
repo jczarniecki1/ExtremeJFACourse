@@ -1,6 +1,9 @@
 passport = require('passport')
 
 exports.authenticate = (req, res, next) ->
+
+  req.body.username = req.body.username.toLowerCase()
+
   auth = passport.authenticate 'local', (err,user) ->
     if err
       next err

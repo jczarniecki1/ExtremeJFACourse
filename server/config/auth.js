@@ -6,6 +6,7 @@
 
   exports.authenticate = function(req, res, next) {
     var auth;
+    req.body.username = req.body.username.toLowerCase();
     auth = passport.authenticate('local', function(err, user) {
       if (err) {
         return next(err);

@@ -13,10 +13,15 @@ angular.module 'app'
       .when '/',
         templateUrl: '/partials/main/main',
         controller: 'mainController'
+
       .when '/admin/users',
         templateUrl: '/partials/admin/user-list',
         controller: 'userListController'
         resolve: routeRoleCheck.admin
+
+      .when '/signup',
+        templateUrl: '/partials/account/signup',
+        controller: 'signupController'
 
 angular.module 'app'
   .run ($rootScope, $location) ->

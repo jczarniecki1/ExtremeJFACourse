@@ -1,13 +1,11 @@
 auth = require('./auth')
-mongoose = require 'mongoose'
-
-User = mongoose.model 'User'
+usersController = require('../controllers/usersController')
 
 module.exports = (app)->
 
-  app.get '/api/users', auth.requireRole('admin'), (req, res) ->
-    User.find({}).exec (err, collection) ->
-      res.send collection
+  app.get '/api/users', auth.requireRole('admin'), usersController.getUsers
+
+  app.post '/api/users', usersController.createUser
 
   app.get '/partials/*', (req, res) ->
     res.render '../../public/app/' + req.params

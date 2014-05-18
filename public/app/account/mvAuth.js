@@ -38,6 +38,18 @@
         } else {
           return $q.reject('not authorized');
         }
+      },
+      createUser: function(newUserData) {
+        var deferred, newUser;
+        newUser = new mvUser(newUserData);
+        deferred = $q.defer();
+        newUser.$save().then(function() {
+          mvIdentity.currentUser = newUser;
+          return deferred.resolve();
+        }, function(response) {
+          return deferred.reject(response.data.reason);
+        });
+        return deferred.promise;
       }
     };
   });

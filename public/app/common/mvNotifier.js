@@ -12,6 +12,10 @@
         mvToastr.warning(msg);
         return console.warn(msg);
       },
+      error: function(msg) {
+        mvToastr.error(msg);
+        return console.error(msg);
+      },
       info: function(msg) {
         mvToastr.info(msg);
         return console.log(msg);

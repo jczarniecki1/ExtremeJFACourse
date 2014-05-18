@@ -32,4 +32,17 @@ angular.module 'app'
           true
         else
           $q.reject 'not authorized'
+
+      createUser: (newUserData) ->
+        newUser = new mvUser newUserData
+        deferred = $q.defer()
+
+        newUser.$save()
+          .then ->
+            mvIdentity.currentUser = newUser
+            deferred.resolve()
+          , (response) ->
+            deferred.reject(response.data.reason)
+
+        deferred.promise
     }

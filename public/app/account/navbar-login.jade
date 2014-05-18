@@ -1,10 +1,15 @@
 .navbar-right(ng-controller="loginController")
     form.navbar-form(ng-hide="identity.isAuthenticated()")
+
+        ul.nav.navbar-nav
+            li
+                a(href="/signup").signup Sign Up
+
         .form-group
             input.form-control(placeholder="Email", ng-model="username")
         .form-group
             input.form-control(type="password" placeholder="Password", ng-model="password")
-        button.btn.btn-primary(ng-click="signin(username, password)") Sign in
+        button.btn.btn-primary(ng-click="signin(username, password)") Log in
 
     ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
         li.dropdown
@@ -15,4 +20,4 @@
                 li(ng-show="identity.currentUser.isAdmin()")
                     a(href="/admin/users") Admin Panel
                 li
-                    a(href="", ng-click="signout()") Sign Out
+                    a(href="", ng-click="signout()") Log Out
