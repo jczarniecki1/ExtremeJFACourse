@@ -57,4 +57,9 @@ C:\MongoDB\bin\mongod.exe --dbpath C:\MongoDB\data
 
 npm install passport passport-local --save
 
+// Testing with karma and mocha
+npm install --save-dev karma mocha karma-mocha karma-chai-plugins
+bower install --save angular-mocks#1.2.0
 
+// add missing karma.cmd
+karma init
