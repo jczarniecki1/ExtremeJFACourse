@@ -1,5 +1,5 @@
 angular.module 'app'
-  .factory 'mvAuth', ($http, mvIdentity, $q) ->
+  .factory 'mvAuth', ($http, mvIdentity, mvUser, $q) ->
     {
       authenticateUser: (username, password)->
         deferred = $q.defer()
@@ -8,10 +8,22 @@ angular.module 'app'
           password: password
         .then (response) ->
           if response.data.success
-            mvIdentity.currentUser = response.data.user
+            user = new mvUser()
+            angular.extend user, response.data.user
+            mvIdentity.currentUser = user
             deferred.resolve true
           else
             deferred.resolve false
+
+        deferred.promise
+
+      logoutUser: ->
+        deferred = $q.defer()
+        $http.post '/logout',
+          logout: true
+        .then () ->
+          mvIdentity.currentUser = undefined
+          deferred.resolve()
 
         deferred.promise
     }

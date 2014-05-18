@@ -1,11 +1,13 @@
 
 footer {
+    bottom: 0;
     padding-left: 15px;
     padding-right: 15px;
+    position: absolute;
+    width: 100%;
 
     p {
-        border-top: 1px solid #555;
+        border-top: 1px solid #999;
         padding-top: 5px;
-        @include box-shadow(0 -1px 0 0 rgba(0, 0, 0, .3));
     }
 }

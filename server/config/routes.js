@@ -9,8 +9,14 @@
       return res.render('../../public/app/' + req.params);
     });
     app.post('/login', auth.authenticate);
+    app.post('/logout', function(req, res) {
+      req.logout();
+      return res.end();
+    });
     return app.get('/', function(req, res) {
-      return res.render('index');
+      return res.render('index', {
+        bootstrappedUser: req.user ? req.user.getData() : void 0
+      });
     });
   };
 

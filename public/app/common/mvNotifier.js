@@ -11,6 +11,10 @@
       warning: function(msg) {
         mvToastr.warning(msg);
         return console.warn(msg);
+      },
+      info: function(msg) {
+        mvToastr.info(msg);
+        return console.log(msg);
       }
     };
   });

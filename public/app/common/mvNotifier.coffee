@@ -10,4 +10,7 @@ angular.module 'app'
       warning: (msg) ->
         mvToastr.warning msg
         console.warn msg
+      info: (msg) ->
+        mvToastr.info msg
+        console.log msg
     }

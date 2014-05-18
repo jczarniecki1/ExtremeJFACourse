@@ -2,32 +2,38 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/server.js" />
+        <item url="file://$PROJECT_DIR$/server/config/passport.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/loginController.js" />
-        <item url="file://$PROJECT_DIR$/public/app/account/mvIdentity.js" />
         <item url="file://$PROJECT_DIR$/public/app/app.js" />
+        <item url="file://$PROJECT_DIR$/server/config/auth.js" />
+        <item url="file://$PROJECT_DIR$/public/app/account/mvUser.js" />
+        <item url="file://$PROJECT_DIR$/public/app/account/mvIdentity.js" />
+        <item url="file://$PROJECT_DIR$/server.js" />
         <item url="file://$PROJECT_DIR$/public/app/common/mvNotifier.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/mvAuth.js" />
         <item url="file://$PROJECT_DIR$/server/config/routes.js" />
         <item url="file://$PROJECT_DIR$/server/config/mongoose.js" />
         <item url="file://$PROJECT_DIR$/public/app/main/mainController.js" />
-        <item url="file://$PROJECT_DIR$/server/config/auth.js" />
         <item url="file://$PROJECT_DIR$/server/config/config.js" />
         <item url="file://$PROJECT_DIR$/server/config/express.js" />
+        <item url="file://$PROJECT_DIR$/server/config/security.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/server/config/passport.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/loginController.js" />
       <root url="file://$PROJECT_DIR$/public/app/app.js" />
       <root url="file://$PROJECT_DIR$/server/config/auth.js" />
-      <root url="file://$PROJECT_DIR$/public/app/account/mvIdentity.js" />
+      <root url="file://$PROJECT_DIR$/public/app/account/mvUser.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
+      <root url="file://$PROJECT_DIR$/public/app/account/mvIdentity.js" />
       <root url="file://$PROJECT_DIR$/public/app/common/mvNotifier.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/mvAuth.js" />
       <root url="file://$PROJECT_DIR$/server/config/routes.js" />
       <root url="file://$PROJECT_DIR$/server/config/mongoose.js" />
       <root url="file://$PROJECT_DIR$/public/app/main/mainController.js" />
       <root url="file://$PROJECT_DIR$/server/config/config.js" />
+      <root url="file://$PROJECT_DIR$/server/config/security.js" />
       <root url="file://$PROJECT_DIR$/server/config/express.js" />
     </CLASSES>
     <SOURCES />
