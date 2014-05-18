@@ -6,6 +6,9 @@ angular.module 'app'
       admin:
         auth: (mvAuth) ->
           mvAuth.authorizeCurrentUserForRoute 'admin'
+      user:
+        auth: (mvAuth) ->
+          mvAuth.authorizeAuthenticatedUserForRoute()
 
     $locationProvider.html5Mode true
 
@@ -22,6 +25,11 @@ angular.module 'app'
       .when '/signup',
         templateUrl: '/partials/account/signup',
         controller: 'signupController'
+
+      .when '/profile',
+        templateUrl: '/partials/account/profile',
+        controller: 'profileController'
+        resolve: routeRoleCheck.user
 
 angular.module 'app'
   .run ($rootScope, $location) ->

@@ -33,6 +33,12 @@ angular.module 'app'
         else
           $q.reject 'not authorized'
 
+      authorizeAuthenticatedUserForRoute: ->
+        if mvIdentity.isAuthenticated()
+          true
+        else
+          $q.reject 'not authorized'
+
       createUser: (newUserData) ->
         newUser = new mvUser newUserData
         deferred = $q.defer()
@@ -42,7 +48,21 @@ angular.module 'app'
             mvIdentity.currentUser = newUser
             deferred.resolve()
           , (response) ->
-            deferred.reject(response.data.reason)
+            deferred.reject response.data.reason
+
+        deferred.promise
+
+      updateCurrentUser: (updatedUserData) ->
+        deferred = $q.defer()
+
+        clone = angular.copy mvIdentity.currentUser
+        angular.extend clone, updatedUserData
+        clone.$update()
+          .then ->
+            mvIdentity.currentUser = clone
+            deferred.resolve()
+          , (response) ->
+             deferred.reject response.data.reason
 
         deferred.promise
     }

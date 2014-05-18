@@ -14,6 +14,7 @@
         <item url="file://$PROJECT_DIR$/public/app/account/mvAuth.js" />
         <item url="file://$PROJECT_DIR$/server/config/routes.js" />
         <item url="file://$PROJECT_DIR$/server/config/mongoose.js" />
+        <item url="file://$PROJECT_DIR$/public/app/account/profileController.js" />
         <item url="file://$PROJECT_DIR$/server/config/config.js" />
         <item url="file://$PROJECT_DIR$/server/utilities/security.js" />
         <item url="file://$PROJECT_DIR$/server/config/express.js" />
@@ -33,6 +34,7 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpec.js.js" />
       <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpec.js.js" />
+      <root url="file://$PROJECT_DIR$/server/controllers/users.js" />
       <root url="file://$PROJECT_DIR$/test/test-app.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/loginController.js" />
       <root url="file://$PROJECT_DIR$/public/app/admin/userListController.js" />
@@ -45,6 +47,7 @@
       <root url="file://$PROJECT_DIR$/public/app/account/mvAuth.js" />
       <root url="file://$PROJECT_DIR$/server/config/routes.js" />
       <root url="file://$PROJECT_DIR$/server/config/mongoose.js" />
+      <root url="file://$PROJECT_DIR$/public/app/account/profileController.js" />
       <root url="file://$PROJECT_DIR$/server/config/config.js" />
       <root url="file://$PROJECT_DIR$/server/config/express.js" />
       <root url="file://$PROJECT_DIR$/server/utilities/security.js" />

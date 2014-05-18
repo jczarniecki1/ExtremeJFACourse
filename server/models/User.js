@@ -29,6 +29,9 @@
     authenticate: function(passwordToMatch) {
       return this.hashed_pwd === security.hashPwd(this.salt, passwordToMatch);
     },
+    hasRole: function(role) {
+      return this.roles.indexOf(role) > -1;
+    },
     getData: function() {
       return {
         firstName: this.firstName,
@@ -50,7 +53,7 @@
         User.create({
           firstName: 'Joe',
           lastName: 'Kowalski',
-          username: 'joe',
+          username: 'joe@pj.com',
           salt: salt,
           hashed_pwd: hash,
           roles: []
@@ -60,7 +63,7 @@
         User.create({
           firstName: 'Joe2',
           lastName: 'Kowalski',
-          username: 'joe2',
+          username: 'joe2@pj.com',
           salt: salt,
           hashed_pwd: hash,
           roles: ['lab']

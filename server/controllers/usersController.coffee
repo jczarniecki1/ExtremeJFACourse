@@ -23,3 +23,28 @@ exports.createUser = (req, res, next) ->
     else
       req.logIn user, (err) ->
         res.send user
+
+exports.updateUser = (req, res, next) ->
+  userUpdates = req.body
+
+  if req.user._id.toString() != userUpdates._id && !req.user.hasRole('admin')
+    res.status 403
+    res.end
+
+  else
+    req.user.username = userUpdates.username.toLowerCase()
+    req.user.firstName = userUpdates.firstName
+    req.user.lastName = userUpdates.lastName
+
+    newPassword = userUpdates.password
+    if newPassword && newPassword.length > 0
+      userUpdates.salt = security.createSalt()
+      userUpdates.hashed_pwd = security.hashPwd userUpdates.salt, newPassword
+
+    req.user.save (err) ->
+      if err
+        res.status 400
+        res.send
+          reason: err.toString()
+      else
+        res.send req.user

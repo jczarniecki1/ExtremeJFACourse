@@ -1,9 +1,11 @@
 angular.module 'app'
   .factory 'mvUser', ($resource) ->
-    UserResource = $resource '/api/users/:id',
-      _id: "@id"
+    UserResource = $resource '/api/users/:id', {_id: "@id"},
+      update:
+        method: 'PUT'
+        isArray: false
 
-    UserResource.prototpe.isAdmin = ->
-      this.roles && this.role.indexOf('admin') > -1
+    UserResource.prototype.isAdmin = ->
+      this.roles && this.roles.indexOf('admin') > -1
 
     UserResource

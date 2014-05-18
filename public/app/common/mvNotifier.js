@@ -13,8 +13,10 @@
         return console.warn(msg);
       },
       error: function(msg) {
-        mvToastr.error(msg);
-        return console.error(msg);
+        var theMsg;
+        theMsg = msg || 'Unknown error';
+        mvToastr.error(theMsg);
+        return console.error(theMsg);
       },
       info: function(msg) {
         mvToastr.info(msg);

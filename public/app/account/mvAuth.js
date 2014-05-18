@@ -39,12 +39,32 @@
           return $q.reject('not authorized');
         }
       },
+      authorizeAuthenticatedUserForRoute: function() {
+        if (mvIdentity.isAuthenticated()) {
+          return true;
+        } else {
+          return $q.reject('not authorized');
+        }
+      },
       createUser: function(newUserData) {
         var deferred, newUser;
         newUser = new mvUser(newUserData);
         deferred = $q.defer();
         newUser.$save().then(function() {
           mvIdentity.currentUser = newUser;
+          return deferred.resolve();
+        }, function(response) {
+          return deferred.reject(response.data.reason);
+        });
+        return deferred.promise;
+      },
+      updateCurrentUser: function(updatedUserData) {
+        var clone, deferred;
+        deferred = $q.defer();
+        clone = angular.copy(mvIdentity.currentUser);
+        angular.extend(clone, updatedUserData);
+        clone.$update().then(function() {
+          mvIdentity.currentUser = clone;
           return deferred.resolve();
         }, function(response) {
           return deferred.reject(response.data.reason);

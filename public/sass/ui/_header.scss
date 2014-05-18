@@ -77,3 +77,13 @@ $global-headerLink-color: #cecece !global;
         }
     }
 }
+
+@media (max-width: 768px) {
+    .navbar-form {
+        padding-top: 0;
+    }
+    .navbar-right {
+        margin-top: -8px;
+        margin-bottom: -8px;
+    }
+}

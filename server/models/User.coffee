@@ -1,7 +1,6 @@
 mongoose = require 'mongoose'
 security = require '../utilities/security'
 
-
 userSchema = mongoose.Schema
   firstName:
     type:String,
@@ -23,6 +22,8 @@ userSchema = mongoose.Schema
 userSchema.methods =
   authenticate : (passwordToMatch) ->
     this.hashed_pwd == security.hashPwd this.salt, passwordToMatch
+  hasRole: (role) ->
+    this.roles.indexOf(role) > -1
   getData: ->
     {
       firstName: this.firstName
@@ -42,7 +43,7 @@ createDefaultUsers = ->
       User.create
         firstName:'Joe'
         lastName: 'Kowalski'
-        username: 'joe'
+        username: 'joe@pj.com'
         salt: salt
         hashed_pwd: hash
         roles: []
@@ -52,7 +53,7 @@ createDefaultUsers = ->
       User.create
         firstName:'Joe2'
         lastName: 'Kowalski'
-        username: 'joe2'
+        username: 'joe2@pj.com'
         salt: salt
         hashed_pwd: hash
         roles: ['lab']

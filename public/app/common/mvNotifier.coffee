@@ -13,8 +13,9 @@ angular.module 'app'
         console.warn msg
 
       error: (msg) ->
-        mvToastr.error msg
-        console.error msg
+        theMsg = msg || 'Unknown error'
+        mvToastr.error theMsg
+        console.error theMsg
 
       info: (msg) ->
         mvToastr.info msg
