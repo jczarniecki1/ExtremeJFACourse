@@ -34,6 +34,9 @@
     }).when('/courses', {
       templateUrl: '/partials/courses/course-list',
       controller: 'courseController'
+    }).when('/courses/:id', {
+      templateUrl: '/partials/courses/course-details',
+      controller: 'courseDetailsController'
     });
   });
 

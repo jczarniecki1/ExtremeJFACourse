@@ -35,6 +35,10 @@ angular.module 'app'
         templateUrl: '/partials/courses/course-list',
         controller: 'courseController'
 
+      .when '/courses/:id',
+        templateUrl: '/partials/courses/course-details',
+        controller: 'courseDetailsController'
+
 angular.module 'app'
   .run ($rootScope, $location) ->
     $rootScope.$on '$routeChangeError', (evt, current, previous, rejection) ->

@@ -5,6 +5,10 @@ exports.getCourses = (req, res) ->
   Course.find({}).exec (err, collection) ->
     res.send collection
 
+exports.getCourseById = (req, res) ->
+  Course.findOne({_id:req.params.id}).exec (err, course) ->
+    res.send course
+
 exports.createCourse = (req, res, next) ->
   courseData = req.body
   courseData.published = new Date()

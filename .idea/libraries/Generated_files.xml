@@ -26,6 +26,7 @@
         <item url="file://$PROJECT_DIR$/server/config/passport.js" />
         <item url="file://$PROJECT_DIR$/public/app/app.js" />
         <item url="file://$PROJECT_DIR$/server/controllers/usersController.js" />
+        <item url="file://$PROJECT_DIR$/public/app/courses/courseDetailsController.js" />
         <item url="file://$PROJECT_DIR$/server/config/auth.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/mvUser.js" />
         <item url="file://$PROJECT_DIR$/server.js" />
@@ -64,6 +65,7 @@
       <root url="file://$PROJECT_DIR$/server/config/passport.js" />
       <root url="file://$PROJECT_DIR$/public/app/app.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/usersController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/courses/courseDetailsController.js" />
       <root url="file://$PROJECT_DIR$/server/config/auth.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/mvUser.js" />
       <root url="file://$PROJECT_DIR$/server.js" />

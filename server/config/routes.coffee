@@ -9,6 +9,7 @@ module.exports = (app)->
   app.put '/api/users', usersController.updateUser
 
   app.get '/api/courses', coursesController.getCourses
+  app.get '/api/courses/:id', coursesController.getCourseById
 
   app.get '/partials/*', (req, res) ->
     res.render '../../public/app/' + req.params

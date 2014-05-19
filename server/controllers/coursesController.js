@@ -10,6 +10,14 @@
     });
   };
 
+  exports.getCourseById = function(req, res) {
+    return Course.findOne({
+      _id: req.params.id
+    }).exec(function(err, course) {
+      return res.send(course);
+    });
+  };
+
   exports.createCourse = function(req, res, next) {
     var courseData;
     courseData = req.body;

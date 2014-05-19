@@ -13,6 +13,7 @@
     app.post('/api/users', usersController.createUser);
     app.put('/api/users', usersController.updateUser);
     app.get('/api/courses', coursesController.getCourses);
+    app.get('/api/courses/:id', coursesController.getCourseById);
     app.get('/partials/*', function(req, res) {
       return res.render('../../public/app/' + req.params);
     });
