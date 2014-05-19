@@ -31,6 +31,9 @@
       templateUrl: '/partials/account/profile',
       controller: 'profileController',
       resolve: routeRoleCheck.user
+    }).when('/courses', {
+      templateUrl: '/partials/courses/course-list',
+      controller: 'courseController'
     });
   });
 

@@ -31,6 +31,7 @@ C:\MongoDB\bin\mongod.exe --dbpath C:\MongoDB\data
 // Connect to the new database and create a message
 
 // >mongo ds047468.mongolab.com:47468/jfa-course -u admin -p teach-me
+// >use jfa-course
 // >db.messages.insert({message: 'Hello from MongoLab'})
 
 // >set NODE_ENV=production (if you want to simulate production env)

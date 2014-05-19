@@ -1,5 +1,10 @@
 $global-headerLink-color: #cecece !global;
 
+.main > .navbar {
+    @include border-radius(0);
+    z-index: 1030;
+}
+
 .navbar-header {
     height: $header-height;
 

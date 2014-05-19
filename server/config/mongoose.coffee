@@ -1,5 +1,6 @@
 mongoose = require 'mongoose'
 userModel = require '../models/User'
+courseModel = require '../models/Course'
 
 module.exports = (config)->
   mongoose.connect config.db
@@ -9,3 +10,4 @@ module.exports = (config)->
     console.log 'Database opened successfully'
 
   userModel.createDefaultUsers()
+  courseModel.createDefaultCourses()

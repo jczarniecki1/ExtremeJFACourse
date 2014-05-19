@@ -1,7 +1,5 @@
 
 angular.module 'app'
-  .controller 'mainController', ($scope)->
+  .controller 'mainController', ($scope, mvCachedCourse)->
     $scope.title = 'Extreme JFA Course'
-    $scope.courses = [
-      name: 'C# for Super Experts', featured: true, published: new Date('1/1/2014')
-    ]
+    $scope.courses = mvCachedCourse.query()

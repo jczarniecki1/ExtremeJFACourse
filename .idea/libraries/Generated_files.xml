@@ -4,10 +4,14 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/test/test-app.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/loginController.js" />
+        <item url="file://$PROJECT_DIR$/public/app/courses/courseController.js" />
         <item url="file://$PROJECT_DIR$/public/app/admin/userListController.js" />
-        <item url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />
+        <item url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
         <item url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
+        <item url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />
+        <item url="file://$PROJECT_DIR$/server/models/Course.js" />
         <item url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/variants.js" />
+        <item url="file://$PROJECT_DIR$/public/app/courses/mvCourse.js" />
         <item url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/all.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/mvIdentity.js" />
         <item url="file://$PROJECT_DIR$/public/app/common/mvNotifier.js" />
@@ -27,20 +31,25 @@
         <item url="file://$PROJECT_DIR$/server.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/signupController.js" />
         <item url="file://$PROJECT_DIR$/public/app/main/mainController.js" />
+        <item url="file://$PROJECT_DIR$/public/app/courses/mvCachedCourse.js" />
         <item url="file://$PROJECT_DIR$/server/models/User.js" />
-        <item url="file://$PROJECT_DIR$/server/controllers/users.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpec.js.js" />
       <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpec.js.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/users.js" />
+      <root url="file://$PROJECT_DIR$/server/controllers/users.js" />
       <root url="file://$PROJECT_DIR$/test/test-app.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/loginController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/courses/courseController.js" />
       <root url="file://$PROJECT_DIR$/public/app/admin/userListController.js" />
-      <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
       <root url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />
+      <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
+      <root url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
+      <root url="file://$PROJECT_DIR$/server/models/Course.js" />
       <root url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/variants.js" />
+      <root url="file://$PROJECT_DIR$/public/app/courses/mvCourse.js" />
       <root url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/all.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/mvIdentity.js" />
       <root url="file://$PROJECT_DIR$/public/app/common/mvNotifier.js" />
@@ -59,9 +68,9 @@
       <root url="file://$PROJECT_DIR$/public/app/account/mvUser.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/signupController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/courses/mvCachedCourse.js" />
       <root url="file://$PROJECT_DIR$/public/app/main/mainController.js" />
       <root url="file://$PROJECT_DIR$/server/models/User.js" />
-      <root url="file://$PROJECT_DIR$/server/controllers/users.js" />
     </CLASSES>
     <SOURCES />
   </library>

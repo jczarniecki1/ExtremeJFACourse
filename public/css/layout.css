@@ -1,6 +1,12 @@
 a:focus {
   outline: 0; }
 
+.main > .navbar {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  z-index: 1030; }
+
 .navbar-header {
   height: 50px; }
   .navbar-header .navbar-brand {
@@ -66,6 +72,9 @@ a:focus {
   .navbar-right {
     margin-top: -8px;
     margin-bottom: -8px; } }
+.content {
+  padding-bottom: 40px; }
+
 footer {
   bottom: 0;
   padding-left: 15px;
@@ -76,10 +85,12 @@ footer {
     border-top: 1px solid #999;
     padding-top: 5px; }
 
+.main {
+  position: relative; }
+
 .content {
   display: block;
-  min-height: 800px;
-  padding-top: 80px; }
+  min-height: 800px; }
   .content h1 {
     font-style: normal;
     font-size: 40px; }

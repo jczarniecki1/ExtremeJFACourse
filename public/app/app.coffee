@@ -31,6 +31,10 @@ angular.module 'app'
         controller: 'profileController'
         resolve: routeRoleCheck.user
 
+      .when '/courses',
+        templateUrl: '/partials/courses/course-list',
+        controller: 'courseController'
+
 angular.module 'app'
   .run ($rootScope, $location) ->
     $rootScope.$on '$routeChangeError', (evt, current, previous, rejection) ->
