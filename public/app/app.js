@@ -20,6 +20,9 @@
     return $routeProvider.when('/', {
       templateUrl: '/partials/main/main',
       controller: 'mainController'
+    }).when('/about', {
+      templateUrl: '/partials/about/about',
+      controller: 'aboutController'
     }).when('/admin/users', {
       templateUrl: '/partials/admin/user-list',
       controller: 'userListController',
