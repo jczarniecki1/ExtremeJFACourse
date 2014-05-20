@@ -8,8 +8,10 @@
         <item url="file://$PROJECT_DIR$/public/app/admin/userListController.js" />
         <item url="file://$PROJECT_DIR$/public/app/about/aboutController.js" />
         <item url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
-        <item url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
         <item url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />
+        <item url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
+        <item url="file://$PROJECT_DIR$/public/app/courses/newCourseController.js" />
+        <item url="file://$PROJECT_DIR$/public/app/courses/mvCourseEditor.js" />
         <item url="file://$PROJECT_DIR$/server/models/Course.js" />
         <item url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/variants.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/mvCourse.js" />
@@ -47,9 +49,11 @@
       <root url="file://$PROJECT_DIR$/public/app/courses/courseController.js" />
       <root url="file://$PROJECT_DIR$/public/app/admin/userListController.js" />
       <root url="file://$PROJECT_DIR$/public/app/about/aboutController.js" />
-      <root url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />
       <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
+      <root url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/courses/newCourseController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/courses/mvCourseEditor.js" />
       <root url="file://$PROJECT_DIR$/server/models/Course.js" />
       <root url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/variants.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/mvCourse.js" />

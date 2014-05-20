@@ -27,6 +27,10 @@
       templateUrl: '/partials/admin/user-list',
       controller: 'userListController',
       resolve: routeRoleCheck.admin
+    }).when('/courses/new', {
+      templateUrl: '/partials/courses/new-course',
+      controller: 'newCourseController',
+      resolve: routeRoleCheck.admin
     }).when('/signup', {
       templateUrl: '/partials/account/signup',
       controller: 'signupController'

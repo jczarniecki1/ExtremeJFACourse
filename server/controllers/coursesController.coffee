@@ -21,4 +21,4 @@ exports.createCourse = (req, res, next) ->
 
     else
       res.status 200
-      res.end()
+      res.send course

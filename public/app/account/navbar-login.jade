@@ -19,6 +19,8 @@
             ul.dropdown-menu
                 li(ng-show="identity.currentUser.isAdmin()")
                     a(href="/admin/users") Admin Panel
+                li(ng-show="identity.currentUser.isAdmin()")
+                    a(href="/courses/new") New Course
                 li
                     a(href="/profile") Profile
                 li

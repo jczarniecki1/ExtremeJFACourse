@@ -30,7 +30,7 @@
         });
       } else {
         res.status(200);
-        return res.end();
+        return res.send(course);
       }
     });
   };

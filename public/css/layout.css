@@ -127,6 +127,9 @@ footer {
   padding-bottom: 0;
   line-height: 35px; }
 
+.form-control[type="checkbox"] {
+  width: 34px; }
+
 .toast-top-right {
   top: 70px; }
 
