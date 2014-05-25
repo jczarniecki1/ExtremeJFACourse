@@ -3,5 +3,5 @@ angular.module 'app'
     courseList = undefined
     {
       query: ->
-        courseList || (courseList = mvCourse.query())
+        courseList or= mvCourse.query()
     }

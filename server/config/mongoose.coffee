@@ -1,6 +1,7 @@
 mongoose = require 'mongoose'
 userModel = require '../models/User'
 courseModel = require '../models/Course'
+challengeModel = require '../models/Challenge'
 
 module.exports = (config)->
   mongoose.connect config.db

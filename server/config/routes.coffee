@@ -1,6 +1,7 @@
 auth = require('./auth')
 usersController = require('../controllers/usersController')
 coursesController = require('../controllers/coursesController')
+challengesController = require('../controllers/challengesController')
 
 module.exports = (app)->
 
@@ -9,8 +10,12 @@ module.exports = (app)->
   app.put '/api/users', usersController.updateUser
 
   app.get '/api/courses', coursesController.getCourses
-  app.post '/api/courses', coursesController.createCourse
+  app.post '/api/courses', auth.requireRole('admin'), coursesController.createCourse
   app.get '/api/courses/:id', coursesController.getCourseById
+
+  app.get '/api/challenges', challengesController.getChallenges
+  app.post '/api/challenges', auth.requireRole('admin'), challengesController.createChallenge
+  app.get '/api/challenges/:id', challengesController.getChallengeById
 
   app.get '/partials/*', (req, res) ->
     res.render '../../public/app/' + req.params

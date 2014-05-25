@@ -44,6 +44,12 @@
     }).when('/courses/:id', {
       templateUrl: '/partials/courses/course-details',
       controller: 'courseDetailsController'
+    }).when('/courses/:courseId/challenge/new', {
+      templateUrl: '/partials/challenges/new-challenge',
+      controller: 'newChallengeController'
+    }).when('/courses/:courseId/challenge/:challengeId', {
+      templateUrl: '/partials/challenges/challenge-details',
+      controller: 'challengeDetailsController'
     });
   });
 

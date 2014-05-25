@@ -19,6 +19,10 @@
     },
     tags: {
       type: [String]
+    },
+    challenges: {
+      type: Array,
+      "default": []
     }
   });
 

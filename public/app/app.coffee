@@ -48,8 +48,16 @@ angular.module 'app'
         templateUrl: '/partials/courses/course-details',
         controller: 'courseDetailsController'
 
+      .when '/courses/:courseId/challenge/new',
+        templateUrl: '/partials/challenges/new-challenge',
+        controller: 'newChallengeController'
+
+      .when '/courses/:courseId/challenge/:challengeId',
+        templateUrl: '/partials/challenges/challenge-details',
+        controller: 'challengeDetailsController'
+
 angular.module 'app'
   .run ($rootScope, $location) ->
     $rootScope.$on '$routeChangeError', (evt, current, previous, rejection) ->
-      if rejection == 'not authorized'
+      if rejection is 'not authorized'
         $location.path '/'

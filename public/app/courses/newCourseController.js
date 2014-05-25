@@ -10,7 +10,7 @@
       };
       return mvCourseEditor.createCourse(newCourseData).then(function(course) {
         mvNotifier.notify('New course created successfully');
-        return $location.path('/courses/' + course._id);
+        return $location.path("/courses/" + course._id);
       }, function(reason) {
         return mvNotifier.error(reason);
       });

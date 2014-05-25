@@ -33,12 +33,8 @@
       return this.roles.indexOf(role) > -1;
     },
     getData: function() {
-      return {
-        firstName: this.firstName,
-        lastName: this.lastName,
-        username: this.username,
-        roles: this.roles
-      };
+      var firstName, lastName, roles, username;
+      return firstName = this.firstName, lastName = this.lastName, username = this.username, roles = this.roles, this;
     }
   };
 

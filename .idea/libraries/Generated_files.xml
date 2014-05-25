@@ -7,9 +7,9 @@
         <item url="file://$PROJECT_DIR$/public/app/courses/courseController.js" />
         <item url="file://$PROJECT_DIR$/public/app/admin/userListController.js" />
         <item url="file://$PROJECT_DIR$/public/app/about/aboutController.js" />
+        <item url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
         <item url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
         <item url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />
-        <item url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/newCourseController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/mvCourseEditor.js" />
         <item url="file://$PROJECT_DIR$/server/models/Course.js" />
@@ -20,23 +20,32 @@
         <item url="file://$PROJECT_DIR$/public/app/common/mvNotifier.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/mvAuth.js" />
         <item url="file://$PROJECT_DIR$/server/config/routes.js" />
+        <item url="file://$PROJECT_DIR$/public/app/debug/scenario.js" />
         <item url="file://$PROJECT_DIR$/server/config/mongoose.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/profileController.js" />
         <item url="file://$PROJECT_DIR$/server/config/config.js" />
-        <item url="file://$PROJECT_DIR$/server/utilities/security.js" />
         <item url="file://$PROJECT_DIR$/server/config/express.js" />
+        <item url="file://$PROJECT_DIR$/server/utilities/security.js" />
         <item url="file://$PROJECT_DIR$/node_modules/karma/requirejs.config.tpl.js" />
         <item url="file://$PROJECT_DIR$/server/config/passport.js" />
         <item url="file://$PROJECT_DIR$/public/app/app.js" />
+        <item url="file://$PROJECT_DIR$/public/app/challenges/mvChallengeEditor.js" />
         <item url="file://$PROJECT_DIR$/server/controllers/usersController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/courseDetailsController.js" />
+        <item url="file://$PROJECT_DIR$/public/app/challenges/newChallengeController.js" />
         <item url="file://$PROJECT_DIR$/server/config/auth.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/mvUser.js" />
+        <item url="file://$PROJECT_DIR$/public/app/challenges/mvChallenge.js" />
+        <item url="file://$PROJECT_DIR$/public/app/debug/reloadLoop.js" />
         <item url="file://$PROJECT_DIR$/server.js" />
+        <item url="file://$PROJECT_DIR$/public/app/challenges/challengeDetailsController.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/signupController.js" />
+        <item url="file://$PROJECT_DIR$/server/controllers/challengesController.js" />
         <item url="file://$PROJECT_DIR$/public/app/main/mainController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/mvCachedCourse.js" />
+        <item url="file://$PROJECT_DIR$/server/models/Challenge.js" />
         <item url="file://$PROJECT_DIR$/server/models/User.js" />
+        <item url="file://$PROJECT_DIR$/public/app/challenges/challengesController.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -44,14 +53,16 @@
       <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpec.js.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/users.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/users.js" />
+      <root url="file://$PROJECT_DIR$/public/app/challenges/newChallangeController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/challenges/newChallangeController.js" />
       <root url="file://$PROJECT_DIR$/test/test-app.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/loginController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/courseController.js" />
       <root url="file://$PROJECT_DIR$/public/app/admin/userListController.js" />
       <root url="file://$PROJECT_DIR$/public/app/about/aboutController.js" />
-      <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
       <root url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
+      <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/newCourseController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/mvCourseEditor.js" />
       <root url="file://$PROJECT_DIR$/server/models/Course.js" />
@@ -61,24 +72,33 @@
       <root url="file://$PROJECT_DIR$/public/app/account/mvIdentity.js" />
       <root url="file://$PROJECT_DIR$/public/app/common/mvNotifier.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/mvAuth.js" />
+      <root url="file://$PROJECT_DIR$/public/app/debug/scenario.js" />
       <root url="file://$PROJECT_DIR$/server/config/routes.js" />
       <root url="file://$PROJECT_DIR$/server/config/mongoose.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/profileController.js" />
       <root url="file://$PROJECT_DIR$/server/config/config.js" />
-      <root url="file://$PROJECT_DIR$/server/config/express.js" />
       <root url="file://$PROJECT_DIR$/server/utilities/security.js" />
+      <root url="file://$PROJECT_DIR$/server/config/express.js" />
       <root url="file://$PROJECT_DIR$/node_modules/karma/requirejs.config.tpl.js" />
       <root url="file://$PROJECT_DIR$/server/config/passport.js" />
       <root url="file://$PROJECT_DIR$/public/app/app.js" />
+      <root url="file://$PROJECT_DIR$/public/app/challenges/mvChallengeEditor.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/usersController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/courseDetailsController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/challenges/newChallengeController.js" />
       <root url="file://$PROJECT_DIR$/server/config/auth.js" />
+      <root url="file://$PROJECT_DIR$/public/app/challenges/mvChallenge.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/mvUser.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
+      <root url="file://$PROJECT_DIR$/public/app/debug/reloadLoop.js" />
+      <root url="file://$PROJECT_DIR$/public/app/challenges/challengeDetailsController.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/signupController.js" />
+      <root url="file://$PROJECT_DIR$/server/controllers/challengesController.js" />
+      <root url="file://$PROJECT_DIR$/server/models/Challenge.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/mvCachedCourse.js" />
       <root url="file://$PROJECT_DIR$/public/app/main/mainController.js" />
       <root url="file://$PROJECT_DIR$/server/models/User.js" />
+      <root url="file://$PROJECT_DIR$/public/app/challenges/challengeController.js" />
     </CLASSES>
     <SOURCES />
   </library>

@@ -2,17 +2,17 @@ passport = require('passport')
 
 exports.authenticate = (req, res, next) ->
 
-  req.body.username = req.body.username.toLowerCase()
+  req.body.username = req.body.username.toLowerCase() if req.body.username
 
   auth = passport.authenticate 'local', (err,user) ->
-    if err
+    if err?
       next err
-    else if !user
+    else unless user?
       res.send
         success:false
     else
       req.logIn user, (err) ->
-        if err
+        if err?
           next err
         else
           res.send
@@ -31,7 +31,7 @@ exports.requireLogin = (req, res, next) ->
 
 exports.requireRole = (role) ->
   (req, res, next) ->
-    unless req.isAuthenticated() && req.user.roles.indexOf(role) > -1
+    unless req.isAuthenticated() and req.user.roles.indexOf(role) > -1
       res.status 404
       res.end()
     else

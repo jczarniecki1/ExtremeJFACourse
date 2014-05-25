@@ -21,22 +21,22 @@ userSchema = mongoose.Schema
 
 userSchema.methods =
   authenticate : (passwordToMatch) ->
-    this.hashed_pwd == security.hashPwd this.salt, passwordToMatch
+    @hashed_pwd is security.hashPwd @salt, passwordToMatch
   hasRole: (role) ->
-    this.roles.indexOf(role) > -1
+    @roles.indexOf(role) > -1
   getData: ->
     {
-      firstName: this.firstName
-      lastName: this.lastName
-      username: this.username
-      roles: this.roles
-    }
+      firstName
+      lastName
+      username
+      roles
+    } = @
 
 User = mongoose.model 'User', userSchema
 
 createDefaultUsers = ->
-  User.find({}).exec (err, collection)->
-    if collection.length == 0
+  User.find({}).exec (err, collection) ->
+    if collection.length is 0
 
       salt = security.createSalt()
       hash = security.hashPwd salt, 'asd'

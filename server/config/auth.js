@@ -6,17 +6,19 @@
 
   exports.authenticate = function(req, res, next) {
     var auth;
-    req.body.username = req.body.username.toLowerCase();
+    if (req.body.username) {
+      req.body.username = req.body.username.toLowerCase();
+    }
     auth = passport.authenticate('local', function(err, user) {
-      if (err) {
+      if (err != null) {
         return next(err);
-      } else if (!user) {
+      } else if (user == null) {
         return res.send({
           success: false
         });
       } else {
         return req.logIn(user, function(err) {
-          if (err) {
+          if (err != null) {
             return next(err);
           } else {
             return res.send({

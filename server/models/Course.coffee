@@ -2,16 +2,19 @@ mongoose = require 'mongoose'
 
 courseSchema = mongoose.Schema
   title:
-    type:String,
+    type:String
     required:'{PATH} is required'
   featured:
-    type:Boolean,
+    type:Boolean
     required:'{PATH} is required'
   published:
-    type:Date,
+    type:Date
     required:'{PATH} is required'
   tags:
-    type:[String],
+    type:[String]
+  challenges:
+    type:Array
+    default: []
 
 Course = mongoose.model 'Course', courseSchema
 
