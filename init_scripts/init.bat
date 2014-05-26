@@ -64,3 +64,15 @@ bower install --save angular-mocks#1.2.0
 
 // add missing karma.cmd
 karma init
+
+
+//Install Python 2.7
+//Install distribute
+//Add C:\Python27\Scripts to PATH
+easy_install pip
+pip install pygments
+
+npm install groc
+
+// add .groc.json
+// groc
