@@ -34,7 +34,13 @@
     },
     getData: function() {
       var firstName, lastName, roles, username;
-      return firstName = this.firstName, lastName = this.lastName, username = this.username, roles = this.roles, this;
+      firstName = this.firstName, lastName = this.lastName, username = this.username, roles = this.roles;
+      return {
+        firstName: firstName,
+        lastName: lastName,
+        username: username,
+        roles: roles
+      };
     }
   };
 

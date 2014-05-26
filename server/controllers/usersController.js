@@ -19,8 +19,8 @@
     userData.salt = security.createSalt();
     userData.hashed_pwd = security.hashPwd(userData.salt, userData.password);
     return User.create(userData, function(err, user) {
-      if (err) {
-        if (err.toString().indexOf('E11000') > -1) {
+      if (err != null) {
+        if (err.toString().match('E11000') != null) {
           err = new Error('Duplicate Username');
         }
         res.status(400);
@@ -51,7 +51,7 @@
         userUpdates.hashed_pwd = security.hashPwd(userUpdates.salt, newPassword);
       }
       return req.user.save(function(err) {
-        if (err) {
+        if (err != null) {
           res.status(400);
           return res.send({
             reason: err.toString()

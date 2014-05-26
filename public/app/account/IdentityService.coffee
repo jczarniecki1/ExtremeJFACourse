@@ -1,9 +1,9 @@
 angular.module 'app'
-  .factory 'mvIdentity', ($window, mvUser)->
+  .factory 'IdentityService', ($window, UserModel)->
 
     currentUser = undefined
     if !!$window.bootstrappedUserObject
-      currentUser = new mvUser()
+      currentUser = new UserModel()
       angular.extend currentUser, $window.bootstrappedUserObject
 
     {

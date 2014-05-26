@@ -3,58 +3,55 @@ angular.module 'app', ['ngResource','ngRoute']
 angular.module 'app'
   .config ($routeProvider, $locationProvider)->
     routeRoleCheck =
-      admin:
-        auth: (mvAuth) ->
-          mvAuth.authorizeCurrentUserForRoute 'admin'
-      user:
-        auth: (mvAuth) ->
-          mvAuth.authorizeAuthenticatedUserForRoute()
+      admin:  auth: (AuthService) -> AuthService.authorizeCurrentUserForRoute 'admin'
+      user:   auth: (AuthService) -> AuthService.authorizeAuthenticatedUserForRoute()
 
     $locationProvider.html5Mode true
 
     $routeProvider
       .when '/',
-        templateUrl: '/partials/main/main',
-        controller: 'mainController'
+        templateUrl: '/partials/main/main'
+        controller: 'MainController'
 
       .when '/about',
-        templateUrl: '/partials/about/about',
-        controller: 'aboutController'
+        templateUrl: '/partials/about/about'
+        controller: 'AboutController'
 
       .when '/admin/users',
-        templateUrl: '/partials/admin/user-list',
-        controller: 'userListController'
+        templateUrl: '/partials/admin/user-list'
+        controller: 'UserListController'
         resolve: routeRoleCheck.admin
 
       .when '/courses/new',
-        templateUrl: '/partials/courses/new-course',
-        controller: 'newCourseController'
+        templateUrl: '/partials/courses/new-course'
+        controller: 'NewCourseController'
         resolve: routeRoleCheck.admin
 
       .when '/signup',
-        templateUrl: '/partials/account/signup',
-        controller: 'signupController'
+        templateUrl: '/partials/account/signup'
+        controller: 'SignupController'
 
       .when '/profile',
-        templateUrl: '/partials/account/profile',
-        controller: 'profileController'
+        templateUrl: '/partials/account/profile'
+        controller: 'ProfileController'
         resolve: routeRoleCheck.user
 
       .when '/courses',
-        templateUrl: '/partials/courses/course-list',
-        controller: 'courseController'
+        templateUrl: '/partials/courses/course-list'
+        controller: 'CourseController'
 
       .when '/courses/:id',
-        templateUrl: '/partials/courses/course-details',
-        controller: 'courseDetailsController'
+        templateUrl: '/partials/courses/course-details'
+        controller: 'CourseDetailsController'
 
       .when '/courses/:courseId/challenge/new',
-        templateUrl: '/partials/challenges/new-challenge',
-        controller: 'newChallengeController'
+        templateUrl: '/partials/challenges/new-challenge'
+        controller: 'NewChallengeController'
+        resolve: routeRoleCheck.admin
 
       .when '/courses/:courseId/challenge/:challengeId',
-        templateUrl: '/partials/challenges/challenge-details',
-        controller: 'challengeDetailsController'
+        templateUrl: '/partials/challenges/challenge-details'
+        controller: 'ChallengeDetailsController'
 
 angular.module 'app'
   .run ($rootScope, $location) ->

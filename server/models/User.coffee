@@ -2,35 +2,35 @@ mongoose = require 'mongoose'
 security = require '../utilities/security'
 
 userSchema = mongoose.Schema
+
   firstName:
-    type:String,
-    required:'{PATH} is required '
+    type:     String,
+    required: '{PATH} is required '
 
   lastName:
-    type:String,
-    required:'{PATH} is required '
+    type:     String,
+    required: '{PATH} is required '
 
   username:
-    type:String,
-    required:'{PATH} is required '
-    unique: true
+    type:     String,
+    required: '{PATH} is required '
+    unique:   true
 
-  salt: String
+  salt:       String
   hashed_pwd: String
-  roles: [String]
+  roles:      [String]
 
 userSchema.methods =
+
   authenticate : (passwordToMatch) ->
     @hashed_pwd is security.hashPwd @salt, passwordToMatch
+
   hasRole: (role) ->
     @roles.indexOf(role) > -1
+
   getData: ->
-    {
-      firstName
-      lastName
-      username
-      roles
-    } = @
+    { firstName, lastName, username, roles } = @
+    { firstName, lastName, username, roles }
 
 User = mongoose.model 'User', userSchema
 

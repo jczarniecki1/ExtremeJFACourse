@@ -1,8 +1,8 @@
 angular.module 'app'
-  .factory 'mvChallengeEditor', (mvChallenge, $q) ->
+  .factory 'ChallengeEditor', (ChallengeModel, $q) ->
     {
       createChallenge: (newChallengeData) ->
-        newChallenge = new mvChallenge newChallengeData
+        newChallenge = new ChallengeModel newChallengeData
         deferred = $q.defer()
 
         newChallenge.$save()

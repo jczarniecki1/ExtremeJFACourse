@@ -1,17 +1,19 @@
 angular.module 'app'
-  .controller 'loginController', ($scope, $http, mvNotifier, mvIdentity, mvAuth, $location)->
-    $scope.identity = mvIdentity
+  .controller 'LoginController', ($scope, $http, NotifierService, IdentityService, AuthService, $location) ->
+
+    $scope.identity = IdentityService
+
     $scope.signin = (username, password) ->
-      mvAuth.authenticateUser username, password
-        .then (success)->
+      AuthService.authenticateUser username, password
+        .then (success) ->
           if success
-            mvNotifier.notify 'You have successfully signed in!'
+            NotifierService.notify 'You have successfully signed in!'
           else
-            mvNotifier.warning 'Failed to log in.'
+            NotifierService.warning 'Failed to log in.'
 
     $scope.signout = ->
-      mvAuth.logoutUser().then ->
+      AuthService.logoutUser().then ->
         $scope.username = ""
         $scope.password = ""
-        mvNotifier.info 'You have succeessfully signed out'
+        NotifierService.info 'You have succeessfully signed out'
         $location.path '/'

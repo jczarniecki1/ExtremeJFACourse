@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "CachedCourse.js",
+  "sourceRoot": "",
+  "sources": [
+    "CachedCourse.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACE,CAAC,OADH,CACW,cADX,EAC2B,SAAC,WAAD,GAAA;AACvB,QAAA,UAAA;AAAA,IAAA,UAAA,GAAa,MAAb,CAAA;WACA;AAAA,MACE,KAAA,EAAO,SAAA,GAAA;eAAG,eAAA,aAAe,WAAW,CAAC,KAAZ,CAAA,GAAlB;MAAA,CADT;MAFuB;EAAA,CAD3B,CAAA,CAAA;AAAA"
+}

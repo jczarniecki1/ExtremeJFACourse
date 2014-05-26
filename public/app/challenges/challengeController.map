@@ -1,10 +1,10 @@
 {
   "version": 3,
-  "file": "challengeController.js",
+  "file": "ChallengeController.js",
   "sourceRoot": "",
   "sources": [
-    "challengeController.coffee"
+    "ChallengeController.coffee"
   ],
   "names": [],
-  "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACE,CAAC,UADH,CACc,qBADd,EACqC,SAAC,MAAD,EAAS,WAAT,GAAA;WACjC,MAAM,CAAC,UAAP,GAAoB,WAAW,CAAC,KAAZ,CAAA,EADa;EAAA,CADrC,CAAA,CAAA;AAAA"
+  "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACE,CAAC,UADH,CACc,qBADd,EACqC,SAAC,MAAD,EAAS,cAAT,GAAA;WACjC,MAAM,CAAC,UAAP,GAAoB,cAAc,CAAC,KAAf,CAAA,EADa;EAAA,CADrC,CAAA,CAAA;AAAA"
 }

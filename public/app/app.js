@@ -6,50 +6,51 @@
     var routeRoleCheck;
     routeRoleCheck = {
       admin: {
-        auth: function(mvAuth) {
-          return mvAuth.authorizeCurrentUserForRoute('admin');
+        auth: function(AuthService) {
+          return AuthService.authorizeCurrentUserForRoute('admin');
         }
       },
       user: {
-        auth: function(mvAuth) {
-          return mvAuth.authorizeAuthenticatedUserForRoute();
+        auth: function(AuthService) {
+          return AuthService.authorizeAuthenticatedUserForRoute();
         }
       }
     };
     $locationProvider.html5Mode(true);
     return $routeProvider.when('/', {
       templateUrl: '/partials/main/main',
-      controller: 'mainController'
+      controller: 'MainController'
     }).when('/about', {
       templateUrl: '/partials/about/about',
-      controller: 'aboutController'
+      controller: 'AboutController'
     }).when('/admin/users', {
       templateUrl: '/partials/admin/user-list',
-      controller: 'userListController',
+      controller: 'UserListController',
       resolve: routeRoleCheck.admin
     }).when('/courses/new', {
       templateUrl: '/partials/courses/new-course',
-      controller: 'newCourseController',
+      controller: 'NewCourseController',
       resolve: routeRoleCheck.admin
     }).when('/signup', {
       templateUrl: '/partials/account/signup',
-      controller: 'signupController'
+      controller: 'SignupController'
     }).when('/profile', {
       templateUrl: '/partials/account/profile',
-      controller: 'profileController',
+      controller: 'ProfileController',
       resolve: routeRoleCheck.user
     }).when('/courses', {
       templateUrl: '/partials/courses/course-list',
-      controller: 'courseController'
+      controller: 'CourseController'
     }).when('/courses/:id', {
       templateUrl: '/partials/courses/course-details',
-      controller: 'courseDetailsController'
+      controller: 'CourseDetailsController'
     }).when('/courses/:courseId/challenge/new', {
       templateUrl: '/partials/challenges/new-challenge',
-      controller: 'newChallengeController'
+      controller: 'NewChallengeController',
+      resolve: routeRoleCheck.admin
     }).when('/courses/:courseId/challenge/:challengeId', {
       templateUrl: '/partials/challenges/challenge-details',
-      controller: 'challengeDetailsController'
+      controller: 'ChallengeDetailsController'
     });
   });
 

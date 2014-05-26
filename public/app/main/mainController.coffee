@@ -1,5 +1,5 @@
 
 angular.module 'app'
-  .controller 'mainController', ($scope, mvCachedCourse)->
+  .controller 'MainController', ($scope, CachedCourse)->
     $scope.title = 'Extreme JFA Course'
-    $scope.courses = mvCachedCourse.query()
+    $scope.courses = CachedCourse.query()

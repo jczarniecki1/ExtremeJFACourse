@@ -1,17 +1,19 @@
 angular.module 'app'
-  .controller 'newChallengeController', ($scope, mvChallengeEditor, $location, $routeParams, mvNotifier) ->
+  .controller 'NewChallengeController', ($scope, ChallengeEditor, $location, $routeParams, NotifierService) ->
+
     courseId = $routeParams.courseId
+
     $scope.create = ->
 
       newChallengeData =
         description: $scope.description
-        body: $scope.body
-        score: $scope.score
-        courseId: courseId
+        body:        $scope.body
+        score:       $scope.score
+        courseId:    courseId
 
-      mvChallengeEditor.createChallenge newChallengeData
+      ChallengeEditor.createChallenge newChallengeData
         .then (challenge) ->
-          mvNotifier.notify 'New challenge created successfully'
+          NotifierService.notify 'New challenge created successfully'
           $location.path "/courses/#{courseId}/challenge/#{challenge._id}"
         , (reason) ->
-          mvNotifier.error reason
+          NotifierService.error reason

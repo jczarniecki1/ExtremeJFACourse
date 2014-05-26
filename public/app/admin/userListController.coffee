@@ -1,3 +1,3 @@
 angular.module 'app'
-  .controller 'userListController', ($scope, mvUser) ->
-    $scope.users = mvUser.query()
+  .controller 'UserListController', ($scope, UserModel) ->
+    $scope.users = UserModel.query()

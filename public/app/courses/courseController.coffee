@@ -1,6 +1,6 @@
 angular.module 'app'
-  .controller 'courseController', ($scope, mvCachedCourse) ->
-    $scope.courses = mvCachedCourse.query()
+  .controller 'CourseController', ($scope, CachedCourse) ->
+    $scope.courses = CachedCourse.query()
 
     $scope.sortOptions = [
       { value: "title", text: "Sort by Title" },

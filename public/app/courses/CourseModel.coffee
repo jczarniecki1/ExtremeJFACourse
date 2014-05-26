@@ -1,5 +1,5 @@
 angular.module 'app'
-  .factory 'mvCourse', ($resource) ->
+  .factory 'CourseModel', ($resource) ->
     CourseResource = $resource '/api/courses/:id', {_id: "@id"},
       update:
         method: 'PUT'

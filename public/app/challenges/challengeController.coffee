@@ -1,3 +1,3 @@
 angular.module 'app'
-  .controller 'challengeController', ($scope, mvChallenge) ->
-    $scope.challenges = mvChallenge.query()
+  .controller 'ChallengeController', ($scope, ChallengeModel) ->
+    $scope.challenges = ChallengeModel.query()

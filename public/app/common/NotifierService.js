@@ -2,7 +2,7 @@
 (function() {
   angular.module('app').value('mvToastr', toastr);
 
-  angular.module('app').factory('mvNotifier', function(mvToastr) {
+  angular.module('app').factory('NotifierService', function(mvToastr) {
     return {
       notify: function(msg) {
         mvToastr.success(msg);
@@ -27,4 +27,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=mvNotifier.map
+//# sourceMappingURL=NotifierService.map

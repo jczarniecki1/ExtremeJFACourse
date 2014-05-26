@@ -2,7 +2,7 @@ angular.module 'app'
   .value 'mvToastr', toastr
 
 angular.module 'app'
-  .factory 'mvNotifier', (mvToastr) ->
+  .factory 'NotifierService', (mvToastr) ->
     {
       notify: (msg) ->
         mvToastr.success msg

@@ -1,5 +1,5 @@
 angular.module 'app'
-  .factory 'mvUser', ($resource) ->
+  .factory 'UserModel', ($resource) ->
     UserResource = $resource '/api/users/:id', {_id: "@id"},
       update:
         method: 'PUT'

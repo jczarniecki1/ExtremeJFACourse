@@ -1,8 +1,8 @@
 angular.module 'app'
-  .factory 'mvCourseEditor', (mvCourse, $q) ->
+  .factory 'CourseEditor', (CourseModel, $q) ->
     {
       createCourse: (newCourseData) ->
-        newCourse = new mvCourse newCourseData
+        newCourse = new CourseModel newCourseData
         deferred = $q.defer()
 
         newCourse.$save()

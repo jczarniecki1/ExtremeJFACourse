@@ -1,5 +1,5 @@
 angular.module 'app'
-  .factory 'mvAuth', ($http, mvIdentity, mvUser, $q) ->
+  .factory 'AuthService', ($http, IdentityService, UserModel, $q) ->
     {
       authenticateUser: (username, password)->
         deferred = $q.defer()
@@ -8,9 +8,9 @@ angular.module 'app'
           password: password
         .then (response) ->
           if response.data.success
-            user = new mvUser()
+            user = new UserModel()
             angular.extend user, response.data.user
-            mvIdentity.currentUser = user
+            IdentityService.currentUser = user
             deferred.resolve true
           else
             deferred.resolve false
@@ -22,30 +22,30 @@ angular.module 'app'
         $http.post '/logout',
           logout: true
         .then () ->
-          mvIdentity.currentUser = undefined
+          IdentityService.currentUser = undefined
           deferred.resolve()
 
         deferred.promise
 
       authorizeCurrentUserForRoute: (role) ->
-        if mvIdentity.isAuthorized role
+        if IdentityService.isAuthorized role
           true
         else
           $q.reject 'not authorized'
 
       authorizeAuthenticatedUserForRoute: ->
-        if mvIdentity.isAuthenticated()
+        if IdentityService.isAuthenticated()
           true
         else
           $q.reject 'not authorized'
 
       createUser: (newUserData) ->
-        newUser = new mvUser newUserData
+        newUser = new UserModel newUserData
         deferred = $q.defer()
 
         newUser.$save()
           .then ->
-            mvIdentity.currentUser = newUser
+            IdentityService.currentUser = newUser
             deferred.resolve()
           , (response) ->
             deferred.reject response.data.reason
@@ -55,11 +55,11 @@ angular.module 'app'
       updateCurrentUser: (updatedUserData) ->
         deferred = $q.defer()
 
-        clone = angular.copy mvIdentity.currentUser
+        clone = angular.copy IdentityService.currentUser
         angular.extend clone, updatedUserData
         clone.$update()
           .then ->
-            mvIdentity.currentUser = clone
+            IdentityService.currentUser = clone
             deferred.resolve()
           , (response) ->
              deferred.reject response.data.reason

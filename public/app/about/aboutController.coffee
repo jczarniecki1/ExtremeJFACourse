@@ -1,2 +1,2 @@
 angular.module 'app'
-  .controller 'aboutController', ->
+  .controller 'AboutController', ->
