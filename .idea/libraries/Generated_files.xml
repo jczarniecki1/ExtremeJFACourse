@@ -86,7 +86,7 @@
       <root url="file://$PROJECT_DIR$/public/app/courses/CourseDetailsController.js" />
       <root url="file://$PROJECT_DIR$/server/config/auth.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/CachedCourse.js" />
-      <root url="file://$PROJECT_DIR$/public/app/main/MainController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/main/_MainController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/CourseController.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
       <root url="file://$PROJECT_DIR$/node_modules/karma-chai-plugins/node_modules/chai-things/test/something.js" />

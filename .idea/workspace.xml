@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\public\app\main\mainController.js" afterPath="$PROJECT_DIR$/public/app/main/MainController.js" />
-      <change type="MOVED" beforePath="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\public\app\main\mainController.map" afterPath="$PROJECT_DIR$/public/app/main/MainController.map" />
-    </list>
+    <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="" />
     <ignored path="ExtremeJFACourse.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
