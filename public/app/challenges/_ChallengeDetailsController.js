@@ -14,4 +14,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=ChallengeDetailsController.map
+//# sourceMappingURL=_ChallengeDetailsController.map

@@ -22,4 +22,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=NewChallengeController.map
+//# sourceMappingURL=_NewChallengeController.map

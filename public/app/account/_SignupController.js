@@ -20,4 +20,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=SignupController.map
+//# sourceMappingURL=_SignupController.map

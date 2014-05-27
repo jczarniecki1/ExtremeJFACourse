@@ -1,9 +1,9 @@
 {
   "version": 3,
-  "file": "CourseController.js",
+  "file": "_CourseController.js",
   "sourceRoot": "",
   "sources": [
-    "CourseController.coffee"
+    "_CourseController.coffee"
   ],
   "names": [],
   "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACE,CAAC,UADH,CACc,kBADd,EACkC,SAAC,MAAD,EAAS,YAAT,GAAA;AAC9B,IAAA,MAAM,CAAC,OAAP,GAAiB,YAAY,CAAC,KAAb,CAAA,CAAjB,CAAA;AAAA,IAEA,MAAM,CAAC,WAAP,GAAqB;MACnB;AAAA,QAAE,KAAA,EAAO,OAAT;AAAA,QAAkB,IAAA,EAAM,eAAxB;OADmB,EAEnB;AAAA,QAAE,KAAA,EAAO,WAAT;AAAA,QAAsB,IAAA,EAAM,sBAA5B;OAFmB;KAFrB,CAAA;WAMA,MAAM,CAAC,SAAP,GAAmB,MAAM,CAAC,WAAY,CAAA,CAAA,CAAE,CAAC,MAPX;EAAA,CADlC,CAAA,CAAA;AAAA"

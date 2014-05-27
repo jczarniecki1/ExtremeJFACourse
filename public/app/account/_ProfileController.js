@@ -27,4 +27,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=ProfileController.map
+//# sourceMappingURL=_ProfileController.map

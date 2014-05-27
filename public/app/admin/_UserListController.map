@@ -1,9 +1,9 @@
 {
   "version": 3,
-  "file": "UserListController.js",
+  "file": "_UserListController.js",
   "sourceRoot": "",
   "sources": [
-    "UserListController.coffee"
+    "_UserListController.coffee"
   ],
   "names": [],
   "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACE,CAAC,UADH,CACc,oBADd,EACoC,SAAC,MAAD,EAAS,SAAT,GAAA;WAChC,MAAM,CAAC,KAAP,GAAe,SAAS,CAAC,KAAV,CAAA,EADiB;EAAA,CADpC,CAAA,CAAA;AAAA"
