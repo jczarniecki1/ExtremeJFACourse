@@ -6,4 +6,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=_ChallengeController.map
+//# sourceMappingURL=ChallengeController.map

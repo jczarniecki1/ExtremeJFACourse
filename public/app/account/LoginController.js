@@ -23,4 +23,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=_LoginController.map
+//# sourceMappingURL=LoginController.map

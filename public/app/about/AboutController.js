@@ -4,4 +4,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=_AboutController.map
+//# sourceMappingURL=AboutController.map

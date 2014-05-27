@@ -14,4 +14,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=_CourseDetailsController.map
+//# sourceMappingURL=CourseDetailsController.map

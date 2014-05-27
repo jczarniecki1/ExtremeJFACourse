@@ -1,9 +1,9 @@
 {
   "version": 3,
-  "file": "_AboutController.js",
+  "file": "AboutController.js",
   "sourceRoot": "",
   "sources": [
-    "_AboutController.coffee"
+    "AboutController.coffee"
   ],
   "names": [],
   "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACE,CAAC,UADH,CACc,iBADd,EACiC,SAAA,GAAA,CADjC,CAAA,CAAA;AAAA"

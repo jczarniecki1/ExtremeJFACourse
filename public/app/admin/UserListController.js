@@ -6,4 +6,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=_UserListController.map
+//# sourceMappingURL=UserListController.map
