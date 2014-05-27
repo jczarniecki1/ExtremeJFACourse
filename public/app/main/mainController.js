@@ -7,4 +7,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=mainController.map
+//# sourceMappingURL=MainController.map
