@@ -12,7 +12,7 @@ angular.module 'app'
         lastName:  $scope.lname
 
       newPassword = $scope.password
-      if newPassword and newPassword.length > 0
+      if newPassword?.length > 0
         newUserData.password = newPassword
 
       AuthService.updateCurrentUser newUserData

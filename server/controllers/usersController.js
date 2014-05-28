@@ -20,7 +20,7 @@
     userData.hashed_pwd = security.hashPwd(userData.salt, userData.password);
     return User.create(userData, function(err, user) {
       if (err != null) {
-        if (err.toString().match('E11000') != null) {
+        if (err.toString().contains('E11000')) {
           err = new Error('Duplicate Username');
         }
         res.status(400);
@@ -38,7 +38,7 @@
   exports.updateUser = function(req, res, next) {
     var newPassword, userUpdates;
     userUpdates = req.body;
-    if (req.user._id.toString() !== userUpdates._id && !req.user.hasRole('admin')) {
+    if (req.user._id.toString() !== (userUpdates._id != null) && !req.user.hasRole('admin')) {
       res.status(403);
       return res.end;
     } else {
@@ -46,7 +46,7 @@
       req.user.firstName = userUpdates.firstName;
       req.user.lastName = userUpdates.lastName;
       newPassword = userUpdates.password;
-      if (newPassword && newPassword.length > 0) {
+      if ((newPassword != null ? newPassword.length : void 0) > 0) {
         userUpdates.salt = security.createSalt();
         userUpdates.hashed_pwd = security.hashPwd(userUpdates.salt, newPassword);
       }

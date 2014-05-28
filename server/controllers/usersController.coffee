@@ -14,7 +14,7 @@ exports.createUser = (req, res, next) ->
   User.create userData, (err, user) ->
 
     if err?
-      if err.toString().match('E11000')?
+      if err.toString().contains 'E11000'
         err = new Error 'Duplicate Username'
 
       res.status 400
@@ -28,7 +28,7 @@ exports.createUser = (req, res, next) ->
 exports.updateUser = (req, res, next) ->
   userUpdates = req.body
 
-  if req.user._id.toString() isnt userUpdates._id and not req.user.hasRole('admin')
+  if req.user._id.toString() isnt userUpdates._id? and not req.user.hasRole('admin')
     res.status 403
     res.end
 
@@ -38,7 +38,7 @@ exports.updateUser = (req, res, next) ->
     req.user.lastName = userUpdates.lastName
 
     newPassword = userUpdates.password
-    if newPassword and newPassword.length > 0
+    if newPassword?.length > 0
       userUpdates.salt = security.createSalt()
       userUpdates.hashed_pwd = security.hashPwd userUpdates.salt, newPassword
 

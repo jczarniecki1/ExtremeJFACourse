@@ -31,7 +31,7 @@ exports.requireLogin = (req, res, next) ->
 
 exports.requireRole = (role) ->
   (req, res, next) ->
-    unless req.isAuthenticated() and req.user.roles.indexOf(role) > -1
+    unless req.isAuthenticated() and role in req.user.roles
       res.status 404
       res.end()
     else

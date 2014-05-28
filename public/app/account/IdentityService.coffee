@@ -1,17 +1,17 @@
 angular.module 'app'
-  .factory 'IdentityService', ($window, UserModel)->
+  .factory 'IdentityService', ($window, UserModel) ->
 
     currentUser = undefined
-    if !!$window.bootstrappedUserObject
+    if $window.bootstrappedUserObject?
       currentUser = new UserModel()
       angular.extend currentUser, $window.bootstrappedUserObject
 
     {
-      currentUser: currentUser
+      currentUser
 
       isAuthenticated: ->
-        return !!this.currentUser
+        @currentUser?
 
       isAuthorized: (role) ->
-        this.currentUser && this.currentUser.roles.indexOf 'admin' > -1
+        @currentUser? and role in @currentUser?.roles
     }

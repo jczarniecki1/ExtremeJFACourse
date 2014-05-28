@@ -26,7 +26,7 @@ userSchema.methods =
     @hashed_pwd is security.hashPwd @salt, passwordToMatch
 
   hasRole: (role) ->
-    @roles.indexOf(role) > -1
+    role in @roles
 
   getData: ->
     { firstName, lastName, username, roles } = @

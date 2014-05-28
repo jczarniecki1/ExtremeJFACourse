@@ -5,7 +5,7 @@ angular.module 'app'
         method: 'PUT'
         isArray: false
 
-    UserResource.prototype.isAdmin = ->
-      this.roles && this.roles.indexOf('admin') > -1
+    UserResource::isAdmin = ->
+      @roles? and 'admin' in @roles
 
     UserResource

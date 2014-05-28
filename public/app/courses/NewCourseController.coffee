@@ -5,7 +5,7 @@ angular.module 'app'
       newCourseData =
         title:    $scope.title
         featured: $scope.featured
-        tags:     $scope.tags.split ','
+        tags:     ($scope.tags or "").split ','
 
       CourseEditor.createCourse newCourseData
         .then (course) ->

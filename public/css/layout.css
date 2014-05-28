@@ -11,6 +11,8 @@ a:focus {
   height: 50px; }
   .navbar-header .navbar-brand {
     color: #cecece;
+    display: inline-block;
+    float: left;
     margin-top: -10px;
     margin-right: 15px;
     padding-right: 20px;

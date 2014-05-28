@@ -2,6 +2,8 @@
 (function() {
   var app, config, env, express;
 
+  require('./server/utilities/utils');
+
   express = require('express');
 
   env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';

@@ -14,7 +14,7 @@
         lastName: $scope.lname
       };
       newPassword = $scope.password;
-      if (newPassword && newPassword.length > 0) {
+      if ((newPassword != null ? newPassword.length : void 0) > 0) {
         newUserData.password = newPassword;
       }
       return AuthService.updateCurrentUser(newUserData).then(function() {

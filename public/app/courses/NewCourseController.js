@@ -6,7 +6,7 @@
       newCourseData = {
         title: $scope.title,
         featured: $scope.featured,
-        tags: $scope.tags.split(',')
+        tags: ($scope.tags || "").split(',')
       };
       return CourseEditor.createCourse(newCourseData).then(function(course) {
         NotifierService.notify('New course created successfully');
