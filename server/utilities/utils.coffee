@@ -3,4 +3,3 @@ String::contains = (value) ->
 
 String::startsWith = (value) ->
   @indexOf(value) is 0
-

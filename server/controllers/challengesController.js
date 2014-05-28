@@ -7,7 +7,14 @@
   Challenge = require('mongoose').model('Challenge');
 
   exports.getChallenges = function(req, res) {
-    return Challenge.find({}).exec(function(err, collection) {
+    var args, courseId;
+    courseId = req.params.courseId;
+    if (typeof courseId === "function" ? courseId({}) : void 0) {
+      args = {
+        courseId: courseId
+      };
+    }
+    return Challenge.find(args).exec(function(err, collection) {
       return res.send(collection);
     });
   };
