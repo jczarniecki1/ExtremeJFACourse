@@ -32,7 +32,6 @@ exports.createChallenge = (req, res, next) ->
             reason: err.toString()
 
         else
-          course.challenges.push challenge
           course.save (err) ->
 
             if err?

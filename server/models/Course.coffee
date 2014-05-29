@@ -16,10 +16,6 @@ courseSchema = mongoose.Schema
   tags:
     type:     [String]
 
-  challenges:
-    type:     Array
-    default:  []
-
 Course = mongoose.model 'Course', courseSchema
 
 exports.createDefaultCourses = ->

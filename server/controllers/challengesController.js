@@ -44,7 +44,6 @@
               reason: err.toString()
             });
           } else {
-            course.challenges.push(challenge);
             return course.save(function(err) {
               if (err != null) {
                 res.status(400);
