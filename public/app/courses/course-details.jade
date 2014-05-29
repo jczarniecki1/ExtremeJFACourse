@@ -15,14 +15,4 @@
             a(href="/courses/{{ course._id }}/challenge/new") Add challenge
 
     .row
-        .col-md-12
-            table.table.table-hover.table-striped.table-condensed
-                thead
-                    tr
-                        th
-                        th Description
-                tbody
-                    tr(ng-repeat="(i, challenge) in course.challenges")
-                        td  {{ i + 1 }}
-                        td
-                            a(href="/courses/{{ course._id }}/challenge/{{ challenge._id }}") {{ challenge.description }}
+        .col-md-12(ng-include="'/partials/challenges/challenge-list'")

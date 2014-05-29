@@ -4,8 +4,8 @@ Challenge = require 'mongoose'
   .model 'Challenge'
 
 exports.getChallenges = (req, res) ->
-  { courseId } = req.params
-  args = { courseId } if courseId? else {}
+  courseId = req.params.courseId
+  args = if courseId? then { courseId: courseId } else {}
   Challenge.find(args).exec (err, collection) ->
     res.send collection
 

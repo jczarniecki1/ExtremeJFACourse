@@ -13,7 +13,7 @@ module.exports = (app)->
   app.post '/api/courses', auth.requireRole('admin'), coursesController.createCourse
   app.get '/api/courses/:id', coursesController.getCourseById
 
-  app.get '/api/challenges', challengesController.getChallenges
+  app.get '/api/courses/:courseId/challenges', challengesController.getChallenges
   app.post '/api/challenges', auth.requireRole('admin'), challengesController.createChallenge
   app.get '/api/challenges/:id', challengesController.getChallengeById
 

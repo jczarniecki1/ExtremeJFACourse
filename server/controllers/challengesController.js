@@ -9,11 +9,9 @@
   exports.getChallenges = function(req, res) {
     var args, courseId;
     courseId = req.params.courseId;
-    if (typeof courseId === "function" ? courseId({}) : void 0) {
-      args = {
-        courseId: courseId
-      };
-    }
+    args = courseId != null ? {
+      courseId: courseId
+    } : {};
     return Challenge.find(args).exec(function(err, collection) {
       return res.send(collection);
     });

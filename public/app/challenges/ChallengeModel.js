@@ -2,7 +2,8 @@
 (function() {
   angular.module('app').factory('ChallengeModel', function($resource) {
     var ChallengeResource;
-    ChallengeResource = $resource('/api/challenges/:id', {
+    ChallengeResource = $resource('/api/courses/:courseId/challenges/:id', {
+      courseId: "@courseId",
       _id: "@id"
     }, {
       update: {
