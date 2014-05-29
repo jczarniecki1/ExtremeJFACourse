@@ -8,6 +8,14 @@
     return this.indexOf(value) === 0;
   };
 
+  Array.prototype.remove = function(value) {
+    var index;
+    index = this.indexOf(value);
+    if (index >= 0) {
+      return this.splice(index, 1);
+    }
+  };
+
 }).call(this);
 
 //# sourceMappingURL=Utils.map

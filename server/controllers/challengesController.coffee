@@ -9,10 +9,6 @@ exports.getChallenges = (req, res) ->
   Challenge.find(args).exec (err, collection) ->
     res.send collection
 
-exports.getChallengeById = (req, res) ->
-  Challenge.findOne({_id:req.params.id}).exec (err, challenge) ->
-    res.send challenge
-
 exports.createChallenge = (req, res, next) ->
   challengeData = req.body
 

@@ -11,11 +11,10 @@ module.exports = (app)->
 
   app.get '/api/courses', coursesController.getCourses
   app.post '/api/courses', auth.requireRole('admin'), coursesController.createCourse
-  app.get '/api/courses/:id', coursesController.getCourseById
+  app.delete '/api/courses/:id', auth.requireRole('admin'), coursesController.removeCourse
 
   app.get '/api/courses/:courseId/challenges', challengesController.getChallenges
-  app.post '/api/challenges', auth.requireRole('admin'), challengesController.createChallenge
-  app.get '/api/challenges/:id', challengesController.getChallengeById
+  app.post '/api/courses/:courseId/challenges', auth.requireRole('admin'), challengesController.createChallenge
 
   app.get '/partials/*', (req, res) ->
     res.render '../../public/app/' + req.params

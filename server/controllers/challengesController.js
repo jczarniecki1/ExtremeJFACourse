@@ -17,14 +17,6 @@
     });
   };
 
-  exports.getChallengeById = function(req, res) {
-    return Challenge.findOne({
-      _id: req.params.id
-    }).exec(function(err, challenge) {
-      return res.send(challenge);
-    });
-  };
-
   exports.createChallenge = function(req, res, next) {
     var challengeData;
     challengeData = req.body;
