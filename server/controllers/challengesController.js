@@ -53,6 +53,24 @@
     });
   };
 
+  exports.removeChallenge = function(req, res, next) {
+    var id;
+    id = req.params.id;
+    return Challenge.remove({
+      _id: id
+    }).exec(function(err) {
+      if (err == null) {
+        res.status(200);
+        return res.end();
+      } else {
+        res.status(400);
+        return res.send({
+          reason: err.toString()
+        });
+      }
+    });
+  };
+
 }).call(this);
 
 //# sourceMappingURL=challengesController.map

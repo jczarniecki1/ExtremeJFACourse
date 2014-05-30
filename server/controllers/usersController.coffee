@@ -49,3 +49,16 @@ exports.updateUser = (req, res, next) ->
           reason: err.toString()
       else
         res.send req.user
+
+exports.removeUser = (req, res, next) ->
+  id = req.params.id
+  User.remove({_id:id}).exec (err) ->
+
+    unless err?
+      res.status 200
+      res.end()
+
+    else
+      res.status 400
+      res.send
+        reason: err.toString()

@@ -14,13 +14,15 @@
     app.get('/api/users', auth.requireRole('admin'), usersController.getUsers);
     app.post('/api/users', usersController.createUser);
     app.put('/api/users', usersController.updateUser);
+    app["delete"]('/api/users/:id', auth.requireRole('admin'), usersController.removeUser);
     app.get('/api/courses', coursesController.getCourses);
     app.post('/api/courses', auth.requireRole('admin'), coursesController.createCourse);
     app["delete"]('/api/courses/:id', auth.requireRole('admin'), coursesController.removeCourse);
     app.get('/api/courses/:courseId/challenges', challengesController.getChallenges);
     app.post('/api/courses/:courseId/challenges', auth.requireRole('admin'), challengesController.createChallenge);
+    app["delete"]('/api/courses/:courseId/challenges/:id', auth.requireRole('admin'), challengesController.removeChallenge);
     app.get('/partials/*', function(req, res) {
-      return res.render('../../public/app/' + req.params);
+      return res.render("../../public/app/" + req.params);
     });
     app.post('/login', auth.authenticate);
     app.post('/profile', auth.authenticate);
@@ -32,8 +34,9 @@
       return res.send(404);
     });
     app.get('*', function(req, res) {
+      var _ref;
       return res.render('index', {
-        bootstrappedUser: req.user ? req.user.getData() : void 0
+        bootstrappedUser: (_ref = req.user) != null ? _ref.getData() : void 0
       });
     });
     return 0;

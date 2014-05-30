@@ -5,19 +5,21 @@ challengesController = require('../controllers/challengesController')
 
 module.exports = (app)->
 
-  app.get '/api/users', auth.requireRole('admin'), usersController.getUsers
-  app.post '/api/users', usersController.createUser
-  app.put '/api/users', usersController.updateUser
+  app.get    '/api/users', auth.requireRole('admin'), usersController.getUsers
+  app.post   '/api/users', usersController.createUser
+  app.put    '/api/users', usersController.updateUser
+  app.delete '/api/users/:id', auth.requireRole('admin'), usersController.removeUser
 
-  app.get '/api/courses', coursesController.getCourses
-  app.post '/api/courses', auth.requireRole('admin'), coursesController.createCourse
+  app.get    '/api/courses', coursesController.getCourses
+  app.post   '/api/courses', auth.requireRole('admin'), coursesController.createCourse
   app.delete '/api/courses/:id', auth.requireRole('admin'), coursesController.removeCourse
 
-  app.get '/api/courses/:courseId/challenges', challengesController.getChallenges
-  app.post '/api/courses/:courseId/challenges', auth.requireRole('admin'), challengesController.createChallenge
+  app.get    '/api/courses/:courseId/challenges', challengesController.getChallenges
+  app.post   '/api/courses/:courseId/challenges', auth.requireRole('admin'), challengesController.createChallenge
+  app.delete '/api/courses/:courseId/challenges/:id', auth.requireRole('admin'), challengesController.removeChallenge
 
   app.get '/partials/*', (req, res) ->
-    res.render '../../public/app/' + req.params
+    res.render "../../public/app/#{req.params}"
 
   app.post '/login', auth.authenticate
 
@@ -32,6 +34,6 @@ module.exports = (app)->
 
   app.get '*', (req, res) ->
     res.render 'index',
-      bootstrappedUser: if req.user then req.user.getData() else undefined
+      bootstrappedUser: req.user?.getData()
 
   0
