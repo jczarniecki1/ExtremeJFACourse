@@ -25,11 +25,7 @@
       return res.render("../../public/app/" + req.params);
     });
     app.post('/login', auth.authenticate);
-    app.post('/profile', auth.authenticate);
-    app.post('/logout', function(req, res) {
-      req.logout();
-      return res.end();
-    });
+    app.post('/logout', auth.logout);
     app.all('/api/*', function(req, res) {
       return res.send(404);
     });

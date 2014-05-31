@@ -23,32 +23,30 @@ exports.createUser = (req, res, next) ->
 
     else
       req.logIn user, (err) ->
-        res.send user
+        res.send user.getData()
 
 exports.updateUser = (req, res, next) ->
   userUpdates = req.body
+  req.user.username  = userUpdates.username.toLowerCase()
+  req.user.firstName = userUpdates.firstName
+  req.user.lastName  = userUpdates.lastName
 
-  if req.user._id.toString() isnt userUpdates._id? and not req.user.hasRole('admin')
-    res.status 403
-    res.end
+  newPassword = userUpdates.password
+  if newPassword?.length > 0
+    req.user.salt = security.createSalt()
+    req.user.hashed_pwd = security.hashPwd req.user.salt, newPassword
 
-  else
-    req.user.username = userUpdates.username.toLowerCase()
-    req.user.firstName = userUpdates.firstName
-    req.user.lastName = userUpdates.lastName
+    # TODO: if password has to be changed...
+    #   Log all possible parameters of this event
+    #   Send email with confirmation
 
-    newPassword = userUpdates.password
-    if newPassword?.length > 0
-      userUpdates.salt = security.createSalt()
-      userUpdates.hashed_pwd = security.hashPwd userUpdates.salt, newPassword
-
-    req.user.save (err) ->
-      if err?
-        res.status 400
-        res.send
-          reason: err.toString()
-      else
-        res.send req.user
+  req.user.save (err) ->
+    if err?
+      res.status 400
+      res.send
+        reason: err.toString()
+    else
+      res.send req.user.getData()
 
 exports.removeUser = (req, res, next) ->
   id = req.params.id

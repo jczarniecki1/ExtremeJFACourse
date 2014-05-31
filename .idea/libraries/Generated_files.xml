@@ -73,7 +73,7 @@
       <root url="file://$PROJECT_DIR$/node_modules/groc/node_modules/spate/test/spate_test.js" />
       <root url="file://$PROJECT_DIR$/public/app/admin/UserListController.js" />
       <root url="file://$PROJECT_DIR$/public/app/about/AboutController.js" />
-      <root url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
+      <root url="file://$PROJECT_DIR$/test/tests/account/UserModelSpecs.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/NewCourseController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/CourseEditor.js" />
       <root url="file://$PROJECT_DIR$/node_modules/groc/node_modules/spate/src/spate.js" />

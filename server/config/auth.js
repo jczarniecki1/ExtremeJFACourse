@@ -24,7 +24,7 @@
           } else {
             return res.send({
               success: true,
-              user: user
+              user: user.getData()
             });
           }
         });
@@ -51,6 +51,11 @@
         return next();
       }
     };
+  };
+
+  exports.logout = function(req, res) {
+    req.logout();
+    return res.end();
   };
 
 }).call(this);

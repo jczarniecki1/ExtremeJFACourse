@@ -29,7 +29,7 @@
         });
       } else {
         return req.logIn(user, function(err) {
-          return res.send(user);
+          return res.send(user.getData());
         });
       }
     });
@@ -38,29 +38,24 @@
   exports.updateUser = function(req, res, next) {
     var newPassword, userUpdates;
     userUpdates = req.body;
-    if (req.user._id.toString() !== (userUpdates._id != null) && !req.user.hasRole('admin')) {
-      res.status(403);
-      return res.end;
-    } else {
-      req.user.username = userUpdates.username.toLowerCase();
-      req.user.firstName = userUpdates.firstName;
-      req.user.lastName = userUpdates.lastName;
-      newPassword = userUpdates.password;
-      if ((newPassword != null ? newPassword.length : void 0) > 0) {
-        userUpdates.salt = security.createSalt();
-        userUpdates.hashed_pwd = security.hashPwd(userUpdates.salt, newPassword);
-      }
-      return req.user.save(function(err) {
-        if (err != null) {
-          res.status(400);
-          return res.send({
-            reason: err.toString()
-          });
-        } else {
-          return res.send(req.user);
-        }
-      });
+    req.user.username = userUpdates.username.toLowerCase();
+    req.user.firstName = userUpdates.firstName;
+    req.user.lastName = userUpdates.lastName;
+    newPassword = userUpdates.password;
+    if ((newPassword != null ? newPassword.length : void 0) > 0) {
+      req.user.salt = security.createSalt();
+      req.user.hashed_pwd = security.hashPwd(req.user.salt, newPassword);
     }
+    return req.user.save(function(err) {
+      if (err != null) {
+        res.status(400);
+        return res.send({
+          reason: err.toString()
+        });
+      } else {
+        return res.send(req.user.getData());
+      }
+    });
   };
 
   exports.removeUser = function(req, res, next) {

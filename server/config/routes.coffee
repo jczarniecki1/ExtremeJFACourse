@@ -22,15 +22,9 @@ module.exports = (app)->
     res.render "../../public/app/#{req.params}"
 
   app.post '/login', auth.authenticate
+  app.post '/logout', auth.logout
 
-  app.post '/profile', auth.authenticate
-
-  app.post '/logout', (req, res) ->
-    req.logout()
-    res.end()
-
-  app.all '/api/*', (req, res) ->
-    res.send 404
+  app.all '/api/*', (req, res) -> res.send 404
 
   app.get '*', (req, res) ->
     res.render 'index',

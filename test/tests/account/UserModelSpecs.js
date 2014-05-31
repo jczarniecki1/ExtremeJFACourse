@@ -20,4 +20,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=vmUserSpecs.map
+//# sourceMappingURL=UserModelSpecs.map

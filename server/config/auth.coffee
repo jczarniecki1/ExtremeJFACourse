@@ -17,7 +17,7 @@ exports.authenticate = (req, res, next) ->
         else
           res.send
             success: true
-            user: user
+            user: user.getData()
 
   auth req, res, next
 
@@ -36,3 +36,8 @@ exports.requireRole = (role) ->
       res.end()
     else
       next()
+
+
+exports.logout = (req, res) ->
+  req.logout()
+  res.end()
