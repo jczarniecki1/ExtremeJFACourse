@@ -12,10 +12,10 @@ angular.module 'app'
         mvToastr.warning msg
         console.warn msg
 
-      error: (msg) ->
-        theMsg = msg || 'Unknown error'
-        mvToastr.error theMsg
-        console.error theMsg
+      error: (error) ->
+        message = error?.data?.reason || 'Unknown error'
+        mvToastr.error message
+        console.error message
 
       info: (msg) ->
         mvToastr.info msg

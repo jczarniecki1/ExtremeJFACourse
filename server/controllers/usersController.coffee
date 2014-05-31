@@ -50,13 +50,22 @@ exports.updateUser = (req, res, next) ->
 
 exports.removeUser = (req, res, next) ->
   id = req.params.id
-  User.remove({_id:id}).exec (err) ->
 
-    unless err?
-      res.status 200
-      res.end()
+  if req.user._id.toString() is id
 
-    else
-      res.status 400
-      res.send
-        reason: err.toString()
+    res.status 400
+    res.send
+      reason: 'You cannot remove yourself'
+
+  else
+
+    User.remove({_id:id}).exec (err) ->
+
+      unless err?
+        res.status 200
+        res.end()
+
+      else
+        res.status 400
+        res.send
+          reason: err.toString()

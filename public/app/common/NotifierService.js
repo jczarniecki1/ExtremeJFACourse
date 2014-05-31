@@ -12,11 +12,11 @@
         mvToastr.warning(msg);
         return console.warn(msg);
       },
-      error: function(msg) {
-        var theMsg;
-        theMsg = msg || 'Unknown error';
-        mvToastr.error(theMsg);
-        return console.error(theMsg);
+      error: function(error) {
+        var message, _ref;
+        message = (error != null ? (_ref = error.data) != null ? _ref.reason : void 0 : void 0) || 'Unknown error';
+        mvToastr.error(message);
+        return console.error(message);
       },
       info: function(msg) {
         mvToastr.info(msg);

@@ -4,8 +4,8 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/node_modules/groc/node_modules/spate/test/spate_test.js" />
         <item url="file://$PROJECT_DIR$/test/test-app.js" />
+        <item url="file://$PROJECT_DIR$/public/app/admin/UserListController.js" />
         <item url="file://$PROJECT_DIR$/public/app/about/AboutController.js" />
-        <item url="file://$PROJECT_DIR$/test/tests/account/vmUserSpecs.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/NewCourseController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/CourseEditor.js" />
         <item url="file://$PROJECT_DIR$/node_modules/groc/node_modules/spate/src/spate.js" />
@@ -46,6 +46,7 @@
         <item url="file://$PROJECT_DIR$/node_modules/groc/lib/styles/base.js" />
         <item url="file://$PROJECT_DIR$/server/controllers/usersController.js" />
         <item url="file://$PROJECT_DIR$/node_modules/groc/lib/styles.js" />
+        <item url="file://$PROJECT_DIR$/public/app/challenges/NewChallengeController.js" />
         <item url="file://$PROJECT_DIR$/node_modules/groc/lib/utils/humanize.js" />
         <item url="file://$PROJECT_DIR$/node_modules/groc/lib/utils/compatibility_helpers.js" />
         <item url="file://$PROJECT_DIR$/public/app/challenges/ChallengeModel.js" />

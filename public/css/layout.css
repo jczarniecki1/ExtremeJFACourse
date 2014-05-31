@@ -71,6 +71,9 @@ a:focus {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee; }
 
+@media (min-width: 768px) {
+  .navbar-header {
+    min-width: 500px; } }
 @media (max-width: 768px) {
   .navbar-form {
     padding-top: 0; }

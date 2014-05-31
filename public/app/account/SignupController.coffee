@@ -13,5 +13,5 @@ angular.module 'app'
         .then ->
           NotifierService.notify 'User account created'
           $location.path '/'
-        , (reason) ->
-          NotifierService.error reason
+        , (error) ->
+          NotifierService.error error

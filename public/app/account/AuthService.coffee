@@ -47,8 +47,8 @@ angular.module 'app'
           .then ->
             IdentityService.currentUser = newUser
             deferred.resolve()
-          , (response) ->
-            deferred.reject response.data.reason
+          , (error) ->
+            deferred.reject error
 
         deferred.promise
 
@@ -61,8 +61,8 @@ angular.module 'app'
           .then ->
             IdentityService.currentUser = clone
             deferred.resolve()
-          , (response) ->
-             deferred.reject response.data.reason
+          , (error) ->
+             deferred.reject error
 
         deferred.promise
     }

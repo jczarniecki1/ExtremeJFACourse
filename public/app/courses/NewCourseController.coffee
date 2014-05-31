@@ -11,5 +11,5 @@ angular.module 'app'
         .then (course) ->
           NotifierService.notify 'New course created successfully'
           $location.path "/courses/#{course._id}"
-        , (reason) ->
-          NotifierService.error reason
+        , (error) ->
+          NotifierService.error error

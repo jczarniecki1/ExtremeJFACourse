@@ -8,8 +8,8 @@
         deferred = $q.defer();
         newChallenge.$save().then(function(challenge) {
           return deferred.resolve(challenge);
-        }, function(response) {
-          return deferred.reject(response.data.reason);
+        }, function(error) {
+          return deferred.reject(error);
         });
         return deferred.promise;
       }

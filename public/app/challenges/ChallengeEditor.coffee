@@ -8,8 +8,8 @@ angular.module 'app'
         newChallenge.$save()
           .then (challenge) ->
             deferred.resolve challenge
-          , (response) ->
-            deferred.reject response.data.reason
+          , (error) ->
+            deferred.reject error
 
         deferred.promise
     }

@@ -8,8 +8,8 @@ angular.module 'app'
         newCourse.$save()
         .then (course) ->
           deferred.resolve course
-        , (response) ->
-          deferred.reject response.data.reason
+        , (error) ->
+          deferred.reject error
 
         deferred.promise
     }

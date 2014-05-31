@@ -53,8 +53,8 @@
         newUser.$save().then(function() {
           IdentityService.currentUser = newUser;
           return deferred.resolve();
-        }, function(response) {
-          return deferred.reject(response.data.reason);
+        }, function(error) {
+          return deferred.reject(error);
         });
         return deferred.promise;
       },
@@ -66,8 +66,8 @@
         clone.$update().then(function() {
           IdentityService.currentUser = clone;
           return deferred.resolve();
-        }, function(response) {
-          return deferred.reject(response.data.reason);
+        }, function(error) {
+          return deferred.reject(error);
         });
         return deferred.promise;
       }

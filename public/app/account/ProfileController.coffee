@@ -18,6 +18,6 @@ angular.module 'app'
       AuthService.updateCurrentUser newUserData
         .then ->
           NotifierService.notify 'Your user account has been updated'
-        , (reason) ->
-          NotifierService.error reason
+        , (error) ->
+          NotifierService.error error
 

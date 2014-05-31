@@ -8,8 +8,8 @@
         deferred = $q.defer();
         newCourse.$save().then(function(course) {
           return deferred.resolve(course);
-        }, function(response) {
-          return deferred.reject(response.data.reason);
+        }, function(error) {
+          return deferred.reject(error);
         });
         return deferred.promise;
       }

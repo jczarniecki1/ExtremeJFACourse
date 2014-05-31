@@ -61,19 +61,26 @@
   exports.removeUser = function(req, res, next) {
     var id;
     id = req.params.id;
-    return User.remove({
-      _id: id
-    }).exec(function(err) {
-      if (err == null) {
-        res.status(200);
-        return res.end();
-      } else {
-        res.status(400);
-        return res.send({
-          reason: err.toString()
-        });
-      }
-    });
+    if (req.user._id.toString() === id) {
+      res.status(400);
+      return res.send({
+        reason: 'You cannot remove yourself'
+      });
+    } else {
+      return User.remove({
+        _id: id
+      }).exec(function(err) {
+        if (err == null) {
+          res.status(200);
+          return res.end();
+        } else {
+          res.status(400);
+          return res.send({
+            reason: err.toString()
+          });
+        }
+      });
+    }
   };
 
 }).call(this);

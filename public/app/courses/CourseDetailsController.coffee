@@ -6,8 +6,8 @@ angular.module 'app'
       CachedCourse.remove($routeParams.id).then ->
         NotifierService.notify "Course removed successfully"
         $location.path "/"
-      , (reason) ->
-        NotifierService.error reason
+      , (error) ->
+        NotifierService.error error
 
 
     CachedCourse.query().$promise.then (collection) ->

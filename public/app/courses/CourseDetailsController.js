@@ -6,8 +6,8 @@
       return CachedCourse.remove($routeParams.id).then(function() {
         NotifierService.notify("Course removed successfully");
         return $location.path("/");
-      }, function(reason) {
-        return NotifierService.error(reason);
+      }, function(error) {
+        return NotifierService.error(error);
       });
     };
     return CachedCourse.query().$promise.then(function(collection) {
