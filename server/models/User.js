@@ -34,6 +34,11 @@
       type: Number,
       min: 0,
       "default": 0
+    },
+    ratingCount: {
+      type: Number,
+      min: 0,
+      "default": 0
     }
   });
 

@@ -1,0 +1,13 @@
+.container
+    h3 Ratings from {{ user.firstName + ' ' + user.lastName }} ({{ user.username }})
+    table.table.table-condensed.user-ratings
+        tr
+            th Date
+            th Type
+            th Rating
+        tr(ng-repeat="rating in ratings")
+            td
+                i.icon.icon-calendar
+                | {{ rating.submitted }}
+            td {{ rating.type }}
+            td {{ rating.rating }}

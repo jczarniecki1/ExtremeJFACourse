@@ -10,6 +10,10 @@ ratingSchema = mongoose.Schema
     type:     String
     required: 'Cannot save anonymous rating'
 
+  submitted:
+    type:     Date
+    required: 'Rating should have date of submission'
+
   type:
     type:     String
     enum:     ratingType

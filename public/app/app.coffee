@@ -27,6 +27,11 @@ angular.module 'app'
         controller: 'UserMessagesController'
         resolve: routeRoleCheck.admin
 
+      .when '/admin/ratings/:userId',
+        templateUrl: '/partials/admin/user-ratings'
+        controller: 'UserRatingsController'
+        resolve: routeRoleCheck.admin
+
       .when '/courses/new',
         templateUrl: '/partials/courses/new-course'
         controller: 'NewCourseController'

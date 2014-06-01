@@ -11,15 +11,11 @@
   Challenge = mongoose.model('Challenge');
 
   exports.getRatings = function(req, res) {
-    var args, userId;
-    args = {};
-    if (!req.user.hasRole('admin')) {
-      userId = req.body.userId;
-      args = {
-        userId: userId
-      };
-    }
-    return Rating.find(args).exec(function(err, collection) {
+    var userId;
+    userId = req.user.hasRole('admin') ? req.body.userId : req.user._id.toString();
+    return Rating.find({
+      userId: userId
+    }).exec(function(err, collection) {
       return res.send(collection);
     });
   };
@@ -39,6 +35,7 @@
         });
       } else {
         ratingData.objectId = element._id;
+        ratingData.submitted = new Date();
         return Rating.create(ratingData, function(err, rating) {
           if (err != null) {
             res.status(400);
@@ -67,6 +64,7 @@
         });
       } else {
         rating.rating = req.body.rating;
+        rating.submitted = new Date();
         return rating.save(function(err) {
           if (err != null) {
             res.status(400);

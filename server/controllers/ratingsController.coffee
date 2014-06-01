@@ -4,13 +4,13 @@ Course    = mongoose.model 'Course'
 Challenge = mongoose.model 'Challenge'
 
 exports.getRatings = (req, res) ->
-  args = {}
+  userId =
+    if req.user.hasRole('admin')
+      req.body.userId
+    else
+      req.user._id.toString()
 
-  unless req.user.hasRole('admin')
-    userId = req.body.userId
-    args = {userId}
-
-  Rating.find(args).exec (err, collection) ->
+  Rating.find({userId}).exec (err, collection) ->
     res.send collection
 
 exports.addRating = (req, res, next) ->
@@ -28,6 +28,7 @@ exports.addRating = (req, res, next) ->
 
     else
       ratingData.objectId = element._id
+      ratingData.submitted = new Date()
 
       Rating.create ratingData, (err, rating) ->
 
@@ -51,6 +52,7 @@ exports.updateRating = (req, res, next) ->
 
     else
       rating.rating = req.body.rating
+      rating.submitted = new Date()
       rating.save (err) ->
 
         if err?
