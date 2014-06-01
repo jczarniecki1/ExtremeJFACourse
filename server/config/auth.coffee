@@ -2,7 +2,7 @@ passport = require('passport')
 
 exports.authenticate = (req, res, next) ->
 
-  req.body.username = req.body.username.toLowerCase() if req.body.username
+  req.body.username = req.body.username?.toLowerCase()
 
   auth = passport.authenticate 'local', (err,user) ->
     if err?
@@ -30,7 +30,7 @@ exports.requireLogin = (req, res, next) ->
 
 exports.requireRole = (role) ->
   (req, res, next) ->
-    unless req.isAuthenticated() and role in req.user.roles
+    unless req.isAuthenticated() and req.user.hasRole(role)
       res.status 404
       res.end()
     else

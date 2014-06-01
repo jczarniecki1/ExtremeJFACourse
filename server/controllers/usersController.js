@@ -15,7 +15,7 @@
   exports.createUser = function(req, res, next) {
     var userData;
     userData = req.body;
-    userData.username = userData.username.toLowerCase();
+    userData.username = userData.username;
     userData.salt = security.createSalt();
     userData.hashed_pwd = security.hashPwd(userData.salt, userData.password);
     return User.create(userData, function(err, user) {
@@ -38,7 +38,7 @@
   exports.updateUser = function(req, res, next) {
     var newPassword, userUpdates;
     userUpdates = req.body;
-    req.user.username = userUpdates.username.toLowerCase();
+    req.user.username = userUpdates.username;
     req.user.firstName = userUpdates.firstName;
     req.user.lastName = userUpdates.lastName;
     newPassword = userUpdates.password;

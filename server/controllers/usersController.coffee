@@ -8,7 +8,7 @@ exports.getUsers = (req, res) ->
 
 exports.createUser = (req, res, next) ->
   userData = req.body
-  userData.username = userData.username.toLowerCase()
+  userData.username = userData.username
   userData.salt = security.createSalt()
   userData.hashed_pwd = security.hashPwd userData.salt, userData.password
   User.create userData, (err, user) ->
@@ -27,7 +27,7 @@ exports.createUser = (req, res, next) ->
 
 exports.updateUser = (req, res, next) ->
   userUpdates = req.body
-  req.user.username  = userUpdates.username.toLowerCase()
+  req.user.username  = userUpdates.username
   req.user.firstName = userUpdates.firstName
   req.user.lastName  = userUpdates.lastName
 

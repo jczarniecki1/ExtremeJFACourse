@@ -4,16 +4,17 @@ security = require '../utilities/security'
 userSchema = mongoose.Schema
 
   firstName:
-    type:     String,
+    type:     String
     required: '{PATH} is required '
 
   lastName:
-    type:     String,
+    type:     String
     required: '{PATH} is required '
 
   username:
-    type:     String,
+    type:     String
     required: '{PATH} is required '
+    lowercase:true
     unique:   true
 
   salt:       String
@@ -22,10 +23,12 @@ userSchema = mongoose.Schema
 
   unreadMessages:
     type:     Number
+    min:      0
     default:  0
 
   allMessages:
     type:     Number
+    min:      0
     default:  0
 
 userSchema.methods =

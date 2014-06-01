@@ -1,8 +1,9 @@
 auth = require('./auth')
-usersController = require('../controllers/usersController')
-coursesController = require('../controllers/coursesController')
-messagesController = require('../controllers/messagesController')
-challengesController = require('../controllers/challengesController')
+usersController       = require('../controllers/usersController')
+coursesController     = require('../controllers/coursesController')
+messagesController    = require('../controllers/messagesController')
+challengesController  = require('../controllers/challengesController')
+ratingsController     = require('../controllers/ratingsController')
 
 module.exports = (app)->
 
@@ -14,6 +15,10 @@ module.exports = (app)->
   app.get    '/api/courses', coursesController.getCourses
   app.post   '/api/courses', auth.requireRole('admin'), coursesController.createCourse
   app.delete '/api/courses/:id', auth.requireRole('admin'), coursesController.removeCourse
+
+  app.get    '/api/ratings', auth.requireLogin, ratingsController.getRatings
+  app.post   '/api/ratings', auth.requireLogin, ratingsController.addRating
+  app.put    '/api/ratings/:id', auth.requireLogin, ratingsController.updateRating
 
   app.get    '/api/user/:userId/messages', auth.requireRole('admin'), messagesController.getMessages
   app.post   '/api/user/:userId/messages', auth.requireLogin, messagesController.createMessage

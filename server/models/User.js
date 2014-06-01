@@ -19,6 +19,7 @@
     username: {
       type: String,
       required: '{PATH} is required ',
+      lowercase: true,
       unique: true
     },
     salt: String,
@@ -26,10 +27,12 @@
     roles: [String],
     unreadMessages: {
       type: Number,
+      min: 0,
       "default": 0
     },
     allMessages: {
       type: Number,
+      min: 0,
       "default": 0
     }
   });
