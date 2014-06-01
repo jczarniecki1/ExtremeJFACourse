@@ -1,24 +1,24 @@
 angular.module 'app'
-  .value 'mvToastr', toastr
+  .value 'Toastr', toastr
 
 angular.module 'app'
-  .factory 'NotifierService', (mvToastr) ->
+  .factory 'NotifierService', (Toastr) ->
     {
       notify: (msg) ->
-        mvToastr.success msg
+        Toastr.success msg
         console.log msg
 
       warning: (msg) ->
-        mvToastr.warning msg
+        Toastr.warning msg
         console.warn msg
 
       error: (error) ->
         message = error?.data?.reason || 'Unknown error'
-        mvToastr.error message
+        Toastr.error message
         console.error message
 
       info: (msg) ->
-        mvToastr.info msg
+        Toastr.info msg
         console.log msg
 
     }

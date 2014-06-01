@@ -2,49 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.sass-cache/2d135bcab990802f64f75c504223ba57af6fa80e/_header.scssc" afterPath="$PROJECT_DIR$/public/.sass-cache/2d135bcab990802f64f75c504223ba57af6fa80e/_header.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/AuthService.coffee" afterPath="$PROJECT_DIR$/public/app/account/AuthService.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/AuthService.js" afterPath="$PROJECT_DIR$/public/app/account/AuthService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/AuthService.map" afterPath="$PROJECT_DIR$/public/app/account/AuthService.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.coffee" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.js" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.map" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.js" afterPath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.map" afterPath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseEditor.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CourseEditor.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseEditor.js" afterPath="$PROJECT_DIR$/public/app/courses/CourseEditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseEditor.map" afterPath="$PROJECT_DIR$/public/app/courses/CourseEditor.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.coffee" afterPath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.js" afterPath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.map" afterPath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/NewCourseController.coffee" afterPath="$PROJECT_DIR$/public/app/courses/NewCourseController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/NewCourseController.js" afterPath="$PROJECT_DIR$/public/app/courses/NewCourseController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/NewCourseController.map" afterPath="$PROJECT_DIR$/public/app/courses/NewCourseController.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/NotifierService.coffee" afterPath="$PROJECT_DIR$/public/app/common/NotifierService.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/NotifierService.js" afterPath="$PROJECT_DIR$/public/app/common/NotifierService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/NotifierService.map" afterPath="$PROJECT_DIR$/public/app/common/NotifierService.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/ProfileController.coffee" afterPath="$PROJECT_DIR$/public/app/account/ProfileController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/ProfileController.js" afterPath="$PROJECT_DIR$/public/app/account/ProfileController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/ProfileController.map" afterPath="$PROJECT_DIR$/public/app/account/ProfileController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/SignupController.coffee" afterPath="$PROJECT_DIR$/public/app/account/SignupController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/SignupController.js" afterPath="$PROJECT_DIR$/public/app/account/SignupController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/SignupController.map" afterPath="$PROJECT_DIR$/public/app/account/SignupController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserListController.coffee" afterPath="$PROJECT_DIR$/public/app/admin/UserListController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserListController.js" afterPath="$PROJECT_DIR$/public/app/admin/UserListController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserListController.map" afterPath="$PROJECT_DIR$/public/app/admin/UserListController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/UserModel.coffee" afterPath="$PROJECT_DIR$/public/app/account/UserModel.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/UserModel.js" afterPath="$PROJECT_DIR$/public/app/account/UserModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/UserModel.map" afterPath="$PROJECT_DIR$/public/app/account/UserModel.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sass/ui/_header.scss" afterPath="$PROJECT_DIR$/public/sass/ui/_header.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/layout.css.map" afterPath="$PROJECT_DIR$/public/css/layout.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/layout.css" afterPath="$PROJECT_DIR$/public/css/layout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/includes/scripts.jade" afterPath="$PROJECT_DIR$/server/includes/scripts.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/user-list.jade" afterPath="$PROJECT_DIR$/public/app/admin/user-list.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/usersController.coffee" afterPath="$PROJECT_DIR$/server/controllers/usersController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/usersController.js" afterPath="$PROJECT_DIR$/server/controllers/usersController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/usersController.map" afterPath="$PROJECT_DIR$/server/controllers/usersController.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExtremeJFACourse.iws" />
@@ -68,40 +28,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserListController.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/admin/UserListController.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="308">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="41" />
-              <folding>
-                <marker date="1401528364140" expanded="true" signature="101:626" placeholder="..." />
-                <marker date="1401528364140" expanded="true" signature="169:626" placeholder="..." />
-                <marker date="1401528364140" expanded="true" signature="220:626" placeholder="..." />
-                <marker date="1401528364140" expanded="true" signature="253:578" placeholder="..." />
-                <marker date="1401528364140" expanded="true" signature="283:561" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProfileController.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/account/ProfileController.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
-              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-              <folding>
-                <marker date="1401528363982" expanded="true" signature="119:689" placeholder="..." />
-                <marker date="1401528363982" expanded="true" signature="272:689" placeholder="..." />
-              </folding>
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotifierService.coffee" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/app/common/NotifierService.coffee">
+      <file leaf-file-name="reloadLoop.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/debug/reloadLoop.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50155765" vertical-offset="0" max-vertical-offset="642">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="434">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/vendor/jquery/src/ajax/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="980">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scripts.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/includes/scripts.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8850889" vertical-offset="151" max-vertical-offset="882">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,16 +103,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="280">
               <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewChallengeController.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/challenges/NewChallengeController.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="336">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -232,7 +183,6 @@
         <option value="$PROJECT_DIR$/server/controllers/challengesController.coffee" />
         <option value="$PROJECT_DIR$/server/config/routes.coffee" />
         <option value="$PROJECT_DIR$/server/config/auth.coffee" />
-        <option value="$PROJECT_DIR$/server/includes/scripts.jade" />
         <option value="$PROJECT_DIR$/public/app/admin/user-list.jade" />
         <option value="$PROJECT_DIR$/public/app/account/UserModel.coffee" />
         <option value="$PROJECT_DIR$/public/sass/ui/_header.scss" />
@@ -247,14 +197,15 @@
         <option value="$PROJECT_DIR$/public/app/courses/CourseEditor.coffee" />
         <option value="$PROJECT_DIR$/public/app/account/ProfileController.coffee" />
         <option value="$PROJECT_DIR$/public/app/common/NotifierService.coffee" />
+        <option value="$PROJECT_DIR$/server/includes/scripts.jade" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="66" />
-    <option name="y" value="1315" />
+    <option name="x" value="72" />
+    <option name="y" value="1265" />
     <option name="width" value="1296" />
-    <option name="height" value="1050" />
+    <option name="height" value="1139" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -660,11 +611,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="1315" width="1296" height="1050" extended-state="0" />
-    <editor active="false" />
+    <frame x="72" y="1265" width="1296" height="1139" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3231579" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2954764" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32526317" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492236" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -711,21 +662,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/sass/_settings.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.56" vertical-offset="0" max-vertical-offset="98">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/passport/lib/http/request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="784" max-vertical-offset="1470">
-          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/account/IdentityService.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="322">
@@ -934,13 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/includes/scripts.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8084815" vertical-offset="165" max-vertical-offset="896">
-          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/challengesController.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="854">
@@ -1017,11 +946,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="308">
           <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="41" />
           <folding>
-            <marker date="1401528364140" expanded="true" signature="101:626" placeholder="..." />
-            <marker date="1401528364140" expanded="true" signature="169:626" placeholder="..." />
-            <marker date="1401528364140" expanded="true" signature="220:626" placeholder="..." />
-            <marker date="1401528364140" expanded="true" signature="253:578" placeholder="..." />
-            <marker date="1401528364140" expanded="true" signature="283:561" placeholder="..." />
+            <marker date="1401528364140" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401528364140" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401528364140" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401528364140" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401528364140" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1096,21 +1025,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/account/ProfileController.coffee">
+    <entry file="file://$PROJECT_DIR$/public/app/common/NotifierService.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <marker date="1401528363982" expanded="true" signature="119:689" placeholder="..." />
-            <marker date="1401528363982" expanded="true" signature="272:689" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.44049248" vertical-offset="0" max-vertical-offset="731">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/common/NotifierService.coffee">
+    <entry file="file://$PROJECT_DIR$/public/app/account/ProfileController.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50155765" vertical-offset="0" max-vertical-offset="642">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/debug/reloadLoop.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendor/jquery/src/ajax/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="980">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/includes/scripts.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8850889" vertical-offset="151" max-vertical-offset="882">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
         </state>
       </provider>
