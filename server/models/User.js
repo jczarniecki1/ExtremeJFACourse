@@ -23,7 +23,15 @@
     },
     salt: String,
     hashed_pwd: String,
-    roles: [String]
+    roles: [String],
+    unreadMessages: {
+      type: Number,
+      "default": 0
+    },
+    allMessages: {
+      type: Number,
+      "default": 0
+    }
   });
 
   userSchema.methods = {
@@ -34,13 +42,15 @@
       return __indexOf.call(this.roles, role) >= 0;
     },
     getData: function() {
-      var firstName, lastName, roles, username;
-      firstName = this.firstName, lastName = this.lastName, username = this.username, roles = this.roles;
+      var allMessages, firstName, lastName, roles, unreadMessages, username;
+      firstName = this.firstName, lastName = this.lastName, username = this.username, roles = this.roles, unreadMessages = this.unreadMessages, allMessages = this.allMessages;
       return {
         firstName: firstName,
         lastName: lastName,
         username: username,
-        roles: roles
+        roles: roles,
+        unreadMessages: unreadMessages,
+        allMessages: allMessages
       };
     }
   };

@@ -22,6 +22,11 @@ angular.module 'app'
         controller: 'UserListController'
         resolve: routeRoleCheck.admin
 
+      .when '/admin/messages/:userId',
+        templateUrl: '/partials/admin/user-messages'
+        controller: 'UserMessagesController'
+        resolve: routeRoleCheck.admin
+
       .when '/courses/new',
         templateUrl: '/partials/courses/new-course'
         controller: 'NewCourseController'

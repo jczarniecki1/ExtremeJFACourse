@@ -1,6 +1,7 @@
 auth = require('./auth')
 usersController = require('../controllers/usersController')
 coursesController = require('../controllers/coursesController')
+messagesController = require('../controllers/messagesController')
 challengesController = require('../controllers/challengesController')
 
 module.exports = (app)->
@@ -13,6 +14,11 @@ module.exports = (app)->
   app.get    '/api/courses', coursesController.getCourses
   app.post   '/api/courses', auth.requireRole('admin'), coursesController.createCourse
   app.delete '/api/courses/:id', auth.requireRole('admin'), coursesController.removeCourse
+
+  app.get    '/api/user/:userId/messages', auth.requireRole('admin'), messagesController.getMessages
+  app.post   '/api/user/:userId/messages', auth.requireLogin, messagesController.createMessage
+#  app.post   '/api/messages', auth.requireRole('admin'), messagesController.answerMessage
+  app.delete '/api/user/:userId/messages/:id', auth.requireRole('admin'), messagesController.removeMessage
 
   app.get    '/api/courses/:courseId/challenges', challengesController.getChallenges
   app.post   '/api/courses/:courseId/challenges', auth.requireRole('admin'), challengesController.createChallenge

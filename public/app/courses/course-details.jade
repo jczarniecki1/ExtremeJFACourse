@@ -1,5 +1,8 @@
 .container
-    h1 {{ course.title }}
+    .row
+        h1 {{ course.title }}
+        button.btn.btn-danger(ng-click="delete()")
+            i.icon.icon-remove
     .row
         .col-md-6
             h3(ng-show="course.featured") Featured
@@ -12,9 +15,8 @@
                     div(ng-repeat="tag in course.tags") {{ tag }}
     .row(ng-show="identity.currentUser.isAdmin()")
         .col-md-2
-            a.btn.btn-success(href="/courses/{{ course._id }}/challenge/new") Add challenge
-        .col-md-2
-            button.btn.btn-danger(ng-click="delete()") Remove course
+            a.btn.btn-success(href="/courses/{{ course._id }}/challenge/new")
+                i.icon.icon-plus
 
     .row
         .col-md-12(ng-include="'/partials/challenges/challenge-list'")

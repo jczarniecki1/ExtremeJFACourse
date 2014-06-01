@@ -20,6 +20,14 @@ userSchema = mongoose.Schema
   hashed_pwd: String
   roles:      [String]
 
+  unreadMessages:
+    type:     Number
+    default:  0
+
+  allMessages:
+    type:     Number
+    default:  0
+
 userSchema.methods =
 
   authenticate : (passwordToMatch) ->
@@ -29,8 +37,8 @@ userSchema.methods =
     role in @roles
 
   getData: ->
-    { firstName, lastName, username, roles } = @
-    { firstName, lastName, username, roles }
+    { firstName, lastName, username, roles, unreadMessages, allMessages } = @
+    { firstName, lastName, username, roles, unreadMessages, allMessages }
 
 User = mongoose.model 'User', userSchema
 

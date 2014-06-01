@@ -28,7 +28,6 @@ exports.requireLogin = (req, res, next) ->
   else
     next()
 
-
 exports.requireRole = (role) ->
   (req, res, next) ->
     unless req.isAuthenticated() and role in req.user.roles
@@ -36,7 +35,6 @@ exports.requireRole = (role) ->
       res.end()
     else
       next()
-
 
 exports.logout = (req, res) ->
   req.logout()
