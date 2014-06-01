@@ -7,3 +7,8 @@ String::startsWith = (value) ->
 Array::remove = (value) ->
   index = @indexOf value
   if index >= 0 then @splice index, 1
+
+Array::findById = (id, callback, onError) ->
+  for element in @
+    if element._id is id then return callback(element)
+  onError()

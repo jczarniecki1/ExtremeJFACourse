@@ -11,21 +11,17 @@
         var $d;
         $d = $q.defer();
         courseList.$promise.then(function(collection) {
-          var course, _i, _len;
-          for (_i = 0, _len = collection.length; _i < _len; _i++) {
-            course = collection[_i];
-            if (course._id === id) {
-              course.$remove({
-                id: id
-              }).then(function() {
-                return collection.remove(course) && $d.resolve();
-              }, function(response) {
-                return $d.reject(response.data.reason);
-              });
-              return;
-            }
-          }
-          return $d.reject("Course not found");
+          return collection.findById(id, function(course) {
+            return course.$remove({
+              id: id
+            }).then(function() {
+              return collection.remove(course) && $d.resolve();
+            }, function(response) {
+              return $d.reject(response.data.reason);
+            });
+          }, function() {
+            return $d.reject("Course not found");
+          });
         });
         return $d.promise;
       }

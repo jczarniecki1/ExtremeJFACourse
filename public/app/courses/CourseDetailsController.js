@@ -11,11 +11,8 @@
       });
     };
     return CachedCourse.query().$promise.then(function(collection) {
-      return collection.forEach(function(course) {
-        if (course._id === $routeParams.id) {
-          $scope.course = course;
-          return false;
-        }
+      return collection.findById($routeParams.id, function(course) {
+        return $scope.course = course;
       });
     });
   });

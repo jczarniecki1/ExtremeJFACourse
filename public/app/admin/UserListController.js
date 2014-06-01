@@ -4,22 +4,18 @@
     $scope.users = UserModel.query();
     return $scope["delete"] = function(id) {
       return $scope.users.$promise.then(function(collection) {
-        var user, _i, _len;
-        for (_i = 0, _len = collection.length; _i < _len; _i++) {
-          user = collection[_i];
-          if (user._id === id) {
-            user.$remove({
-              id: id
-            }).then(function() {
-              NotifierService.warning("User removed successfully \nI hope you were sure to do this");
-              return $scope.users = UserModel.query();
-            }, function(error) {
-              return NotifierService.error(error);
-            });
-          }
-          return;
-        }
-        return NotifierService.error("User not found");
+        return collection.findById(id, function(user) {
+          return user.$remove({
+            id: id
+          }).then(function() {
+            NotifierService.warning("User removed successfully \nI hope you were sure to do this");
+            return $scope.users = UserModel.query();
+          }, function(error) {
+            return NotifierService.error(error);
+          });
+        }, function() {
+          return NotifierService.error("User not found");
+        });
       });
     };
   });

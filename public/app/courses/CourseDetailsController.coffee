@@ -11,7 +11,5 @@ angular.module 'app'
 
 
     CachedCourse.query().$promise.then (collection) ->
-      collection.forEach (course) ->
-        if course._id is $routeParams.id
-          $scope.course = course
-          false
+      collection.findById $routeParams.id, (course) ->
+        $scope.course = course

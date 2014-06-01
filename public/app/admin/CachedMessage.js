@@ -19,22 +19,18 @@
         var $d;
         $d = $q.defer();
         messageList[userId].$promise.then(function(collection) {
-          var message, _i, _len;
-          for (_i = 0, _len = collection.length; _i < _len; _i++) {
-            message = collection[_i];
-            if (message._id === messageId) {
-              message.$answer({
-                messageId: messageId,
-                answer: answer
-              }).then(function() {
-                return collection.remove(message) && $d.resolve();
-              }, function(response) {
-                return $d.reject(response.data.reason);
-              });
-              return;
-            }
-          }
-          return $d.reject("Message not found");
+          return collection.findById(messageId, function(message) {
+            return message.$answer({
+              messageId: messageId,
+              answer: answer
+            }).then(function() {
+              return collection.remove(message) && $d.resolve();
+            }, function(response) {
+              return $d.reject(response.data.reason);
+            });
+          }, function() {
+            return $d.reject("Message not found");
+          });
         });
         return $d.promise;
       },
@@ -42,21 +38,17 @@
         var $d;
         $d = $q.defer();
         messageList[userId].$promise.then(function(collection) {
-          var message, _i, _len;
-          for (_i = 0, _len = collection.length; _i < _len; _i++) {
-            message = collection[_i];
-            if (message._id === messageId) {
-              message.$remove({
-                messageId: messageId
-              }).then(function() {
-                return collection.remove(message) && $d.resolve();
-              }, function(response) {
-                return $d.reject(response.data.reason);
-              });
-              return;
-            }
-          }
-          return $d.reject("Message not found");
+          return collection.findById(messageId, function(message) {
+            return message.$remove({
+              messageId: messageId
+            }).then(function() {
+              return collection.remove(message) && $d.resolve();
+            }, function(response) {
+              return $d.reject(response.data.reason);
+            });
+          }, function() {
+            return $d.reject("Message not found");
+          });
         });
         return $d.promise;
       }

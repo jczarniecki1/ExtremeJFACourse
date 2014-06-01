@@ -14,15 +14,13 @@ angular.module 'app'
 
         messageList[userId].$promise
         .then (collection) ->
-          for message in collection
-            if message._id is messageId
-              message.$answer({messageId, answer})
-              .then ->
-                  collection.remove(message) and $d.resolve()
-                , (response) ->
-                  $d.reject response.data.reason
-              return
-          $d.reject "Message not found"
+          collection.findById messageId, (message) ->
+            message.$answer({messageId, answer})
+            .then ->
+                collection.remove(message) and $d.resolve()
+              , (response) ->
+                $d.reject response.data.reason
+          , -> $d.reject "Message not found"
 
         $d.promise
 
@@ -31,15 +29,13 @@ angular.module 'app'
 
         messageList[userId].$promise
         .then (collection) ->
-          for message in collection
-            if message._id is messageId
-              message.$remove({messageId})
-              .then ->
-                  collection.remove(message) and $d.resolve()
-                , (response) ->
-                  $d.reject response.data.reason
-              return
-          $d.reject "Message not found"
+          collection.findById messageId, (message) ->
+            message.$remove({messageId})
+            .then ->
+                collection.remove(message) and $d.resolve()
+              , (response) ->
+                $d.reject response.data.reason
+          , -> $d.reject "Message not found"
 
         $d.promise
     }

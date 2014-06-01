@@ -10,15 +10,13 @@ angular.module 'app'
 
         courseList.$promise
         .then (collection) ->
-          for course in collection
-            if course._id is id
-              course.$remove({id})
-              .then ->
-                  collection.remove(course) and $d.resolve()
-                , (response) ->
-                  $d.reject response.data.reason
-              return
-          $d.reject "Course not found"
+          collection.findById id, (course) ->
+            course.$remove({id})
+            .then ->
+                collection.remove(course) and $d.resolve()
+              , (response) ->
+                $d.reject response.data.reason
+          , -> $d.reject "Course not found"
 
         $d.promise
     }
