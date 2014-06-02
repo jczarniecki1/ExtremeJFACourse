@@ -14,7 +14,7 @@ exports.getRatings = (req, res) ->
       req.user._id
 
   Rating.find({userId}).exec (err, collection) ->
-    res.send collection
+    res.send collection.map (x) -> x.getData()
 
 exports.addRating = (req, res, next) ->
   ratingData = req.body

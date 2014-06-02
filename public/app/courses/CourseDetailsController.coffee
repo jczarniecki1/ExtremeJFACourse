@@ -21,7 +21,7 @@ angular.module 'app'
         objectId : $routeParams.id
         type : 'course'
 
-      $scope.isReadOnly = true
+      $scope.isReadonly = true
 
       saveRating = ->
         unless existingRating?
@@ -39,27 +39,28 @@ angular.module 'app'
             existingRating = rating
             console.log "Rating was updated"
 
-      $scope.hoverRating = (value) ->
+      $scope.hoverRating = ->
         clearTimeout savingRating
         $scope.isRatingHovered = true
 
-      $scope.leaveRating = ->
-        $scope.isRatingHovered = false
-        savingRating = setTimeout ->
-          unless $scope.isRatingHovered or $scope.userRate is $scope.currentRate
-            $scope.userRate = $scope.currentRate
-            saveRating()
-        , 1000
+      unless IdentityService.currentUser.isAdmin()
+        $scope.leaveRating = ->
+          $scope.isRatingHovered = false
+          savingRating = setTimeout ->
+            unless $scope.isRatingHovered or $scope.userRate is $scope.currentRate
+              $scope.userRate = $scope.currentRate
+              saveRating()
+          , 1000
 
-      afterFetchRating = ->
-        $scope.isReadOnly = false
+        afterFetchRating = ->
+          $scope.isReadonly = false
 
-      CachedRating.findOne(args).then (rating) ->
-        $scope.currentRate = $scope.userRate = rating.value
-        existingRating = rating
-        console.log "Found existing rating #{rating.value}"
-      , ->
-        $scope.currentRate = $scope.userRate = 0
-        console.log "Existing rating was not found"
-      , ->
-        afterFetchRating()
+        CachedRating.findOne(args).then (rating) ->
+          $scope.currentRate = $scope.userRate = rating.value
+          existingRating = rating
+          afterFetchRating()
+          console.log "Found existing rating #{rating.value}"
+        , ->
+          $scope.currentRate = $scope.userRate = 0
+          afterFetchRating()
+          console.log "Existing rating was not found"

@@ -20,7 +20,9 @@
     return Rating.find({
       userId: userId
     }).exec(function(err, collection) {
-      return res.send(collection);
+      return res.send(collection.map(function(x) {
+        return x.getData();
+      }));
     });
   };
 

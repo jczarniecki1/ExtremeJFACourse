@@ -23,7 +23,7 @@
         objectId: $routeParams.id,
         type: 'course'
       };
-      $scope.isReadOnly = true;
+      $scope.isReadonly = true;
       saveRating = function() {
         if (existingRating == null) {
           args.value = $scope.userRate;
@@ -39,32 +39,34 @@
           });
         }
       };
-      $scope.hoverRating = function(value) {
+      $scope.hoverRating = function() {
         clearTimeout(savingRating);
         return $scope.isRatingHovered = true;
       };
-      $scope.leaveRating = function() {
-        $scope.isRatingHovered = false;
-        return savingRating = setTimeout(function() {
-          if (!($scope.isRatingHovered || $scope.userRate === $scope.currentRate)) {
-            $scope.userRate = $scope.currentRate;
-            return saveRating();
-          }
-        }, 1000);
-      };
-      afterFetchRating = function() {
-        return $scope.isReadOnly = false;
-      };
-      return CachedRating.findOne(args).then(function(rating) {
-        $scope.currentRate = $scope.userRate = rating.value;
-        existingRating = rating;
-        return console.log("Found existing rating " + rating.value);
-      }, function() {
-        $scope.currentRate = $scope.userRate = 0;
-        return console.log("Existing rating was not found");
-      }, function() {
-        return afterFetchRating();
-      });
+      if (!IdentityService.currentUser.isAdmin()) {
+        $scope.leaveRating = function() {
+          $scope.isRatingHovered = false;
+          return savingRating = setTimeout(function() {
+            if (!($scope.isRatingHovered || $scope.userRate === $scope.currentRate)) {
+              $scope.userRate = $scope.currentRate;
+              return saveRating();
+            }
+          }, 1000);
+        };
+        afterFetchRating = function() {
+          return $scope.isReadonly = false;
+        };
+        return CachedRating.findOne(args).then(function(rating) {
+          $scope.currentRate = $scope.userRate = rating.value;
+          existingRating = rating;
+          afterFetchRating();
+          return console.log("Found existing rating " + rating.value);
+        }, function() {
+          $scope.currentRate = $scope.userRate = 0;
+          afterFetchRating();
+          return console.log("Existing rating was not found");
+        });
+      }
     }
   });
 
