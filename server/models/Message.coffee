@@ -1,9 +1,10 @@
 mongoose = require 'mongoose'
+ObjectId = mongoose.Schema.Types.ObjectId
 
 messageSchema = mongoose.Schema
 
   userId:
-    type:     Object,
+    type:     ObjectId,
     required: 'Cannot send anonymous message'
 
   url:

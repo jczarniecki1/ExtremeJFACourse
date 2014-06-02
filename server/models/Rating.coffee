@@ -1,4 +1,5 @@
 mongoose = require 'mongoose'
+ObjectId = mongoose.Schema.Types.ObjectId
 
 ratingType =
   values: 'course challenge'.split(' ')
@@ -7,7 +8,7 @@ ratingType =
 ratingSchema = mongoose.Schema
 
   userId:
-    type:     String
+    type:     ObjectId
     required: 'Cannot save anonymous rating'
 
   submitted:
@@ -20,13 +21,19 @@ ratingSchema = mongoose.Schema
     required: 'Cannot send rating with unknown type'
 
   objectId:
-    type:     Object
+    type:     ObjectId
     required: 'Cannot save rating from unknown location'
 
-  rating:
+  value:
     type:     Number
     min:      1
     max:      5
     required: 'Cannot save rating with unknown value'
+
+ratingSchema.methods =
+
+  getData: ->
+    { _id, type, objectId, value } = @
+    { _id, type, objectId, value }
 
 Rating = mongoose.model 'Rating', ratingSchema

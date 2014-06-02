@@ -18,6 +18,7 @@
         <item url="file://$PROJECT_DIR$/public/app/account/AuthService.js" />
         <item url="file://$PROJECT_DIR$/public/app/debug/scenario.js" />
         <item url="file://$PROJECT_DIR$/node_modules/groc/lib/languages.js" />
+        <item url="file://$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.js" />
         <item url="file://$PROJECT_DIR$/node_modules/groc/lib/utils.js" />
         <item url="file://$PROJECT_DIR$/public/app/app.js" />
         <item url="file://$PROJECT_DIR$/public/app/admin/CachedMessage.js" />
@@ -28,8 +29,8 @@
         <item url="file://$PROJECT_DIR$/server/controllers/messagesController.js" />
         <item url="file://$PROJECT_DIR$/server/models/Rating.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/CachedCourse.js" />
-        <item url="file://$PROJECT_DIR$/public/app/main/MainController.js" />
         <item url="file://$PROJECT_DIR$/public/app/admin/MessageModel.js" />
+        <item url="file://$PROJECT_DIR$/public/app/main/MainController.js" />
         <item url="file://$PROJECT_DIR$/server/models/Message.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/LoginController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/CourseController.js" />
@@ -99,6 +100,7 @@
       <root url="file://$PROJECT_DIR$/public/app/debug/scenario.js" />
       <root url="file://$PROJECT_DIR$/node_modules/groc/lib/languages.js" />
       <root url="file://$PROJECT_DIR$/node_modules/groc/lib/utils.js" />
+      <root url="file://$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.js" />
       <root url="file://$PROJECT_DIR$/public/app/app.js" />
       <root url="file://$PROJECT_DIR$/public/app/admin/CachedMessage.js" />
       <root url="file://$PROJECT_DIR$/public/app/admin/UserMessagesController.js" />
@@ -107,8 +109,8 @@
       <root url="file://$PROJECT_DIR$/server/config/auth.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/messagesController.js" />
       <root url="file://$PROJECT_DIR$/server/models/Rating.js" />
-      <root url="file://$PROJECT_DIR$/public/app/admin/MessageModel.js" />
       <root url="file://$PROJECT_DIR$/public/app/main/MainController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/admin/MessageModel.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/CachedCourse.js" />
       <root url="file://$PROJECT_DIR$/server/models/Message.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/CourseController.js" />

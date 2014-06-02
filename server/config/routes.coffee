@@ -18,7 +18,7 @@ module.exports = (app)->
 
   app.get    '/api/ratings', auth.requireLogin, ratingsController.getRatings
   app.post   '/api/ratings', auth.requireLogin, ratingsController.addRating
-  app.put    '/api/ratings/:id', auth.requireLogin, ratingsController.updateRating
+  app.put    '/api/ratings', auth.requireLogin, ratingsController.updateRating
 
   app.get    '/api/user/:userId/messages', auth.requireRole('admin'), messagesController.getMessages
   app.post   '/api/user/:userId/messages', auth.requireLogin, messagesController.createMessage

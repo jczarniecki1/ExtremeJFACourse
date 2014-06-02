@@ -5,7 +5,7 @@
             i.icon.icon-remove2
     .row
         .col-md-6
-            rating(ng-model="rate", max="max", readonly="isReadonly")
+            rating(ng-show="identity.isAuthenticated()", ng-model="currentRate", max="5", on-hover="hoverRating(value)" on-leave="leaveRating()", readonly="isReadonly")
             h3 Published on {{ course.published | date }}
 
         .col-md-6

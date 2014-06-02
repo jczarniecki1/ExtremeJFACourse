@@ -1,4 +1,5 @@
 mongoose = require 'mongoose'
+ObjectId = mongoose.Schema.Types.ObjectId
 
 challengeSchema = mongoose.Schema
 
@@ -15,6 +16,6 @@ challengeSchema = mongoose.Schema
     required: '{PATH} is required'
 
   courseId:
-    type:     Object
+    type:     ObjectId
 
 Challenge = mongoose.model 'Challenge', challengeSchema
