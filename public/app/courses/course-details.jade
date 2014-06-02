@@ -5,12 +5,7 @@
             i.icon.icon-remove2
     .row
         .col-md-6
-            .rating(ng-model="rank")
-                - for (var i=1; i<=2; i++)
-                  i.icon.icon-2x.icon-star3(ng-mouseenter='rankHover(i)', ng-mouseleave='rankReset()', ng-click='rate(i)')
-                - for (var i=(2+1); i<=5; i++)
-                  i.icon.icon-2x.icon-star(ng-mouseenter='rankHover(i)', ng-mouseleave='rankReset()', ng-click='rate(i)')
-            //-  rating(ng-model="rate", max="max", readonly="isReadonly", state-on="icon icon-star3", state-off="icon icon-star")
+            rating(ng-model="rate", max="max", readonly="isReadonly")
             h3 Published on {{ course.published | date }}
 
         .col-md-6

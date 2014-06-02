@@ -1,4 +1,9 @@
 angular.module 'app'
+  .config ($provide) ->
+    $provide.decorator 'ratingDirective', ($delegate) ->
+      $delegate[0].templateUrl = '/partials/bootstrap/rating/rating'
+      $delegate
+
   .controller 'CourseDetailsController', ($scope, CachedCourse, $routeParams, IdentityService, NotifierService, $location) ->
     $scope.identity = IdentityService
 
@@ -10,6 +15,7 @@ angular.module 'app'
         NotifierService.error error
 
     $scope.myRate = 2
+    $scope.max = 5
 
     $scope.rate = (rate) ->
       console.log rate
