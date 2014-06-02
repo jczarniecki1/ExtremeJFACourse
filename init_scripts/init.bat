@@ -12,6 +12,7 @@ bower init
 bower install jquery --save
 bower install toastr --save
 bower install angular angular-resource angular-route --save
+bower install angular-bootstrap --save
 
 npm install nodemon
 

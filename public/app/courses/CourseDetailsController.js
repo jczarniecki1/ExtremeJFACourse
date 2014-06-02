@@ -10,6 +10,19 @@
         return NotifierService.error(error);
       });
     };
+    $scope.myRate = 2;
+    $scope.rate = function(rate) {
+      console.log(rate);
+      return $scope.myRate = rate;
+    };
+    $scope.rankHover = function(rate) {
+      console.log(rate);
+      return $scope.rate = rate;
+    };
+    $scope.rankReset = function() {
+      return $scope.rate = $scope.myRate;
+    };
+    $scope.rankReset();
     return CachedCourse.query().$promise.then(function(collection) {
       return collection.findById($routeParams.id, function(course) {
         return $scope.course = course;

@@ -9,6 +9,20 @@ angular.module 'app'
       , (error) ->
         NotifierService.error error
 
+    $scope.myRate = 2
+
+    $scope.rate = (rate) ->
+      console.log rate
+      $scope.myRate = rate
+
+    $scope.rankHover = (rate) ->
+      console.log rate
+      $scope.rate = rate
+
+    $scope.rankReset = () ->
+      $scope.rate = $scope.myRate
+
+    $scope.rankReset()
 
     CachedCourse.query().$promise.then (collection) ->
       collection.findById $routeParams.id, (course) ->

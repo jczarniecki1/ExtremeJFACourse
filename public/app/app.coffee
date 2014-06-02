@@ -1,4 +1,4 @@
-angular.module 'app', ['ngResource','ngRoute']
+angular.module 'app', ['ngResource','ngRoute', 'ui.bootstrap']
 
 angular.module 'app'
   .config ($routeProvider, $locationProvider)->
@@ -28,6 +28,7 @@ angular.module 'app'
         resolve: routeRoleCheck.admin
 
       .when '/admin/ratings/:userId',
+        replace: true
         templateUrl: '/partials/admin/user-ratings'
         controller: 'UserRatingsController'
         resolve: routeRoleCheck.admin

@@ -18,6 +18,14 @@ a:focus {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-large {
+  font-size: 1.3em;
+  line-height: 1.3em; }
+
+.icon-2x {
+  font-size: 2em;
+  line-height: 2em; }
+
 .icon-home:before {
   content: "\e600"; }
 
