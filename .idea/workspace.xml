@@ -5,108 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="Walking skeleton">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coffeelint.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/utilities/response.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/AuthService.coffee" afterPath="$PROJECT_DIR$/public/app/account/AuthService.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/AuthService.js" afterPath="$PROJECT_DIR$/public/app/account/AuthService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/AuthService.map" afterPath="$PROJECT_DIR$/public/app/account/AuthService.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/CachedChallenge.coffee" afterPath="$PROJECT_DIR$/public/app/challenges/CachedChallenge.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/CachedChallenge.js" afterPath="$PROJECT_DIR$/public/app/challenges/CachedChallenge.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/CachedChallenge.map" afterPath="$PROJECT_DIR$/public/app/challenges/CachedChallenge.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CachedCourse.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CachedCourse.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CachedCourse.js" afterPath="$PROJECT_DIR$/public/app/courses/CachedCourse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CachedCourse.map" afterPath="$PROJECT_DIR$/public/app/courses/CachedCourse.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/CachedMessage.coffee" afterPath="$PROJECT_DIR$/public/app/admin/CachedMessage.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/CachedMessage.js" afterPath="$PROJECT_DIR$/public/app/admin/CachedMessage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/CachedMessage.map" afterPath="$PROJECT_DIR$/public/app/admin/CachedMessage.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/CachedRating.coffee" afterPath="$PROJECT_DIR$/public/app/admin/CachedRating.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/CachedRating.js" afterPath="$PROJECT_DIR$/public/app/admin/CachedRating.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/CachedRating.map" afterPath="$PROJECT_DIR$/public/app/admin/CachedRating.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Challenge.coffee" afterPath="$PROJECT_DIR$/server/models/Challenge.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Challenge.js" afterPath="$PROJECT_DIR$/server/models/Challenge.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Challenge.map" afterPath="$PROJECT_DIR$/server/models/Challenge.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeController.coffee" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeController.map" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.coffee" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.js" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.map" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.coffee" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.js" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.map" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeEditor.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeModel.coffee" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeModel.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeModel.js" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/ChallengeModel.map" afterPath="$PROJECT_DIR$/public/app/challenges/ChallengeModel.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Course.coffee" afterPath="$PROJECT_DIR$/server/models/Course.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Course.js" afterPath="$PROJECT_DIR$/server/models/Course.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Course.map" afterPath="$PROJECT_DIR$/server/models/Course.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseController.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CourseController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseController.map" afterPath="$PROJECT_DIR$/public/app/courses/CourseController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.map" afterPath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseEditor.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CourseEditor.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseEditor.js" afterPath="$PROJECT_DIR$/public/app/courses/CourseEditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseEditor.map" afterPath="$PROJECT_DIR$/public/app/courses/CourseEditor.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseModel.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CourseModel.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseModel.js" afterPath="$PROJECT_DIR$/public/app/courses/CourseModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseModel.map" afterPath="$PROJECT_DIR$/public/app/courses/CourseModel.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/IdentityService.coffee" afterPath="$PROJECT_DIR$/public/app/account/IdentityService.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/IdentityService.js" afterPath="$PROJECT_DIR$/public/app/account/IdentityService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/IdentityService.map" afterPath="$PROJECT_DIR$/public/app/account/IdentityService.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/LoginController.coffee" afterPath="$PROJECT_DIR$/public/app/account/LoginController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/LoginController.map" afterPath="$PROJECT_DIR$/public/app/account/LoginController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/main/MainController.coffee" afterPath="$PROJECT_DIR$/public/app/main/MainController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/main/MainController.map" afterPath="$PROJECT_DIR$/public/app/main/MainController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/MessageModel.coffee" afterPath="$PROJECT_DIR$/public/app/admin/MessageModel.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/MessageModel.js" afterPath="$PROJECT_DIR$/public/app/admin/MessageModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/MessageModel.map" afterPath="$PROJECT_DIR$/public/app/admin/MessageModel.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.coffee" afterPath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.map" afterPath="$PROJECT_DIR$/public/app/challenges/NewChallengeController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/NewCourseController.coffee" afterPath="$PROJECT_DIR$/public/app/courses/NewCourseController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/NewCourseController.map" afterPath="$PROJECT_DIR$/public/app/courses/NewCourseController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/NotifierService.coffee" afterPath="$PROJECT_DIR$/public/app/common/NotifierService.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/NotifierService.js" afterPath="$PROJECT_DIR$/public/app/common/NotifierService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/NotifierService.map" afterPath="$PROJECT_DIR$/public/app/common/NotifierService.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/ProfileController.coffee" afterPath="$PROJECT_DIR$/public/app/account/ProfileController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/ProfileController.map" afterPath="$PROJECT_DIR$/public/app/account/ProfileController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/RatingModel.coffee" afterPath="$PROJECT_DIR$/public/app/admin/RatingModel.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/RatingModel.js" afterPath="$PROJECT_DIR$/public/app/admin/RatingModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/RatingModel.map" afterPath="$PROJECT_DIR$/public/app/admin/RatingModel.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/SignupController.coffee" afterPath="$PROJECT_DIR$/public/app/account/SignupController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/SignupController.map" afterPath="$PROJECT_DIR$/public/app/account/SignupController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserListController.coffee" afterPath="$PROJECT_DIR$/public/app/admin/UserListController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserListController.map" afterPath="$PROJECT_DIR$/public/app/admin/UserListController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserMessagesController.coffee" afterPath="$PROJECT_DIR$/public/app/admin/UserMessagesController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserMessagesController.map" afterPath="$PROJECT_DIR$/public/app/admin/UserMessagesController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/UserModel.coffee" afterPath="$PROJECT_DIR$/public/app/account/UserModel.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/UserModel.map" afterPath="$PROJECT_DIR$/public/app/account/UserModel.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserRatingsController.coffee" afterPath="$PROJECT_DIR$/public/app/admin/UserRatingsController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/UserRatingsController.map" afterPath="$PROJECT_DIR$/public/app/admin/UserRatingsController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/Utils.coffee" afterPath="$PROJECT_DIR$/public/app/common/Utils.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/Utils.js" afterPath="$PROJECT_DIR$/public/app/common/Utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/common/Utils.map" afterPath="$PROJECT_DIR$/public/app/common/Utils.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.coffee" afterPath="$PROJECT_DIR$/public/app/app.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.js" afterPath="$PROJECT_DIR$/public/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.map" afterPath="$PROJECT_DIR$/public/app/app.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.coffee" afterPath="$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.map" afterPath="$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/challengesController.coffee" afterPath="$PROJECT_DIR$/server/controllers/challengesController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/challengesController.js" afterPath="$PROJECT_DIR$/server/controllers/challengesController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/challengesController.map" afterPath="$PROJECT_DIR$/server/controllers/challengesController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init_scripts/init.bat" afterPath="$PROJECT_DIR$/init_scripts/init.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/ratingsController.coffee" afterPath="$PROJECT_DIR$/server/controllers/ratingsController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/ratingsController.js" afterPath="$PROJECT_DIR$/server/controllers/ratingsController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/ratingsController.map" afterPath="$PROJECT_DIR$/server/controllers/ratingsController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/routes.coffee" afterPath="$PROJECT_DIR$/server/config/routes.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/routes.js" afterPath="$PROJECT_DIR$/server/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/routes.map" afterPath="$PROJECT_DIR$/server/config/routes.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/utilities/security.coffee" afterPath="$PROJECT_DIR$/server/utilities/security.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.coffee" afterPath="$PROJECT_DIR$/server.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.map" afterPath="$PROJECT_DIR$/server.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/utilities/utils.coffee" afterPath="$PROJECT_DIR$/server/utilities/utils.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/utilities/utils.js" afterPath="$PROJECT_DIR$/server/utilities/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/utilities/utils.map" afterPath="$PROJECT_DIR$/server/utilities/utils.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/navbar-login.jade" afterPath="$PROJECT_DIR$/public/app/account/navbar-login.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/includes/scripts.jade" afterPath="$PROJECT_DIR$/server/includes/scripts.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExtremeJFACourse.iws" />
@@ -129,7 +29,28 @@
     <favorites_list name="ExtremeJFACourse" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="scripts.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/includes/scripts.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="485" max-vertical-offset="980">
+              <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar-login.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/app/account/navbar-login.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.94343436" vertical-offset="9" max-vertical-offset="560">
+              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -142,13 +63,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/app/admin/user-ratings.jade" />
         <option value="$PROJECT_DIR$/public/app/courses/course-details.jade" />
         <option value="$PROJECT_DIR$/server/controllers/usersController.coffee" />
         <option value="$PROJECT_DIR$/server/models/Rating.coffee" />
         <option value="$PROJECT_DIR$/public/app/debug/scenario.coffee" />
         <option value="$PROJECT_DIR$/server/models/Message.coffee" />
-        <option value="$PROJECT_DIR$/server/includes/scripts.jade" />
         <option value="$PROJECT_DIR$/server/config/mongoose.coffee" />
         <option value="$PROJECT_DIR$/server/models/Challenge.coffee" />
         <option value="$PROJECT_DIR$/coffeelint.json" />
@@ -193,6 +112,8 @@
         <option value="$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.coffee" />
         <option value="$PROJECT_DIR$/public/app/admin/CachedMessage.coffee" />
         <option value="$PROJECT_DIR$/public/app/common/Utils.coffee" />
+        <option value="$PROJECT_DIR$/server/includes/scripts.jade" />
+        <option value="$PROJECT_DIR$/public/app/account/navbar-login.jade" />
       </list>
     </option>
   </component>
@@ -330,7 +251,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="file watc&#9;null&#9;null&#10;file watcher&#9;ACTION&#9;FileWatcher.runForFiles&#10;File Wat&#9;null&#9;null&#10;route&#9;FILE&#9;file://D:/My Documents/Projects - Web/MEAN App/ExtremeJFACourse/server/config/routes.coffee&#10;File Wa&#9;null&#9;null&#10;serv&#9;FILE&#9;file://D:/My Documents/Projects - Web/MEAN App/ExtremeJFACourse/server.coffee&#10;la&#9;FILE&#9;file://D:/My Documents/Projects - Web/MEAN App/ExtremeJFACourse/public/sass/layout.scss&#10;file watch&#9;null&#9;null&#10;Indent&#9;null&#9;null&#10;Convert&#9;ACTION&#9;ConvertIndentsGroup&#10;File W&#9;null&#9;null&#10;inspections&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="scri&#9;FILE&#9;file://D:/My Documents/Projects - Web/MEAN App/ExtremeJFACourse/server/includes/scripts.jade&#10;file watc&#9;null&#9;null&#10;file watcher&#9;ACTION&#9;FileWatcher.runForFiles&#10;File Wat&#9;null&#9;null&#10;route&#9;FILE&#9;file://D:/My Documents/Projects - Web/MEAN App/ExtremeJFACourse/server/config/routes.coffee&#10;File Wa&#9;null&#9;null&#10;serv&#9;FILE&#9;file://D:/My Documents/Projects - Web/MEAN App/ExtremeJFACourse/server.coffee&#10;la&#9;FILE&#9;file://D:/My Documents/Projects - Web/MEAN App/ExtremeJFACourse/public/sass/layout.scss&#10;file watch&#9;null&#9;null&#10;Indent&#9;null&#9;null&#10;Convert&#9;ACTION&#9;ConvertIndentsGroup&#10;File W&#9;null&#9;null&#10;inspections&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/server.js" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -423,14 +344,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="1265" width="1296" height="1139" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5226179" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5226179" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32435033" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492236" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26475155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26475155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39942253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -473,38 +394,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/config/auth.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23595506" vertical-offset="35" max-vertical-offset="658">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/debug/scenario.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="350">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/User.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1288">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/includes/scripts.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="980">
-          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/courses/course-details.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
@@ -887,6 +776,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03994294" vertical-offset="0" max-vertical-offset="701">
           <caret line="2" column="27" selection-start-line="1" selection-start-column="34" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/sass/lib/stubs/sass_functions.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17976">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/account/navbar-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="482">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/includes/scripts.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="485" max-vertical-offset="980">
+          <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/account/navbar-login.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94343436" vertical-offset="9" max-vertical-offset="560">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding />
         </state>
       </provider>

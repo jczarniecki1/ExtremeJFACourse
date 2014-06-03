@@ -18,10 +18,18 @@
                 b.caret
             ul.dropdown-menu
                 li(ng-show="identity.currentUser.isAdmin()")
-                    a(href="/admin/users") Admin Panel
+                    a(href="/admin/users")
+                        i.icon.icon-user4
+                        | &nbsp;Admin Panel
                 li(ng-show="identity.currentUser.isAdmin()")
-                    a(href="/courses/new") New Course
+                    a(href="/courses/new")
+                        i.icon.icon-plus
+                        | &nbsp;New Course
                 li
-                    a(href="/profile") Profile
+                    a(href="/profile")
+                        i.icon.icon-user
+                        | &nbsp;Profile
                 li
-                    a(href="", ng-click="signout()") Log Out
+                    a(href="", ng-click="signout()")
+                        i.icon.icon-exit
+                        | &nbsp;Log Out
