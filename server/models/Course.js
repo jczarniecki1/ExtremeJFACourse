@@ -19,8 +19,27 @@
     },
     tags: {
       type: [String]
+    },
+    avgRating: {
+      type: Number,
+      min: 0,
+      "default": 0
     }
   });
+
+  courseSchema.methods = {
+    updateRating: function() {
+      var Rating;
+      Rating = require('../models/Rating');
+      return Rating.find({
+        objectId: this._id
+      }).exec(function(err, collection) {
+        if (err == null) {
+          return this.avgRating = collection.avg();
+        }
+      });
+    }
+  };
 
   Course = mongoose.model('Course', courseSchema);
 

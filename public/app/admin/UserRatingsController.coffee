@@ -1,8 +1,10 @@
 angular.module 'app'
-  .controller 'UserRatingsController', ($scope, $routeParams, UserModel, CachedRating) ->
-    userId = $routeParams.userId
-    UserModel.query().$promise.then (collection)->
-      collection.findById userId, (user) ->
-        $scope.user = user
+.controller 'UserRatingsController', ($scope, $routeParams, UserModel, CachedRating) ->
+  userId = $routeParams.userId
 
-    $scope.ratings = CachedRating.query({userId})
+  UserModel.query().$promise
+  .then (collection) ->
+    collection.findById userId, (user) ->
+      $scope.user = user
+
+  $scope.ratings = CachedRating.query {userId}

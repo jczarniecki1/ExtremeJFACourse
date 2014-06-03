@@ -1,22 +1,24 @@
 angular.module 'app'
-  .factory 'CachedCourse', (CourseModel, $q) ->
-    courseList = undefined
+.factory 'CachedCourse', (CourseModel, $q) ->
 
-    {
-      query: -> courseList or= CourseModel.query()
+  courseList = undefined
 
-      remove: (id) ->
-        $d = $q.defer()
+  class CachedCourse
+    query: -> courseList or= CourseModel.query()
 
-        courseList.$promise
-        .then (collection) ->
-          collection.findById id, (course) ->
-            course.$remove({id})
-            .then ->
-                collection.remove(course) and $d.resolve()
-              , (response) ->
-                $d.reject response.data.reason
-          , -> $d.reject "Course not found"
+    remove: (id) ->
+      $d = $q.defer()
 
-        $d.promise
-    }
+      courseList.$promise
+      .then (collection) ->
+        collection.findById id, (course) ->
+          course.$remove({id})
+          .then ->
+            collection.remove(course) and $d.resolve()
+          , (response) ->
+            $d.reject response.data.reason
+        , -> $d.reject "Course not found"
+
+      $d.promise
+
+  new CachedCourse()

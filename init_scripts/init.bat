@@ -77,3 +77,9 @@ npm install groc
 
 // add .groc.json
 // groc
+
+npm install coffeelint
+coffeelint --makeconfig > coffeelint.json
+
+coffeelint -r public/app -q
+coffeelint -r server -q

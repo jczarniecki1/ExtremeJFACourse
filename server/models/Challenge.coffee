@@ -18,4 +18,16 @@ challengeSchema = mongoose.Schema
   courseId:
     type:     ObjectId
 
+  avgRating:
+    type:     Number
+    min:      0
+    default:  0
+
+challengeSchema.methods =
+  updateRating: ->
+    Rating = require '../models/Rating'
+    Rating.find({objectId:@_id}).exec (err, collection) ->
+      unless err?
+        @avgRating = collection.avg()
+
 Challenge = mongoose.model 'Challenge', challengeSchema

@@ -7,9 +7,9 @@
     return CachedChallenge.query({
       courseId: courseId
     }).$promise.then(function(collection) {
-      return collection.findById($routeParams.challengeId, function(challenge) {
+      return collection != null ? collection.findById($routeParams.challengeId, function(challenge) {
         return $scope.challenge = challenge;
-      });
+      }) : void 0;
     });
   });
 

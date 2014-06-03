@@ -1,3 +1,4 @@
+require './server/utilities/response'
 require './server/utilities/utils'
 express = require 'express'
 

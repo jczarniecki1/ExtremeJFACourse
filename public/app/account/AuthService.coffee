@@ -1,68 +1,70 @@
 angular.module 'app'
-  .factory 'AuthService', ($http, IdentityService, UserModel, $q) ->
-    {
-      authenticateUser: (username, password)->
-        deferred = $q.defer()
-        $http.post '/login',
-          username: username
-          password: password
-        .then (response) ->
-          if response.data.success
-            user = new UserModel()
-            angular.extend user, response.data.user
-            IdentityService.currentUser = user
-            deferred.resolve true
-          else
-            deferred.resolve false
+.factory 'AuthService', ($http, IdentityService, UserModel, $q) ->
 
-        deferred.promise
+  class AuthService
 
-      logoutUser: ->
-        deferred = $q.defer()
-        $http.post '/logout',
-          logout: true
-        .then () ->
-          IdentityService.currentUser = undefined
-          deferred.resolve()
-
-        deferred.promise
-
-      authorizeCurrentUserForRoute: (role) ->
-        if IdentityService.isAuthorized role
-          true
+    authenticateUser: (username, password) ->
+      $d = $q.defer()
+      $http.post '/login',
+        username: username
+        password: password
+      .then (response) ->
+        if response.data.success
+          user = new UserModel()
+          angular.extend user, response.data.user
+          IdentityService.currentUser = user
+          $d.resolve true
         else
-          $q.reject 'not authorized'
+          $d.resolve false
 
-      authorizeAuthenticatedUserForRoute: ->
-        if IdentityService.isAuthenticated()
-          true
-        else
-          $q.reject 'not authorized'
+      $d.promise
 
-      createUser: (newUserData) ->
-        newUser = new UserModel newUserData
-        deferred = $q.defer()
+    logoutUser: ->
+      $d = $q.defer()
+      $http.post '/logout',
+        logout: true
+      .then () ->
+        IdentityService.currentUser = undefined
+        $d.resolve()
 
-        newUser.$save()
-          .then ->
-            IdentityService.currentUser = newUser
-            deferred.resolve()
-          , (error) ->
-            deferred.reject error
+      $d.promise
 
-        deferred.promise
+    authorizeCurrentUserForRoute: (role) ->
+      if IdentityService.isAuthorized role
+        true
+      else
+        $q.reject 'not authorized'
 
-      updateCurrentUser: (updatedUserData) ->
-        deferred = $q.defer()
+    authorizeAuthenticatedUserForRoute: ->
+      if IdentityService.isAuthenticated()
+        true
+      else
+        $q.reject 'not authorized'
 
-        clone = angular.copy IdentityService.currentUser
-        angular.extend clone, updatedUserData
-        clone.$update()
-          .then ->
-            IdentityService.currentUser = clone
-            deferred.resolve()
-          , (error) ->
-             deferred.reject error
+    createUser: (newUserData) ->
+      newUser = new UserModel newUserData
+      $d = $q.defer()
 
-        deferred.promise
-    }
+      newUser.$save()
+      .then ->
+        IdentityService.currentUser = newUser
+        $d.resolve()
+      , (error) ->
+        $d.reject error
+
+      $d.promise
+
+    updateCurrentUser: (updatedUserData) ->
+      $d = $q.defer()
+
+      clone = angular.copy IdentityService.currentUser
+      angular.extend clone, updatedUserData
+      clone.$update()
+      .then ->
+        IdentityService.currentUser = clone
+        $d.resolve()
+      , (error) -> $d.reject error
+
+      $d.promise
+
+  new AuthService()

@@ -1,17 +1,18 @@
 angular.module 'app'
-  .factory 'IdentityService', ($window, UserModel) ->
+.factory 'IdentityService', ($window, UserModel) ->
 
-    currentUser = undefined
-    if $window.bootstrappedUserObject?
-      currentUser = new UserModel()
-      angular.extend currentUser, $window.bootstrappedUserObject
+  currentUser = undefined
+  if $window.bootstrappedUserObject?
+    currentUser = new UserModel()
+    angular.extend currentUser, $window.bootstrappedUserObject
 
-    {
-      currentUser
+  class IdentityService
+    currentUser: currentUser
 
-      isAuthenticated: ->
-        @currentUser?
+    isAuthenticated: ->
+      @currentUser?
 
-      isAuthorized: (role) ->
-        @currentUser? and role in @currentUser?.roles
-    }
+    isAuthorized: (role) ->
+      @currentUser? and role in @currentUser?.roles
+
+  new IdentityService()

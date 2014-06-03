@@ -7,7 +7,7 @@ module.exports =
         .toString 'base64'
 
     hashPwd: (salt, pwd) ->
-      hmac = crypto.createHmac('sha1', salt);
+      hmac = crypto.createHmac 'sha1', salt
       hmac.update pwd
         .digest 'hex'
   }

@@ -42,7 +42,8 @@ exports.addRating = (req, res, next) ->
 
         else
           res.status 200
-          req.user.ratingCount++;
+          req.user.ratingCount++
+          element.updateRating()
           req.user.save()
           res.send rating.getData()
 
@@ -64,4 +65,8 @@ exports.updateRating = (req, res, next) ->
           res.send
             reason: err.toString()
         else
+          model = if rating.type is 'course' then Course else Challenge
+          model.findOne({_id: rating.objectId}).exec (err, element) ->
+            unless err?
+              element.updateRating()
           res.send rating.getData()

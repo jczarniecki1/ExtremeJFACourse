@@ -24,7 +24,9 @@
         return callback(element);
       }
     }
-    return onError();
+    if (onError != null) {
+      return onError();
+    }
   };
 
 }).call(this);

@@ -2,6 +2,8 @@
 (function() {
   var app, config, env, express;
 
+  require('./server/utilities/response');
+
   require('./server/utilities/utils');
 
   express = require('express');

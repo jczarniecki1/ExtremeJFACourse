@@ -1,56 +1,32 @@
-Course = require 'mongoose'
-  .model 'Course'
-Challenge = require 'mongoose'
-  .model 'Challenge'
+mongoose = require 'mongoose'
+Course = mongoose.model 'Course'
+Challenge = mongoose.model 'Challenge'
+
 
 exports.getChallenges = (req, res) ->
   courseId = req.params.courseId
-  args = if courseId? then { courseId: courseId } else {}
+  args = if courseId? then { courseId } else {}
   Challenge.find(args).exec (err, collection) ->
-    res.send collection
+    res.SendIfPossible collection, err
+
 
 exports.createChallenge = (req, res, next) ->
   challengeData = req.body
 
   Course.findOne({_id:challengeData.courseId}).exec (err, course) ->
+    if err? then return res.SendError err, 'Cannot find the course'
 
-    if err?
-        res.status 400
-        res.send
-          reason: 'Cannot find the course'
+    Challenge.create challengeData, (err, challenge) ->
+      if err? then return res.SendError err
 
-    else
-      Challenge.create challengeData, (err, challenge) ->
-
-        if err?
-          res.status 400
-          res.send
-            reason: err.toString()
-
-        else
-          course.save (err) ->
-
-            if err?
-              res.status 400
-              res.send
-                reason: err.toString()
-
-            else
-              res.status 200
-              res.send challenge
+      course.save (err) ->
+        res.SendIfPossible challenge, err
 
 
 exports.removeChallenge = (req, res, next) ->
   id = req.params.id
   Challenge.remove({_id:id}).exec (err) ->
+    res.SendOkIfPossible err
 
-    unless err?
-      res.status 200
-      res.end()
-
-    else
-      res.status 400
-      res.send
-        reason: err.toString()
 
 # TODO: updateChallenge

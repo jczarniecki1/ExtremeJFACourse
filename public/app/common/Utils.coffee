@@ -11,4 +11,4 @@ Array::remove = (value) ->
 Array::findById = (id, callback, onError) ->
   for element in @
     if element._id is id then return callback(element)
-  onError()
+  if onError? then onError()

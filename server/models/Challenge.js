@@ -21,8 +21,27 @@
     },
     courseId: {
       type: ObjectId
+    },
+    avgRating: {
+      type: Number,
+      min: 0,
+      "default": 0
     }
   });
+
+  challengeSchema.methods = {
+    updateRating: function() {
+      var Rating;
+      Rating = require('../models/Rating');
+      return Rating.find({
+        objectId: this._id
+      }).exec(function(err, collection) {
+        if (err == null) {
+          return this.avgRating = collection.avg();
+        }
+      });
+    }
+  };
 
   Challenge = mongoose.model('Challenge', challengeSchema);
 

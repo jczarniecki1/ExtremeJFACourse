@@ -1,17 +1,16 @@
 angular.module 'app'
-  .controller 'SignupController', ($scope, AuthService, UserModel, NotifierService, $location) ->
+.controller 'SignupController', ($scope, AuthService, UserModel, NotifierService, $location) ->
 
-    $scope.signup = ->
+  $scope.signup = ->
 
-      newUserData =
-        username:  $scope.email
-        password:  $scope.password
-        firstName: $scope.fname
-        lastName:  $scope.lname
+    newUserData =
+      username:  $scope.email
+      password:  $scope.password
+      firstName: $scope.fname
+      lastName:  $scope.lname
 
-      AuthService.createUser newUserData
-        .then ->
-          NotifierService.notify 'User account created'
-          $location.path '/'
-        , (error) ->
-          NotifierService.error error
+    AuthService.createUser newUserData
+    .then ->
+      NotifierService.notify 'User account created'
+      $location.path '/'
+    , (error) -> NotifierService.error error

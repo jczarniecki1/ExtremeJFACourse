@@ -3,26 +3,36 @@
   angular.module('app').value('Toastr', toastr);
 
   angular.module('app').factory('NotifierService', function(Toastr) {
-    return {
-      notify: function(msg) {
+    var NotifierService;
+    NotifierService = (function() {
+      function NotifierService() {}
+
+      NotifierService.prototype.notify = function(msg) {
         Toastr.success(msg);
         return console.log(msg);
-      },
-      warning: function(msg) {
+      };
+
+      NotifierService.prototype.warning = function(msg) {
         Toastr.warning(msg);
         return console.warn(msg);
-      },
-      error: function(error) {
+      };
+
+      NotifierService.prototype.error = function(error) {
         var message, _ref;
         message = (error != null ? (_ref = error.data) != null ? _ref.reason : void 0 : void 0) || 'Unknown error';
         Toastr.error(message);
         return console.error(message);
-      },
-      info: function(msg) {
+      };
+
+      NotifierService.prototype.info = function(msg) {
         Toastr.info(msg);
         return console.log(msg);
-      }
-    };
+      };
+
+      return NotifierService;
+
+    })();
+    return new NotifierService();
   });
 
 }).call(this);

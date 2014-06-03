@@ -16,6 +16,20 @@
     }
   };
 
+  Array.prototype.avg = function() {
+    var sum, x, _i, _len;
+    if (this.length === 0) {
+      return 0;
+    } else {
+      sum = 0;
+      for (_i = 0, _len = this.length; _i < _len; _i++) {
+        x = this[_i];
+        sum += x;
+      }
+      return sum / this.length;
+    }
+  };
+
 }).call(this);
 
 //# sourceMappingURL=utils.map
