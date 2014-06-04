@@ -6,6 +6,8 @@
     .row
         .col-md-6
             rating(ng-show="identity.isAuthenticated()", ng-model="currentRate", max="5", on-hover="hoverRating(value)" on-leave="leaveRating()", readonly="isReadonly")
+            div(ng-show="userRate  > 0 && userRate <= 3")
+                a(href="#") What should we do better?
             h3 Published on {{ course.published | date }}
 
         .col-md-6

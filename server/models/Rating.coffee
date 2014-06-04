@@ -33,7 +33,7 @@ ratingSchema = mongoose.Schema
 ratingSchema.methods =
 
   getData: ->
-    { _id, type, objectId, value } = @
-    { _id, type, objectId, value }
+    { _id, submitted, type, objectId, value } = @
+    { _id, submitted, type, objectId, value }
 
 Rating = mongoose.model 'Rating', ratingSchema

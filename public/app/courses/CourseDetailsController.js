@@ -28,20 +28,21 @@
         if (existingRating == null) {
           args.value = $scope.userRate;
           return CachedRating.create(args).then(function(rating) {
-            existingRating = rating;
-            return console.log("Rating was submitted");
+            return existingRating = rating;
           });
         } else {
           existingRating.value = $scope.userRate;
           return existingRating.$update().then(function(rating) {
-            existingRating = rating;
-            return console.log("Rating was updated");
+            return existingRating = rating;
           });
         }
       };
       $scope.hoverRating = function() {
         clearTimeout(savingRating);
         return $scope.isRatingHovered = true;
+      };
+      $scope.showFeedbackDialog = function() {
+        return console.log("TODO: showFeedbackDialog");
       };
       if (!IdentityService.currentUser.isAdmin()) {
         $scope.leaveRating = function() {
@@ -59,12 +60,10 @@
         return CachedRating.findOne(args).then(function(rating) {
           $scope.currentRate = $scope.userRate = rating.value;
           existingRating = rating;
-          afterFetchRating();
-          return console.log("Found existing rating " + rating.value);
+          return afterFetchRating();
         }, function() {
           $scope.currentRate = $scope.userRate = 0;
-          afterFetchRating();
-          return console.log("Existing rating was not found");
+          return afterFetchRating();
         });
       }
     }

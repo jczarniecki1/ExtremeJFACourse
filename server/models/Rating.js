@@ -39,10 +39,11 @@
 
   ratingSchema.methods = {
     getData: function() {
-      var objectId, type, value, _id;
-      _id = this._id, type = this.type, objectId = this.objectId, value = this.value;
+      var objectId, submitted, type, value, _id;
+      _id = this._id, submitted = this.submitted, type = this.type, objectId = this.objectId, value = this.value;
       return {
         _id: _id,
+        submitted: submitted,
         type: type,
         objectId: objectId,
         value: value

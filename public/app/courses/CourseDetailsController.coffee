@@ -30,18 +30,19 @@ angular.module 'app'
         CachedRating.create(args)
         .then (rating) ->
           existingRating = rating
-          console.log "Rating was submitted"
       else
         existingRating.value = $scope.userRate
 
         existingRating.$update()
         .then (rating) ->
           existingRating = rating
-          console.log "Rating was updated"
 
     $scope.hoverRating = ->
       clearTimeout savingRating
       $scope.isRatingHovered = true
+
+    $scope.showFeedbackDialog = ->
+      console.log "TODO: showFeedbackDialog"
 
     unless IdentityService.currentUser.isAdmin()
       $scope.leaveRating = ->
@@ -59,8 +60,6 @@ angular.module 'app'
         $scope.currentRate = $scope.userRate = rating.value
         existingRating = rating
         afterFetchRating()
-        console.log "Found existing rating #{rating.value}"
       , ->
         $scope.currentRate = $scope.userRate = 0
         afterFetchRating()
-        console.log "Existing rating was not found"
