@@ -1,4 +1,5 @@
 mongoose = require 'mongoose'
+Rating   = mongoose.model 'Rating'
 ObjectId = mongoose.Schema.Types.ObjectId
 
 challengeSchema = mongoose.Schema
@@ -25,7 +26,6 @@ challengeSchema = mongoose.Schema
 
 challengeSchema.methods =
   updateRating: ->
-    Rating = require '../models/Rating'
     Rating.find({objectId:@_id}).exec (err, collection) =>
       unless err?
         @avgRating = collection.avg (x) -> x.value
