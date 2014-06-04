@@ -1,4 +1,5 @@
 mongoose = require 'mongoose'
+Rating   = mongoose.model 'Rating'
 
 courseSchema = mongoose.Schema
   title:
@@ -23,17 +24,17 @@ courseSchema = mongoose.Schema
 
 courseSchema.methods =
   updateRating: ->
-    Rating = require '../models/Rating'
-    Rating.find({objectId:@_id}).exec (err, collection) ->
+    Rating.find({objectId:@_id}).exec (err, collection) =>
       unless err?
-        @avgRating = collection.avg()
+        @avgRating = collection.avg (x) -> x.value
+        @save()
 
 
 Course = mongoose.model 'Course', courseSchema
 
 exports.createDefaultCourses = ->
   Course.find({}).exec (err, collection) ->
-    if collection.length == 0
+    if collection.length is 0
       Course.create {title: 'C# for Humanists', featured: true, published: new Date('4/1/2014'), tags: ['C#']}
       Course.create {title: 'C# for Pacifists', featured: false, published: new Date('5/11/2014'), tags: ['C#','Coding']}
       Course.create {title: 'Java 8 - Introducing Lambda Expressions', featured: true, published: new Date('5/12/2014'), tags: ['Java']}

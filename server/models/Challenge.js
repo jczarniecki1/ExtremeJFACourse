@@ -35,11 +35,16 @@
       Rating = require('../models/Rating');
       return Rating.find({
         objectId: this._id
-      }).exec(function(err, collection) {
-        if (err == null) {
-          return this.avgRating = collection.avg();
-        }
-      });
+      }).exec((function(_this) {
+        return function(err, collection) {
+          if (err == null) {
+            _this.avgRating = collection.avg(function(x) {
+              return x.value;
+            });
+            return _this.save();
+          }
+        };
+      })(this));
     }
   };
 

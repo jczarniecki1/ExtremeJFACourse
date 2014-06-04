@@ -8,10 +8,10 @@ Array::remove = (value) ->
   index = @indexOf value
   if index >= 0 then @splice index, 1
 
-Array::avg = ->
+Array::avg = (selector) ->
   if @length is 0
     0
   else
     sum = 0
-    sum += x for x in @
+    sum += selector(x) for x in @
     sum / @length

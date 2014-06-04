@@ -1,4 +1,4 @@
-mongoose = require('mongoose')
+mongoose = require 'mongoose'
 Rating    = mongoose.model 'Rating'
 Course    = mongoose.model 'Course'
 Challenge = mongoose.model 'Challenge'

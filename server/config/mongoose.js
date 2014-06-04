@@ -6,13 +6,13 @@
 
   userModel = require('../models/User');
 
+  require('../models/Rating');
+
   courseModel = require('../models/Course');
 
   require('../models/Challenge');
 
   require('../models/Message');
-
-  require('../models/Rating');
 
   module.exports = function(config) {
     var db;
