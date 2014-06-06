@@ -1,5 +1,0 @@
-{
-    "glob": ["public/app/**/*.coffee", "server/**/*.coffee", "README.md"],
-    "github": true,
-    "out": "./public/doc"
-}

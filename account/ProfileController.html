@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><title>account/ProfileController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="account/ProfileController"><meta name="groc-project-path" content="public/app/account/ProfileController.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/public/app/account/ProfileController.coffee">public/app/account/ProfileController.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span> <span class="s">&#39;app&#39;</span>
+<span class="p">.</span><span class="nx">controller</span> <span class="s">&#39;ProfileController&#39;</span><span class="p">,</span> <span class="nf">($scope, AuthService, IdentityService, NotifierService) -&gt;</span>
+  <span class="nv">u = </span><span class="nx">IdentityService</span><span class="p">.</span><span class="nx">currentUser</span>
+  <span class="nv">$scope.email = </span><span class="nx">u</span><span class="p">.</span><span class="nx">username</span>
+  <span class="nv">$scope.fname = </span><span class="nx">u</span><span class="p">.</span><span class="nx">firstName</span>
+  <span class="nv">$scope.lname = </span><span class="nx">u</span><span class="p">.</span><span class="nx">lastName</span>
+
+  <span class="nv">$scope.update = </span><span class="nf">-&gt;</span>
+    <span class="nv">newUserData =</span>
+      <span class="nv">username: </span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">email</span>
+      <span class="nv">firstName: </span><span class="nx">$scope</span><span class="p">.</span><span class="nx">fname</span>
+      <span class="nv">lastName: </span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">lname</span>
+
+    <span class="nv">newPassword = </span><span class="nx">$scope</span><span class="p">.</span><span class="nx">password</span>
+    <span class="k">if</span> <span class="nx">newPassword</span><span class="o">?</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+      <span class="nv">newUserData.password = </span><span class="nx">newPassword</span>
+
+    <span class="nx">AuthService</span><span class="p">.</span><span class="nx">updateCurrentUser</span> <span class="nx">newUserData</span>
+    <span class="p">.</span><span class="nx">then</span> <span class="nf">-&gt;</span>
+      <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">notify</span> <span class="s">&#39;Your user account has been updated&#39;</span>
+    <span class="p">,</span> <span class="nf">(error) -&gt;</span> <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">error</span> <span class="nx">error</span></div></div></div></div></body></html>

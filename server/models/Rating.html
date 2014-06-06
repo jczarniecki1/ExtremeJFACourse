@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head><title>server/models/Rating</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="server/models/Rating"><meta name="groc-project-path" content="server/models/Rating.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/server/models/Rating.coffee">server/models/Rating.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nv">mongoose = </span><span class="nx">require</span> <span class="s">&#39;mongoose&#39;</span>
+<span class="nv">ObjectId = </span><span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">ObjectId</span>
+
+<span class="nv">ratingType =</span>
+  <span class="nv">values: </span><span class="s">&#39;course challenge&#39;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+  <span class="nv">message: </span><span class="s">&#39;You can rate only existing course or challenge&#39;</span>
+
+<span class="nv">ratingSchema = </span><span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span>
+
+  <span class="nv">userId:</span>
+    <span class="nv">type: </span>    <span class="nx">ObjectId</span>
+    <span class="nv">required: </span><span class="s">&#39;Cannot save anonymous rating&#39;</span>
+
+  <span class="nv">submitted:</span>
+    <span class="nv">type: </span>    <span class="nb">Date</span>
+    <span class="nv">required: </span><span class="s">&#39;Rating should have date of submission&#39;</span>
+
+  <span class="nv">type:</span>
+    <span class="nv">type: </span>    <span class="nb">String</span>
+    <span class="nv">enum: </span>    <span class="nx">ratingType</span>
+    <span class="nv">required: </span><span class="s">&#39;Cannot send rating with unknown type&#39;</span>
+
+  <span class="nv">objectId:</span>
+    <span class="nv">type: </span>    <span class="nx">ObjectId</span>
+    <span class="nv">required: </span><span class="s">&#39;Cannot save rating from unknown location&#39;</span>
+
+  <span class="nv">value:</span>
+    <span class="nv">type: </span>    <span class="nb">Number</span>
+    <span class="nv">min: </span>     <span class="mi">1</span>
+    <span class="nv">max: </span>     <span class="mi">5</span>
+    <span class="nv">required: </span><span class="s">&#39;Cannot save rating with unknown value&#39;</span>
+
+<span class="nv">ratingSchema.methods =</span>
+
+  <span class="nv">getData: </span><span class="nf">-&gt;</span>
+    <span class="p">{</span> <span class="nx">_id</span><span class="p">,</span> <span class="nx">submitted</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">objectId</span><span class="p">,</span> <span class="nx">value</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">@</span>
+    <span class="p">{</span> <span class="nx">_id</span><span class="p">,</span> <span class="nx">submitted</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">objectId</span><span class="p">,</span> <span class="nx">value</span> <span class="p">}</span>
+
+<span class="nv">Rating = </span><span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span> <span class="s">&#39;Rating&#39;</span><span class="p">,</span> <span class="nx">ratingSchema</span></div></div></div></div></body></html>

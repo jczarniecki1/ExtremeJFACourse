@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><title>admin/CachedMessage</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="admin/CachedMessage"><meta name="groc-project-path" content="public/app/admin/CachedMessage.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/public/app/admin/CachedMessage.coffee">public/app/admin/CachedMessage.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span> <span class="s">&#39;app&#39;</span>
+<span class="p">.</span><span class="nx">factory</span> <span class="s">&#39;CachedMessage&#39;</span><span class="p">,</span> <span class="nf">(MessageModel, $q) -&gt;</span>
+  <span class="nv">messageList = </span><span class="p">{}</span>
+
+  <span class="k">class</span> <span class="nx">CachedMessage</span>
+    <span class="nv">query: </span><span class="nf">(args) -&gt;</span>
+      <span class="k">if</span> <span class="nx">args</span><span class="o">?</span><span class="p">.</span><span class="nx">userId</span><span class="o">?</span>
+        <span class="nv">args = </span><span class="p">{</span> <span class="nv">userId: </span><span class="nx">args</span><span class="p">.</span><span class="nx">userId</span> <span class="p">}</span>
+        <span class="nx">messageList</span><span class="p">[</span><span class="nx">args</span><span class="p">.</span><span class="nx">userId</span><span class="p">]</span> <span class="o">?=</span> <span class="nx">MessageModel</span><span class="p">.</span><span class="nx">query</span> <span class="nx">args</span>
+      <span class="k">else</span>
+        <span class="nx">messageList</span><span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">]</span> <span class="o">?=</span> <span class="nx">MessageModel</span><span class="p">.</span><span class="nx">query</span><span class="p">()</span>
+
+    <span class="nv">answer: </span><span class="nf">(userId, messageId, answer) -&gt;</span>
+      <span class="nv">$d = </span><span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">()</span>
+
+      <span class="nx">messageList</span><span class="p">[</span><span class="nx">userId</span><span class="p">].</span><span class="nx">$promise</span>
+      <span class="p">.</span><span class="nx">then</span> <span class="nf">(collection) -&gt;</span>
+        <span class="nx">collection</span><span class="p">.</span><span class="nx">findById</span> <span class="nx">messageId</span><span class="p">,</span> <span class="nf">(message) -&gt;</span>
+          <span class="nx">message</span><span class="p">.</span><span class="nx">$answer</span><span class="p">({</span><span class="nx">messageId</span><span class="p">,</span> <span class="nx">answer</span><span class="p">})</span>
+          <span class="p">.</span><span class="nx">then</span> <span class="nf">-&gt;</span>
+            <span class="nx">collection</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">and</span> <span class="nx">$d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">()</span>
+          <span class="p">,</span> <span class="nf">(response) -&gt;</span> <span class="nx">$d</span><span class="p">.</span><span class="nx">reject</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">reason</span>
+        <span class="p">,</span> <span class="nf">-&gt;</span> <span class="nx">$d</span><span class="p">.</span><span class="nx">reject</span> <span class="s">&quot;Message not found&quot;</span>
+
+      <span class="nx">$d</span><span class="p">.</span><span class="nx">promise</span>
+
+    <span class="nv">remove: </span><span class="nf">(userId, messageId) -&gt;</span>
+      <span class="nv">$d = </span><span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">()</span>
+
+      <span class="nx">messageList</span><span class="p">[</span><span class="nx">userId</span><span class="p">].</span><span class="nx">$promise</span>
+      <span class="p">.</span><span class="nx">then</span> <span class="nf">(collection) -&gt;</span>
+        <span class="nx">collection</span><span class="p">.</span><span class="nx">findById</span> <span class="nx">messageId</span><span class="p">,</span> <span class="nf">(message) -&gt;</span>
+          <span class="nx">message</span><span class="p">.</span><span class="nx">$remove</span><span class="p">({</span><span class="nx">messageId</span><span class="p">})</span>
+          <span class="p">.</span><span class="nx">then</span> <span class="nf">-&gt;</span>
+            <span class="nx">collection</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">and</span> <span class="nx">$d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">()</span>
+          <span class="p">,</span> <span class="nf">(response) -&gt;</span>
+            <span class="nx">$d</span><span class="p">.</span><span class="nx">reject</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">reason</span>
+        <span class="p">,</span> <span class="nf">-&gt;</span> <span class="nx">$d</span><span class="p">.</span><span class="nx">reject</span> <span class="s">&quot;Message not found&quot;</span>
+
+      <span class="nx">$d</span><span class="p">.</span><span class="nx">promise</span>
+
+  <span class="k">new</span> <span class="nx">CachedMessage</span><span class="p">()</span></div></div></div></div></body></html>

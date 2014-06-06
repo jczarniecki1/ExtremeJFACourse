@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><title>server/models/User</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="server/models/User"><meta name="groc-project-path" content="server/models/User.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/server/models/User.coffee">server/models/User.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nv">mongoose = </span><span class="nx">require</span> <span class="s">&#39;mongoose&#39;</span>
+<span class="nv">security = </span><span class="nx">require</span> <span class="s">&#39;../utilities/security&#39;</span>
+
+<span class="nv">userSchema = </span><span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span>
+
+  <span class="nv">firstName:</span>
+    <span class="nv">type: </span>    <span class="nb">String</span>
+    <span class="nv">required: </span><span class="s">&#39;{PATH} is required &#39;</span>
+
+  <span class="nv">lastName:</span>
+    <span class="nv">type: </span>    <span class="nb">String</span>
+    <span class="nv">required: </span><span class="s">&#39;{PATH} is required &#39;</span>
+
+  <span class="nv">username:</span>
+    <span class="nv">type: </span>    <span class="nb">String</span>
+    <span class="nv">required: </span><span class="s">&#39;{PATH} is required &#39;</span>
+    <span class="nx">lowercase</span><span class="o">:</span><span class="kc">true</span>
+    <span class="nv">unique: </span>  <span class="kc">true</span>
+
+  <span class="nv">salt: </span>      <span class="nb">String</span>
+  <span class="nv">hashed_pwd: </span><span class="nb">String</span>
+  <span class="nv">roles: </span>     <span class="p">[</span><span class="nb">String</span><span class="p">]</span>
+
+  <span class="nv">unreadMessages:</span>
+    <span class="nv">type: </span>    <span class="nb">Number</span>
+    <span class="nv">min: </span>     <span class="mi">0</span>
+    <span class="nv">default: </span> <span class="mi">0</span>
+
+  <span class="nv">allMessages:</span>
+    <span class="nv">type: </span>    <span class="nb">Number</span>
+    <span class="nv">min: </span>     <span class="mi">0</span>
+    <span class="nv">default: </span> <span class="mi">0</span>
+
+  <span class="nv">ratingCount:</span>
+    <span class="nv">type: </span>    <span class="nb">Number</span>
+    <span class="nv">min: </span>     <span class="mi">0</span>
+    <span class="nv">default: </span> <span class="mi">0</span>
+
+<span class="nv">userSchema.methods =</span>
+
+  <span class="nv">authenticate : </span><span class="nf">(passwordToMatch) -&gt;</span>
+    <span class="nx">@hashed_pwd</span> <span class="o">is</span> <span class="nx">security</span><span class="p">.</span><span class="nx">hashPwd</span> <span class="nx">@salt</span><span class="p">,</span> <span class="nx">passwordToMatch</span>
+
+  <span class="nv">hasRole: </span><span class="nf">(role) -&gt;</span>
+    <span class="nx">role</span> <span class="k">in</span> <span class="nx">@roles</span>
+
+  <span class="nv">getData: </span><span class="nf">-&gt;</span>
+    <span class="p">{</span> <span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">roles</span><span class="p">,</span> <span class="nx">unreadMessages</span><span class="p">,</span> <span class="nx">allMessages</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">@</span>
+    <span class="p">{</span> <span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">roles</span><span class="p">,</span> <span class="nx">unreadMessages</span><span class="p">,</span> <span class="nx">allMessages</span> <span class="p">}</span>
+
+<span class="nv">User = </span><span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span> <span class="s">&#39;User&#39;</span><span class="p">,</span> <span class="nx">userSchema</span>
+
+<span class="nv">createDefaultUsers = </span><span class="nf">-&gt;</span>
+  <span class="nx">User</span><span class="p">.</span><span class="nx">find</span><span class="p">({}).</span><span class="nx">exec</span> <span class="nf">(err, collection) -&gt;</span>
+    <span class="k">if</span> <span class="nx">collection</span><span class="p">.</span><span class="nx">length</span> <span class="o">is</span> <span class="mi">0</span>
+
+      <span class="nv">salt = </span><span class="nx">security</span><span class="p">.</span><span class="nx">createSalt</span><span class="p">()</span>
+      <span class="nv">hash = </span><span class="nx">security</span><span class="p">.</span><span class="nx">hashPwd</span> <span class="nx">salt</span><span class="p">,</span> <span class="s">&#39;asd&#39;</span>
+      <span class="nx">User</span><span class="p">.</span><span class="nx">create</span>
+        <span class="nx">firstName</span><span class="o">:</span><span class="s">&#39;Joe&#39;</span>
+        <span class="nv">lastName: </span><span class="s">&#39;Kowalski&#39;</span>
+        <span class="nv">username: </span><span class="s">&#39;joe@pj.com&#39;</span>
+        <span class="nv">salt: </span><span class="nx">salt</span>
+        <span class="nv">hashed_pwd: </span><span class="nx">hash</span>
+        <span class="nv">roles: </span><span class="p">[]</span>
+
+      <span class="nv">salt = </span><span class="nx">security</span><span class="p">.</span><span class="nx">createSalt</span><span class="p">()</span>
+      <span class="nv">hash = </span><span class="nx">security</span><span class="p">.</span><span class="nx">hashPwd</span> <span class="nx">salt</span><span class="p">,</span> <span class="s">&#39;asd2&#39;</span>
+      <span class="nx">User</span><span class="p">.</span><span class="nx">create</span>
+        <span class="nx">firstName</span><span class="o">:</span><span class="s">&#39;Joe2&#39;</span>
+        <span class="nv">lastName: </span><span class="s">&#39;Kowalski&#39;</span>
+        <span class="nv">username: </span><span class="s">&#39;joe2@pj.com&#39;</span>
+        <span class="nv">salt: </span><span class="nx">salt</span>
+        <span class="nv">hashed_pwd: </span><span class="nx">hash</span>
+        <span class="nv">roles: </span><span class="p">[</span><span class="s">&#39;lab&#39;</span><span class="p">]</span>
+
+      <span class="nv">salt = </span><span class="nx">security</span><span class="p">.</span><span class="nx">createSalt</span><span class="p">()</span>
+      <span class="nv">hash = </span><span class="nx">security</span><span class="p">.</span><span class="nx">hashPwd</span> <span class="nx">salt</span><span class="p">,</span> <span class="s">&#39;xxx&#39;</span>
+      <span class="nx">User</span><span class="p">.</span><span class="nx">create</span>
+        <span class="nx">firstName</span><span class="o">:</span><span class="s">&#39;Grumpy&#39;</span>
+        <span class="nv">lastName: </span><span class="s">&#39;Student&#39;</span>
+        <span class="nv">username: </span><span class="s">&#39;admin&#39;</span>
+        <span class="nv">salt: </span><span class="nx">salt</span>
+        <span class="nv">hashed_pwd: </span><span class="nx">hash</span>
+        <span class="nv">roles: </span><span class="p">[</span><span class="s">&#39;admin&#39;</span><span class="p">]</span>
+
+<span class="nv">exports.createDefaultUsers = </span><span class="nx">createDefaultUsers</span></div></div></div></div></body></html>

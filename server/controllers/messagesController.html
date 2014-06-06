@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><title>server/controllers/messagesController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="server/controllers/messagesController"><meta name="groc-project-path" content="server/controllers/messagesController.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/server/controllers/messagesController.coffee">server/controllers/messagesController.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nv">Message = </span><span class="nx">require</span> <span class="s">&#39;mongoose&#39;</span>
+  <span class="p">.</span><span class="nx">model</span> <span class="s">&#39;Message&#39;</span>
+
+<span class="nv">exports.getMessages = </span><span class="nf">(req, res) -&gt;</span>
+  <span class="nv">userId = </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">userId</span>
+  <span class="nv">args = </span><span class="k">if</span> <span class="nx">userId</span><span class="o">?</span> <span class="k">then</span> <span class="p">{</span> <span class="nv">userId: </span><span class="nx">userId</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{}</span>
+  <span class="nx">Message</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">args</span><span class="p">).</span><span class="nx">exec</span> <span class="nf">(err, collection) -&gt;</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="nx">collection</span>
+
+<span class="nv">exports.createMessage = </span><span class="nf">(req, res, next) -&gt;</span>
+  <span class="nv">messageData = </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+
+  <span class="nx">Message</span><span class="p">.</span><span class="nx">create</span> <span class="nx">messageData</span><span class="p">,</span> <span class="nf">(err, message) -&gt;</span>
+
+    <span class="k">if</span> <span class="nx">err</span><span class="o">?</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">400</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">send</span>
+        <span class="nv">reason: </span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+
+    <span class="k">else</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">200</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="nx">message</span>
+
+<span class="nv">exports.removeMessage = </span><span class="nf">(req, res, next) -&gt;</span>
+  <span class="nv">id = </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span>
+  <span class="nx">Message</span><span class="p">.</span><span class="nx">remove</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span><span class="nx">id</span><span class="p">}).</span><span class="nx">exec</span> <span class="nf">(err) -&gt;</span>
+
+    <span class="k">unless</span> <span class="nx">err</span><span class="o">?</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">200</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+
+    <span class="k">else</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">400</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">send</span>
+        <span class="nv">reason: </span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>TODO: answerMessage</p></div></div></div></div></body></html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><title>server/config/mongoose</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="server/config/mongoose"><meta name="groc-project-path" content="server/config/mongoose.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/server/config/mongoose.coffee">server/config/mongoose.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nv">mongoose = </span><span class="nx">require</span> <span class="s">&#39;mongoose&#39;</span>
+<span class="nv">userModel = </span><span class="nx">require</span> <span class="s">&#39;../models/User&#39;</span>
+<span class="nx">require</span> <span class="s">&#39;../models/Rating&#39;</span>
+<span class="nv">courseModel = </span><span class="nx">require</span> <span class="s">&#39;../models/Course&#39;</span>
+<span class="nx">require</span> <span class="s">&#39;../models/Challenge&#39;</span>
+<span class="nx">require</span> <span class="s">&#39;../models/Message&#39;</span>
+
+<span class="nv">module.exports = </span><span class="nf">(config)-&gt;</span>
+  <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span> <span class="nx">config</span><span class="p">.</span><span class="nx">db</span>
+  <span class="nv">db = </span><span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span>
+  <span class="nx">db</span><span class="p">.</span><span class="nx">on</span> <span class="s">&#39;error&#39;</span><span class="p">,</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span><span class="s">&#39;connection error...&#39;</span><span class="p">)</span>
+  <span class="nx">db</span><span class="p">.</span><span class="nx">once</span> <span class="s">&#39;open&#39;</span><span class="p">,</span> <span class="nf">-&gt;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&#39;Database opened successfully&#39;</span>
+
+  <span class="nx">userModel</span><span class="p">.</span><span class="nx">createDefaultUsers</span><span class="p">()</span>
+  <span class="nx">courseModel</span><span class="p">.</span><span class="nx">createDefaultCourses</span><span class="p">()</span></div></div></div></div></body></html>

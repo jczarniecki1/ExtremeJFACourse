@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><title>admin/UserMessagesController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="admin/UserMessagesController"><meta name="groc-project-path" content="public/app/admin/UserMessagesController.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/public/app/admin/UserMessagesController.coffee">public/app/admin/UserMessagesController.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span> <span class="s">&#39;app&#39;</span>
+<span class="p">.</span><span class="nx">controller</span> <span class="s">&#39;UserMessagesController&#39;</span><span class="p">,</span> <span class="nf">($scope, $routeParams, UserModel, CachedMessage, NotifierService) -&gt;</span>
+  <span class="nv">userId = </span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">userId</span>
+
+  <span class="nx">UserModel</span><span class="p">.</span><span class="nx">query</span><span class="p">().</span><span class="nx">$promise</span>
+  <span class="p">.</span><span class="nx">then</span> <span class="nf">(collection)-&gt;</span>
+    <span class="nx">collection</span><span class="p">.</span><span class="nx">findById</span> <span class="nx">userId</span><span class="p">,</span> <span class="nf">(user) -&gt;</span>
+      <span class="nv">$scope.user = </span><span class="nx">user</span>
+
+  <span class="nv">$scope.messages = </span><span class="nx">CachedMessage</span><span class="p">.</span><span class="nx">query</span> <span class="p">{</span><span class="nx">userId</span><span class="p">}</span>
+
+  <span class="nv">$scope.answer = </span><span class="nf">(id) -&gt;</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">$promise</span>
+    <span class="p">.</span><span class="nx">then</span> <span class="nf">(collection) -&gt;</span>
+      <span class="nx">collection</span><span class="p">.</span><span class="nx">findById</span> <span class="nx">id</span><span class="p">,</span> <span class="nf">(message) -&gt;</span>
+        <span class="nv">answer = </span><span class="nx">$scope</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">answer</span>
+        <span class="nx">message</span><span class="p">.</span><span class="nx">$answer</span><span class="p">({</span><span class="nx">id</span><span class="p">,</span> <span class="nx">answer</span><span class="p">})</span>
+        <span class="p">.</span><span class="nx">then</span> <span class="nf">-&gt;</span>
+          <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">success</span> <span class="s">&quot;Answer send successfully&quot;</span>
+        <span class="p">,</span> <span class="nf">(error) -&gt;</span> <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">error</span> <span class="nx">error</span>
+
+      <span class="p">,</span> <span class="nf">-&gt;</span> <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">error</span> <span class="s">&quot;Message not found&quot;</span>
+
+  <span class="nv">$scope.delete = </span><span class="nf">(id) -&gt;</span>
+    <span class="nx">CachedMessage</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+    <span class="err">#</span><span class="c1">##.$promise.then (collection) -&gt;</span>
+      <span class="k">for</span> <span class="nx">message</span> <span class="k">in</span> <span class="nx">collection</span>
+        <span class="k">if</span> <span class="nx">message</span><span class="p">.</span><span class="nx">_id</span> <span class="o">is</span> <span class="nx">id</span>
+          <span class="nx">message</span><span class="p">.</span><span class="nx">remove</span><span class="p">({</span><span class="nx">id</span><span class="p">}).</span><span class="nx">then</span> <span class="nf">-&gt;</span>
+            <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">info</span> <span class="s">&quot;Message removed successfully&quot;</span>
+          <span class="p">,</span> <span class="nf">(error) -&gt;</span>
+            <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">error</span> <span class="nx">error</span>
+        <span class="k">return</span>
+
+      <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">error</span> <span class="s">&quot;Message not found&quot;</span></div></div></div><div class="segment"></div></div></body></html>

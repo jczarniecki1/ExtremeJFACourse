@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><title>server/controllers/usersController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="server/controllers/usersController"><meta name="groc-project-path" content="server/controllers/usersController.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/server/controllers/usersController.coffee">server/controllers/usersController.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nv">security = </span><span class="nx">require</span> <span class="s">&#39;../utilities/security&#39;</span>
+<span class="nv">User = </span><span class="nx">require</span> <span class="s">&#39;mongoose&#39;</span>
+  <span class="p">.</span><span class="nx">model</span> <span class="s">&#39;User&#39;</span>
+
+<span class="nv">exports.getUsers = </span><span class="nf">(req, res) -&gt;</span>
+  <span class="nx">User</span><span class="p">.</span><span class="nx">find</span><span class="p">({}).</span><span class="nx">exec</span> <span class="nf">(err, collection) -&gt;</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="nx">collection</span>
+
+<span class="nv">exports.createUser = </span><span class="nf">(req, res, next) -&gt;</span>
+  <span class="nv">userData = </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+  <span class="nv">userData.username = </span><span class="nx">userData</span><span class="p">.</span><span class="nx">username</span>
+  <span class="nv">userData.salt = </span><span class="nx">security</span><span class="p">.</span><span class="nx">createSalt</span><span class="p">()</span>
+  <span class="nv">userData.hashed_pwd = </span><span class="nx">security</span><span class="p">.</span><span class="nx">hashPwd</span> <span class="nx">userData</span><span class="p">.</span><span class="nx">salt</span><span class="p">,</span> <span class="nx">userData</span><span class="p">.</span><span class="nx">password</span>
+  <span class="nx">User</span><span class="p">.</span><span class="nx">create</span> <span class="nx">userData</span><span class="p">,</span> <span class="nf">(err, user) -&gt;</span>
+
+    <span class="k">if</span> <span class="nx">err</span><span class="o">?</span>
+      <span class="k">if</span> <span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">contains</span> <span class="s">&#39;E11000&#39;</span>
+        <span class="nv">err = </span><span class="k">new</span> <span class="nb">Error</span> <span class="s">&#39;Duplicate Username&#39;</span>
+
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">400</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">send</span>
+        <span class="nv">reason: </span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+
+    <span class="k">else</span>
+      <span class="nx">req</span><span class="p">.</span><span class="nx">logIn</span> <span class="nx">user</span><span class="p">,</span> <span class="nf">(err) -&gt;</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="nx">user</span><span class="p">.</span><span class="nx">getData</span><span class="p">()</span>
+
+<span class="nv">exports.updateUser = </span><span class="nf">(req, res, next) -&gt;</span>
+  <span class="nv">userUpdates = </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+  <span class="nv">req.user.username  = </span><span class="nx">userUpdates</span><span class="p">.</span><span class="nx">username</span>
+  <span class="nv">req.user.firstName = </span><span class="nx">userUpdates</span><span class="p">.</span><span class="nx">firstName</span>
+  <span class="nv">req.user.lastName  = </span><span class="nx">userUpdates</span><span class="p">.</span><span class="nx">lastName</span>
+
+  <span class="nv">newPassword = </span><span class="nx">userUpdates</span><span class="p">.</span><span class="nx">password</span>
+  <span class="k">if</span> <span class="nx">newPassword</span><span class="o">?</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="nv">req.user.salt = </span><span class="nx">security</span><span class="p">.</span><span class="nx">createSalt</span><span class="p">()</span>
+    <span class="nv">req.user.hashed_pwd = </span><span class="nx">security</span><span class="p">.</span><span class="nx">hashPwd</span> <span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">salt</span><span class="p">,</span> <span class="nx">newPassword</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>TODO: if password has to be changed...
+  Log all possible parameters of this event
+  Send email with confirmation</p></div></div><div class="code"><div class="wrapper">  <span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">save</span> <span class="nf">(err) -&gt;</span>
+    <span class="k">if</span> <span class="nx">err</span><span class="o">?</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">400</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">send</span>
+        <span class="nv">reason: </span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+    <span class="k">else</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">send</span> <span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">getData</span><span class="p">()</span>
+
+<span class="nv">exports.removeUser = </span><span class="nf">(req, res, next) -&gt;</span>
+  <span class="nv">id = </span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span>
+
+  <span class="k">if</span> <span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">_id</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">is</span> <span class="nx">id</span>
+
+    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">400</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span>
+      <span class="nv">reason: </span><span class="s">&#39;You cannot remove yourself&#39;</span>
+
+  <span class="k">else</span>
+
+    <span class="nx">User</span><span class="p">.</span><span class="nx">remove</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span><span class="nx">id</span><span class="p">}).</span><span class="nx">exec</span> <span class="nf">(err) -&gt;</span>
+
+      <span class="k">unless</span> <span class="nx">err</span><span class="o">?</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">200</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+
+      <span class="k">else</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="mi">400</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">send</span>
+          <span class="nv">reason: </span><span class="nx">err</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span></div></div></div></div></body></html>

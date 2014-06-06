@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><title>server/config/config</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="server/config/config"><meta name="groc-project-path" content="server/config/config.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/server/config/config.coffee">server/config/config.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nv">path = </span><span class="nx">require</span> <span class="s">&#39;path&#39;</span>
+<span class="nv">rootPath = </span><span class="nx">path</span><span class="p">.</span><span class="nx">normalize</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s">&#39;/../../&#39;</span>
+
+<span class="nv">module.exports =</span>
+  <span class="nv">development:</span>
+    <span class="nv">rootPath: </span><span class="nx">rootPath</span>
+    <span class="nx">db</span><span class="o">:</span><span class="s">&#39;mongodb://localhost/jfa-course&#39;</span>
+    <span class="nv">port: </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">3030</span>
+
+  <span class="nv">production:</span>
+    <span class="nv">rootPath: </span><span class="nx">rootPath</span>
+    <span class="nx">db</span><span class="o">:</span><span class="s">&#39;mongodb://admin:teach-me@ds047468.mongolab.com:47468/jfa-course&#39;</span>
+    <span class="nv">port: </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">80</span></div></div></div></div></body></html>

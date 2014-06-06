@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head><title>courses/CourseDetailsController</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="courses/CourseDetailsController"><meta name="groc-project-path" content="public/app/courses/CourseDetailsController.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/public/app/courses/CourseDetailsController.coffee">public/app/courses/CourseDetailsController.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span> <span class="s">&#39;app&#39;</span>
+<span class="p">.</span><span class="nx">controller</span> <span class="s">&#39;CourseDetailsController&#39;</span><span class="p">,</span> <span class="nf">($scope, CachedCourse, CachedRating, $routeParams, IdentityService, NotifierService, $location) -&gt;</span>
+  <span class="nv">$scope.identity = </span><span class="nx">IdentityService</span>
+  <span class="nv">existingRating = </span><span class="kc">null</span>
+  <span class="nv">savingRating = </span><span class="kc">null</span>
+
+  <span class="nv">$scope.delete = </span><span class="nf">-&gt;</span>
+    <span class="nx">CachedCourse</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">then</span> <span class="nf">-&gt;</span>
+      <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">notify</span> <span class="s">&quot;Course removed successfully&quot;</span>
+      <span class="nx">$location</span><span class="p">.</span><span class="nx">path</span> <span class="s">&quot;/&quot;</span>
+    <span class="p">,</span> <span class="nf">(error) -&gt;</span>
+      <span class="nx">NotifierService</span><span class="p">.</span><span class="nx">error</span> <span class="nx">error</span>
+
+  <span class="nx">CachedCourse</span><span class="p">.</span><span class="nx">query</span><span class="p">().</span><span class="nx">$promise</span><span class="p">.</span><span class="nx">then</span> <span class="nf">(collection) -&gt;</span>
+    <span class="nx">collection</span><span class="p">.</span><span class="nx">findById</span> <span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nf">(course) -&gt;</span>
+      <span class="nv">$scope.course = </span><span class="nx">course</span>
+
+  <span class="k">if</span> <span class="nx">IdentityService</span><span class="p">.</span><span class="nx">isAuthenticated</span><span class="p">()</span>
+
+    <span class="nv">args =</span>
+      <span class="nv">objectId : </span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">id</span>
+      <span class="nv">type : </span><span class="s">&#39;course&#39;</span>
+
+    <span class="nv">$scope.isReadonly = </span><span class="kc">true</span>
+
+    <span class="nv">saveRating = </span><span class="nf">-&gt;</span>
+      <span class="k">unless</span> <span class="nx">existingRating</span><span class="o">?</span>
+        <span class="nv">args.value = </span><span class="nx">$scope</span><span class="p">.</span><span class="nx">userRate</span>
+
+        <span class="nx">CachedRating</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span> <span class="nf">(rating) -&gt;</span>
+          <span class="nv">existingRating = </span><span class="nx">rating</span>
+      <span class="k">else</span>
+        <span class="nv">existingRating.value = </span><span class="nx">$scope</span><span class="p">.</span><span class="nx">userRate</span>
+
+        <span class="nx">existingRating</span><span class="p">.</span><span class="nx">$update</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">then</span> <span class="nf">(rating) -&gt;</span>
+          <span class="nv">existingRating = </span><span class="nx">rating</span>
+
+    <span class="nv">$scope.hoverRating = </span><span class="nf">-&gt;</span>
+      <span class="nx">clearTimeout</span> <span class="nx">savingRating</span>
+      <span class="nv">$scope.isRatingHovered = </span><span class="kc">true</span>
+
+    <span class="nv">$scope.showFeedbackDialog = </span><span class="nf">-&gt;</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;TODO: showFeedbackDialog&quot;</span>
+
+    <span class="k">unless</span> <span class="nx">IdentityService</span><span class="p">.</span><span class="nx">currentUser</span><span class="p">.</span><span class="nx">isAdmin</span><span class="p">()</span>
+      <span class="nv">$scope.leaveRating = </span><span class="nf">-&gt;</span>
+        <span class="nv">$scope.isRatingHovered = </span><span class="kc">false</span>
+        <span class="nv">savingRating = </span><span class="nx">setTimeout</span> <span class="nf">-&gt;</span>
+          <span class="k">unless</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">isRatingHovered</span> <span class="o">or</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">userRate</span> <span class="o">is</span> <span class="nx">$scope</span><span class="p">.</span><span class="nx">currentRate</span>
+            <span class="nv">$scope.userRate = </span><span class="nx">$scope</span><span class="p">.</span><span class="nx">currentRate</span>
+            <span class="nx">saveRating</span><span class="p">()</span>
+        <span class="p">,</span> <span class="mi">1000</span>
+
+      <span class="nv">afterFetchRating = </span><span class="nf">-&gt;</span>
+        <span class="nv">$scope.isReadonly = </span><span class="kc">false</span>
+
+      <span class="nx">CachedRating</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">args</span><span class="p">).</span><span class="nx">then</span> <span class="nf">(rating) -&gt;</span>
+        <span class="nv">$scope.currentRate = $scope.userRate = </span><span class="nx">rating</span><span class="p">.</span><span class="nx">value</span>
+        <span class="nv">existingRating = </span><span class="nx">rating</span>
+        <span class="nx">afterFetchRating</span><span class="p">()</span>
+      <span class="p">,</span> <span class="nf">-&gt;</span>
+        <span class="nv">$scope.currentRate = $scope.userRate = </span><span class="mi">0</span>
+        <span class="nx">afterFetchRating</span><span class="p">()</span></div></div></div></div></body></html>

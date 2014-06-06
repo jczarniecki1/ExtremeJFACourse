@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><title>courses/CourseEditor</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="courses/CourseEditor"><meta name="groc-project-path" content="public/app/courses/CourseEditor.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/public/app/courses/CourseEditor.coffee">public/app/courses/CourseEditor.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span> <span class="s">&#39;app&#39;</span>
+<span class="p">.</span><span class="nx">factory</span> <span class="s">&#39;CourseEditor&#39;</span><span class="p">,</span> <span class="nf">(CourseModel, $q) -&gt;</span>
+  <span class="k">class</span> <span class="nx">CourseEditor</span>
+    <span class="nv">createCourse: </span><span class="nf">(newCourseData) -&gt;</span>
+      <span class="nv">newCourse = </span><span class="k">new</span> <span class="nx">CourseModel</span> <span class="nx">newCourseData</span>
+      <span class="nv">deferred = </span><span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">()</span>
+
+      <span class="nx">newCourse</span><span class="p">.</span><span class="nx">$save</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">then</span> <span class="nf">(course) -&gt;</span>
+        <span class="nx">deferred</span><span class="p">.</span><span class="nx">resolve</span> <span class="nx">course</span>
+      <span class="p">,</span> <span class="nf">(error) -&gt;</span>
+        <span class="nx">deferred</span><span class="p">.</span><span class="nx">reject</span> <span class="nx">error</span>
+
+      <span class="nx">deferred</span><span class="p">.</span><span class="nx">promise</span>
+
+  <span class="k">new</span> <span class="nx">CourseEditor</span><span class="p">()</span></div></div></div></div></body></html>

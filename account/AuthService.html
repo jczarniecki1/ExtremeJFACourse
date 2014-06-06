@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"><head><title>account/AuthService</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="account/AuthService"><meta name="groc-project-path" content="public/app/account/AuthService.coffee"><meta name="groc-github-url" content="https://github.com/jczarniecki1/ExtremeJFACourse"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/jczarniecki1/ExtremeJFACourse/blob/master/public/app/account/AuthService.coffee">public/app/account/AuthService.coffee</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span> <span class="s">&#39;app&#39;</span>
+<span class="p">.</span><span class="nx">factory</span> <span class="s">&#39;AuthService&#39;</span><span class="p">,</span> <span class="nf">($http, IdentityService, UserModel, $q) -&gt;</span>
+
+  <span class="k">class</span> <span class="nx">AuthService</span>
+
+    <span class="nv">authenticateUser: </span><span class="nf">(username, password) -&gt;</span>
+      <span class="nv">$d = </span><span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">()</span>
+      <span class="nx">$http</span><span class="p">.</span><span class="nx">post</span> <span class="s">&#39;/login&#39;</span><span class="p">,</span>
+        <span class="nv">username: </span><span class="nx">username</span>
+        <span class="nv">password: </span><span class="nx">password</span>
+      <span class="p">.</span><span class="nx">then</span> <span class="nf">(response) -&gt;</span>
+        <span class="k">if</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">success</span>
+          <span class="nv">user = </span><span class="k">new</span> <span class="nx">UserModel</span><span class="p">()</span>
+          <span class="nx">angular</span><span class="p">.</span><span class="nx">extend</span> <span class="nx">user</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">user</span>
+          <span class="nv">IdentityService.currentUser = </span><span class="nx">user</span>
+          <span class="nx">$d</span><span class="p">.</span><span class="nx">resolve</span> <span class="kc">true</span>
+        <span class="k">else</span>
+          <span class="nx">$d</span><span class="p">.</span><span class="nx">resolve</span> <span class="kc">false</span>
+
+      <span class="nx">$d</span><span class="p">.</span><span class="nx">promise</span>
+
+    <span class="nv">logoutUser: </span><span class="nf">-&gt;</span>
+      <span class="nv">$d = </span><span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">()</span>
+      <span class="nx">$http</span><span class="p">.</span><span class="nx">post</span> <span class="s">&#39;/logout&#39;</span><span class="p">,</span>
+        <span class="nv">logout: </span><span class="kc">true</span>
+      <span class="p">.</span><span class="nx">then</span> <span class="p">()</span> <span class="nf">-&gt;</span>
+        <span class="nv">IdentityService.currentUser = </span><span class="kc">undefined</span>
+        <span class="nx">$d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">()</span>
+
+      <span class="nx">$d</span><span class="p">.</span><span class="nx">promise</span>
+
+    <span class="nv">authorizeCurrentUserForRoute: </span><span class="nf">(role) -&gt;</span>
+      <span class="k">if</span> <span class="nx">IdentityService</span><span class="p">.</span><span class="nx">isAuthorized</span> <span class="nx">role</span>
+        <span class="kc">true</span>
+      <span class="k">else</span>
+        <span class="nx">$q</span><span class="p">.</span><span class="nx">reject</span> <span class="s">&#39;not authorized&#39;</span>
+
+    <span class="nv">authorizeAuthenticatedUserForRoute: </span><span class="nf">-&gt;</span>
+      <span class="k">if</span> <span class="nx">IdentityService</span><span class="p">.</span><span class="nx">isAuthenticated</span><span class="p">()</span>
+        <span class="kc">true</span>
+      <span class="k">else</span>
+        <span class="nx">$q</span><span class="p">.</span><span class="nx">reject</span> <span class="s">&#39;not authorized&#39;</span>
+
+    <span class="nv">createUser: </span><span class="nf">(newUserData) -&gt;</span>
+      <span class="nv">newUser = </span><span class="k">new</span> <span class="nx">UserModel</span> <span class="nx">newUserData</span>
+      <span class="nv">$d = </span><span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">()</span>
+
+      <span class="nx">newUser</span><span class="p">.</span><span class="nx">$save</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">then</span> <span class="nf">-&gt;</span>
+        <span class="nv">IdentityService.currentUser = </span><span class="nx">newUser</span>
+        <span class="nx">$d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">()</span>
+      <span class="p">,</span> <span class="nf">(error) -&gt;</span>
+        <span class="nx">$d</span><span class="p">.</span><span class="nx">reject</span> <span class="nx">error</span>
+
+      <span class="nx">$d</span><span class="p">.</span><span class="nx">promise</span>
+
+    <span class="nv">updateCurrentUser: </span><span class="nf">(updatedUserData) -&gt;</span>
+      <span class="nv">$d = </span><span class="nx">$q</span><span class="p">.</span><span class="nx">defer</span><span class="p">()</span>
+
+      <span class="nv">clone = </span><span class="nx">angular</span><span class="p">.</span><span class="nx">copy</span> <span class="nx">IdentityService</span><span class="p">.</span><span class="nx">currentUser</span>
+      <span class="nx">angular</span><span class="p">.</span><span class="nx">extend</span> <span class="nx">clone</span><span class="p">,</span> <span class="nx">updatedUserData</span>
+      <span class="nx">clone</span><span class="p">.</span><span class="nx">$update</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">then</span> <span class="nf">-&gt;</span>
+        <span class="nv">IdentityService.currentUser = </span><span class="nx">clone</span>
+        <span class="nx">$d</span><span class="p">.</span><span class="nx">resolve</span><span class="p">()</span>
+      <span class="p">,</span> <span class="nf">(error) -&gt;</span> <span class="nx">$d</span><span class="p">.</span><span class="nx">reject</span> <span class="nx">error</span>
+
+      <span class="nx">$d</span><span class="p">.</span><span class="nx">promise</span>
+
+  <span class="k">new</span> <span class="nx">AuthService</span><span class="p">()</span></div></div></div></div></body></html>
