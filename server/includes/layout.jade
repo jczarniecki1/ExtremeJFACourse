@@ -1,0 +1,20 @@
+doctype
+html
+    head
+        title Extreme JFA Course
+        link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
+        link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap-theme.min.css")
+        link(rel="stylesheet", href="/vendor/toastr/toastr.css")
+        link(rel="stylesheet", href="/css/layout.css")
+
+    body(ng-app='app')
+
+        div(class="main")
+            include currentUser
+            block main-content
+
+        footer.text-center
+            p &copy; 2014 Grumpy Students
+
+        include scripts

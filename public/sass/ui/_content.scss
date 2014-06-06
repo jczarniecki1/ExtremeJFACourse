@@ -1,0 +1,50 @@
+
+.main {
+    .page-header:first-child {
+        margin-top: 0;
+    }
+}
+
+.content {
+    display: block;
+
+    h1 {
+        font-style: normal;
+    }
+}
+
+.about-team {
+    text-align: center;
+
+    img {
+        @include border-radius(50%);
+        display: inline-block;
+    }
+}
+
+.thick-outline {
+    @include box-shadow(0 0 0 10px rgba(0,0,0,0.2));
+}
+
+.about-tech {
+    margin-top: 20px;
+
+    & > div {
+        line-height: 100px;
+        height: 130px;
+    }
+
+    img {
+        display: inline;
+        vertical-align: middle;
+    }
+}
+
+.users-list {
+    th {
+        background-color: #f9f9f9;
+    }
+    &.table>tbody>tr>td {
+        vertical-align: middle;
+    }
+}

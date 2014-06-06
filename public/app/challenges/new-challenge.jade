@@ -1,0 +1,24 @@
+.container
+    .well
+        form.form-horizontal(name="newExerciseForm")
+            fieldset
+                legend New Exercise
+                .form-group
+                    label.col-md-2.control-label(for="description") Description
+                    .col-md-10
+                        textarea.form-control(name="description", placeholder="Description", ng-model="description", required)
+                .form-group
+                    label.col-md-2.control-label(for="body") Body
+                    .col-md-10
+                        textarea.form-control(name="body", placeholder="Body", ng-model="body")
+                .form-group
+                    label.col-md-2.control-label(for="score") Score
+                    .col-md-10
+                        input.form-control(name="score", type="number", ng-model="score", required)
+
+                .form-group
+                    .col-md-10.col-md-offset-2
+                        .pull-right
+                            button.btn.btn-primary(ng-click="create()", ng-disabled="newExerciseForm.$invalid") Submit
+                            | &nbsp;
+                            a.btn.btn-default(href="/") Cancel

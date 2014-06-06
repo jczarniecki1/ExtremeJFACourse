@@ -1,0 +1,1 @@
+<div class="container"><h3>Ratings from {{ user.firstName + ' ' + user.lastName }} ({{ user.username }})</h3><table class="table table-condensed user-ratings"><tr><th>Date</th><th>Type</th><th>Rating</th></tr><tr ng-repeat="rating in ratings"><td><i class="icon icon-calendar"></i>{{ rating.submitted }}</td><td>{{ rating.type }}</td><td>{{ rating.value }}</td></tr></table></div>

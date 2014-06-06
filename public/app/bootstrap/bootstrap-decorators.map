@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "bootstrap-decorators.js",
+  "sourceRoot": "",
+  "sources": [
+    "bootstrap-decorators.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACA,CAAC,MADD,CACQ,SAAC,QAAD,GAAA;WACN,QAAQ,CAAC,SAAT,CAAmB,iBAAnB,EAAsC,SAAC,SAAD,GAAA;AACpC,MAAA,SAAU,CAAA,CAAA,CAAE,CAAC,WAAb,GAA2B,mCAA3B,CAAA;aACA,UAFoC;IAAA,CAAtC,EADM;EAAA,CADR,CAAA,CAAA;AAAA"
+}

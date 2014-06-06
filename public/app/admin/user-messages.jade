@@ -1,0 +1,21 @@
+.container
+    h3 Messages from {{ user.firstName + ' ' + user.lastName }} ({{ user.username }})
+    table.table.table-condensed.user-messages
+        tr
+            th Date
+            th Location
+            th Message
+            th Actions
+        tr(ng-repeat="message in messages")
+            td
+                i.icon.icon-calendar
+                | {{ message.created }}
+            td
+                a(href="{{ message.url }}") {{ message.location }}
+            td {{ message.text }}
+            td
+                a.btn.btn-default(href="/admin/answer/{{ user._id }}/{{ message._id }}")
+                    i.icon.icon-undo2
+                    | &nbsp;
+                a.btn.btn-danger(ng-click="delete(message._id)")
+                    i.icon.icon-remove2

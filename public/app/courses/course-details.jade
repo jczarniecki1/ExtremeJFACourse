@@ -1,0 +1,26 @@
+.container
+    .row
+        h1 {{ course.title }}
+        button.btn.btn-danger(ng-click="delete()")
+            i.icon.icon-remove2
+    .row
+        .col-md-6
+            rating(ng-show="identity.isAuthenticated()", ng-model="currentRate", max="5", on-hover="hoverRating(value)" on-leave="leaveRating()", readonly="isReadonly")
+            div(ng-show="userRate  > 0 && userRate <= 3")
+                a(href="#") What should we do better?
+            h3 Published on {{ course.published | date }}
+
+        .col-md-6
+            .panel.panel-primary
+                .panel-heading Tags
+                .panel-body
+                    div(ng-repeat="tag in course.tags") {{ tag }}
+    .row(ng-show="identity.currentUser.isAdmin()")
+        .col-md-2
+            a.btn.btn-success(href="/courses/{{ course._id }}/challenge/new")
+                i.icon.icon-plus
+
+    .row
+        .col-md-12(ng-include="'/partials/challenges/challenge-list'")
+
+

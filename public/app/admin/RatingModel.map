@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "RatingModel.js",
+  "sourceRoot": "",
+  "sources": [
+    "RatingModel.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACA,CAAC,OADD,CACS,aADT,EACwB,SAAC,SAAD,GAAA;WACtB,SAAA,CAAU,kBAAV,EAA8B;AAAA,MAAC,GAAA,EAAK,KAAN;KAA9B,EACE;AAAA,MAAA,MAAA,EAAQ;AAAA,QAAE,MAAA,EAAQ,KAAV;AAAA,QAAiB,OAAA,EAAS,KAA1B;OAAR;KADF,EADsB;EAAA,CADxB,CAAA,CAAA;AAAA"
+}

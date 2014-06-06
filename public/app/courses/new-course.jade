@@ -1,0 +1,23 @@
+.container
+    .well
+        form.form-horizontal(name="newCourseForm")
+            fieldset
+                legend New Course
+                .form-group
+                    label.col-md-2.control-label(for="title") Title
+                    .col-md-10
+                        input.form-control(name="title", type="text", placeholder="Title", ng-model="title", required)
+                .form-group
+                    label.col-md-2.control-label(for="tags") Tags
+                    .col-md-10
+                        input.form-control(name="tags", type="text", placeholder="Tags", ng-model="tags")
+                .form-group
+                    label.col-md-2.control-label(for="featured") Featured
+                    .col-md-10
+                        input.form-control(name="featured", type="checkbox", ng-model="featured", required)
+                .form-group
+                    .col-md-10.col-md-offset-2
+                        .pull-right
+                            button.btn.btn-primary(ng-click="create()", ng-disabled="newCourseForm.$invalid") Submit
+                            | &nbsp;
+                            a.btn.btn-default(href="/") Cancel
