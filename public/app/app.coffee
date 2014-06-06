@@ -27,7 +27,6 @@ app.config ($routeProvider, $locationProvider)->
       resolve: routeRoleCheck.admin
 
     .when '/admin/ratings/:userId',
-      replace: true
       templateUrl: '/partials/admin/user-ratings'
       controller: 'UserRatingsController'
       resolve: routeRoleCheck.admin
