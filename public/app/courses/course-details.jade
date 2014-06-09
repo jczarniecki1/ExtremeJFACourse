@@ -1,8 +1,9 @@
 .container
     .row
         h1 {{ course.title }}
-        button.btn.btn-danger(ng-click="delete()")
-            i.icon.icon-remove2
+        .col-md-2(ng-show="identity.currentUser.isAdmin()")
+            button.btn.btn-danger(ng-click="delete()")
+                i.icon.icon-remove2
     .row
         .col-md-6
             rating(ng-show="identity.isAuthenticated()", ng-model="currentRate", max="5", on-hover="hoverRating(value)" on-leave="leaveRating()", readonly="isReadonly")
