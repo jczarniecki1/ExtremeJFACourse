@@ -1,2 +1,3 @@
 angular.module 'app'
-  .controller 'AboutController', ->
+.controller 'AboutController', ->
+  undefined

@@ -35,28 +35,20 @@
       _id: ratingData.objectId
     }).exec(function(err, element) {
       if (err != null) {
-        res.status(400);
-        return res.send({
-          reason: err.toString()
-        });
-      } else {
-        ratingData.objectId = element._id;
-        ratingData.submitted = new Date();
-        return Rating.create(ratingData, function(err, rating) {
-          if (err != null) {
-            res.status(400);
-            return res.send({
-              reason: err.toString()
-            });
-          } else {
-            res.status(200);
-            req.user.ratingCount++;
-            element.updateRating();
-            req.user.save();
-            return res.send(rating.getData());
-          }
-        });
+        return res.SendError(err);
       }
+      ratingData.objectId = element._id;
+      ratingData.submitted = new Date();
+      return Rating.create(ratingData, function(err, rating) {
+        if (err != null) {
+          return res.SendError(err);
+        }
+        res.status(200);
+        req.user.ratingCount++;
+        element.updateRating();
+        req.user.save();
+        return res.send(rating.getData());
+      });
     });
   };
 
@@ -65,33 +57,25 @@
       _id: req.body._id
     }).exec(function(err, rating) {
       if (err != null) {
-        res.status(400);
-        return res.send({
-          reason: err.toString()
-        });
-      } else {
-        rating.value = req.body.value;
-        rating.submitted = new Date();
-        return rating.save(function(err) {
-          var model;
-          if (err != null) {
-            res.status(400);
-            return res.send({
-              reason: err.toString()
-            });
-          } else {
-            model = rating.type === 'course' ? Course : Challenge;
-            model.findOne({
-              _id: rating.objectId
-            }).exec(function(err, element) {
-              if (err == null) {
-                return element.updateRating();
-              }
-            });
-            return res.send(rating.getData());
+        return res.SendError(err);
+      }
+      rating.value = req.body.value;
+      rating.submitted = new Date();
+      return rating.save(function(err) {
+        var model;
+        if (err != null) {
+          return res.SendError(err);
+        }
+        model = rating.type === 'course' ? Course : Challenge;
+        model.findOne({
+          _id: rating.objectId
+        }).exec(function(err, element) {
+          if (err == null) {
+            return element.updateRating();
           }
         });
-      }
+        return res.send(rating.getData());
+      });
     });
   };
 

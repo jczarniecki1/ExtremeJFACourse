@@ -8,7 +8,7 @@ response.SendSuccess = (answer) ->
     @end()
 
 
-response.SendError = (answer, reason = null) ->
+response.SendError = (error, reason = null) ->
   reason =
     unless reason?
       error?.toString()

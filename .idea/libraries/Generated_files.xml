@@ -46,7 +46,7 @@
         <item url="file://$PROJECT_DIR$/node_modules/coffeelint/src/rules/line_endings.js" />
         <item url="file://$PROJECT_DIR$/server/config/routes.js" />
         <item url="file://$PROJECT_DIR$/server/config/mongoose.js" />
-        <item url="file://$PROJECT_DIR$/server/utilities/errors.js" />
+        <item url="file://$PROJECT_DIR$/server/utilities/response.js" />
         <item url="file://$PROJECT_DIR$/server/config/config.js" />
         <item url="file://$PROJECT_DIR$/server/config/express.js" />
         <item url="file://$PROJECT_DIR$/node_modules/coffeelint/src/lexical_linter.js" />

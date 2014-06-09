@@ -13,11 +13,11 @@
     }
   };
 
-  response.SendError = function(answer, reason) {
+  response.SendError = function(error, reason) {
     if (reason == null) {
       reason = null;
     }
-    reason = reason == null ? typeof error !== "undefined" && error !== null ? error.toString() : void 0 : typeof reason === 'function' ? reason(error) : reason;
+    reason = reason == null ? error != null ? error.toString() : void 0 : typeof reason === 'function' ? reason(error) : reason;
     this.status(400);
     return this.send({
       reason: reason

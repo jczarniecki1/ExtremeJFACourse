@@ -11,7 +11,7 @@
       userId: userId
     } : {};
     return Message.find(args).exec(function(err, collection) {
-      return res.send(collection);
+      return res.SendIfPossible(collection, err);
     });
   };
 
@@ -19,15 +19,7 @@
     var messageData;
     messageData = req.body;
     return Message.create(messageData, function(err, message) {
-      if (err != null) {
-        res.status(400);
-        return res.send({
-          reason: err.toString()
-        });
-      } else {
-        res.status(200);
-        return res.send(message);
-      }
+      return res.SendIfPossible(message, err);
     });
   };
 
@@ -37,15 +29,7 @@
     return Message.remove({
       _id: id
     }).exec(function(err) {
-      if (err == null) {
-        res.status(200);
-        return res.end();
-      } else {
-        res.status(400);
-        return res.send({
-          reason: err.toString()
-        });
-      }
+      return res.SendOkIfPossible(err);
     });
   };
 

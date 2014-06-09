@@ -6,6 +6,7 @@ Challenge = mongoose.model 'Challenge'
 exports.getChallenges = (req, res) ->
   courseId = req.params.courseId
   args = if courseId? then { courseId } else {}
+
   Challenge.find(args).exec (err, collection) ->
     res.SendIfPossible collection, err
 
@@ -25,6 +26,7 @@ exports.createChallenge = (req, res, next) ->
 
 exports.removeChallenge = (req, res, next) ->
   id = req.params.id
+
   Challenge.remove({_id:id}).exec (err) ->
     res.SendOkIfPossible err
 

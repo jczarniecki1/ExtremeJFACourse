@@ -1,14 +1,12 @@
 security = require '../utilities/security'
-User = require 'mongoose'
-  .model 'User'
+User = require('mongoose').model 'User'
 
 exports.getUsers = (req, res) ->
   User.find({}).exec (err, collection) ->
-    res.send collection
+    res.SendIfPossible collection, err
 
 exports.createUser = (req, res, next) ->
   userData = req.body
-  userData.username = userData.username
   userData.salt = security.createSalt()
   userData.hashed_pwd = security.hashPwd userData.salt, userData.password
   User.create userData, (err, user) ->
@@ -16,10 +14,7 @@ exports.createUser = (req, res, next) ->
     if err?
       if err.toString().contains 'E11000'
         err = new Error 'Duplicate Username'
-
-      res.status 400
-      res.send
-        reason: err.toString()
+      res.sendError err
 
     else
       req.logIn user, (err) ->
@@ -41,31 +36,14 @@ exports.updateUser = (req, res, next) ->
     #   Send email with confirmation
 
   req.user.save (err) ->
-    if err?
-      res.status 400
-      res.send
-        reason: err.toString()
-    else
-      res.send req.user.getData()
+    res.SendIfPossible req.user.getData(), err
 
 exports.removeUser = (req, res, next) ->
   id = req.params.id
 
   if req.user._id.toString() is id
-
-    res.status 400
-    res.send
-      reason: 'You cannot remove yourself'
+    res.sendError 'You cannot remove yourself'
 
   else
-
     User.remove({_id:id}).exec (err) ->
-
-      unless err?
-        res.status 200
-        res.end()
-
-      else
-        res.status 400
-        res.send
-          reason: err.toString()
+      res.SendOkIfPossible err

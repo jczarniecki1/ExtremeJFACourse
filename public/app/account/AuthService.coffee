@@ -5,9 +5,7 @@ angular.module 'app'
 
     authenticateUser: (username, password) ->
       $d = $q.defer()
-      $http.post '/login',
-        username: username
-        password: password
+      $http.post '/login', {username, password}
       .then (response) ->
         if response.data.success
           user = new UserModel()
@@ -21,8 +19,7 @@ angular.module 'app'
 
     logoutUser: ->
       $d = $q.defer()
-      $http.post '/logout',
-        logout: true
+      $http.post '/logout', {logout: true}
       .then () ->
         IdentityService.currentUser = undefined
         $d.resolve()

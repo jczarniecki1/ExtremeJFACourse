@@ -23,50 +23,32 @@ exports.addRating = (req, res, next) ->
 
   model = if ratingData.type is 'course' then Course else Challenge
   model.findOne({_id: ratingData.objectId}).exec (err, element) ->
+    if err? then return res.SendError err
 
-    if err?
-      res.status 400
-      res.send
-        reason: err.toString()
+    ratingData.objectId = element._id
+    ratingData.submitted = new Date()
 
-    else
-      ratingData.objectId = element._id
-      ratingData.submitted = new Date()
+    Rating.create ratingData, (err, rating) ->
+      if err? then return res.SendError err
 
-      Rating.create ratingData, (err, rating) ->
-
-        if err?
-          res.status 400
-          res.send
-            reason: err.toString()
-
-        else
-          res.status 200
-          req.user.ratingCount++
-          element.updateRating()
-          req.user.save()
-          res.send rating.getData()
+      res.status 200
+      req.user.ratingCount++
+      element.updateRating()
+      req.user.save()
+      res.send rating.getData()
 
 exports.updateRating = (req, res, next) ->
   Rating.findOne({_id:req.body._id}).exec (err, rating) ->
+    if err? then return res.SendError err
 
-    if err?
-      res.status 400
-      res.send
-        reason: err.toString()
+    rating.value = req.body.value
+    rating.submitted = new Date()
 
-    else
-      rating.value = req.body.value
-      rating.submitted = new Date()
-      rating.save (err) ->
+    rating.save (err) ->
+      if err? then return res.SendError err
 
-        if err?
-          res.status 400
-          res.send
-            reason: err.toString()
-        else
-          model = if rating.type is 'course' then Course else Challenge
-          model.findOne({_id: rating.objectId}).exec (err, element) ->
-            unless err?
-              element.updateRating()
-          res.send rating.getData()
+      model = if rating.type is 'course' then Course else Challenge
+      model.findOne({_id: rating.objectId}).exec (err, element) ->
+        unless err?
+          element.updateRating()
+      res.send rating.getData()

@@ -39,7 +39,7 @@
         "limitComments": true
     },
     "missing_fat_arrows": {
-        "level": "warn"
+        "level": "ignore"
     },
     "newlines_after_classes": {
         "value": 3,
@@ -58,7 +58,7 @@
         "level": "ignore"
     },
     "no_implicit_braces": {
-        "level": "error",
+        "level": "ignore",
         "strict": true
     },
     "no_implicit_parens": {
@@ -72,7 +72,7 @@
         "level": "ignore"
     },
     "no_stand_alone_at": {
-        "level": "error"
+        "level": "ignore"
     },
     "no_tabs": {
         "level": "error"

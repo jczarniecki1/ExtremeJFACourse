@@ -8,14 +8,13 @@
 
   exports.getUsers = function(req, res) {
     return User.find({}).exec(function(err, collection) {
-      return res.send(collection);
+      return res.SendIfPossible(collection, err);
     });
   };
 
   exports.createUser = function(req, res, next) {
     var userData;
     userData = req.body;
-    userData.username = userData.username;
     userData.salt = security.createSalt();
     userData.hashed_pwd = security.hashPwd(userData.salt, userData.password);
     return User.create(userData, function(err, user) {
@@ -23,10 +22,7 @@
         if (err.toString().contains('E11000')) {
           err = new Error('Duplicate Username');
         }
-        res.status(400);
-        return res.send({
-          reason: err.toString()
-        });
+        return res.sendError(err);
       } else {
         return req.logIn(user, function(err) {
           return res.send(user.getData());
@@ -47,14 +43,7 @@
       req.user.hashed_pwd = security.hashPwd(req.user.salt, newPassword);
     }
     return req.user.save(function(err) {
-      if (err != null) {
-        res.status(400);
-        return res.send({
-          reason: err.toString()
-        });
-      } else {
-        return res.send(req.user.getData());
-      }
+      return res.SendIfPossible(req.user.getData(), err);
     });
   };
 
@@ -62,23 +51,12 @@
     var id;
     id = req.params.id;
     if (req.user._id.toString() === id) {
-      res.status(400);
-      return res.send({
-        reason: 'You cannot remove yourself'
-      });
+      return res.sendError('You cannot remove yourself');
     } else {
       return User.remove({
         _id: id
       }).exec(function(err) {
-        if (err == null) {
-          res.status(200);
-          return res.end();
-        } else {
-          res.status(400);
-          return res.send({
-            reason: err.toString()
-          });
-        }
+        return res.SendOkIfPossible(err);
       });
     }
   };
