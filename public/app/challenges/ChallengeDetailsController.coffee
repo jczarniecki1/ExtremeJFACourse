@@ -6,3 +6,4 @@ angular.module 'app'
   CachedChallenge.query({courseId}).$promise.then (collection) ->
     collection?.findById $routeParams.challengeId, (challenge) ->
       $scope.challenge = challenge
+      $('.description').html challenge.description

@@ -8,7 +8,8 @@
       courseId: courseId
     }).$promise.then(function(collection) {
       return collection != null ? collection.findById($routeParams.challengeId, function(challenge) {
-        return $scope.challenge = challenge;
+        $scope.challenge = challenge;
+        return $('.description').html(challenge.description);
       }) : void 0;
     });
   });

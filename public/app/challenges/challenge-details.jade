@@ -1,3 +1,34 @@
 .container
-    p {{ challenge.description }}
-    p Score: {{ challenge.score }}
+    .row
+        .col-xs-8
+            .col-xs-4
+                button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='basic'}") Basic
+            .col-xs-4
+                button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='advanced'}") Advanced
+            .col-xs-4
+                button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='expert'}") Expert
+        .col-xs-4
+            input.form-control(type="search", placeholder="Search")
+    br
+    .row
+    .row
+        .col-md-6
+        .col-md-6
+            .row
+                .col-md-7
+                    h2 Exercise 1/10
+                .col-md-5
+                    button.btn.btn-primary.btn-block.submit-answer(ng-click="submit()") Submit your answer
+                    button.btn.btn-link.btn-block.skip-challenge(ng-click="skip()") Skip to next
+            br
+    .row
+        .col-md-6
+            .well
+                h3 Placeholder for live editor
+                textarea.form-control {{ challenge.initialInput }}
+                br
+                button.btn.btn-primary.btn-block Compile
+                br
+                textarea.form-control(placeholder="Output")
+        .col-md-6
+            .description

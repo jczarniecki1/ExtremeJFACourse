@@ -3,13 +3,16 @@ angular.module 'app'
 
   courseId = $routeParams.courseId
 
+  $scope.levels = ["basic","advanced","expert"]
   $scope.create = ->
 
     newChallengeData =
-      description: $scope.description
-      body:        $scope.body
-      score:       $scope.score
-      courseId:    courseId
+      description:              $scope.description
+      level:                    $scope.level
+      jsonData:                 $scope.jsonData
+      initialInput:             $scope.initialInput
+      correctAnswerExpression:  $scope.correctAnswerExpression
+      courseId:                 courseId
 
     ChallengeEditor.createChallenge newChallengeData
     .then (challenge) ->

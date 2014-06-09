@@ -2,18 +2,30 @@ mongoose = require 'mongoose'
 Rating   = mongoose.model 'Rating'
 ObjectId = mongoose.Schema.Types.ObjectId
 
+challengeLevel =
+  values: 'basic advanced expert'.split(' ')
+  message: 'You must choose valid level'
+
 challengeSchema = mongoose.Schema
 
   description:
-    type:     String,
+    type:     String
     required: '{PATH} is required'
 
-  body:
-    type:     String,
+  level:
+    type:     String
+    enum:     challengeLevel
     required: '{PATH} is required'
 
-  score:
-    type:     Number,
+  jsonData:
+    type:     String
+    required: '{PATH} is required'
+
+  initialInput:
+    type:     String
+
+  correctAnswerExpression:
+    type:     String
     required: '{PATH} is required'
 
   courseId:

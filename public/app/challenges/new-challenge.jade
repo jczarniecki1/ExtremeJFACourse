@@ -4,17 +4,25 @@
             fieldset
                 legend New Exercise
                 .form-group
+                    label.col-md-2.control-label(for="level") Level
+                    .col-md-10
+                        select.form-control(name="level", placeholder="Choose level", ng-model="level", ng-options="lvl as lvl for lvl in levels" required)
+                .form-group
                     label.col-md-2.control-label(for="description") Description
                     .col-md-10
                         textarea.form-control(name="description", placeholder="Description", ng-model="description", required)
                 .form-group
-                    label.col-md-2.control-label(for="body") Body
+                    label.col-md-2.control-label(for="jsonData") Data
                     .col-md-10
-                        textarea.form-control(name="body", placeholder="Body", ng-model="body")
+                        textarea.form-control(name="jsonData", placeholder="Data (JSON)", ng-model="jsonData")
                 .form-group
-                    label.col-md-2.control-label(for="score") Score
+                    label.col-md-2.control-label(for="initialInput") Initial input
                     .col-md-10
-                        input.form-control(name="score", type="number", ng-model="score", required)
+                        textarea.form-control(name="initialInput", placeholder="Initial input", ng-model="initialInput")
+                .form-group
+                    label.col-md-2.control-label(for="correctAnswerExpression") Answer
+                    .col-md-10
+                        textarea.form-control(name="correctAnswerExpression", placeholder="Rules for correct anwser", ng-model="correctAnswerExpression")
 
                 .form-group
                     .col-md-10.col-md-offset-2
