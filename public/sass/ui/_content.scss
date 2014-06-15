@@ -49,8 +49,32 @@
     }
 }
 
+// Course Details
+
+.tags-wrapper {
+    .tags {
+        display: inline-block;
+        margin-top: -2px;
+        vertical-align: top;
+        .label {
+            margin-right: 5px;
+        }
+    }
+}
 
 // Challenges
+
+.back {
+    line-height: 20px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    display: block;
+
+    .icon {
+        color: #428BCA;
+        margin-right: 5px;
+    }
+}
 
 .submit-answer {
     text-transform: uppercase;

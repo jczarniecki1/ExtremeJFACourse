@@ -17,11 +17,12 @@
   };
 
   Array.prototype.findById = function(id, callback, onError) {
-    var element, _i, _len;
-    for (_i = 0, _len = this.length; _i < _len; _i++) {
-      element = this[_i];
+    var element, index, _i, _len;
+    for (index = _i = 0, _len = this.length; _i < _len; index = ++_i) {
+      element = this[index];
       if (element._id === id) {
-        return callback(element);
+        callback(element);
+        return index;
       }
     }
     if (onError != null) {

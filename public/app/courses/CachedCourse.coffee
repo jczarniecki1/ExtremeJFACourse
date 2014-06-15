@@ -6,6 +6,10 @@ angular.module 'app'
   class CachedCourse
     query: -> courseList or= CourseModel.query()
 
+    findById: (id, callback, onError) ->
+      @query().$promise.then (collection) ->
+        collection.findById id, callback, onError
+
     remove: (id) ->
       $d = $q.defer()
 

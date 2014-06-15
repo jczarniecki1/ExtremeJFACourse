@@ -1,6 +1,11 @@
 .container
     .row
-        h1 {{ course.title }}
+        .col-md-10
+            h1 {{ course.title }}
+            .tags-wrapper
+                | Tags:&nbsp;
+                div.tags(ng-repeat="tag in course.tags")
+                    span.label.label-info {{ tag }}
         .col-md-2(ng-show="identity.currentUser.isAdmin()")
             button.btn.btn-danger(ng-click="delete()")
                 i.icon.icon-remove2
@@ -11,16 +16,11 @@
                 a(href="#") What should we do better?
             h3 Published on {{ course.published | date }}
 
-        .col-md-6
-            .panel.panel-primary
-                .panel-heading Tags
-                .panel-body
-                    div(ng-repeat="tag in course.tags") {{ tag }}
     .row(ng-show="identity.currentUser.isAdmin()")
         .col-md-2
-            a.btn.btn-success(href="/courses/{{ course._id }}/challenge/new")
+            a.btn.btn-success.btn-sm(href="/courses/{{ course._id }}/challenge/new")
                 i.icon.icon-plus
-
+                | &nbsp;New Challenge
     .row
         .col-md-12(ng-include="'/partials/challenges/challenge-list'")
 

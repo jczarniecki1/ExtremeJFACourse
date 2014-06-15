@@ -20,6 +20,7 @@ exports.createChallenge = (req, res, next) ->
     Challenge.create challengeData, (err, challenge) ->
       if err? then return res.SendError err
 
+      course.challengesCount++
       course.save (err) ->
         res.SendIfPossible challenge, err
 
@@ -27,8 +28,15 @@ exports.createChallenge = (req, res, next) ->
 exports.removeChallenge = (req, res, next) ->
   id = req.params.id
 
-  Challenge.remove({_id:id}).exec (err) ->
-    res.SendOkIfPossible err
+  Course.findOne({_id:req.params.courseId}).exec (err, course) ->
+    if err? then return res.SendError err, 'Cannot find the course'
+
+    Challenge.remove({_id:id}).exec (err) ->
+      if err? then return res.SendError err
+
+      course.challengesCount--
+      course.save (err) ->
+        res.SendOkIfPossible err
 
 
 # TODO: updateChallenge

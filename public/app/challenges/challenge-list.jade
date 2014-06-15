@@ -2,7 +2,12 @@ table.table.table-hover.table-striped.table-condensed(ng-controller="ChallengeCo
     thead
         tr
             th Challenges
+            th Level
     tbody
         tr(ng-repeat="(i, challenge) in challenges")
             td
                 a(href="/courses/{{ course._id }}/challenge/{{ challenge._id }}") Exercise {{ i + 1 }}
+            td
+                span.label.label-success(ng-show="challenge.level=='basic'") Basic
+                span.label.label-info(ng-show="challenge.level=='advanced'") Advanced
+                span.label.label-warning(ng-show="challenge.level=='expert'") Expert

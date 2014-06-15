@@ -21,8 +21,8 @@
       <option name="workingDir" value="$FileDir$" />
       <envs />
     </TaskOptions>
-    <TaskOptions isEnabled="true">
-      <option name="arguments" value="--compass --sourcemap --update sass\$FileName$:css\$FileNameWithoutExtension$.css" />
+    <TaskOptions isEnabled="false">
+      <option name="arguments" value="--scss --compass --sourcemap --update sass\$FileName$:css\$FileNameWithoutExtension$.css" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Compiles .scss files into .css files" />
       <option name="exitCodeBehavior" value="ERROR" />
@@ -35,13 +35,13 @@
       </option>
       <option name="outputFromStdout" value="false" />
       <option name="passParentEnvs" value="true" />
-      <option name="program" value="$USER_HOME$/Connect/tools/Ruby/bin/scss.bat" />
+      <option name="program" value="sass" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
       <option name="workingDir" value="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\public" />
       <envs />
     </TaskOptions>
-    <TaskOptions isEnabled="false">
+    <TaskOptions isEnabled="true">
       <option name="arguments" value="--map --compile $FileName$" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Compiles .coffee files into .js files" />
@@ -55,7 +55,7 @@
       </option>
       <option name="outputFromStdout" value="false" />
       <option name="passParentEnvs" value="true" />
-      <option name="program" value="$PROJECT_DIR$/node_modules/.bin/coffee.cmd" />
+      <option name="program" value="coffee" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
       <option name="workingDir" value="$FileDir$" />

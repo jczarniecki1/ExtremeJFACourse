@@ -23,8 +23,9 @@ sudo npm install -g coffeelint
 #mongod --dbpath ~/.mongodb/data &
 
 ## Sass
-#sudo apt-get install ruby
+#sudo apt-get install ruby ruby1.9.1-dev
 #sudo gem install compass
+#sudo gem install --version '~> 0.9' rb-inotify
 
 ## Listeners (not necessary if using WebStorm)
 #sass --watch --scss --compass ./public/sass/ ./public/css/

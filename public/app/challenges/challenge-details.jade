@@ -1,5 +1,10 @@
 .container
     .row
+        .col-xs-12
+            .back
+                i.icon.icon-arrow-left3
+                a(href="/courses/{{ courseId }}") Back to "{{ course.title }}"
+    .row
         .col-xs-8
             .col-xs-4
                 button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='basic'}") Basic
@@ -7,16 +12,13 @@
                 button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='advanced'}") Advanced
             .col-xs-4
                 button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='expert'}") Expert
-        .col-xs-4
-            input.form-control(type="search", placeholder="Search")
     br
-    .row
     .row
         .col-md-6
         .col-md-6
             .row
                 .col-md-7
-                    h2 Exercise 1/10
+                    h2 Exercise {{ challengeIndex+1 }}/{{ course.challengesCount }}
                 .col-md-5
                     button.btn.btn-primary.btn-block.submit-answer(ng-click="submit()") Submit your answer
                     button.btn.btn-link.btn-block.skip-challenge(ng-click="skip()") Skip to next
@@ -27,7 +29,7 @@
                 h3 Placeholder for live editor
                 textarea.form-control {{ challenge.initialInput }}
                 br
-                button.btn.btn-primary.btn-block Compile
+                button.btn.btn-warning.btn-block Compile
                 br
                 textarea.form-control(placeholder="Output")
         .col-md-6

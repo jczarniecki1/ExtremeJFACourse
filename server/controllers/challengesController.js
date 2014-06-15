@@ -32,6 +32,7 @@
         if (err != null) {
           return res.SendError(err);
         }
+        course.challengesCount++;
         return course.save(function(err) {
           return res.SendIfPossible(challenge, err);
         });
@@ -42,10 +43,23 @@
   exports.removeChallenge = function(req, res, next) {
     var id;
     id = req.params.id;
-    return Challenge.remove({
-      _id: id
-    }).exec(function(err) {
-      return res.SendOkIfPossible(err);
+    return Course.findOne({
+      _id: req.params.courseId
+    }).exec(function(err, course) {
+      if (err != null) {
+        return res.SendError(err, 'Cannot find the course');
+      }
+      return Challenge.remove({
+        _id: id
+      }).exec(function(err) {
+        if (err != null) {
+          return res.SendError(err);
+        }
+        course.challengesCount--;
+        return course.save(function(err) {
+          return res.SendOkIfPossible(err);
+        });
+      });
     });
   };
 

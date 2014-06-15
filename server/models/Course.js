@@ -26,6 +26,11 @@
       type: Number,
       min: 0,
       "default": 0
+    },
+    challengesCount: {
+      type: Number,
+      min: 0,
+      "default": 0
     }
   });
 

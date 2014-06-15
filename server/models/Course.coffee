@@ -22,6 +22,11 @@ courseSchema = mongoose.Schema
     min:      0
     default:  0
 
+  challengesCount:
+    type:     Number
+    min:      0
+    default:  0
+
 courseSchema.methods =
   updateRating: ->
     Rating.find({objectId:@_id}).exec (err, collection) =>

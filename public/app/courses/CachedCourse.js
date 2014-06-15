@@ -10,6 +10,12 @@
         return courseList || (courseList = CourseModel.query());
       };
 
+      CachedCourse.prototype.findById = function(id, callback, onError) {
+        return this.query().$promise.then(function(collection) {
+          return collection.findById(id, callback, onError);
+        });
+      };
+
       CachedCourse.prototype.remove = function(id) {
         var $d;
         $d = $q.defer();
