@@ -41,7 +41,7 @@
       <option name="workingDir" value="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\public" />
       <envs />
     </TaskOptions>
-    <TaskOptions isEnabled="true">
+    <TaskOptions isEnabled="false">
       <option name="arguments" value="--map --compile $FileName$" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Compiles .coffee files into .js files" />
