@@ -21,7 +21,7 @@
                     h2 Exercise {{ challengeIndex+1 }}/{{ course.challengesCount }}
                 .col-md-5
                     button.btn.btn-primary.btn-block.submit-answer(ng-click="submit()") Submit your answer
-                    button.btn.btn-link.btn-block.skip-challenge(ng-click="skip()") Skip to next
+                    button.btn.btn-link.btn-block.skip-challenge(ng-click="skip()", ng-show="challengeIndex < course.challengesCount - 1") Skip to next
             br
     .row
         .col-md-6
@@ -29,7 +29,9 @@
                 h3 Placeholder for live editor
                 textarea.form-control {{ challenge.initialInput }}
                 br
-                button.btn.btn-warning.btn-block Compile
+                button.btn.btn-warning.btn-block
+                    i.icon.icon-lab
+                    | &nbsp;Execute
                 br
                 textarea.form-control(placeholder="Output")
         .col-md-6
