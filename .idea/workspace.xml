@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="Walking skeleton">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/init_scripts/path.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/init_scripts/runMongo.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init_scripts/init.bat" afterPath="$PROJECT_DIR$/init_scripts/init.bat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init_scripts/path.bat" afterPath="$PROJECT_DIR$/init_scripts/path.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init_scripts/path.sh" afterPath="$PROJECT_DIR$/init_scripts/path.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init_scripts/runMongo.bat" afterPath="$PROJECT_DIR$/init_scripts/runMongo.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init_scripts/ubuntu_installation.sh" afterPath="$PROJECT_DIR$/init_scripts/ubuntu_installation.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExtremeJFACourse.iws" />
@@ -45,11 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="path.sh" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="path.sh" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/init_scripts/path.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="96">
-              <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.022315202" vertical-offset="0" max-vertical-offset="717">
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="runMongo.bat" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/init_scripts/runMongo.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="96">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -59,17 +67,27 @@
         <entry file="file://$PROJECT_DIR$/init_scripts/ubuntu_installation.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="944">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="runMongo.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/init_scripts/runMongo.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="112">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.023121387" vertical-offset="0" max-vertical-offset="692">
-              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="688">
+              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -95,31 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scripts.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/includes/scripts.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="1120">
-              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="course-details.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/courses/course-details.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="528">
               <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new-challenge.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/challenges/new-challenge.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="608">
-              <caret line="20" column="118" selection-start-line="20" selection-start-column="118" selection-end-line="20" selection-end-column="118" />
               <folding />
             </state>
           </provider>
@@ -148,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/app/challenges/ChallengeController.coffee" />
         <option value="$PROJECT_DIR$/public/app/challenges/CachedChallenge.coffee" />
         <option value="$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.coffee" />
         <option value="$PROJECT_DIR$/public/app/admin/UserRatingsController.coffee" />
@@ -196,9 +193,10 @@
         <option value="$PROJECT_DIR$/server/models/Challenge.coffee" />
         <option value="$PROJECT_DIR$/server/includes/scripts.jade" />
         <option value="$PROJECT_DIR$/public/app/courses/course-details.jade" />
-        <option value="$PROJECT_DIR$/init_scripts/path.sh" />
         <option value="$PROJECT_DIR$/init_scripts/ubuntu_installation.sh" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/init_scripts/runMongo.sh" />
+        <option value="$PROJECT_DIR$/init_scripts/path.sh" />
       </list>
     </option>
   </component>
@@ -289,6 +287,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtremeJFACourse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExtremeJFACourse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="init_scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -355,11 +367,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/init_scripts" />
       <recent name="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\public\app\admin" />
       <recent name="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\server\controllers" />
       <recent name="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\server\models" />
       <recent name="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\public\app\challenges" />
-      <recent name="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\server\utilities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My Documents\Projects - Web\MEAN App\ExtremeJFACourse\public\app\courses" />
@@ -511,20 +523,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/app/challenges/CachedChallenge.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/challenges/ChallengeController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="154">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/common/NotifierService.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="406">
@@ -856,10 +854,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/init_scripts/path.sh">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="96">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="688">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init_scripts/runMongo.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="96">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -867,15 +873,23 @@
     <entry file="file://$PROJECT_DIR$/init_scripts/ubuntu_installation.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="944">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/init_scripts/runMongo.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023121387" vertical-offset="0" max-vertical-offset="692">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="112">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init_scripts/path.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022315202" vertical-offset="0" max-vertical-offset="717">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
           <folding />
         </state>
       </provider>
