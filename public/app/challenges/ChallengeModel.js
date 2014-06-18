@@ -8,6 +8,10 @@
       update: {
         method: 'PUT',
         isArray: false
+      },
+      remove: {
+        method: 'DELETE',
+        isArray: false
       }
     });
   });

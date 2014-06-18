@@ -3,6 +3,7 @@ table.table.table-hover.table-striped.table-condensed(ng-controller="ChallengeCo
         tr
             th Challenges
             th Level
+            th(ng-show="identity.currentUser.isAdmin()") Actions
     tbody
         tr(ng-repeat="(i, challenge) in challenges")
             td
@@ -11,3 +12,6 @@ table.table.table-hover.table-striped.table-condensed(ng-controller="ChallengeCo
                 span.label.label-success(ng-show="challenge.level=='basic'") Basic
                 span.label.label-info(ng-show="challenge.level=='advanced'") Advanced
                 span.label.label-warning(ng-show="challenge.level=='expert'") Expert
+            td(ng-show="identity.currentUser.isAdmin()")
+                button.btn.btn-xs.btn-danger(ng-click="delete(challenge._id)")
+                    i.icon.icon-remove2
