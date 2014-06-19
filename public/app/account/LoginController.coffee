@@ -11,8 +11,12 @@ angular.module 'app'
       else
         NotifierService.warning 'Failed to log in.'
 
+  userActions = $('#userActions')
+  userActions.find('.dropdown-toggle').click -> userActions.toggleClass 'open'
+
   $scope.signout = ->
-    AuthService.logoutUser().then ->
+    AuthService.logoutUser()
+    .then ->
       $scope.username = ""
       $scope.password = ""
       NotifierService.info 'You have succeessfully signed out'
