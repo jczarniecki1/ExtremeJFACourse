@@ -29,8 +29,9 @@
     app.get('/api/ratings', checkLogin, ratingsController.getRatings);
     app.post('/api/ratings', checkLogin, ratingsController.addRating);
     app.put('/api/ratings', checkLogin, ratingsController.updateRating);
+    app.post('/api/feedback', checkLogin, messagesController.saveFeedback);
     app.get('/api/user/:userId/messages', adminOnly, messagesController.getMessages);
-    app.post('/api/user/:userId/messages', checkLogin, messagesController.createMessage);
+    app.post('/api/user/:userId/messages', adminOnly, messagesController.createMessage);
     app["delete"]('/api/user/:userId/messages/:id', adminOnly, messagesController.removeMessage);
     app.get('/api/courses/:courseId/challenges', challengesController.getChallenges);
     app.post('/api/courses/:courseId/challenges', adminOnly, challengesController.createChallenge);

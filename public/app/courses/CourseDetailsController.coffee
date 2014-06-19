@@ -1,25 +1,18 @@
 angular.module 'app'
-.controller 'CourseDetailsController', ($scope, CachedCourse, CachedRating, $routeParams, IdentityService, NotifierService, $location,$rootScope,$dialogs) ->
+.controller 'CourseDetailsController', ($scope, CachedCourse, CachedRating, $routeParams, IdentityService, NotifierService, $location, $dialogs, FeedbackMessage) ->
   $scope.identity = IdentityService
   existingRating = null
   savingRating = null
 
-  $scope.openFeedbackModal = ->
-    $dialogs.create '/partials/bootstrap/modal/feedbackModal', 'FeedbackModalController', {}, {key: false, back: 'static'}
-    .result.then (feedback) ->
-      console.debug "TODO: save feedback"
-      NotifierService.notify "Message submitted successfully"
+  if IdentityService.currentUser?.isAdmin()
 
-    , ->
-      $scope.name = 'You decided not to enter in your name, that makes me sad.'
-
-  $scope.delete = ->
-    CachedCourse.remove $routeParams.id
-    .then ->
-      NotifierService.notify "Course removed successfully"
-      $location.path "/"
-    , (error) ->
-      NotifierService.error error
+    $scope.delete = ->
+      CachedCourse.remove $routeParams.id
+      .then ->
+        NotifierService.notify "Course removed successfully"
+        $location.path "/"
+      , (error) ->
+        NotifierService.error error
 
   CachedCourse.query().$promise
   .then (collection) ->
@@ -38,7 +31,7 @@ angular.module 'app'
       unless existingRating?
         ratingArgs.value = $scope.userRate
 
-        CachedRating.create(ratingArgs)
+        CachedRating.create ratingArgs
         .then (rating) ->
           existingRating = rating
       else
@@ -52,9 +45,6 @@ angular.module 'app'
       clearTimeout savingRating
       $scope.isRatingHovered = true
 
-    $scope.showFeedbackDialog = ->
-      console.log "TODO: showFeedbackDialog"
-
     $scope.leaveRating = ->
       unless IdentityService.currentUser.isAdmin()
         $scope.isRatingHovered = false
@@ -66,6 +56,22 @@ angular.module 'app'
 
     afterFetchRating = ->
       $scope.isReadonly = false
+
+
+    $scope.openFeedbackModal = ->
+      $dialogs.create '/partials/bootstrap/modal/feedbackModal', 'FeedbackModalController', {}, {key: false, back: 'static'}
+      .result.then (feedback) ->
+        messageData =
+          url: $location.url()
+          location: "Course: #{$scope.course.title}"
+          text: feedback
+
+        newFeedback = new FeedbackMessage(messageData)
+        newFeedback.$save()
+        .then ->
+          NotifierService.notify "Message submitted successfully"
+        , NotifierService.error
+
 
     CachedRating.findOne ratingArgs
     .then (rating) ->

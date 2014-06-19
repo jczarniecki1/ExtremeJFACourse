@@ -24,6 +24,7 @@
         <item url="file://$PROJECT_DIR$/public/app/courses/CourseModel.js" />
         <item url="file://$PROJECT_DIR$/server/utilities/utils.js" />
         <item url="file://$PROJECT_DIR$/server/utilities/response.js" />
+        <item url="file://$PROJECT_DIR$/public/app/feedback/FeedbackMessage.js" />
         <item url="file://$PROJECT_DIR$/server/models/Course.js" />
         <item url="file://$PROJECT_DIR$/server/models/Rating.js" />
         <item url="file://$PROJECT_DIR$/test/test-app.js" />
@@ -153,6 +154,7 @@
       <root url="file://$PROJECT_DIR$/public/app/courses/CourseModel.js" />
       <root url="file://$PROJECT_DIR$/server/utilities/utils.js" />
       <root url="file://$PROJECT_DIR$/server/utilities/response.js" />
+      <root url="file://$PROJECT_DIR$/public/app/feedback/FeedbackMessage.js" />
       <root url="file://$PROJECT_DIR$/test/tests/account/UserModelSpecs.js" />
       <root url="file://$PROJECT_DIR$/server/models/Course.js" />
       <root url="file://$PROJECT_DIR$/server/models/Rating.js" />

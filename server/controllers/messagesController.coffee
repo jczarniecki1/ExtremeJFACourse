@@ -14,6 +14,13 @@ exports.createMessage = (req, res, next) ->
   Message.create messageData, (err, message) ->
     res.SendIfPossible message, err
 
+exports.saveFeedback = (req, res, next) ->
+  messageData = req.body
+  messageData.userId = req.user._id
+
+  Message.create messageData, (err, message) ->
+    res.SendIfPossible message, err
+
 exports.removeMessage = (req, res, next) ->
   id = req.params.id
 

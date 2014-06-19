@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "FeedbackMessage.js",
+  "sourceRoot": "",
+  "sources": [
+    "FeedbackMessage.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACA,CAAC,OADD,CACS,iBADT,EAC4B,SAAC,SAAD,GAAA;WAC1B,SAAA,CAAU,eAAV,EAA2B;AAAA,MAAC,GAAA,EAAK,KAAN;KAA3B,EAD0B;EAAA,CAD5B,CAAA,CAAA;AAAA"
+}

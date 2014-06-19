@@ -18,7 +18,6 @@ exports.getRatings = (req, res) ->
 
 exports.addRating = (req, res, next) ->
   ratingData = req.body
-
   ratingData.userId = req.user._id
 
   model = if ratingData.type is 'course' then Course else Challenge

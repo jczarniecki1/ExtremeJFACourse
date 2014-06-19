@@ -19,6 +19,14 @@
       type: String,
       required: 'Cannot send message from unknown location'
     },
+    created: {
+      type: Date,
+      "default": new Date()
+    },
+    unread: {
+      type: Boolean,
+      "default": true
+    },
     text: {
       type: String,
       required: '{PATH} is required'
