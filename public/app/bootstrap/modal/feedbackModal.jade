@@ -1,11 +1,13 @@
 .modal-header
-    h3.modal-title I'm a modal!
+    h4.modal-title
+        span.icon.icon-bubble2
+        | &nbsp;What can we improve in our project?
 .modal-body
-    ul
-        li(ng-repeat='item in items')
-            a(ng-click='selected.item = item') {{ item }}
-    | Selected:
-    b {{ selected.item }}
+    ng-form(name='feedbackForm', novalidate='novalidate', role='form')
+        .form-group.input-group-lg
+            label.control-label(for='feedback') Message:
+            textarea#feedback.form-control(type='text', name='feedback', ng-model='feedback', ng-keyup='hitEnter($event)', required='required')
+            span.help-block Describe your problem or share a new idea
 .modal-footer
-    button.btn.btn-primary(ng-click='ok()') OK
-    button.btn.btn-warning(ng-click='cancel()') Cancel
+    button.btn.btn-default(type='button', ng-click='cancel()') Cancel
+    button.btn.btn-primary(type='button', ng-click='save()', ng-disabled='(feedbackForm.$dirty && feedbackForm.$invalid) || feedbackForm.$pristine') Send

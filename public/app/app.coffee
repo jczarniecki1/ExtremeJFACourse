@@ -1,4 +1,4 @@
-app = angular.module 'app', ['ngResource','ngRoute', 'ui.bootstrap']
+app = angular.module 'app', ['ngResource','ngRoute', 'ui.bootstrap', 'dialogs']
 
 app.config ($routeProvider, $locationProvider)->
   routeRoleCheck =

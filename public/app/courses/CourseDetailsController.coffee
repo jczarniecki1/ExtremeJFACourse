@@ -1,36 +1,17 @@
-
-FeedbackModalController = ($scope, $modalInstance, items) ->
-  $scope.items = items
-  $scope.selected = item: $scope.items[0]
-  $scope.ok = ->
-    $modalInstance.close $scope.selected.item
-
-  $scope.cancel = ->
-    $modalInstance.dismiss "cancel"
-
 angular.module 'app'
-.controller 'CourseDetailsController', ($scope, CachedCourse, CachedRating, $routeParams, IdentityService, NotifierService, $location, $modal, $log) ->
+.controller 'CourseDetailsController', ($scope, CachedCourse, CachedRating, $routeParams, IdentityService, NotifierService, $location,$rootScope,$dialogs) ->
   $scope.identity = IdentityService
   existingRating = null
   savingRating = null
 
-  $scope.items = ['item1', 'item2', 'item3']
+  $scope.openFeedbackModal = ->
+    $dialogs.create '/partials/bootstrap/modal/feedbackModal', 'FeedbackModalController', {}, {key: false, back: 'static'}
+    .result.then (feedback) ->
+      console.debug "TODO: save feedback"
+      NotifierService.notify "Message submitted successfully"
 
-  $scope.openFeedbackModal = (size) ->
-    modalInstance = $modal.open
-      templateUrl: "/partials/bootstrap/modal/feedbackModal"
-      controller: FeedbackModalController
-      size: size
-      resolve:
-        items: ->
-          $scope.items
-
-    modalInstance.result
-    .then (selectedItem) ->
-      $scope.selected = selectedItem
     , ->
-      $log.info "Modal dismissed at: " + new Date()
-
+      $scope.name = 'You decided not to enter in your name, that makes me sad.'
 
   $scope.delete = ->
     CachedCourse.remove $routeParams.id

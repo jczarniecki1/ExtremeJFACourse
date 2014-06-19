@@ -1480,6 +1480,57 @@ footer {
     border-top: 1px solid #999;
     padding-top: 5px; }
 
+.toast-top-right {
+  top: 70px; }
+
+/* Custom dialog/modal headers */
+.dialog-header-error {
+  background-color: #d2322d; }
+
+.dialog-header-wait {
+  background-color: #428bca; }
+
+.dialog-header-notify {
+  background-color: #eeeeee; }
+
+.dialog-header-confirm {
+  background-color: #333333; }
+
+.dialog-header-error span, .dialog-header-error h4,
+.dialog-header-wait span,
+.dialog-header-wait h4,
+.dialog-header-confirm span,
+.dialog-header-confirm h4 {
+  color: #ffffff; }
+
+/* Ease Display */
+.pad {
+  padding: 25px; }
+
+.modal-content {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0; }
+  .modal-content textarea {
+    width: 100% !important; }
+
+.modal-body {
+  padding-bottom: 0; }
+
+.navbar-form button,
+.navbar-form .form-group {
+  margin-left: 10px; }
+
+.navbar-nav > li > .signup {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 35px; }
+
+.form-control[type="checkbox"] {
+  width: 34px; }
+
 .main .page-header:first-child {
   margin-top: 0; }
 
@@ -1526,6 +1577,10 @@ footer {
 
 .star-rating .rating {
   color: rgba(200, 200, 0, 0.7); }
+.star-rating .btn-link {
+  border: 0;
+  padding: 0;
+  margin-top: -10px; }
 
 .back {
   line-height: 20px;
@@ -1541,18 +1596,3 @@ footer {
 
 .skip-challenge {
   text-decoration: underline; }
-
-.navbar-form button,
-.navbar-form .form-group {
-  margin-left: 10px; }
-
-.navbar-nav > li > .signup {
-  padding-top: 0;
-  padding-bottom: 0;
-  line-height: 35px; }
-
-.form-control[type="checkbox"] {
-  width: 34px; }
-
-.toast-top-right {
-  top: 70px; }
