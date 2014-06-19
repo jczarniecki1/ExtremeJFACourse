@@ -3,11 +3,11 @@ setLocation = (desiredLocation) ->
 
 scenario = ->
   setLocation '/courses'
-  $('[ng-model="username"]').val 'admin'
-#  $('[ng-model="username"]').val 'joe@pj.com'
+#  $('[ng-model="username"]').val 'admin'
+  $('[ng-model="username"]').val 'joe@pj.com'
   $('[ng-model="username"]').trigger 'change'
-  $('[ng-model="password"]').val 'xxx'
-#  $('[ng-model="password"]').val 'asd'
+#  $('[ng-model="password"]').val 'xxx'
+  $('[ng-model="password"]').val 'asd'
   $('[ng-model="password"]').trigger 'change'
   $('#login:visible').trigger 'click'
 

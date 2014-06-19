@@ -10,11 +10,13 @@
             button.btn.btn-danger(ng-click="delete()")
                 i.icon.icon-remove2
     .row
-        .col-md-6
+        .col-md-6.star-rating
             rating(ng-show="identity.isAuthenticated()", ng-model="currentRate", max="5", on-hover="hoverRating(value)" on-leave="leaveRating()", readonly="isReadonly")
             div(ng-show="userRate  > 0 && userRate <= 3")
-                a(href="#") What should we do better?
-            h3 Published on {{ course.published | date }}
+                .btn.btn-link(ng-click="openFeedbackModal()") What should we do better?
+                //- script(id="feedbackModal.html", type="text/ng-template")
+
+            h4 Published on {{ course.published | date }}
 
     .row(ng-show="identity.currentUser.isAdmin()")
         .col-md-2

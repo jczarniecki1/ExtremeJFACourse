@@ -1524,6 +1524,9 @@ footer {
   .tags-wrapper .tags .label {
     margin-right: 5px; }
 
+.star-rating .rating {
+  color: rgba(200, 200, 0, 0.7); }
+
 .back {
   line-height: 20px;
   margin-bottom: 10px;
