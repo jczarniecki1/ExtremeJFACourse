@@ -6,8 +6,8 @@
     ng-form(name='feedbackForm', novalidate='novalidate', role='form')
         .form-group.input-group-lg
             label.control-label(for='feedback') Message:
-            textarea#feedback.form-control(type='text', name='feedback', ng-model='feedback', ng-keyup='hitEnter($event)', required='required')
+            textarea#feedback.form-control(type='text', name='feedback', ng-model='feedback', required='required')
             span.help-block Describe your problem or share a new idea
 .modal-footer
     button.btn.btn-default(type='button', ng-click='cancel()') Cancel
-    button.btn.btn-primary(type='button', ng-click='save()', ng-disabled='(feedbackForm.$dirty && feedbackForm.$invalid) || feedbackForm.$pristine') Send
+    button.btn.btn-primary(type='button', ng-click='send()', ng-disabled='(feedbackForm.$dirty && feedbackForm.$invalid) || feedbackForm.$pristine') Send

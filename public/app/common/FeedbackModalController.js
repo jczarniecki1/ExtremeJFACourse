@@ -4,13 +4,8 @@
     $scope.cancel = function() {
       return $modalInstance.dismiss("canceled");
     };
-    $scope.save = function() {
+    return $scope.send = function() {
       return $modalInstance.close($scope.feedback);
-    };
-    return $scope.hitEnter = function(evt) {
-      if (angular.equals(evt.keyCode, 13) && !(angular.equals($scope.name, null) || angular.equals($scope.name, ""))) {
-        return $scope.save();
-      }
     };
   });
 
