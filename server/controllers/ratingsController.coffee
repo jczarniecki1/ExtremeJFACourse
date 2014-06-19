@@ -9,7 +9,6 @@ exports.getRatings = (req, res) ->
   userId =
     if req.user.hasRole 'admin'
       req.url.match(///=.*///)[0].substr(1)
-      #req.body.userId
     else
       req.user._id
 

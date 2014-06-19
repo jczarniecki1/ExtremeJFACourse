@@ -8,9 +8,17 @@
         return $scope.user = user;
       });
     });
-    return $scope.ratings = CachedRating.query({
+    $scope.ratings = CachedRating.query({
       userId: userId
     });
+    return $scope.range = function(value) {
+      var _i, _results;
+      return (function() {
+        _results = [];
+        for (var _i = 1; 1 <= value ? _i <= value : _i >= value; 1 <= value ? _i++ : _i--){ _results.push(_i); }
+        return _results;
+      }).apply(this);
+    };
   });
 
 }).call(this);

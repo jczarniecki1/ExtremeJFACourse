@@ -8,3 +8,6 @@ angular.module 'app'
       $scope.user = user
 
   $scope.ratings = CachedRating.query {userId}
+
+
+  $scope.range = (value) -> [1..value]

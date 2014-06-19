@@ -4,6 +4,7 @@
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/public/app/account/LoginController.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/IdentityService.js" />
+        <item url="file://$PROJECT_DIR$/public/app/common/Filters.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/SignupController.js" />
         <item url="file://$PROJECT_DIR$/node_modules/karma/requirejs.config.tpl.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/AuthService.js" />
@@ -134,6 +135,7 @@
       <root url="file://$PROJECT_DIR$/node_modules/groc/lib/utils/style_helpers.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/LoginController.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/IdentityService.js" />
+      <root url="file://$PROJECT_DIR$/public/app/common/Filters.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/SignupController.js" />
       <root url="file://$PROJECT_DIR$/node_modules/karma/requirejs.config.tpl.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/AuthService.js" />

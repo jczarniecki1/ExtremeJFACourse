@@ -1,21 +1,33 @@
-.container
+.container.simple-admin-page
     h3 Messages from {{ user.firstName + ' ' + user.lastName }} ({{ user.username }})
-    table.table.table-condensed.user-messages
+    table.table.table-condensed
         tr
-            th Date
+            th
+            th.date-width Date
+            th.time-width Time
             th Location
             th Message
             th Actions
         tr(ng-repeat="message in messages")
             td
+                i.icon.icon-bubble2
+            td
                 i.icon.icon-calendar
-                | {{ message.created }}
+                | &nbsp;{{ message.created | date:'yyyy MMMM d' }}
             td
-                a(href="{{ message.url }}") {{ message.location }}
-            td {{ message.text }}
+                i.icon.icon-clock
+                | &nbsp;{{ message.created | date:'HH:mm' }}
             td
-                a.btn.btn-default(href="/admin/answer/{{ user._id }}/{{ message._id }}")
+                a(href="{{ message.url }}")
+                    i.icon.icon-newtab
+                    | &nbsp;{{ message.location }}
+            td {{ message.text | characters:70 }}
+            td
+                a.btn.btn-xs.btn-default(href="", popover-placement="left", popover="{{message.text}}", popover-trigger="click")
+                    | Show
+                | &nbsp;
+                a.btn.btn-xs.btn-default(href="/admin/answer/{{ user._id }}/{{ message._id }}")
                     i.icon.icon-undo2
-                    | &nbsp;
-                a.btn.btn-danger(ng-click="delete(message._id)")
+                | &nbsp;
+                a.btn.btn-xs.btn-danger(ng-click="delete(message._id)")
                     i.icon.icon-remove2

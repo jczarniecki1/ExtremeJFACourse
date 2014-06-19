@@ -22,6 +22,8 @@
     });
     if (IdentityService.isAuthenticated()) {
       ratingArgs = {
+        url: $location.url(),
+        location: "Course: " + $scope.course.title,
         objectId: $routeParams.id,
         type: 'course'
       };

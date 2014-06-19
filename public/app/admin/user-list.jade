@@ -1,5 +1,5 @@
-.container
-    table.table.table-hover.table-condensed.users-list
+.container.simple-admin-page
+    table.table.table-hover.table-condensed
         tr
             th
             th Name
@@ -12,7 +12,10 @@
             td
                 i.icon.icon-user
             td {{ user.firstName + ' ' + user.lastName }}
-            td {{ user.username }}
+            td
+                a(href="mailto:{{ user.username }}")
+                    i.icon.icon-address-book
+                    | &nbsp;{{ user.username | capitalize }}
             td {{ user.roles.join(', ') }}
             td
                 a(href="/admin/ratings/{{ user._id }}")
@@ -21,13 +24,13 @@
             td
                 a(href="/admin/messages/{{ user._id }}")
                     i.icon.icon-envelope
-                    | &nbsp;{{ user.unreadMessages }}/{{ user.allMessages }}
+                    | &nbsp;{{ user.unreadMessages }} / {{ user.allMessages }}
             td
-                a.btn.btn-default(ng-click="lock(user._id)")
+                a.btn.btn-xs.btn-default(ng-click="lock(user._id)")
                     i.icon.icon-unlocked
                 | &nbsp;
-                a.btn.btn-default(ng-click="edit(user._id)")
+                a.btn.btn-xs.btn-default(ng-click="edit(user._id)")
                     i.icon.icon-pencil2
                 | &nbsp;
-                a.btn.btn-danger(ng-click="delete(user._id)")
+                a.btn.btn-xs.btn-danger(ng-click="delete(user._id)")
                     i.icon.icon-remove2

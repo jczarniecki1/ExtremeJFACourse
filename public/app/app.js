@@ -2,7 +2,7 @@
 (function() {
   var app;
 
-  app = angular.module('app', ['ngResource', 'ngRoute', 'ui.bootstrap', 'dialogs']);
+  app = angular.module('app', ['ngResource', 'ngRoute', 'ui.bootstrap', 'dialogs', 'truncate']);
 
   app.config(function($routeProvider, $locationProvider) {
     var routeRoleCheck;

@@ -17,20 +17,12 @@ angular.module 'app'
         message.$answer({id, answer})
         .then ->
           NotifierService.success "Answer send successfully"
-        , (error) -> NotifierService.error error
+        , NotifierService.error
 
       , -> NotifierService.error "Message not found"
 
   $scope.delete = (id) ->
-    CachedMessage.remove(id)
-    ###.$promise.then (collection) ->
-      for message in collection
-        if message._id is id
-          message.remove({id}).then ->
-            NotifierService.info "Message removed successfully"
-          , (error) ->
-            NotifierService.error error
-        return
-
-      NotifierService.error "Message not found"
-    ###
+    CachedMessage.remove userId, id
+    .then ->
+      NotifierService.info "Message removed successfully"
+    , NotifierService.error

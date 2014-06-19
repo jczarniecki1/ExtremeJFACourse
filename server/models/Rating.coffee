@@ -30,6 +30,14 @@ ratingSchema = mongoose.Schema
     max:      5
     required: 'Cannot save rating with unknown value'
 
+  url:
+    type:     String,
+    required: 'Cannot save rating from unknown location'
+
+  location:
+    type:     String,
+    required: 'Cannot save rating from unknown location'
+
 ratingSchema.methods =
 
   getData: ->

@@ -40,12 +40,31 @@
     }
 }
 
-.users-list {
+.simple-admin-page {
     th {
         background-color: #f9f9f9;
     }
-    &.table>tbody>tr>td {
+    .table>tbody>tr>td {
         vertical-align: middle;
+
+        &:first-child {
+            width: 30px;
+            text-align: center;
+        }
+    }
+    .icon-calendar, .icon-clock {
+        font-size: 80%;
+        color: #999;
+    }
+
+    .date-width { width: 150px; }
+    .time-width { width: 70px; }
+
+    .popover {
+        max-width: 800px;
+        &.left > .arrow:after {
+            border-left-color: rgba(0,0,0,.15);
+        }
     }
 }
 

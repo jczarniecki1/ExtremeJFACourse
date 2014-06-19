@@ -16,7 +16,7 @@ angular.module 'app'
       messageList[userId].$promise
       .then (collection) ->
         collection.findById messageId, (message) ->
-          message.$answer({messageId, answer})
+          message.$answer {messageId, answer}
           .then ->
             collection.remove(message) and $d.resolve()
           , (response) -> $d.reject response.data.reason
@@ -30,11 +30,10 @@ angular.module 'app'
       messageList[userId].$promise
       .then (collection) ->
         collection.findById messageId, (message) ->
-          message.$remove({messageId})
+          message.$remove {id: messageId}
           .then ->
             collection.remove(message) and $d.resolve()
-          , (response) ->
-            $d.reject response.data.reason
+          , (response) -> $d.reject response.data.reason
         , -> $d.reject "Message not found"
 
       $d.promise

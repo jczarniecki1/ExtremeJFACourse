@@ -1,13 +1,23 @@
-.container
+.container.simple-admin-page
     h3 Ratings from {{ user.firstName + ' ' + user.lastName }} ({{ user.username }})
     table.table.table-condensed.user-ratings
         tr
-            th Date
-            th Type
+            th
+            th.date-width Date
+            th.time-width Time
+            th Location
             th Rating
         tr(ng-repeat="rating in ratings")
             td
+            td
                 i.icon.icon-calendar
-                | {{ rating.submitted }}
-            td {{ rating.type }}
-            td {{ rating.value }}
+                | &nbsp;{{ rating.submitted | date:'yyyy MMMM d' }}
+            td
+                i.icon.icon-clock
+                | &nbsp;{{ rating.submitted | date:'HH:mm' }}
+            td
+                a(href="{{ rating.url }}")
+                    i.icon.icon-newtab
+                    | &nbsp;{{ rating.location }}
+            td
+                i.icon.icon-star3(ng-repeat="x in range(rating.value)")

@@ -9,3 +9,6 @@ angular.module 'app'
   $provide.decorator 'modalWindowDirective', ($delegate) ->
     $delegate[0].templateUrl = '/partials/bootstrap/modal/window'
     $delegate
+  $provide.decorator 'popoverPopupDirective', ($delegate) ->
+    $delegate[0].templateUrl = '/partials/bootstrap/popover/popover'
+    $delegate

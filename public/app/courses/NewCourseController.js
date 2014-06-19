@@ -11,9 +11,7 @@
       return CourseEditor.createCourse(newCourseData).then(function(course) {
         NotifierService.notify('New course created successfully');
         return $location.path("/courses/" + course._id);
-      }, function(error) {
-        return NotifierService.error(error);
-      });
+      }, NotifierService.error);
     };
   });
 

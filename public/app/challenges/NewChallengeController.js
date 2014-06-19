@@ -17,9 +17,7 @@
       return ChallengeEditor.createChallenge(newChallengeData).then(function(challenge) {
         NotifierService.notify('New challenge created successfully');
         return $location.path("/courses/" + courseId + "/challenge/" + challenge._id);
-      }, function(error) {
-        return NotifierService.error(error);
-      });
+      }, NotifierService.error);
     };
   });
 

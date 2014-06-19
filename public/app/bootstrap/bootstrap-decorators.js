@@ -9,8 +9,12 @@
       $delegate[0].templateUrl = '/partials/bootstrap/modal/backdrop';
       return $delegate;
     });
-    return $provide.decorator('modalWindowDirective', function($delegate) {
+    $provide.decorator('modalWindowDirective', function($delegate) {
       $delegate[0].templateUrl = '/partials/bootstrap/modal/window';
+      return $delegate;
+    });
+    return $provide.decorator('popoverPopupDirective', function($delegate) {
+      $delegate[0].templateUrl = '/partials/bootstrap/popover/popover';
       return $delegate;
     });
   });

@@ -18,4 +18,4 @@ angular.module 'app'
     .then (challenge) ->
       NotifierService.notify 'New challenge created successfully'
       $location.path "/courses/#{courseId}/challenge/#{challenge._id}"
-    , (error) -> NotifierService.error error
+    , NotifierService.error

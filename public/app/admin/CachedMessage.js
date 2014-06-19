@@ -44,7 +44,7 @@
         messageList[userId].$promise.then(function(collection) {
           return collection.findById(messageId, function(message) {
             return message.$remove({
-              messageId: messageId
+              id: messageId
             }).then(function() {
               return collection.remove(message) && $d.resolve();
             }, function(response) {

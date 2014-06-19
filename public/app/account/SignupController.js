@@ -12,9 +12,7 @@
       return AuthService.createUser(newUserData).then(function() {
         NotifierService.notify('User account created');
         return $location.path('/');
-      }, function(error) {
-        return NotifierService.error(error);
-      });
+      }, NotifierService.error);
     };
   });
 

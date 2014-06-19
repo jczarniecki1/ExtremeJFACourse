@@ -19,9 +19,7 @@
       }
       return AuthService.updateCurrentUser(newUserData).then(function() {
         return NotifierService.notify('Your user account has been updated');
-      }, function(error) {
-        return NotifierService.error(error);
-      });
+      }, NotifierService.error);
     };
   });
 

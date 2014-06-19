@@ -21,28 +21,16 @@
             answer: answer
           }).then(function() {
             return NotifierService.success("Answer send successfully");
-          }, function(error) {
-            return NotifierService.error(error);
-          });
+          }, NotifierService.error);
         }, function() {
           return NotifierService.error("Message not found");
         });
       });
     };
     return $scope["delete"] = function(id) {
-      return CachedMessage.remove(id);
-
-      /*.$promise.then (collection) ->
-        for message in collection
-          if message._id is id
-            message.remove({id}).then ->
-              NotifierService.info "Message removed successfully"
-            , (error) ->
-              NotifierService.error error
-          return
-      
-        NotifierService.error "Message not found"
-       */
+      return CachedMessage.remove(userId, id).then(function() {
+        return NotifierService.info("Message removed successfully");
+      }, NotifierService.error);
     };
   });
 

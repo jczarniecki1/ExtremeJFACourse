@@ -1564,10 +1564,24 @@ footer {
     display: inline;
     vertical-align: middle; }
 
-.users-list th {
+.simple-admin-page th {
   background-color: #f9f9f9; }
-.users-list.table > tbody > tr > td {
+.simple-admin-page .table > tbody > tr > td {
   vertical-align: middle; }
+  .simple-admin-page .table > tbody > tr > td:first-child {
+    width: 30px;
+    text-align: center; }
+.simple-admin-page .icon-calendar, .simple-admin-page .icon-clock {
+  font-size: 80%;
+  color: #999; }
+.simple-admin-page .date-width {
+  width: 150px; }
+.simple-admin-page .time-width {
+  width: 70px; }
+.simple-admin-page .popover {
+  max-width: 800px; }
+  .simple-admin-page .popover.left > .arrow:after {
+    border-left-color: rgba(0, 0, 0, 0.15); }
 
 .tags-wrapper .tags {
   display: inline-block;

@@ -14,7 +14,6 @@
             rating(ng-show="identity.isAuthenticated()", ng-model="currentRate", max="5", on-hover="hoverRating(value)" on-leave="leaveRating()", readonly="isReadonly")
             div(ng-show="userRate  > 0 && userRate <= 3")
                 .btn.btn-link(ng-click="openFeedbackModal()") What should we do better?
-                //- script(id="feedbackModal.html", type="text/ng-template")
 
             h4 Published on {{ course.published | date }}
 
