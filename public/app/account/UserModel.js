@@ -19,6 +19,9 @@
     UserResource.prototype.isAdmin = function() {
       return (this.roles != null) && __indexOf.call(this.roles, 'admin') >= 0;
     };
+    UserResource.prototype.isTester = function() {
+      return (this.roles != null) && (__indexOf.call(this.roles, 'lab') >= 0 || this.isAdmin());
+    };
     return UserResource;
   });
 

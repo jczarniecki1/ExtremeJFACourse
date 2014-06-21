@@ -14,6 +14,29 @@ exports.createCourse = (req, res, next) ->
     res.SendIfPossible course, err
 
 
+exports.publishCourse = (req, res, next) ->
+  id = req.params.id
+
+  Course.findOne({_id:id}).exec (err, course) ->
+    if err? then return res.SendError err
+
+    course.published = true
+    course.publishedDate = new Date()
+
+    course.save (err) ->
+      res.SendOkIfPossible err
+
+exports.unpublishCourse = (req, res, next) ->
+  id = req.params.id
+
+  Course.findOne({_id:id}).exec (err, course) ->
+    if err? then return res.SendError err
+
+    course.published = false
+
+    course.save (err) ->
+      res.SendOkIfPossible err
+
 exports.updateCourse = (req, res, next) ->
   id = req.params.id
   courseData = req.body
@@ -22,10 +45,9 @@ exports.updateCourse = (req, res, next) ->
     if err? then return res.SendError err
 
     course.title = courseData.title
+    course.description = courseData.description
     course.tags = courseData.tags
     course.featured = courseData.featured
-    course.published = courseData.published
-    course.readyToPublish = courseData.readyToPublish
     course.lastUpdate = new Date()
 
     course.save (err) ->

@@ -336,6 +336,30 @@ angular.module('dialogs.services',['ui.bootstrap.modal','dialogs.controllers'])
                 }, // end confirm
 
                 /**
+                 * Confirm dangerous action Dialog (cloned Confirm Dialog)
+                 *
+                 * @param	header 	string
+                 * @param	msg 	string
+                 * @param	opts	object
+                 */
+                danger : function(header,msg,opts){
+                    opts = _setOpts(opts);
+
+                    return $modal.open({
+                        templateUrl : '/dialogs/danger.html',
+                        controller : 'confirmDialogCtrl',
+                        backdrop: opts.bd,
+                        keyboard: opts.kb,
+                        windowClass: opts.wc,
+                        size: opts.ws,
+                        resolve : {
+                            header : function() { return angular.copy(header); },
+                            msg : function() { return angular.copy(msg); }
+                        }
+                    }); // end modal.open
+                }, // end danger
+
+                /**
                  * Create Custom Dialog
                  *
                  * @param	url 	string
@@ -385,4 +409,5 @@ angular.module('dialogs.main',['dialogs.services','ngSanitize']) // requires ang
         $templateCache.put('/dialogs/wait.html','<div class="modal-header dialog-header-wait"><h4 class="modal-title"><span class="glyphicon glyphicon-time"></span> '+startSym+'"DIALOGS_PLEASE_WAIT" | translate'+endSym+'</h4></div><div class="modal-body"><p ng-bind-html="msg"></p><div class="progress progress-striped active"><div class="progress-bar progress-bar-info" ng-style="getProgress()"></div><span class="sr-only">'+startSym+'progress'+endSym+''+startSym+'"DIALOGS_PERCENT_COMPLETE" | translate'+endSym+'</span></div></div>');
         $templateCache.put('/dialogs/notify.html','<div class="modal-header dialog-header-notify"><button type="button" class="close" ng-click="close()" class="pull-right">&times;</button><h4 class="modal-title text-info"><span class="glyphicon glyphicon-info-sign"></span> '+startSym+'header'+endSym+'</h4></div><div class="modal-body text-info" ng-bind-html="msg"></div><div class="modal-footer"><button type="button" class="btn btn-primary" ng-click="close()">'+startSym+'"DIALOGS_OK" | translate'+endSym+'</button></div>');
         $templateCache.put('/dialogs/confirm.html','<div class="modal-header dialog-header-confirm"><button type="button" class="close" ng-click="no()">&times;</button><h4 class="modal-title"><span class="glyphicon glyphicon-check"></span> '+startSym+'header'+endSym+'</h4></div><div class="modal-body" ng-bind-html="msg"></div><div class="modal-footer"><button type="button" class="btn btn-default" ng-click="yes()">'+startSym+'"DIALOGS_YES" | translate'+endSym+'</button><button type="button" class="btn btn-primary" ng-click="no()">'+startSym+'"DIALOGS_NO" | translate'+endSym+'</button></div>');
+        $templateCache.put('/dialogs/danger.html','<div class="modal-header dialog-header-error"><button type="button" class="close" ng-click="no()">&times;</button><h4 class="modal-title"><span class="glyphicon glyphicon-check"></span> '+startSym+'header'+endSym+'</h4></div><div class="modal-body" ng-bind-html="msg"></div><div class="modal-footer"><button type="button" class="btn btn-default" ng-click="yes()">'+startSym+'"DIALOGS_YES" | translate'+endSym+'</button><button type="button" class="btn btn-primary" ng-click="no()">'+startSym+'"DIALOGS_NO" | translate'+endSym+'</button></div>');
     }]); // end run / dialogs

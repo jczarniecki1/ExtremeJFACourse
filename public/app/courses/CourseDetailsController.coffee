@@ -4,15 +4,33 @@ angular.module 'app'
   existingRating = null
   savingRating = null
 
-  if IdentityService.currentUser?.isAdmin()
 
-    $scope.delete = ->
+  #if IdentityService.currentUser?.isAdmin()
+
+  $scope.publish = ->
+    $dialogs.confirm 'Confirm', 'Are you sure you want to publish this course?'
+    .result.then ->
+      $scope.course.$publish({id:$routeParams.id})
+      .then ->
+        $scope.course.published = true
+        NotifierService.notify "Course was published"
+      , NotifierService.error
+
+  $scope.unpublish = ->
+    $scope.course.$unpublish({id:$routeParams.id})
+    .then ->
+      $scope.course.published = false
+      NotifierService.info "Course was unpublished"
+    , NotifierService.error
+
+  $scope.delete = ->
+    $dialogs.danger 'Confirm', 'Are you sure you want to remove this course entirely?'
+    .result.then ->
       CachedCourse.remove $routeParams.id
       .then ->
         NotifierService.notify "Course removed successfully"
         $location.path "/"
-      , (error) ->
-        NotifierService.error error
+      , NotifierService.error
 
   CachedCourse.query().$promise
   .then (collection) ->

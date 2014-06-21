@@ -7,4 +7,7 @@ angular.module 'app'
   UserResource::isAdmin = ->
     @roles? and 'admin' in @roles
 
+  UserResource::isTester = ->
+    @roles? and ('lab' in @roles or @isAdmin())
+
   UserResource

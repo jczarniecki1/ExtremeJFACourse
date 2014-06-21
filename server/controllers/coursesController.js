@@ -22,6 +22,39 @@
     });
   };
 
+  exports.publishCourse = function(req, res, next) {
+    var id;
+    id = req.params.id;
+    return Course.findOne({
+      _id: id
+    }).exec(function(err, course) {
+      if (err != null) {
+        return res.SendError(err);
+      }
+      course.published = true;
+      course.publishedDate = new Date();
+      return course.save(function(err) {
+        return res.SendOkIfPossible(err);
+      });
+    });
+  };
+
+  exports.unpublishCourse = function(req, res, next) {
+    var id;
+    id = req.params.id;
+    return Course.findOne({
+      _id: id
+    }).exec(function(err, course) {
+      if (err != null) {
+        return res.SendError(err);
+      }
+      course.published = false;
+      return course.save(function(err) {
+        return res.SendOkIfPossible(err);
+      });
+    });
+  };
+
   exports.updateCourse = function(req, res, next) {
     var courseData, id;
     id = req.params.id;
@@ -33,10 +66,9 @@
         return res.SendError(err);
       }
       course.title = courseData.title;
+      course.description = courseData.description;
       course.tags = courseData.tags;
       course.featured = courseData.featured;
-      course.published = courseData.published;
-      course.readyToPublish = courseData.readyToPublish;
       course.lastUpdate = new Date();
       return course.save(function(err) {
         return res.SendOkIfPossible(err);

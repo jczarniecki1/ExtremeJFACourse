@@ -26,6 +26,8 @@
     app.get('/api/courses', coursesController.getCourses);
     app.post('/api/courses', adminOnly, coursesController.createCourse);
     app.put('/api/courses', adminOnly, coursesController.updateCourse);
+    app.put('/api/courses/:id/publish', adminOnly, coursesController.publishCourse);
+    app.put('/api/courses/:id/unpublish', adminOnly, coursesController.unpublishCourse);
     app["delete"]('/api/courses/:id', adminOnly, coursesController.removeCourse);
     app.get('/api/ratings', checkLogin, ratingsController.getRatings);
     app.post('/api/ratings', checkLogin, ratingsController.addRating);

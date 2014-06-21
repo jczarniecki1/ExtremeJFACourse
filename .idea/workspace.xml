@@ -5,35 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="Walking skeleton">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/main/ready-courses.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/main/unpublished-courses.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Course.coffee" afterPath="$PROJECT_DIR$/server/models/Course.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Course.js" afterPath="$PROJECT_DIR$/server/models/Course.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/Course.map" afterPath="$PROJECT_DIR$/server/models/Course.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/main/MainController.coffee" afterPath="$PROJECT_DIR$/public/app/main/MainController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/main/MainController.js" afterPath="$PROJECT_DIR$/public/app/main/MainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/main/MainController.map" afterPath="$PROJECT_DIR$/public/app/main/MainController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/NewCourseController.coffee" afterPath="$PROJECT_DIR$/public/app/courses/NewCourseController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/NewCourseController.js" afterPath="$PROJECT_DIR$/public/app/courses/NewCourseController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/NewCourseController.map" afterPath="$PROJECT_DIR$/public/app/courses/NewCourseController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sass/ui/_content.scss" afterPath="$PROJECT_DIR$/public/sass/ui/_content.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/sass/ui/_header.scss" afterPath="$PROJECT_DIR$/public/sass/ui/_header.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/course-list.jade" afterPath="$PROJECT_DIR$/public/app/courses/course-list.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.js" afterPath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.map" afterPath="$PROJECT_DIR$/public/app/courses/CourseDetailsController.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseModel.coffee" afterPath="$PROJECT_DIR$/public/app/courses/CourseModel.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseModel.js" afterPath="$PROJECT_DIR$/public/app/courses/CourseModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/CourseModel.map" afterPath="$PROJECT_DIR$/public/app/courses/CourseModel.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/UserModel.coffee" afterPath="$PROJECT_DIR$/public/app/account/UserModel.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/UserModel.js" afterPath="$PROJECT_DIR$/public/app/account/UserModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/account/UserModel.map" afterPath="$PROJECT_DIR$/public/app/account/UserModel.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/course-details.jade" afterPath="$PROJECT_DIR$/public/app/courses/course-details.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/coursesController.coffee" afterPath="$PROJECT_DIR$/server/controllers/coursesController.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/coursesController.js" afterPath="$PROJECT_DIR$/server/controllers/coursesController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/coursesController.map" afterPath="$PROJECT_DIR$/server/controllers/coursesController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/main/featured-courses.jade" afterPath="$PROJECT_DIR$/public/app/main/featured-courses.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/layout.css" afterPath="$PROJECT_DIR$/public/css/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/bootstrap/dialogs.js" afterPath="$PROJECT_DIR$/public/app/bootstrap/dialogs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/main/main.jade" afterPath="$PROJECT_DIR$/public/app/main/main.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/messagesController.coffee" afterPath="$PROJECT_DIR$/server/controllers/messagesController.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/messagesController.js" afterPath="$PROJECT_DIR$/server/controllers/messagesController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/messagesController.map" afterPath="$PROJECT_DIR$/server/controllers/messagesController.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/new-course.jade" afterPath="$PROJECT_DIR$/public/app/courses/new-course.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/main/new-courses.jade" afterPath="$PROJECT_DIR$/public/app/main/new-courses.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/routes.coffee" afterPath="$PROJECT_DIR$/server/config/routes.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/routes.js" afterPath="$PROJECT_DIR$/server/config/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/routes.map" afterPath="$PROJECT_DIR$/server/config/routes.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExtremeJFACourse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,38 +48,8 @@
       <file leaf-file-name="Course.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/models/Course.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="1152">
-              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new-course.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/courses/new-course.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
-              <caret line="16" column="89" selection-start-line="16" selection-start-column="89" selection-end-line="16" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new-courses.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/main/new-courses.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="192">
-              <caret line="3" column="91" selection-start-line="3" selection-start-column="91" selection-end-line="3" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/main/main.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="1152">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -99,28 +58,18 @@
       <file leaf-file-name="course-details.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/courses/course-details.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
+              <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserModel.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/account/UserModel.coffee">
+      <file leaf-file-name="CourseDetailsController.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainController.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/main/MainController.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="160">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1744">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -136,21 +85,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IdentityService.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/account/IdentityService.coffee">
+      <file leaf-file-name="dialogs.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/bootstrap/dialogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5122" max-vertical-offset="6704">
+              <caret line="358" column="41" selection-start-line="358" selection-start-column="41" selection-end-line="358" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="featured-courses.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/main/featured-courses.jade">
+      <file leaf-file-name="ratingsController.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/controllers/ratingsController.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="176">
-              <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
+              <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CachedCourse.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/courses/CachedCourse.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/config/routes.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="896">
+              <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coursesController.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/controllers/coursesController.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1120">
+              <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseModel.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/courses/CourseModel.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="208">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -169,8 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/sass/layout.scss" />
-        <option value="$PROJECT_DIR$/public/app/common/FeedbackModalController.coffee" />
         <option value="$PROJECT_DIR$/public/app/bootstrap/modal/feedbackModal.jade" />
         <option value="$PROJECT_DIR$/public/app/account/navbar-login.html" />
         <option value="$PROJECT_DIR$/public/app/account/navbar-login.jade" />
@@ -189,13 +176,11 @@
         <option value="$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.coffee" />
         <option value="$PROJECT_DIR$/server/controllers/ratingsController.coffee" />
         <option value="$PROJECT_DIR$/public/app/admin/UserRatingsController.coffee" />
-        <option value="$PROJECT_DIR$/public/app/courses/course-details.jade" />
         <option value="$PROJECT_DIR$/server/models/Rating.coffee" />
         <option value="$PROJECT_DIR$/public/app/common/Filters.coffee" />
         <option value="$PROJECT_DIR$/public/app/admin/user-ratings.jade" />
         <option value="$PROJECT_DIR$/public/app/admin/user-list.jade" />
         <option value="$PROJECT_DIR$/public/app/admin/user-messages.jade" />
-        <option value="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" />
         <option value="$PROJECT_DIR$/public/sass/ui/_dialogs.scss" />
         <option value="$PROJECT_DIR$/public/sass/ui/_footer.scss" />
         <option value="$PROJECT_DIR$/public/sass/ui/_forms.scss" />
@@ -204,8 +189,6 @@
         <option value="$PROJECT_DIR$/init_scripts/ubuntu_installation.sh" />
         <option value="$PROJECT_DIR$/.scss-lint.yml" />
         <option value="$PROJECT_DIR$/server/controllers/messagesController.coffee" />
-        <option value="$PROJECT_DIR$/server/config/routes.coffee" />
-        <option value="$PROJECT_DIR$/server/controllers/coursesController.coffee" />
         <option value="$PROJECT_DIR$/public/sass/ui/_header.scss" />
         <option value="$PROJECT_DIR$/public/app/courses/new-course.jade" />
         <option value="$PROJECT_DIR$/public/app/courses/NewCourseController.coffee" />
@@ -214,11 +197,17 @@
         <option value="$PROJECT_DIR$/public/app/courses/course-list.jade" />
         <option value="$PROJECT_DIR$/public/app/main/unpublished-courses.jade" />
         <option value="$PROJECT_DIR$/public/app/main/featured-courses.jade" />
-        <option value="$PROJECT_DIR$/server/models/Course.coffee" />
         <option value="$PROJECT_DIR$/public/app/main/new-courses.jade" />
+        <option value="$PROJECT_DIR$/public/app/main/MainController.coffee" />
         <option value="$PROJECT_DIR$/public/app/account/UserModel.coffee" />
         <option value="$PROJECT_DIR$/public/app/main/main.jade" />
-        <option value="$PROJECT_DIR$/public/app/main/MainController.coffee" />
+        <option value="$PROJECT_DIR$/public/app/courses/CourseModel.coffee" />
+        <option value="$PROJECT_DIR$/server/config/routes.coffee" />
+        <option value="$PROJECT_DIR$/server/models/Course.coffee" />
+        <option value="$PROJECT_DIR$/server/controllers/coursesController.coffee" />
+        <option value="$PROJECT_DIR$/public/app/courses/course-details.jade" />
+        <option value="$PROJECT_DIR$/public/app/bootstrap/dialogs.js" />
+        <option value="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" />
         <option value="$PROJECT_DIR$/server/includes/scripts.jade" />
       </list>
     </option>
@@ -589,56 +578,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/vendor/angular-bootstrap/ui-bootstrap-tpls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16184351" vertical-offset="43273" max-vertical-offset="65952">
-          <caret line="2714" column="25" selection-start-line="2714" selection-start-column="13" selection-end-line="2714" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/bootstrap/popover/popover.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032955717" vertical-offset="0" max-vertical-offset="971">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/bootstrap/bootstrap-decorators.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18125644" vertical-offset="0" max-vertical-offset="971">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/admin/CachedMessage.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18125644" vertical-offset="0" max-vertical-offset="971">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/admin/user-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="96">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/User.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1472">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/models/Challenge.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="971">
@@ -717,24 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11534501" vertical-offset="0" max-vertical-offset="971">
           <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1456">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <marker date="1403345683695" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/ratingsController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
-          <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="23" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -859,22 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/config/routes.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864">
-          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/coursesController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="768">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/courses/NewCourseController.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="368">
@@ -923,6 +828,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/main/MainController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.065911435" vertical-offset="0" max-vertical-offset="971">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/main/main.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16701461" vertical-offset="0" max-vertical-offset="958">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/main/featured-courses.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="176">
@@ -931,66 +852,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/Course.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="194" max-vertical-offset="1152">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/courses/new-course.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
-          <caret line="16" column="89" selection-start-line="16" selection-start-column="89" selection-end-line="16" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/main/new-courses.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="192">
-          <caret line="3" column="91" selection-start-line="3" selection-start-column="91" selection-end-line="3" selection-end-column="91" />
+        <state vertical-scroll-proportion="0.16701461" vertical-offset="0" max-vertical-offset="958">
+          <caret line="10" column="79" selection-start-line="10" selection-start-column="79" selection-end-line="10" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/account/IdentityService.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384">
+        <state vertical-scroll-proportion="0.016477859" vertical-offset="0" max-vertical-offset="971">
           <caret line="1" column="25" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/main/new-courses.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.049433574" vertical-offset="0" max-vertical-offset="971">
+          <caret line="3" column="91" selection-start-line="3" selection-start-column="91" selection-end-line="3" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/admin/UserMessagesController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="971">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/account/UserModel.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/account/AuthService.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="181" max-vertical-offset="1152">
+          <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/account/ProfileController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/Course.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="1152">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/ratingsController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
+          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/coursesController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1120">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/courses/CourseModel.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="208">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/courses/CachedCourse.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="528">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/courses/course-details.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
+          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/main/main.jade">
+    <entry file="file://$PROJECT_DIR$/server/config/routes.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="896">
+          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/main/MainController.coffee">
+    <entry file="file://$PROJECT_DIR$/public/app/bootstrap/dialogs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="160">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5122" max-vertical-offset="6704">
+          <caret line="358" column="41" selection-start-line="358" selection-start-column="41" selection-end-line="358" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1744">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding />
         </state>
       </provider>
