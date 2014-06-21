@@ -19,8 +19,8 @@
     }
 
     .navbar-brand {
+        @include inline-block();
         color: $global-headerLink-color;
-        display: inline-block;
         float: left;
         margin-right: 15px;
         margin-top: -10px;
@@ -71,18 +71,18 @@
     }
 
     .navbar-collapse {
+        @include inline-block();
         border: none;
-        display: inline-block;
         float: left;
         height: $header-height;
     }
 
     .navbar-nav > li {
-        display: inline-block;
+        @include inline-block();
 
         & > a {
             color: $global-headerLink-color;
-            text-shadow: 0 1px 5px #000  !important;;
+            @include box-shadow(0 1px 5px #000  !important);
         }
     }
 }

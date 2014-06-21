@@ -1,6 +1,9 @@
 exclude: './public/sass/ui/_fonts.scss'
 
 linters:
+  Compass::*:
+    enabled: true
+
   BorderZero:
     enabled: false
 

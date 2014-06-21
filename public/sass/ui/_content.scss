@@ -18,7 +18,7 @@
 
     img {
         @include border-radius(50%);
-        display: inline-block;
+        @include inline-block();
     }
 }
 
@@ -78,9 +78,8 @@
 .tags-wrapper {
 
     .tags {
-        display: inline-block;
+        @include inline-block(top);
         margin-top: -2px;
-        vertical-align: top;
 
         .label {
             margin-right: 5px;

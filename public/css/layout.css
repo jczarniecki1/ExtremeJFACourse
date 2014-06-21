@@ -1388,8 +1388,12 @@ a:focus {
 .navbar-header {
   height: 50px; }
   .navbar-header .navbar-brand {
-    color: #cecece;
     display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline;
+    color: #cecece;
     float: left;
     margin-right: 15px;
     margin-top: -10px;
@@ -1431,15 +1435,25 @@ a:focus {
       background-image: -webkit-linear-gradient(315deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%);
       background-image: linear-gradient(135deg, rgba(0, 0, 0, 0) 58%, #000000 58%, #ffffff 60%, #000000 60%, rgba(0, 0, 0, 0) 66%); }
   .navbar-header .navbar-collapse {
-    border: none;
     display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline;
+    border: none;
     float: left;
     height: 50px; }
   .navbar-header .navbar-nav > li {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline; }
     .navbar-header .navbar-nav > li > a {
       color: #cecece;
-      text-shadow: 0 1px 5px #000  !important; }
+      -moz-box-shadow: 0 1px 5px black !important;
+      -webkit-box-shadow: 0 1px 5px black !important;
+      box-shadow: 0 1px 5px black !important; }
 
 .sub-header {
   border-bottom: 1px solid #eee;
@@ -1536,7 +1550,11 @@ footer {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    *zoom: 1;
+    *display: inline; }
 
 .thick-outline {
   -moz-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2);
@@ -1574,8 +1592,11 @@ footer {
 
 .tags-wrapper .tags {
   display: inline-block;
-  margin-top: -2px;
-  vertical-align: top; }
+  vertical-align: top;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-top: -2px; }
   .tags-wrapper .tags .label {
     margin-right: 5px; }
 
