@@ -1,0 +1,8 @@
+.panel.panel-primary
+    .panel-heading.text-center Unpublished &nbsp;
+        .label.label-info Not visible
+    .panel-body
+        .row(ng-repeat="course in courses | orderBy:'publishDate':false | filter:{ published:false, readyToTest: false }")
+            .col-md-3 {{ course.publishDate | date:'MMMM d' }}
+            .col-md-9
+                a(href="/courses/{{ course._id }}") {{ course.title }}

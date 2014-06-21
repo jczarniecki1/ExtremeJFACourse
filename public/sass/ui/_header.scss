@@ -82,7 +82,7 @@
 
         & > a {
             color: $global-headerLink-color;
-            @include box-shadow(0 1px 5px #000  !important);
+            @include text-shadow(0 1px 5px #000 !important);
         }
     }
 }

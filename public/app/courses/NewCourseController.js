@@ -5,8 +5,11 @@
       var newCourseData;
       newCourseData = {
         title: $scope.title,
+        description: $scope.description,
         featured: $scope.featured,
-        tags: ($scope.tags || "").split(',')
+        tags: ($scope.tags || "").replace(/[^a-zA-Z]*/, ' ').split(' ').slice(1).filter(function(x) {
+          return x.length > 0;
+        })
       };
       return CourseEditor.createCourse(newCourseData).then(function(course) {
         NotifierService.notify('New course created successfully');

@@ -25,13 +25,13 @@
     app["delete"]('/api/users/:id', adminOnly, usersController.removeUser);
     app.get('/api/courses', coursesController.getCourses);
     app.post('/api/courses', adminOnly, coursesController.createCourse);
+    app.put('/api/courses', adminOnly, coursesController.updateCourse);
     app["delete"]('/api/courses/:id', adminOnly, coursesController.removeCourse);
     app.get('/api/ratings', checkLogin, ratingsController.getRatings);
     app.post('/api/ratings', checkLogin, ratingsController.addRating);
     app.put('/api/ratings', checkLogin, ratingsController.updateRating);
     app.post('/api/feedback', checkLogin, messagesController.saveFeedback);
     app.get('/api/user/:userId/messages', adminOnly, messagesController.getMessages);
-    app.post('/api/user/:userId/messages', adminOnly, messagesController.createMessage);
     app["delete"]('/api/user/:userId/messages/:id', adminOnly, messagesController.removeMessage);
     app.get('/api/courses/:courseId/challenges', challengesController.getChallenges);
     app.post('/api/courses/:courseId/challenges', adminOnly, challengesController.createChallenge);

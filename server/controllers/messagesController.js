@@ -25,14 +25,6 @@
     });
   };
 
-  exports.createMessage = function(req, res, next) {
-    var messageData;
-    messageData = req.body;
-    return Message.create(messageData, function(err, message) {
-      return res.SendIfPossible(message, err);
-    });
-  };
-
   exports.saveFeedback = function(req, res, next) {
     var messageData;
     messageData = req.body;

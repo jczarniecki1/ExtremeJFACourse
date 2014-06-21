@@ -12,7 +12,7 @@
                 th Title
                 th Publish Date
         tbody
-            tr(ng-repeat="course in courses | filter:searchText | orderBy:sortOrder")
+            tr(ng-repeat="course in courses | filter:{ published:true } | filter:searchText | orderBy:sortOrder")
                 td
                     a(href="/courses/{{ course._id }}") {{ course.title }}
-                td {{ course.published | date }}
+                td {{ course.publishDate | date }}

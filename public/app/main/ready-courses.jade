@@ -1,0 +1,8 @@
+.panel.panel-primary
+    .panel-heading.text-center Ready for test &nbsp;
+        .label.label-warning Visible for testers
+    .panel-body
+        .row(ng-repeat="course in courses | orderBy:'publishDate':false | filter:{ readyToTest:true }")
+            .col-md-3 {{ course.publishDate | date:'MMMM d' }}
+            .col-md-9
+                a(href="/courses/{{ course._id }}") {{ course.title }}

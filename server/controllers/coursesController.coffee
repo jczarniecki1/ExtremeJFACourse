@@ -9,10 +9,27 @@ exports.getCourses = (req, res) ->
 
 exports.createCourse = (req, res, next) ->
   courseData = req.body
-  courseData.published = new Date()
 
   Course.create courseData, (err, course) ->
     res.SendIfPossible course, err
+
+
+exports.updateCourse = (req, res, next) ->
+  id = req.params.id
+  courseData = req.body
+
+  Course.findOne({_id:id}).exec (err, course) ->
+    if err? then return res.SendError err
+
+    course.title = courseData.title
+    course.tags = courseData.tags
+    course.featured = courseData.featured
+    course.published = courseData.published
+    course.readyToPublish = courseData.readyToPublish
+    course.lastUpdate = new Date()
+
+    course.save (err) ->
+      res.SendOkIfPossible err
 
 
 exports.removeCourse = (req, res, next) ->

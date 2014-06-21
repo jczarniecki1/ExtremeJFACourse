@@ -17,9 +17,30 @@
   exports.createCourse = function(req, res, next) {
     var courseData;
     courseData = req.body;
-    courseData.published = new Date();
     return Course.create(courseData, function(err, course) {
       return res.SendIfPossible(course, err);
+    });
+  };
+
+  exports.updateCourse = function(req, res, next) {
+    var courseData, id;
+    id = req.params.id;
+    courseData = req.body;
+    return Course.findOne({
+      _id: id
+    }).exec(function(err, course) {
+      if (err != null) {
+        return res.SendError(err);
+      }
+      course.title = courseData.title;
+      course.tags = courseData.tags;
+      course.featured = courseData.featured;
+      course.published = courseData.published;
+      course.readyToPublish = courseData.readyToPublish;
+      course.lastUpdate = new Date();
+      return course.save(function(err) {
+        return res.SendOkIfPossible(err);
+      });
     });
   };
 

@@ -15,13 +15,6 @@ exports.getMessages = (req, res) ->
     res.SendIfPossible collection, err
 
 
-exports.createMessage = (req, res, next) ->
-  messageData = req.body
-
-  Message.create messageData, (err, message) ->
-    res.SendIfPossible message, err
-
-
 exports.saveFeedback = (req, res, next) ->
   messageData = req.body
   messageData.userId = req.user._id

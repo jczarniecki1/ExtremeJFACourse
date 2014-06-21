@@ -1451,9 +1451,8 @@ a:focus {
     *display: inline; }
     .navbar-header .navbar-nav > li > a {
       color: #cecece;
-      -moz-box-shadow: 0 1px 5px black !important;
-      -webkit-box-shadow: 0 1px 5px black !important;
-      box-shadow: 0 1px 5px black !important; }
+      text-shadow: 0 1px 5px !important;
+      text-shadow: 0 1px 5px black !important; }
 
 .sub-header {
   border-bottom: 1px solid #eee;
@@ -1589,6 +1588,16 @@ footer {
   max-width: 800px; }
   .simple-admin-page .popover.left > .arrow:after {
     border-left-color: rgba(0, 0, 0, 0.15); }
+
+.panel-heading .label {
+  margin-top: -4px;
+  padding-bottom: .4em;
+  padding-top: .4em;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline; }
 
 .tags-wrapper .tags {
   display: inline-block;

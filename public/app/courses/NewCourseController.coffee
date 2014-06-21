@@ -4,8 +4,12 @@ angular.module 'app'
 
     newCourseData =
       title:    $scope.title
+      description: $scope.description
       featured: $scope.featured
-      tags:     ($scope.tags or "").split ','
+      tags:     ($scope.tags or "")
+        .replace(/[^a-zA-Z]*/,' ')
+        .split(' ')[1..]
+        .filter (x)-> x.length > 0
 
     CourseEditor.createCourse newCourseData
     .then (course) ->

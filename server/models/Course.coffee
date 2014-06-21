@@ -6,13 +6,31 @@ courseSchema = mongoose.Schema
     type:     String
     required: '{PATH} is required'
 
+  description:
+    type:     String
+
   featured:
     type:     Boolean
-    required: '{PATH} is required'
+    default:  false
+
+  created:
+    type:     Date
+    default:  new Date()
+
+  lastUpdate:
+    type:     Date
+    default:  new Date()
 
   published:
+    type:     Boolean
+    default:  false
+
+  readyToTest:
+    type:     Boolean
+    default:  false
+
+  publishDate:
     type:     Date
-    required: '{PATH} is required'
 
   tags:
     type:     [String]
@@ -40,7 +58,9 @@ Course = mongoose.model 'Course', courseSchema
 exports.createDefaultCourses = ->
   Course.find({}).exec (err, collection) ->
     if collection.length is 0
-      Course.create {title: 'C# for Humanists', featured: true, published: new Date('4/1/2014'), tags: ['C#']}
-      Course.create {title: 'C# for Pacifists', featured: false, published: new Date('5/11/2014'), tags: ['C#','Coding']}
-      Course.create {title: 'Java 8 - Introducing Lambda Expressions', featured: true, published: new Date('5/12/2014'), tags: ['Java']}
-      Course.create {title: 'Writing 80% less code with Angular.js', featured: false, published: new Date('5/14/2014'), tags: ['JavaScript','Coding']}
+      Course.create {title: 'C# for Humanists', featured: true, publishDate: new Date('4/1/2014'), published: true, tags: ['C#']}
+      Course.create {title: 'C# for Pacifists', publishDate: new Date('5/11/2014'), published: true, tags: ['C#','Coding']}
+      Course.create {title: 'Java 8 - Introducing Lambda Expressions', featured: true, publishDate: new Date('5/12/2014'), published: true, tags: ['Java']}
+      Course.create {title: 'Writing 80% less code with Angular.js', publishDate: new Date('5/14/2014'), published: true, tags: ['JavaScript','Coding']}
+      Course.create {title: 'C# for Pacifists - part 2', publishDate: new Date('6/30/2014'), readyToTest: true, tags: ['JavaScript','Coding']}
+      Course.create {title: 'C# for Humanists - part 2', featured: true, publishDate: new Date('6/26/2014'), tags: ['C#']}

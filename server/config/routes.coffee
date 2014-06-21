@@ -17,6 +17,7 @@ module.exports = (app)->
 
   app.get    '/api/courses', coursesController.getCourses
   app.post   '/api/courses', adminOnly, coursesController.createCourse
+  app.put    '/api/courses', adminOnly, coursesController.updateCourse
   app.delete '/api/courses/:id', adminOnly, coursesController.removeCourse
 
   app.get    '/api/ratings', checkLogin, ratingsController.getRatings
@@ -26,8 +27,6 @@ module.exports = (app)->
   app.post   '/api/feedback', checkLogin, messagesController.saveFeedback
 
   app.get    '/api/user/:userId/messages', adminOnly, messagesController.getMessages
-  app.post   '/api/user/:userId/messages', adminOnly, messagesController.createMessage
-  #app.post   '/api/messages', adminOnly, messagesController.answerMessage
   app.delete '/api/user/:userId/messages/:id', adminOnly, messagesController.removeMessage
 
   app.get    '/api/courses/:courseId/challenges', challengesController.getChallenges
