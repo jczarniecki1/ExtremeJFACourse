@@ -51,10 +51,23 @@
   exports.removeMessage = function(req, res, next) {
     var id;
     id = req.params.id;
-    return Message.remove({
+    return Message.findOne({
       _id: id
-    }).exec(function(err) {
-      return res.SendOkIfPossible(err);
+    }).exec(function(err, message) {
+      return User.findOne({
+        _id: message.userId
+      }).exec(function(err, user) {
+        if (err != null) {
+          return res.SendError("Cannot find owner of this message");
+        }
+        user.allMessages--;
+        user.save();
+        return Message.remove({
+          _id: id
+        }).exec(function(err) {
+          return res.SendOkIfPossible(err);
+        });
+      });
     });
   };
 

@@ -23,15 +23,15 @@
 }
 
 .thick-outline {
-    @include box-shadow(0 0 0 10px rgba(0,0,0,0.2));
+    @include box-shadow(0 0 0 10px rgba(0,0,0,.2));
 }
 
 .about-tech {
     margin-top: 20px;
 
     & > div {
-        line-height: 100px;
         height: 130px;
+        line-height: 100px;
     }
 
     img {
@@ -44,24 +44,29 @@
     th {
         background-color: #f9f9f9;
     }
-    .table>tbody>tr>td {
+
+    .table td {
         vertical-align: middle;
 
         &:first-child {
-            width: 30px;
             text-align: center;
+            width: 30px;
         }
     }
-    .icon-calendar, .icon-clock {
-        font-size: 80%;
+
+    .icon-calendar,
+    .icon-clock {
         color: #999;
+        font-size: 80%;
     }
 
     .date-width { width: 150px; }
+
     .time-width { width: 70px; }
 
     .popover {
         max-width: 800px;
+
         &.left > .arrow:after {
             border-left-color: rgba(0,0,0,.15);
         }
@@ -71,10 +76,12 @@
 // Course Details
 
 .tags-wrapper {
+
     .tags {
         display: inline-block;
         margin-top: -2px;
         vertical-align: top;
+
         .label {
             margin-right: 5px;
         }
@@ -82,26 +89,28 @@
 }
 
 .star-rating {
+
     .rating {
         color: rgba(200,200,0,.7);
     }
+
     .btn-link {
         border: 0;
-        padding: 0;
         margin-top: -10px;
+        padding: 0;
     }
 }
 
 // Challenges
 
 .back {
+    display: block;
     line-height: 20px;
     margin-bottom: 10px;
     margin-left: 15px;
-    display: block;
 
     .icon {
-        color: #428BCA;
+        color: #428bca;
         margin-right: 5px;
     }
 }

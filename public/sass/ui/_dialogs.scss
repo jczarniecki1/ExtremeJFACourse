@@ -1,19 +1,20 @@
-/* Custom dialog/modal headers */
+// Custom dialog/modal headers
 
-.dialog-header-error    { background-color: #d2322d; }
-.dialog-header-wait     { background-color: #428bca; }
-.dialog-header-notify   { background-color: #eeeeee; }
-.dialog-header-confirm  { background-color: #333333; }
+.dialog-header-error   { background-color: #d2322d; }
+.dialog-header-wait    { background-color: #428bca; }
+.dialog-header-notify  { background-color: #eee; }
+.dialog-header-confirm { background-color: #333; }
 
 .dialog-header-error,
 .dialog-header-wait,
 .dialog-header-confirm {
-    span, h4 {
-        color: #ffffff;
+    span,
+    h4 {
+        color: #fff;
     }
 }
 
-/* Ease Display */
+// Ease Display
 
 .pad { padding: 25px; }
 

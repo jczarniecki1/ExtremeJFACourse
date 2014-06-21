@@ -37,8 +37,15 @@ exports.saveFeedback = (req, res, next) ->
 
 exports.removeMessage = (req, res, next) ->
   id = req.params.id
+  Message.findOne({_id:id}).exec (err, message) ->
 
-  Message.remove({_id:id}).exec (err) ->
-    res.SendOkIfPossible err
+    User.findOne({_id:message.userId}).exec (err, user) ->
+      if err? then return res.SendError "Cannot find owner of this message"
+
+      user.allMessages--
+      user.save()
+
+      Message.remove({_id:id}).exec (err) ->
+        res.SendOkIfPossible err
 
 # TODO: answerMessage

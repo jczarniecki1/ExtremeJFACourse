@@ -1,0 +1,27 @@
+exclude: './public/sass/ui/_fonts.scss'
+
+linters:
+  BorderZero:
+    enabled: false
+
+  Indentation:
+    enabled: true
+    width: 4
+
+  SelectorDepth:
+    max_depth: 5
+
+  SpaceAfterComma:
+    enabled: false
+
+  SpaceBeforeBrace:
+    allow_single_line_padding: true
+
+  FinalNewline:
+    enabled: false
+
+  NameFormat:
+    enabled: false
+
+  StringQuotes:
+    enabled: false

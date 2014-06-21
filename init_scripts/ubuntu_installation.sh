@@ -27,6 +27,10 @@ sudo npm install -g coffeelint
 #sudo gem install compass
 #sudo gem install --version '~> 0.9' rb-inotify
 
+# ScssLint
+#sudo gem install scss-lint
+#scss-lint ./public/sass/**/*.scss
+
 ## Listeners (not necessary if using WebStorm)
 #sass --watch --scss --compass ./public/sass/ ./public/css/
 #coffee -w -o ./server/ ./server/ &
