@@ -19,7 +19,7 @@
 
       NotifierService.prototype.error = function(error) {
         var message, _ref;
-        message = (error != null ? (_ref = error.data) != null ? _ref.reason : void 0 : void 0) || 'Unknown error';
+        message = (error != null ? (_ref = error.data) != null ? _ref.reason : void 0 : void 0) || error || 'Unknown error';
         Toastr.error(message);
         return console.error(message);
       };

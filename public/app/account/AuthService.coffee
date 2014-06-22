@@ -11,10 +11,10 @@ angular.module 'app'
           user = new UserModel()
           angular.extend user, response.data.user
           IdentityService.currentUser = user
-          $d.resolve true
+          $d.resolve response.data
         else
-          $d.resolve false
-      , -> $d.resolve false
+          $d.resolve response.data
+      , -> $d.resolve null
 
       $d.promise
 

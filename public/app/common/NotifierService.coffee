@@ -13,7 +13,7 @@ angular.module 'app'
       console.warn msg
 
     error: (error) ->
-      message = error?.data?.reason || 'Unknown error'
+      message = error?.data?.reason or error or 'Unknown error'
       Toastr.error message
       console.error message
 

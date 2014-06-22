@@ -17,12 +17,12 @@
             user = new UserModel();
             angular.extend(user, response.data.user);
             IdentityService.currentUser = user;
-            return $d.resolve(true);
+            return $d.resolve(response.data);
           } else {
-            return $d.resolve(false);
+            return $d.resolve(response.data);
           }
         }, function() {
-          return $d.resolve(false);
+          return $d.resolve(null);
         });
         return $d.promise;
       };

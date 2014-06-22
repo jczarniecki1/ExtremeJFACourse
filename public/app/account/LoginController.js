@@ -4,11 +4,15 @@
     var userActions;
     $scope.identity = IdentityService;
     $scope.signin = function(username, password) {
-      return AuthService.authenticateUser(username, password).then(function(success) {
-        if (success) {
+      return AuthService.authenticateUser(username, password).then(function(response) {
+        if (response != null ? response.success : void 0) {
           return NotifierService.notify('You have successfully signed in!');
         } else {
-          return NotifierService.warning('Failed to log in');
+          if (response != null ? response.reason : void 0) {
+            return NotifierService.warning("Failed to log in. Wrong " + response.reason);
+          } else {
+            return NotifierService.error('Cannot log in. Request not accepted');
+          }
         }
       });
     };

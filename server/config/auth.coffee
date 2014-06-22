@@ -1,13 +1,17 @@
-passport = require('passport')
+passport = require 'passport'
+User = require('mongoose').model 'User'
 
 exports.authenticate = (req, res, next) ->
 
-  req.body.username = req.body.username?.toLowerCase()
+  username = req.body.username = req.body.username?.toLowerCase()
 
-  auth = passport.authenticate 'local', (err,user) ->
+  auth = passport.authenticate 'local', (err, user) ->
     if err then next err
     else unless user
-      res.send { success:false }
+      User.findOne {username}
+      .exec (err, user) ->
+        if user? then res.send { success: false, reason: 'password' }
+        else res.send { success: false, reason: 'username' }
     else
       req.logIn user, (err) ->
         if err then next err

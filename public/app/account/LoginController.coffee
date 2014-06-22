@@ -5,11 +5,14 @@ angular.module 'app'
 
   $scope.signin = (username, password) ->
     AuthService.authenticateUser username, password
-    .then (success) ->
-      if success
+    .then (response) ->
+      if response?.success
         NotifierService.notify 'You have successfully signed in!'
       else
-        NotifierService.warning 'Failed to log in'
+        if response?.reason
+          NotifierService.warning "Failed to log in. Wrong #{response.reason}"
+        else
+          NotifierService.error 'Cannot log in. Request not accepted'
 
   userActions = $('#userActions')
   userActions.find('.dropdown-toggle').click -> userActions.toggleClass 'open'
