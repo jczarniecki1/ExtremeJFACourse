@@ -4,7 +4,7 @@ angular.module 'app'
   courseId = $routeParams.courseId
 
   $scope.levels = ["basic","advanced","expert"]
-  $scope.create = ->
+  $scope.submit = ->
 
     newChallengeData =
       description:              $scope.description

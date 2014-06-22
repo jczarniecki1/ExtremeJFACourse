@@ -39,6 +39,7 @@
     app["delete"]('/api/user/:userId/messages/:id', adminOnly, messagesController.removeMessage);
     app.get('/api/courses/:courseId/challenges', challengesController.getChallenges);
     app.post('/api/courses/:courseId/challenges', adminOnly, challengesController.createChallenge);
+    app.put('/api/courses/:courseId/challenges/:id', adminOnly, challengesController.updateChallenge);
     app["delete"]('/api/courses/:courseId/challenges/:id', adminOnly, challengesController.removeChallenge);
     app.get('/partials/*', function(req, res) {
       return res.render("../../public/app/" + req.params);

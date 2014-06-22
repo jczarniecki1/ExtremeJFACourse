@@ -35,6 +35,7 @@ module.exports = (app)->
 
   app.get    '/api/courses/:courseId/challenges', challengesController.getChallenges
   app.post   '/api/courses/:courseId/challenges', adminOnly, challengesController.createChallenge
+  app.put    '/api/courses/:courseId/challenges/:id', adminOnly, challengesController.updateChallenge
   app.delete '/api/courses/:courseId/challenges/:id', adminOnly, challengesController.removeChallenge
 
   app.get '/partials/*', (req, res) ->

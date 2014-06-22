@@ -65,6 +65,10 @@
     }).when('/courses/:courseId/challenge/:challengeId', {
       templateUrl: '/partials/challenges/challenge-details',
       controller: 'ChallengeDetailsController'
+    }).when('/courses/:courseId/challenge/edit/:challengeId', {
+      templateUrl: '/partials/challenges/new-challenge',
+      controller: 'EditChallengeController',
+      resolve: routeRoleCheck.admin
     });
   });
 

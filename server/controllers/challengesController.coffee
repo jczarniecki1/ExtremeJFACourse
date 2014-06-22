@@ -25,6 +25,24 @@ exports.createChallenge = (req, res, next) ->
         res.SendIfPossible challenge, err
 
 
+exports.updateChallenge = (req, res, next) ->
+  id = req.params.id
+  challengeData = req.body
+
+  Challenge.findOne({_id:id}).exec (err, challenge) ->
+    if err? then return res.SendError err
+    unless challenge? then return res.SendError "Challenge not found"
+
+    challenge.description = challengeData.description
+    challenge.level = challengeData.level
+    challenge.jsonData = challengeData.jsonData
+    challenge.initialInput = challengeData.initialInput
+    challenge.correctAnswerExpression = challengeData.description
+
+    challenge.save (err) ->
+      res.SendOkIfPossible err
+
+
 exports.removeChallenge = (req, res, next) ->
   id = req.params.id
 

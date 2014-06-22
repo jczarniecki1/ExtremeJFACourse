@@ -4,7 +4,7 @@
     var courseId;
     courseId = $routeParams.courseId;
     $scope.levels = ["basic", "advanced", "expert"];
-    return $scope.create = function() {
+    return $scope.submit = function() {
       var newChallengeData;
       newChallengeData = {
         description: $scope.description,

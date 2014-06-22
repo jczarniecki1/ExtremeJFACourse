@@ -67,6 +67,11 @@ app.config ($routeProvider, $locationProvider)->
       templateUrl: '/partials/challenges/challenge-details'
       controller: 'ChallengeDetailsController'
 
+    .when '/courses/:courseId/challenge/edit/:challengeId',
+      templateUrl: '/partials/challenges/new-challenge'
+      controller: 'EditChallengeController'
+      resolve: routeRoleCheck.admin
+
 app.run ($rootScope, $location) ->
   $rootScope.$on '$routeChangeError', (evt, current, previous, rejection) ->
     if rejection is 'not authorized'

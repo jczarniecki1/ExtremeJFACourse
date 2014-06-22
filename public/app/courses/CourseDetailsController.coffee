@@ -42,6 +42,9 @@ angular.module 'app'
   $scope.edit = ->
     $location.path "/courses/edit/#{$routeParams.id}"
 
+  $scope.editChallenge = (id) ->
+    $location.path "/courses/#{$routeParams.id}/challenge/edit/#{id}"
+
   $scope.delete = ->
     $dialogs.danger 'Confirm', 'Are you sure you want to remove this course entirely?'
     .result.then ->

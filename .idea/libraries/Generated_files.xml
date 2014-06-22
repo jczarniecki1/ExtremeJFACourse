@@ -34,6 +34,7 @@
         <item url="file://$PROJECT_DIR$/public/app/challenges/ChallengeController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/EditCourseController.js" />
         <item url="file://$PROJECT_DIR$/server/controllers/ratingsController.js" />
+        <item url="file://$PROJECT_DIR$/public/app/challenges/EditChallengeController.js" />
         <item url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
         <item url="file://$PROJECT_DIR$/public/app/challenges/ChallengeModel.js" />
         <item url="file://$PROJECT_DIR$/public/app/challenges/ChallengeEditor.js" />
@@ -167,6 +168,7 @@
       <root url="file://$PROJECT_DIR$/public/app/challenges/ChallengeController.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/ratingsController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/EditCourseController.js" />
+      <root url="file://$PROJECT_DIR$/public/app/challenges/EditChallengeController.js" />
       <root url="file://$PROJECT_DIR$/server/controllers/coursesController.js" />
       <root url="file://$PROJECT_DIR$/public/app/challenges/ChallengeModel.js" />
       <root url="file://$PROJECT_DIR$/server/utilities/security.js" />

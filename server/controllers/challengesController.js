@@ -40,6 +40,30 @@
     });
   };
 
+  exports.updateChallenge = function(req, res, next) {
+    var challengeData, id;
+    id = req.params.id;
+    challengeData = req.body;
+    return Challenge.findOne({
+      _id: id
+    }).exec(function(err, challenge) {
+      if (err != null) {
+        return res.SendError(err);
+      }
+      if (challenge == null) {
+        return res.SendError("Challenge not found");
+      }
+      challenge.description = challengeData.description;
+      challenge.level = challengeData.level;
+      challenge.jsonData = challengeData.jsonData;
+      challenge.initialInput = challengeData.initialInput;
+      challenge.correctAnswerExpression = challengeData.description;
+      return challenge.save(function(err) {
+        return res.SendOkIfPossible(err);
+      });
+    });
+  };
+
   exports.removeChallenge = function(req, res, next) {
     var id;
     id = req.params.id;
