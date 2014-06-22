@@ -22,11 +22,37 @@
     });
   };
 
-  exports.publishCourse = function(req, res, next) {
-    var id;
-    id = req.params.id;
+  exports.setReady = function(req, res, next) {
     return Course.findOne({
-      _id: id
+      _id: req.params.id
+    }).exec(function(err, course) {
+      if (err != null) {
+        return res.SendError(err);
+      }
+      course.readyToTest = true;
+      return course.save(function(err) {
+        return res.SendOkIfPossible(err);
+      });
+    });
+  };
+
+  exports.setNotReady = function(req, res, next) {
+    return Course.findOne({
+      _id: req.params.id
+    }).exec(function(err, course) {
+      if (err != null) {
+        return res.SendError(err);
+      }
+      course.readyToTest = false;
+      return course.save(function(err) {
+        return res.SendOkIfPossible(err);
+      });
+    });
+  };
+
+  exports.publishCourse = function(req, res, next) {
+    return Course.findOne({
+      _id: req.params.id
     }).exec(function(err, course) {
       if (err != null) {
         return res.SendError(err);
@@ -40,10 +66,8 @@
   };
 
   exports.unpublishCourse = function(req, res, next) {
-    var id;
-    id = req.params.id;
     return Course.findOne({
-      _id: id
+      _id: req.params.id
     }).exec(function(err, course) {
       if (err != null) {
         return res.SendError(err);
@@ -64,6 +88,9 @@
     }).exec(function(err, course) {
       if (err != null) {
         return res.SendError(err);
+      }
+      if (course == null) {
+        return res.SendError("Course not found");
       }
       course.title = courseData.title;
       course.description = courseData.description;

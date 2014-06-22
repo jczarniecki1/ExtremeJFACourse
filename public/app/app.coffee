@@ -36,6 +36,11 @@ app.config ($routeProvider, $locationProvider)->
       controller: 'NewCourseController'
       resolve: routeRoleCheck.admin
 
+    .when '/courses/edit/:id',
+      templateUrl: '/partials/courses/new-course'
+      controller: 'EditCourseController'
+      resolve: routeRoleCheck.admin
+
     .when '/signup',
       templateUrl: '/partials/account/signup'
       controller: 'SignupController'

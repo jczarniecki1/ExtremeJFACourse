@@ -1,35 +1,61 @@
 .container
+
+    .row(ng-show="identity.currentUser.isAdmin()")
+        .col-md-12
+            a.btn.btn-sm.btn-success(href="/courses/{{ course._id }}/challenge/new")
+                i.icon.icon-plus
+                | &nbsp; New Challenge
+            | &nbsp;
+            button.btn.btn-sm.btn-warning(ng-show="!course.published", ng-click="publish()")
+                i.icon.icon-checkbox-unchecked
+                | &nbsp; Published
+            button.btn.btn-sm.btn-success(ng-show="course.published", ng-click="unpublish()")
+                i.icon.icon-checkbox-checked
+                | &nbsp; Published
+            | &nbsp;
+            button.btn.btn-sm.btn-warning(ng-show="!course.readyToTest", ng-click="setReadyForTest()")
+                i.icon.icon-checkbox-unchecked
+                | &nbsp; Ready to test
+            button.btn.btn-sm.btn-success(ng-show="course.readyToTest", ng-click="unsetReadyForTest()")
+                i.icon.icon-checkbox-checked
+                | &nbsp; Ready to test
+            | &nbsp;
+            button.btn.btn-sm.btn-default(ng-disabled="course.published", ng-click="edit()")
+                i.icon.icon-pencil2
+            button.btn.btn-sm.btn-danger.right(ng-disabled="course.published", ng-click="delete()")
+                i.icon.icon-remove2
+
+    .row(ng-show="!identity.currentUser.isAdmin()")
+        .col-md-12
+            a.btn.btn-sm.btn-default(href="/courses")
+                i.icon.icon-arrow-left3
+                | &nbsp; List of courses
+
+            .right(ng-show="!course.started && !isAdmin()")
+                .label.label-default(ng-show="!identity.isAuthenticated()")
+                    | Log in to start the course
+                button.btn.btn-sm.btn-success(ng-show="identity.isAuthenticated()", ng-click="start()")
+                    | Start this course
+
     .row
         .col-md-10
             h1 {{ course.title }}
+    .row
+        .col-md-6
             .tags-wrapper
-                | Tags:&nbsp;
+                | Tags: &nbsp;
                 div.tags(ng-repeat="tag in course.tags")
-                    span.label.label-info {{ tag }}
-        .col-md-2(ng-show="identity.currentUser.isAdmin()")
-            button.btn.btn-warning(ng-show="course.published", ng-click="unpublish()")
-                i.icon.icon-eye-blocked
-                | &nbsp; Unpublish
-            button.btn.btn-success(ng-show="!course.published", ng-click="publish()")
-                i.icon.icon-eye
-                | &nbsp; Publish
-            | &nbsp;
-            button.btn.btn-danger(ng-show="!course.published", ng-click="delete()")
-                i.icon.icon-remove2
-    .row
-        .col-md-6.star-rating
-            rating(ng-show="identity.isAuthenticated()", ng-model="currentRate", max="5", on-hover="hoverRating(value)" on-leave="leaveRating()", readonly="isReadonly")
-            div(ng-show="userRate  > 0 && userRate <= 3")
-                .btn.btn-link(ng-click="openFeedbackModal()") What should we do better?
+                    span.label.label-default {{ tag }}
 
-            p Published on {{ course.publishDate | date }}
+            .star-rating
+                rating(ng-show="identity.isAuthenticated()", ng-model="currentRate", max="5", on-hover="hoverRating(value)" on-leave="leaveRating()", readonly="isReadonly")
+                div(ng-show="userRate  > 0 && userRate <= 3")
+                    .btn.btn-link(ng-click="openFeedbackModal()") What should we do better?
 
-    .row(ng-show="identity.currentUser.isAdmin()")
-        .col-md-2
-            a.btn.btn-success.btn-sm(href="/courses/{{ course._id }}/challenge/new")
-                i.icon.icon-plus
-                | &nbsp;New Challenge
-    .row
+        .col-md-6
+            p.right Published on {{ course.publishDate | date }}
+            br.clear
+            p.right Last update on {{ course.lastUpdate | date }}
+
+    .row.challenges
         .col-md-12(ng-include="'/partials/challenges/challenge-list'")
-
-

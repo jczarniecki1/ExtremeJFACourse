@@ -1,17 +1,24 @@
 table.table.table-hover.table-striped.table-condensed(ng-controller="ChallengeController")
     thead
         tr
+            th
             th Challenges
             th Level
-            th(ng-show="identity.currentUser.isAdmin()") Actions
+            th.actions(ng-show="identity.currentUser.isAdmin()") Actions
     tbody
         tr(ng-repeat="(i, challenge) in challenges")
             td
-                a(href="/courses/{{ course._id }}/challenge/{{ challenge._id }}") Exercise {{ i + 1 }}
+            td
+                button.btn.btn-link(ng-disabled="!(course.started || identity.currentUser.isAdmin())", ng-click="open(challenge._id)")
+                    i.icon(ng-class="{'icon-notebook': (course.started || identity.currentUser.isAdmin()), 'icon-lock': (!(course.started || identity.currentUser.isAdmin()))}")
+                    | &nbsp; Exercise {{ i + 1 }}
             td
                 span.label.label-success(ng-show="challenge.level=='basic'") Basic
                 span.label.label-info(ng-show="challenge.level=='advanced'") Advanced
                 span.label.label-warning(ng-show="challenge.level=='expert'") Expert
             td(ng-show="identity.currentUser.isAdmin()")
-                button.btn.btn-xs.btn-danger(ng-click="delete(challenge._id)")
+                button.btn.btn-sm.btn-default(ng-disabled="course.published", ng-click="edit(challenge._id)")
+                    i.icon.icon-pencil2
+                | &nbsp;
+                button.btn.btn-sm.btn-danger.right(ng-disabled="course.published", ng-click="delete(challenge._id)")
                     i.icon.icon-remove2

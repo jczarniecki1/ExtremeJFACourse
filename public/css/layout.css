@@ -1535,6 +1535,15 @@ footer {
 .form-control[type="checkbox"] {
   width: 34px; }
 
+.right {
+  float: right; }
+
+.left {
+  float: left; }
+
+.clear {
+  clear: both; }
+
 .main .page-header:first-child {
   margin-top: 0; }
 
@@ -1569,13 +1578,13 @@ footer {
     display: inline;
     vertical-align: middle; }
 
-.simple-admin-page th {
-  background-color: #f9f9f9; }
 .simple-admin-page .table td {
   vertical-align: middle; }
   .simple-admin-page .table td:first-child {
     text-align: center;
     width: 30px; }
+.simple-admin-page th {
+  background-color: #f9f9f9; }
 .simple-admin-page .icon-calendar,
 .simple-admin-page .icon-clock {
   color: #999;
@@ -1616,14 +1625,20 @@ footer {
   margin-top: -10px;
   padding: 0; }
 
-.back {
-  display: block;
-  line-height: 20px;
-  margin-bottom: 10px;
-  margin-left: 15px; }
-  .back .icon {
-    color: #428bca;
-    margin-right: 5px; }
+.challenges .table td {
+  vertical-align: middle; }
+  .challenges .table td:first-child {
+    text-align: center;
+    width: 30px; }
+.challenges .actions {
+  width: 100px; }
+.challenges .label {
+  vertical-align: middle; }
+.challenges tbody tr:last-child td {
+  border-bottom: 1px solid #DDD; }
+
+.first-row {
+  margin-bottom: 20px; }
 
 .submit-answer {
   text-transform: uppercase; }

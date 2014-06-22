@@ -1,9 +1,9 @@
 .container
-    .row
-        .col-xs-12
-            .back
+    .row.first-row
+        .col-md-12
+            a.btn.btn-sm.btn-default(href="/courses/{{ courseId }}")
                 i.icon.icon-arrow-left3
-                a(href="/courses/{{ courseId }}") Back to "{{ course.title }}"
+                | &nbsp; Back to "{{ course.title }}"
     .row
         .col-xs-8
             .col-xs-4

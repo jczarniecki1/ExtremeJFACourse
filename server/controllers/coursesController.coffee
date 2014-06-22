@@ -14,28 +14,38 @@ exports.createCourse = (req, res, next) ->
     res.SendIfPossible course, err
 
 
-exports.publishCourse = (req, res, next) ->
-  id = req.params.id
-
-  Course.findOne({_id:id}).exec (err, course) ->
+exports.setReady = (req, res, next) ->
+  Course.findOne({_id:req.params.id}).exec (err, course) ->
     if err? then return res.SendError err
+    course.readyToTest = true
+    course.save (err) ->
+      res.SendOkIfPossible err
 
+
+exports.setNotReady = (req, res, next) ->
+  Course.findOne({_id:req.params.id}).exec (err, course) ->
+    if err? then return res.SendError err
+    course.readyToTest = false
+    course.save (err) ->
+      res.SendOkIfPossible err
+
+
+exports.publishCourse = (req, res, next) ->
+  Course.findOne({_id:req.params.id}).exec (err, course) ->
+    if err? then return res.SendError err
     course.published = true
     course.publishedDate = new Date()
-
     course.save (err) ->
       res.SendOkIfPossible err
+
 
 exports.unpublishCourse = (req, res, next) ->
-  id = req.params.id
-
-  Course.findOne({_id:id}).exec (err, course) ->
+  Course.findOne({_id:req.params.id}).exec (err, course) ->
     if err? then return res.SendError err
-
     course.published = false
-
     course.save (err) ->
       res.SendOkIfPossible err
+
 
 exports.updateCourse = (req, res, next) ->
   id = req.params.id
@@ -43,6 +53,7 @@ exports.updateCourse = (req, res, next) ->
 
   Course.findOne({_id:id}).exec (err, course) ->
     if err? then return res.SendError err
+    unless course? then return res.SendError "Course not found"
 
     course.title = courseData.title
     course.description = courseData.description

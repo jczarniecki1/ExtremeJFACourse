@@ -5,6 +5,9 @@
     $scope.identity = IdentityService;
     existingRating = null;
     savingRating = null;
+    $scope.open = function(challengeId) {
+      return $location.path("/courses/" + $routeParams.id + "/challenge/" + challengeId);
+    };
     $scope.publish = function() {
       return $dialogs.confirm('Confirm', 'Are you sure you want to publish this course?').result.then(function() {
         return $scope.course.$publish({
@@ -22,6 +25,25 @@
         $scope.course.published = false;
         return NotifierService.info("Course was unpublished");
       }, NotifierService.error);
+    };
+    $scope.setReadyForTest = function() {
+      return $scope.course.$setReady({
+        id: $routeParams.id
+      }).then(function() {
+        $scope.course.readyToTest = true;
+        return NotifierService.notify("Course 'Ready' flag is set");
+      }, NotifierService.error);
+    };
+    $scope.unsetReadyForTest = function() {
+      return $scope.course.$setNotReady({
+        id: $routeParams.id
+      }).then(function() {
+        $scope.course.readyToTest = false;
+        return NotifierService.info("Course 'Ready' flag is unset");
+      }, NotifierService.error);
+    };
+    $scope.edit = function() {
+      return $location.path("/courses/edit/" + $routeParams.id);
     };
     $scope["delete"] = function() {
       return $dialogs.danger('Confirm', 'Are you sure you want to remove this course entirely?').result.then(function() {

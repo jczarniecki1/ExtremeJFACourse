@@ -10,7 +10,7 @@
                 .form-group
                     label.col-md-2.control-label(for="description") Description
                     .col-md-10
-                        input.form-control(name="description", type="text", placeholder="Description", ng-model="description")
+                        textarea.form-control(name="description", placeholder="Description", ng-model="description")
                 .form-group
                     label.col-md-2.control-label(for="tags") Tags
                     .col-md-10
@@ -22,6 +22,6 @@
                 .form-group
                     .col-md-10.col-md-offset-2
                         .pull-right
-                            button.btn.btn-primary(ng-click="create()", ng-disabled="newCourseForm.$invalid") Submit
+                            button.btn.btn-primary(ng-click="submit()", ng-disabled="newCourseForm.$invalid") Submit
                             | &nbsp;
                             a.btn.btn-default(href="/") Cancel

@@ -1,6 +1,6 @@
 angular.module 'app'
 .controller 'NewCourseController', ($scope, CourseEditor, NotifierService, $location) ->
-  $scope.create = ->
+  $scope.submit = ->
 
     newCourseData =
       title:    $scope.title

@@ -4,6 +4,8 @@ angular.module 'app'
   existingRating = null
   savingRating = null
 
+  $scope.open = (challengeId) ->
+    $location.path "/courses/#{$routeParams.id}/challenge/#{challengeId}"
 
   #if IdentityService.currentUser?.isAdmin()
 
@@ -22,6 +24,23 @@ angular.module 'app'
       $scope.course.published = false
       NotifierService.info "Course was unpublished"
     , NotifierService.error
+
+  $scope.setReadyForTest = ->
+    $scope.course.$setReady({id:$routeParams.id})
+    .then ->
+      $scope.course.readyToTest = true
+      NotifierService.notify "Course 'Ready' flag is set"
+    , NotifierService.error
+
+  $scope.unsetReadyForTest = ->
+    $scope.course.$setNotReady({id:$routeParams.id})
+    .then ->
+      $scope.course.readyToTest = false
+      NotifierService.info "Course 'Ready' flag is unset"
+    , NotifierService.error
+
+  $scope.edit = ->
+    $location.path "/courses/edit/#{$routeParams.id}"
 
   $scope.delete = ->
     $dialogs.danger 'Confirm', 'Are you sure you want to remove this course entirely?'

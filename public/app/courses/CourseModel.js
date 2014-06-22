@@ -6,7 +6,10 @@
     }, {
       update: {
         method: 'PUT',
-        isArray: false
+        isArray: false,
+        params: {
+          action: 'edit'
+        }
       },
       publish: {
         method: 'PUT',
@@ -20,6 +23,20 @@
         isArray: false,
         params: {
           action: 'unpublish'
+        }
+      },
+      setReady: {
+        method: 'PUT',
+        isArray: false,
+        params: {
+          action: 'ready'
+        }
+      },
+      setNotReady: {
+        method: 'PUT',
+        isArray: false,
+        params: {
+          action: 'notready'
         }
       },
       remove: {
