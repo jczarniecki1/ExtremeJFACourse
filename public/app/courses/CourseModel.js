@@ -4,11 +4,18 @@
     return $resource('/api/courses/:id/:action', {
       _id: "@id"
     }, {
+      start: {
+        method: 'PUT',
+        isArray: false,
+        params: {
+          action: 'start'
+        }
+      },
       update: {
         method: 'PUT',
         isArray: false,
         params: {
-          action: 'edit'
+          action: 'update'
         }
       },
       publish: {

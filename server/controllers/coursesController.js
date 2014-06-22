@@ -22,6 +22,35 @@
     });
   };
 
+  exports.startCourse = function(req, res, next) {
+    var courseId;
+    courseId = req.params.id;
+    return Course.findOne({
+      _id: courseId
+    }).exec(function(err, course) {
+      var startDate;
+      if (err != null) {
+        return res.SendError(err);
+      }
+      if (!course.published) {
+        return res.SendError('Course is not published');
+      }
+      if (req.user.courses.any(function(x) {
+        return x._id === courseId;
+      })) {
+        return res.SendError('Course is already started');
+      }
+      startDate = new Date();
+      req.user.courses.push({
+        id: courseId,
+        startDate: startDate
+      });
+      return req.user.save(function(err) {
+        return res.SendIfPossible(startDate, err);
+      });
+    });
+  };
+
   exports.setReady = function(req, res, next) {
     return Course.findOne({
       _id: req.params.id

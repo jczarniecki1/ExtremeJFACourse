@@ -13,10 +13,10 @@
                 i.icon.icon-checkbox-checked
                 | &nbsp; Published
             | &nbsp;
-            button.btn.btn-sm.btn-warning(ng-show="!course.readyToTest", ng-click="setReadyForTest()")
+            button.btn.btn-sm.btn-warning(ng-show="!course.readyToTest", ng-click="readyToTest(true)")
                 i.icon.icon-checkbox-unchecked
                 | &nbsp; Ready to test
-            button.btn.btn-sm.btn-success(ng-show="course.readyToTest", ng-click="unsetReadyForTest()")
+            button.btn.btn-sm.btn-success(ng-show="course.readyToTest", ng-click="readyToTest(false)")
                 i.icon.icon-checkbox-checked
                 | &nbsp; Ready to test
             | &nbsp;

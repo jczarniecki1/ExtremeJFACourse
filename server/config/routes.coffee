@@ -17,7 +17,8 @@ module.exports = (app)->
 
   app.get    '/api/courses', coursesController.getCourses
   app.post   '/api/courses', adminOnly, coursesController.createCourse
-  app.put    '/api/courses/:id/edit',      adminOnly, coursesController.updateCourse
+  app.put    '/api/courses/:id/start',     checkLogin, coursesController.startCourse
+  app.put    '/api/courses/:id/update',    adminOnly, coursesController.updateCourse
   app.put    '/api/courses/:id/publish',   adminOnly, coursesController.publishCourse
   app.put    '/api/courses/:id/unpublish', adminOnly, coursesController.unpublishCourse
   app.put    '/api/courses/:id/ready',     adminOnly, coursesController.setReady

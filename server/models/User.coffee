@@ -1,5 +1,6 @@
 mongoose = require 'mongoose'
 security = require '../utilities/security'
+Mixed = mongoose.Schema.Types.Mixed
 
 userSchema = mongoose.Schema
 
@@ -16,6 +17,10 @@ userSchema = mongoose.Schema
     required: '{PATH} is required '
     lowercase:true
     unique:   true
+
+  courses:
+    type:     [Mixed]
+    default:  []
 
   salt:       String
   hashed_pwd: String
@@ -45,8 +50,8 @@ userSchema.methods =
     role in @roles
 
   getData: ->
-    { firstName, lastName, username, roles, unreadMessages, allMessages } = @
-    { firstName, lastName, username, roles, unreadMessages, allMessages }
+    { firstName, lastName, username, roles, unreadMessages, allMessages, courses } = @
+    { firstName, lastName, username, roles, unreadMessages, allMessages, courses }
 
 User = mongoose.model 'User', userSchema
 

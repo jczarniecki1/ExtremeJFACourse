@@ -3,68 +3,80 @@ angular.module 'app'
   $scope.identity = IdentityService
   existingRating = null
   savingRating = null
+  courseId = $routeParams.id
 
-  $scope.open = (challengeId) ->
-    $location.path "/courses/#{$routeParams.id}/challenge/#{challengeId}"
-
-  #if IdentityService.currentUser?.isAdmin()
+  $scope.start = ->
+    $scope.course.$start({id:courseId})
+    .then (startDate) ->
+      user = $scope.identity.currentUser
+      user.courses.push {id: courseId, startDate }
+      $scope.course.started = true
+      NotifierService.notify "Course was started"
+    , NotifierService.error
 
   $scope.publish = ->
     $dialogs.confirm 'Confirm', 'Are you sure you want to publish this course?'
     .result.then ->
-      $scope.course.$publish({id:$routeParams.id})
+      $scope.course.$publish({id:courseId})
       .then ->
         $scope.course.published = true
         NotifierService.notify "Course was published"
       , NotifierService.error
 
   $scope.unpublish = ->
-    $scope.course.$unpublish({id:$routeParams.id})
+    $scope.course.$unpublish({id:courseId})
     .then ->
       $scope.course.published = false
       NotifierService.info "Course was unpublished"
     , NotifierService.error
 
-  $scope.setReadyForTest = ->
-    $scope.course.$setReady({id:$routeParams.id})
+  $scope.readyToTest = (enabled) ->
+    $scope.course.$setNotReady({id:courseId})
     .then ->
-      $scope.course.readyToTest = true
-      NotifierService.notify "Course 'Ready' flag is set"
-    , NotifierService.error
-
-  $scope.unsetReadyForTest = ->
-    $scope.course.$setNotReady({id:$routeParams.id})
-    .then ->
-      $scope.course.readyToTest = false
-      NotifierService.info "Course 'Ready' flag is unset"
+      $scope.course.readyToTest = enabled
+      NotifierService.info "Course 'Ready' flag is #{if enabled then 'set' else 'unset'}"
     , NotifierService.error
 
   $scope.edit = ->
-    $location.path "/courses/edit/#{$routeParams.id}"
-
-  $scope.editChallenge = (id) ->
-    $location.path "/courses/#{$routeParams.id}/challenge/edit/#{id}"
+    $location.path "/courses/edit/#{courseId}"
 
   $scope.delete = ->
     $dialogs.danger 'Confirm', 'Are you sure you want to remove this course entirely?'
     .result.then ->
-      CachedCourse.remove $routeParams.id
+      CachedCourse.remove courseId
       .then ->
         NotifierService.notify "Course removed successfully"
         $location.path "/"
       , NotifierService.error
 
+  $scope.openFeedbackModal = ->
+    $dialogs.create '/partials/bootstrap/modal/feedbackModal', 'FeedbackModalController', {}, {key: false, back: 'static'}
+    .result.then (feedback) ->
+      messageData =
+        url: $location.url()
+        location: "Course: #{$scope.course.title}"
+        text: feedback
+
+      newFeedback = new FeedbackMessage(messageData)
+      newFeedback.$save()
+      .then ->
+        NotifierService.notify "Message submitted successfully"
+      , NotifierService.error
+
   CachedCourse.query().$promise
   .then (collection) ->
-    collection.findById $routeParams.id, (course) ->
+    collection.findById courseId, (course) ->
       $scope.course = course
 
       if IdentityService.isAuthenticated()
 
+        if $scope.identity.currentUser?.courses.any((x) -> x.id is courseId)
+          course.started = true
+
         ratingArgs =
           url: $location.url()
           location: "Course: #{$scope.course.title}"
-          objectId : $routeParams.id
+          objectId : courseId
           type : 'course'
 
         $scope.isReadonly = true
@@ -98,21 +110,6 @@ angular.module 'app'
 
         afterFetchRating = ->
           $scope.isReadonly = false
-
-
-        $scope.openFeedbackModal = ->
-          $dialogs.create '/partials/bootstrap/modal/feedbackModal', 'FeedbackModalController', {}, {key: false, back: 'static'}
-          .result.then (feedback) ->
-            messageData =
-              url: $location.url()
-              location: "Course: #{$scope.course.title}"
-              text: feedback
-
-            newFeedback = new FeedbackMessage(messageData)
-            newFeedback.$save()
-            .then ->
-              NotifierService.notify "Message submitted successfully"
-            , NotifierService.error
 
 
         CachedRating.findOne ratingArgs

@@ -4,6 +4,17 @@
     return this.indexOf(value) >= 0;
   };
 
+  Array.prototype.any = function(fn) {
+    var value, _i, _len;
+    for (_i = 0, _len = this.length; _i < _len; _i++) {
+      value = this[_i];
+      if (fn(value)) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   String.prototype.startsWith = function(value) {
     return this.indexOf(value) === 0;
   };

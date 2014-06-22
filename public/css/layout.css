@@ -1635,7 +1635,7 @@ footer {
 .challenges .label {
   vertical-align: middle; }
 .challenges tbody tr:last-child td {
-  border-bottom: 1px solid #DDD; }
+  border-bottom: 1px solid #ddd; }
 
 .first-row {
   margin-bottom: 20px; }

@@ -1,5 +1,5 @@
 angular.module 'app'
-.controller 'LoginController', ($scope, $http, NotifierService, IdentityService, AuthService, $location) ->
+.controller 'LoginController', ($scope, $http, NotifierService, IdentityService, AuthService, $location, CachedCourse) ->
 
   $scope.identity = IdentityService
 
@@ -7,6 +7,11 @@ angular.module 'app'
     AuthService.authenticateUser $scope.username, $scope.password
     .then (response) ->
       if response?.success
+        CachedCourse.query().$promise.then (collection) ->
+          for course in collection
+            if $scope.identity.currentUser?.courses.any((x) -> x.id is course._id)
+              course.started = true
+
         NotifierService.notify 'You have successfully signed in!'
       else
         if response?.reason
