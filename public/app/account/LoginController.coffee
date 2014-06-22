@@ -3,8 +3,8 @@ angular.module 'app'
 
   $scope.identity = IdentityService
 
-  $scope.signin = (username, password) ->
-    AuthService.authenticateUser username, password
+  signinUser = ->
+    AuthService.authenticateUser $scope.username, $scope.password
     .then (response) ->
       if response?.success
         NotifierService.notify 'You have successfully signed in!'
@@ -13,6 +13,14 @@ angular.module 'app'
           NotifierService.warning "Failed to log in. Wrong #{response.reason}"
         else
           NotifierService.error 'Cannot log in. Request not accepted'
+
+  $scope.signin = () ->
+    unless $scope.username? or $scope.password?
+      $('[ng-model="username"]').trigger 'change'
+      $('[ng-model="password"]').trigger 'change'
+      setTimeout signinUser, 100
+    else
+      signinUser()
 
   userActions = $('#userActions')
   userActions.find('.dropdown-toggle').click -> userActions.toggleClass 'open'
