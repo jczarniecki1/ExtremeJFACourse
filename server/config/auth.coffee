@@ -5,15 +5,12 @@ exports.authenticate = (req, res, next) ->
   req.body.username = req.body.username?.toLowerCase()
 
   auth = passport.authenticate 'local', (err,user) ->
-    if err?
-      next err
-    else unless user?
-      res.send
-        success:false
+    if err then next err
+    else unless user
+      res.send { success:false }
     else
       req.logIn user, (err) ->
-        if err?
-          next err
+        if err then next err
         else
           res.send
             success: true

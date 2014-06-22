@@ -9,7 +9,7 @@ angular.module 'app'
       if success
         NotifierService.notify 'You have successfully signed in!'
       else
-        NotifierService.warning 'Failed to log in.'
+        NotifierService.warning 'Failed to log in'
 
   userActions = $('#userActions')
   userActions.find('.dropdown-toggle').click -> userActions.toggleClass 'open'

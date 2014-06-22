@@ -12,8 +12,8 @@
           username: username,
           password: password
         }).then(function(response) {
-          var user;
-          if (response.data.success) {
+          var user, _ref;
+          if ((_ref = response.data) != null ? _ref.success : void 0) {
             user = new UserModel();
             angular.extend(user, response.data.user);
             IdentityService.currentUser = user;
@@ -21,6 +21,8 @@
           } else {
             return $d.resolve(false);
           }
+        }, function() {
+          return $d.resolve(false);
         });
         return $d.promise;
       };

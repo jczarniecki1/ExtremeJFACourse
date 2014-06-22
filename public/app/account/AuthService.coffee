@@ -7,13 +7,14 @@ angular.module 'app'
       $d = $q.defer()
       $http.post '/login', {username, password}
       .then (response) ->
-        if response.data.success
+        if response.data?.success
           user = new UserModel()
           angular.extend user, response.data.user
           IdentityService.currentUser = user
           $d.resolve true
         else
           $d.resolve false
+      , -> $d.resolve false
 
       $d.promise
 

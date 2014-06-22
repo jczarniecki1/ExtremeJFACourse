@@ -15,7 +15,9 @@
       return User.findOne({
         username: username
       }).exec(function(err, user) {
-        if (user && user.authenticate(password)) {
+        if (err != null) {
+          return done(null, false);
+        } else if (user != null ? user.authenticate(password) : void 0) {
           return done(null, user);
         } else {
           return done(null, false);
@@ -25,16 +27,18 @@
     passport.serializeUser(function(user, done) {
       if (user) {
         return done(null, user.id);
+      } else {
+        return done(null, false);
       }
     });
     return passport.deserializeUser(function(id, done) {
       return User.findOne({
         _id: id
       }).exec(function(err, user) {
-        if (user) {
+        if (err != null) {
+          return done(err, null);
+        } else if (user) {
           return done(null, user);
-        } else {
-          return done(null, false);
         }
       });
     });

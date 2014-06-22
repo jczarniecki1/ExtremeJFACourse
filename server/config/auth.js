@@ -8,15 +8,15 @@
     var auth, _ref;
     req.body.username = (_ref = req.body.username) != null ? _ref.toLowerCase() : void 0;
     auth = passport.authenticate('local', function(err, user) {
-      if (err != null) {
+      if (err) {
         return next(err);
-      } else if (user == null) {
+      } else if (!user) {
         return res.send({
           success: false
         });
       } else {
         return req.logIn(user, function(err) {
-          if (err != null) {
+          if (err) {
             return next(err);
           } else {
             return res.send({

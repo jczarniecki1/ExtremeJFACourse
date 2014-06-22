@@ -8,7 +8,7 @@
         if (success) {
           return NotifierService.notify('You have successfully signed in!');
         } else {
-          return NotifierService.warning('Failed to log in.');
+          return NotifierService.warning('Failed to log in');
         }
       });
     };
