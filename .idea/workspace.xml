@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/server/config/auth.coffee" line="18" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="Walking skeleton">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/courses/course-details.jade" afterPath="$PROJECT_DIR$/public/app/courses/course-details.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="Walking skeleton" />
     <ignored path="ExtremeJFACourse.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,8 +63,8 @@
       <file leaf-file-name="course-details.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/app/courses/course-details.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7" vertical-offset="320" max-vertical-offset="1280">
-              <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.85" vertical-offset="320" max-vertical-offset="1280">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -498,10 +495,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="1033" width="1400" height="1341" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2208" sideWeight="0.49928367" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2208" sideWeight="0.49928367" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.324" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492236" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -957,8 +954,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/courses/course-details.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7" vertical-offset="320" max-vertical-offset="1280">
-          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.85" vertical-offset="320" max-vertical-offset="1280">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
         </state>
       </provider>
