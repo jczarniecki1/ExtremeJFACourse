@@ -87,7 +87,9 @@
         return res.SendError(err);
       }
       course.published = true;
-      course.publishedDate = new Date();
+      if (course.publishDate == null) {
+        course.publishDate = new Date();
+      }
       return course.save(function(err) {
         return res.SendOkIfPossible(err);
       });

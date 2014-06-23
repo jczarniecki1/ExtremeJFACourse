@@ -51,7 +51,7 @@ exports.publishCourse = (req, res, next) ->
   Course.findOne({_id:req.params.id}).exec (err, course) ->
     if err? then return res.SendError err
     course.published = true
-    course.publishedDate = new Date()
+    course.publishDate ?= new Date()
     course.save (err) ->
       res.SendOkIfPossible err
 

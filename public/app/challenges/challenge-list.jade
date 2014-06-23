@@ -11,7 +11,7 @@ table.table.table-hover.table-striped.table-condensed(ng-controller="ChallengeCo
             td
                 button.btn.btn-link(ng-disabled="!(course.started || identity.currentUser.isAdmin())", ng-click="open(challenge._id)")
                     i.icon(ng-class="{'icon-notebook': (course.started || identity.currentUser.isAdmin()), 'icon-lock': (!(course.started || identity.currentUser.isAdmin()))}")
-                    | &nbsp; {{ i + 1 }} - {{ challenge.title }}
+                    | &nbsp; {{ challenge.title }}
             td
                 span.label.label-success(ng-show="challenge.level=='basic'") Basic
                 span.label.label-info(ng-show="challenge.level=='advanced'") Advanced

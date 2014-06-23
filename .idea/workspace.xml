@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd1d6b53-05cd-47f8-a7a7-d9d7b79608fc" name="Default" comment="Walking skeleton">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/controls/JFAStateMachineExercise.js" afterPath="$PROJECT_DIR$/public/app/controls/JFAStateMachineExercise.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/challenges/challenge-list.jade" afterPath="$PROJECT_DIR$/public/app/challenges/challenge-list.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/coursesController.coffee" afterPath="$PROJECT_DIR$/server/controllers/coursesController.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/coursesController.js" afterPath="$PROJECT_DIR$/server/controllers/coursesController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/controllers/coursesController.map" afterPath="$PROJECT_DIR$/server/controllers/coursesController.map" />
     </list>
     <ignored path="ExtremeJFACourse.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +41,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JFAStateMachineExercise.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JFAStateMachineExercise.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/controls/JFAStateMachineExercise.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37512848" vertical-offset="2883" max-vertical-offset="3920">
-              <caret line="203" column="32" selection-start-line="203" selection-start-column="32" selection-end-line="203" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2883" max-vertical-offset="3920">
+              <caret line="199" column="25" selection-start-line="199" selection-start-column="25" selection-end-line="199" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coursesController.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/controllers/coursesController.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="1424">
+              <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+              <folding>
+                <element signature="e#922#1107#0" expanded="false" />
+                <element signature="e#1154#1340#0" expanded="false" />
+                <element signature="e#1216#1340#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="challenge-list.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/app/challenges/challenge-list.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.21666667" vertical-offset="0" max-vertical-offset="960">
+              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -87,7 +113,6 @@
         <option value="$PROJECT_DIR$/public/app/courses/CourseModel.coffee" />
         <option value="$PROJECT_DIR$/server/config/routes.coffee" />
         <option value="$PROJECT_DIR$/server/models/User.coffee" />
-        <option value="$PROJECT_DIR$/server/controllers/coursesController.coffee" />
         <option value="$PROJECT_DIR$/public/app/common/Utils.coffee" />
         <option value="$PROJECT_DIR$/public/app/courses/CourseDetailsController.coffee" />
         <option value="$PROJECT_DIR$/public/app/challenges/ChallengeController.coffee" />
@@ -98,7 +123,6 @@
         <option value="$PROJECT_DIR$/public/app/debug/scenario.coffee" />
         <option value="$PROJECT_DIR$/public/app/courses/new-course.jade" />
         <option value="$PROJECT_DIR$/server/models/Challenge.coffee" />
-        <option value="$PROJECT_DIR$/public/app/challenges/challenge-list.jade" />
         <option value="$PROJECT_DIR$/public/app/controls/ControlsProvider.coffee" />
         <option value="$PROJECT_DIR$/server/controllers/challengesController.coffee" />
         <option value="$PROJECT_DIR$/bower.json" />
@@ -113,6 +137,8 @@
         <option value="$PROJECT_DIR$/server/includes/scripts.jade" />
         <option value="$PROJECT_DIR$/public/app/main/unpublished-courses.jade" />
         <option value="$PROJECT_DIR$/public/app/controls/JFAStateMachineExercise.js" />
+        <option value="$PROJECT_DIR$/server/controllers/coursesController.coffee" />
+        <option value="$PROJECT_DIR$/public/app/challenges/challenge-list.jade" />
       </list>
     </option>
   </component>
@@ -442,10 +468,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="1033" width="1400" height="1341" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2208" sideWeight="0.49928367" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2208" sideWeight="0.49928367" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.324" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2492236" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -660,20 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/coursesController.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="1344">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#922#1107#0" expanded="false" />
-            <element signature="e#1154#1340#0" expanded="false" />
-            <element signature="e#1216#1340#0" expanded="false" />
-            <element signature="e#1389#1610#0" expanded="false" />
-            <element signature="e#1451#1610#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/sass/ui/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3006536" vertical-offset="0" max-vertical-offset="1904">
@@ -815,14 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/challenges/challenge-list.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="17" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/challenges/EditChallengeController.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27184466" vertical-offset="0" max-vertical-offset="1236">
@@ -905,8 +909,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/controls/JFAStateMachineExercise.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37512848" vertical-offset="2883" max-vertical-offset="3920">
-          <caret line="203" column="32" selection-start-line="203" selection-start-column="32" selection-end-line="203" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2883" max-vertical-offset="3920">
+          <caret line="199" column="25" selection-start-line="199" selection-start-column="25" selection-end-line="199" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/coursesController.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="1424">
+          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+          <folding>
+            <element signature="e#922#1107#0" expanded="false" />
+            <element signature="e#1154#1340#0" expanded="false" />
+            <element signature="e#1216#1340#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/challenges/challenge-list.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21666667" vertical-offset="0" max-vertical-offset="960">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
           <folding />
         </state>
       </provider>
