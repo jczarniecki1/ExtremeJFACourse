@@ -39,7 +39,9 @@
         $(".radio").unbind();
         if (q.v1 === undefined) {
             $("#quizQuestion").html("<p>" + q.val + "</p>");
-            qclbck();
+            if (typeof(qclbck) == "function") {
+                qclbck();
+            }
             return;
         }
         var html = "<label><input class='radio' type='radio' name='que' data-to='"
@@ -71,7 +73,9 @@
         if (text.length === 0 && entry.final) {
             accepted = true;
             visited.push(defn.entry);
-            sclbck();
+            if (typeof(sclbck) == "function") {
+                sclbck();
+            }
             return;
         }
         if (text.length === 0) {
@@ -94,9 +98,13 @@
         }
         if (cnode.final) {
             accepted = true;
-            sclbck();
+            if (typeof(sclbck) == "function") {
+                sclbck();
+            }
         } else {
-            fclbck();
+            if (typeof(fclbck) == "function") {
+                fclbck();
+            }
         }
     }
 
