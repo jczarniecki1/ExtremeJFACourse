@@ -1,5 +1,5 @@
 .panel.panel-primary
-    .panel-heading.text-center Unpublished &nbsp;
+    .panel-heading.text-center Playground &nbsp;
         .label.label-info Not visible
     .panel-body
         .row(ng-repeat="course in courses | orderBy:'publishDate':false | filter:{ published:false, readyToTest: false }")
