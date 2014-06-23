@@ -9,6 +9,7 @@ angular.module 'app'
       $scope.localFilePath = course.localFilePath
       $scope.localFileName = course.localFileName
       $scope.presentationUrl = course.presentationUrl
+      $scope.videoUrl = course.videoUrl
       $scope.description = course.description
       $scope.featured = course.featured
       $scope.tags = course.tags.join(', ')
@@ -20,6 +21,7 @@ angular.module 'app'
       localFilePath:   $scope.localFilePath
       localFileName:   $scope.localFileName
       presentationUrl: $scope.presentationUrl
+      videoUrl: $scope.videoUrl
       description:     $scope.description
       featured:        $scope.featured
       tags:           ($scope.tags or "")

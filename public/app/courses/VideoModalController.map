@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "VideoModalController.js",
+  "sourceRoot": "",
+  "sources": [
+    "VideoModalController.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,OAAO,CAAC,MAAR,CAAe,KAAf,CACA,CAAC,UADD,CACY,sBADZ,EACoC,SAAC,MAAD,EAAS,cAAT,EAAyB,IAAzB,GAAA;WAElC,MAAM,CAAC,MAAP,GAAgB,SAAA,GAAA;aAAG,cAAc,CAAC,OAAf,CAAuB,UAAvB,EAAH;IAAA,EAFkB;EAAA,CADpC,CAAA,CAAA;AAAA"
+}

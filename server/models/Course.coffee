@@ -18,6 +18,9 @@ courseSchema = mongoose.Schema
   presentationUrl:
     type:     String
 
+  videoUrl:
+    type:     String
+
   featured:
     type:     Boolean
     default:  false

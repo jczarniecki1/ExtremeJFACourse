@@ -76,6 +76,7 @@ exports.updateCourse = (req, res, next) ->
     course.localFilePath = courseData.localFilePath
     course.localFileName = courseData.localFileName
     course.presentationUrl = courseData.presentationUrl
+    course.videoUrl = courseData.videoUrl
     course.description = courseData.description
     course.tags = courseData.tags
     course.featured = courseData.featured

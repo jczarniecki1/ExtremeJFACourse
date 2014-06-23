@@ -44,6 +44,10 @@
                 a.btn.btn-sm.btn-primary(href="{{ getFileUrl() }}", target="_self", download='{{ course.localFileName }}')
                     i.icon.icon-download3
                     | &nbsp; Materials
+                | &nbsp;
+                a.btn.btn-sm.btn-primary(href="#", ng-show="course.videoUrl", ng-click="openVideo()")
+                    i.icon.icon-play3
+                    | &nbsp; Video
 
     .row
         .col-md-10

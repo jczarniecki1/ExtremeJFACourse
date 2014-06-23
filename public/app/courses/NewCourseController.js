@@ -8,6 +8,7 @@
         localFilePath: $scope.localFilePath,
         localFileName: $scope.localFileName,
         presentationUrl: $scope.presentationUrl,
+        videoUrl: $scope.videoUrl,
         description: $scope.description,
         featured: $scope.featured,
         tags: ($scope.tags || "").replace(/[^a-zA-Z]*/, ' ').split(' ').slice(1).filter(function(x) {

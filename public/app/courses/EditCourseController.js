@@ -10,6 +10,7 @@
         $scope.localFilePath = course.localFilePath;
         $scope.localFileName = course.localFileName;
         $scope.presentationUrl = course.presentationUrl;
+        $scope.videoUrl = course.videoUrl;
         $scope.description = course.description;
         $scope.featured = course.featured;
         return $scope.tags = course.tags.join(', ');
@@ -22,6 +23,7 @@
         localFilePath: $scope.localFilePath,
         localFileName: $scope.localFileName,
         presentationUrl: $scope.presentationUrl,
+        videoUrl: $scope.videoUrl,
         description: $scope.description,
         featured: $scope.featured,
         tags: ($scope.tags || "").replace(/[^a-zA-Z]*/, ' ').split(' ').slice(1).filter(function(x) {

@@ -7,6 +7,7 @@ angular.module 'app'
       localFilePath:   $scope.localFilePath
       localFileName:   $scope.localFileName
       presentationUrl: $scope.presentationUrl
+      videoUrl: $scope.videoUrl
       description:     $scope.description
       featured:        $scope.featured
       tags:           ($scope.tags or "")

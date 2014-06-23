@@ -55,6 +55,12 @@ angular.module 'app'
         $location.path "/"
       , NotifierService.error
 
+  $scope.openVideo = ->
+    $dialogs.create '/partials/bootstrap/modal/videoModal', 'VideoModalController', {},  {url:"https://docs.google.com/a/pjwstk.edu.pl/file/d/0BwxxWo9sXY9LalNTSFB2c01SUEE/preview", key: false, back: 'static'}
+    setTimeout ->
+      $('#video').attr('src',$scope.course.videoUrl)
+    , 1000
+
   $scope.openFeedbackModal = ->
     $dialogs.create '/partials/bootstrap/modal/feedbackModal', 'FeedbackModalController', {}, {key: false, back: 'static'}
     .result.then (feedback) ->

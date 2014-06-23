@@ -21,6 +21,7 @@
         <item url="file://$PROJECT_DIR$/public/app/challenges/CachedChallenge.js" />
         <item url="file://$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/CourseEditor.js" />
+        <item url="file://$PROJECT_DIR$/public/app/courses/VideoModalController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/CachedCourse.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/NewCourseController.js" />
         <item url="file://$PROJECT_DIR$/public/app/courses/CourseModel.js" />
@@ -156,6 +157,7 @@
       <root url="file://$PROJECT_DIR$/public/app/challenges/ChallengeDetailsController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/CourseEditor.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/CachedCourse.js" />
+      <root url="file://$PROJECT_DIR$/public/app/courses/VideoModalController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/NewCourseController.js" />
       <root url="file://$PROJECT_DIR$/public/app/courses/CourseModel.js" />
       <root url="file://$PROJECT_DIR$/server/utilities/utils.js" />
