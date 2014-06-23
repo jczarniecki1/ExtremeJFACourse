@@ -1,38 +1,37 @@
 .container
+    script#regex-template(type='text/x-handlebars-template')
+        h3 {{title}}
+        p {{{instruction}}}
+        | {{{body}}}
+        p {{{altinstruction}}}
+        | {{{altbody}}}
+        label(for='word') Dodaj testowe słowo:
+        input#word(name='word', type='text', placeholder='Wpisz słowo')
+        label
+            input#wordcheck(type='checkbox', checked='checked')
+            | dopasuj
+        button#addword Dodaj
+        br
+        input#reinput(type='text', placeholder='Wpisz wyrażenie')
+        button#hint Podpowiedź
+        br
+
     .row.first-row
         .col-md-12
             a.btn.btn-sm.btn-default(href="/courses/{{ courseId }}")
                 i.icon.icon-arrow-left3
                 | &nbsp; Back to "{{ course.title }}"
-    .row
-        .col-xs-8
-            .col-xs-4
-                button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='basic'}") Basic
-            .col-xs-4
-                button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='advanced'}") Advanced
-            .col-xs-4
-                button.btn.btn-default.btn-block(ng-class="{active: challenge.level=='expert'}") Expert
-    br
-    .row
+
+    .row.challenge-header
+        .col-md-3
+            span.label.label-success(ng-show="challenge.level=='basic'") Basic
+            span.label.label-info(ng-show="challenge.level=='advanced'") Advanced
+            span.label.label-warning(ng-show="challenge.level=='expert'") Expert
         .col-md-6
-        .col-md-6
-            .row
-                .col-md-7
-                    h2 Exercise {{ challengeIndex+1 }}/{{ course.challengesCount }}
-                .col-md-5
-                    button.btn.btn-primary.btn-block.submit-answer(ng-click="submit()") Submit your answer
-                    button.btn.btn-link.btn-block.skip-challenge(ng-click="skip()", ng-show="challengeIndex < course.challengesCount - 1") Skip to next
-            br
+            h2 Exercise {{ challengeIndex + 1 }}/{{ course.challengesCount }}
+        .col-md-3
+            button.btn.btn-link.btn-block.skip-challenge(ng-click="skip()", ng-show="challengeIndex < course.challengesCount - 1") Skip to next
     .row
-        .col-md-6
+        .col-md-12
             .well
-                h3 Placeholder for live editor
-                textarea.form-control {{ challenge.initialInput }}
-                br
-                button.btn.btn-warning.btn-block
-                    i.icon.icon-lab
-                    | &nbsp;Execute
-                br
-                textarea.form-control(placeholder="Output")
-        .col-md-6
-            .description
+                .challenge-body

@@ -1,18 +1,26 @@
 angular.module 'app'
-.controller 'NewChallengeController', ($scope, ChallengeEditor, $location, $routeParams, NotifierService) ->
+.controller 'NewChallengeController', ($scope, ChallengeEditor, $location, $routeParams, NotifierService, ControlsProvider) ->
 
   courseId = $routeParams.courseId
 
+  $scope.formTitle = "New Challenge"
   $scope.levels = ["basic","advanced","expert"]
+  $scope.controls = ControlsProvider.getControls()
+
   $scope.submit = ->
 
+    try
+      parsedConfig = JSON.parse $scope.config
+    catch
+      return NotifierService.error 'Cannot parse configuration to JSON'
+
     newChallengeData =
-      description:              $scope.description
-      level:                    $scope.level
-      jsonData:                 $scope.jsonData
-      initialInput:             $scope.initialInput
-      correctAnswerExpression:  $scope.correctAnswerExpression
-      courseId:                 courseId
+      title:       $scope.title
+      description: $scope.description
+      level:       $scope.level
+      config:      parsedConfig
+      control:     $scope.control
+      courseId:    courseId
 
     ChallengeEditor.createChallenge newChallengeData
     .then (challenge) ->

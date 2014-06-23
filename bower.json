@@ -23,6 +23,7 @@
     "angular-bootstrap": "~0.11.0",
     "angular-translate": "~2.2.0",
     "angular-sanitize": "~1.2.18",
-    "angular-truncate": "*"
+    "angular-truncate": "*",
+    "handlebars": "~1.3.0"
   }
 }

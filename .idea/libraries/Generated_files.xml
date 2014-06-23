@@ -9,6 +9,7 @@
         <item url="file://$PROJECT_DIR$/node_modules/karma/requirejs.config.tpl.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/AuthService.js" />
         <item url="file://$PROJECT_DIR$/public/app/debug/scenario.js" />
+        <item url="file://$PROJECT_DIR$/public/app/controls/ControlsProvider.js" />
         <item url="file://$PROJECT_DIR$/public/app/common/Utils.js" />
         <item url="file://$PROJECT_DIR$/public/app/common/NotifierService.js" />
         <item url="file://$PROJECT_DIR$/public/app/account/UserModel.js" />
@@ -142,6 +143,7 @@
       <root url="file://$PROJECT_DIR$/node_modules/karma/requirejs.config.tpl.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/AuthService.js" />
       <root url="file://$PROJECT_DIR$/public/app/debug/scenario.js" />
+      <root url="file://$PROJECT_DIR$/public/app/controls/ControlsProvider.js" />
       <root url="file://$PROJECT_DIR$/public/app/common/Utils.js" />
       <root url="file://$PROJECT_DIR$/public/app/common/NotifierService.js" />
       <root url="file://$PROJECT_DIR$/public/app/account/UserModel.js" />

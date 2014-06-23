@@ -1538,6 +1538,15 @@ footer {
 .form-control[type="checkbox"] {
   width: 34px; }
 
+.challenge-form textarea,
+.course-form textarea {
+  min-height: 200px;
+  width: 100% !important; }
+
+.code-inside {
+  font-family: Consolas, "Lucida Console", monospace;
+  font-size: 12px; }
+
 .right {
   float: right; }
 
@@ -1643,8 +1652,17 @@ footer {
 .first-row {
   margin-bottom: 20px; }
 
-.submit-answer {
-  text-transform: uppercase; }
+.challenge-header h2 {
+  text-align: center; }
+.challenge-header .label {
+  margin-top: 30px;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline; }
 
 .skip-challenge {
+  margin-top: 25px;
+  text-align: right;
   text-decoration: underline; }

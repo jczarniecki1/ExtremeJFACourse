@@ -1,12 +1,17 @@
 mongoose = require 'mongoose'
 Rating   = mongoose.model 'Rating'
 ObjectId = mongoose.Schema.Types.ObjectId
+Mixed = mongoose.Schema.Types.Mixed
 
 challengeLevel =
   values: 'basic advanced expert'.split(' ')
   message: 'You must choose valid level'
 
 challengeSchema = mongoose.Schema
+
+  title:
+    type:     String
+    required: '{PATH} is required'
 
   description:
     type:     String
@@ -17,19 +22,11 @@ challengeSchema = mongoose.Schema
     enum:     challengeLevel
     required: '{PATH} is required'
 
-  jsonData:
-    type:     String
-    required: '{PATH} is required'
+  control:    String
 
-  initialInput:
-    type:     String
+  config:     Mixed
 
-  correctAnswerExpression:
-    type:     String
-    required: '{PATH} is required'
-
-  courseId:
-    type:     ObjectId
+  courseId:   ObjectId
 
   avgRating:
     type:     Number

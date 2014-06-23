@@ -146,10 +146,19 @@
     margin-bottom: 20px;
 }
 
-.submit-answer {
-    text-transform: uppercase;
+.challenge-header {
+    h2 {
+        text-align: center;
+    }
+
+    .label {
+        margin-top: 30px;
+        @include inline-block(top);
+    }
 }
 
 .skip-challenge {
+    margin-top: 25px;
+    text-align: right;
     text-decoration: underline;
 }

@@ -10,8 +10,8 @@
 
   scenario = function() {
     setLocation('/courses');
-    $('[ng-model="username"]').val('joe@pj.com');
-    $('[ng-model="password"]').val('asd');
+    $('[ng-model="username"]').val('admin');
+    $('[ng-model="password"]').val('xxx');
     $('#login:visible').trigger('click');
     return console.debug('>> scenario finished...');
   };

@@ -33,11 +33,11 @@ exports.updateChallenge = (req, res, next) ->
     if err? then return res.SendError err
     unless challenge? then return res.SendError "Challenge not found"
 
+    challenge.title = challengeData.title
     challenge.description = challengeData.description
     challenge.level = challengeData.level
-    challenge.jsonData = challengeData.jsonData
-    challenge.initialInput = challengeData.initialInput
-    challenge.correctAnswerExpression = challengeData.description
+    challenge.control = challengeData.control
+    challenge.config = challengeData.config
 
     challenge.save (err) ->
       res.SendOkIfPossible err

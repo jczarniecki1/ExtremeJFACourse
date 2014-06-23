@@ -1,28 +1,30 @@
 .container
-    .well
+    .well.challenge-form
         form.form-horizontal(name="newExerciseForm")
             fieldset
-                legend New Exercise
+                legend {{ formTitle }}
                 .form-group
                     label.col-md-2.control-label(for="level") Level
                     .col-md-10
-                        select.form-control(name="level", placeholder="Choose level", ng-model="level", ng-options="lvl as lvl for lvl in levels" required)
+                        select.form-control(name="level", ng-model="level", ng-options="lvl for lvl in levels", required)
+                            option(value="") Choose level
+                .form-group
+                    label.col-md-2.control-label(for="title") Title
+                    .col-md-10
+                        input.form-control(name="title", type="text", placeholder="Title", ng-model="title", required)
                 .form-group
                     label.col-md-2.control-label(for="description") Description
                     .col-md-10
                         textarea.form-control(name="description", placeholder="Description", ng-model="description", required)
                 .form-group
-                    label.col-md-2.control-label(for="jsonData") Data
+                    label.col-md-2.control-label(for="control") Controller
                     .col-md-10
-                        textarea.form-control(name="jsonData", placeholder="Data (JSON)", ng-model="jsonData")
+                        select.form-control(name="control", ng-model="control", ng-options="c.id as c.name for c in controls")
+                            option(value="") Choose controller
                 .form-group
-                    label.col-md-2.control-label(for="initialInput") Initial input
+                    label.col-md-2.control-label(for="config") Configuration
                     .col-md-10
-                        textarea.form-control(name="initialInput", placeholder="Initial input", ng-model="initialInput")
-                .form-group
-                    label.col-md-2.control-label(for="correctAnswerExpression") Answer
-                    .col-md-10
-                        textarea.form-control(name="correctAnswerExpression", placeholder="Rules for correct anwser", ng-model="correctAnswerExpression")
+                        textarea.form-control.code-inside(name="config", placeholder="(JSON)", ng-model="config")
 
                 .form-group
                     .col-md-10.col-md-offset-2

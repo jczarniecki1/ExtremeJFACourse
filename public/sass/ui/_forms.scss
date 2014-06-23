@@ -15,3 +15,16 @@
 .form-control[type="checkbox"] {
     width: 34px;
 }
+
+.challenge-form,
+.course-form {
+    textarea {
+        min-height: 200px;
+        width: 100% !important;
+    }
+}
+
+.code-inside {
+    font-family: Consolas, "Lucida Console", monospace;
+    font-size: 12px;
+}
