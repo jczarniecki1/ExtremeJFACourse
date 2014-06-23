@@ -29,7 +29,11 @@
                     a(href="/profile")
                         i.icon.icon-user
                         | &nbsp;Profile
-                li
-                    a(href="", ng-click="signout()")
+                li.with-spanner(ng-hide="identity.currentUser.isAdmin()")
+                    a(href="#", ng-click="openFeedbackModal()")
+                        i.icon.icon-bubble2
+                        | &nbsp;Feedback
+                li.with-spanner
+                    a(href="#", ng-click="signout()")
                         i.icon.icon-exit
                         | &nbsp;Log Out

@@ -47,14 +47,16 @@
 
   ratingSchema.methods = {
     getData: function() {
-      var objectId, submitted, type, value, _id;
-      _id = this._id, submitted = this.submitted, type = this.type, objectId = this.objectId, value = this.value;
+      var location, objectId, submitted, type, url, value, _id;
+      _id = this._id, submitted = this.submitted, type = this.type, objectId = this.objectId, value = this.value, url = this.url, location = this.location;
       return {
         _id: _id,
         submitted: submitted,
         type: type,
         objectId: objectId,
-        value: value
+        value: value,
+        url: url,
+        location: location
       };
     }
   };

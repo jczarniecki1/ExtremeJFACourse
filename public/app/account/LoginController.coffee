@@ -1,5 +1,5 @@
 angular.module 'app'
-.controller 'LoginController', ($scope, $http, NotifierService, IdentityService, AuthService, $location, CachedCourse) ->
+.controller 'LoginController', ($scope, $http, NotifierService, IdentityService, AuthService, $location, $dialogs, FeedbackMessage, CachedCourse) ->
 
   $scope.identity = IdentityService
 
@@ -37,3 +37,17 @@ angular.module 'app'
       $scope.password = ""
       NotifierService.info 'You have succeessfully signed out'
       $location.path '/'
+
+  $scope.openFeedbackModal = ->
+    $dialogs.create '/partials/bootstrap/modal/feedbackModal', 'FeedbackModalController', {}, {key: false, back: 'static'}
+    .result.then (feedback) ->
+      messageData =
+        url: $location.url()
+        location: "Feedback used from menu"
+        text: feedback
+
+      newFeedback = new FeedbackMessage(messageData)
+      newFeedback.$save()
+      .then ->
+        NotifierService.notify "Message submitted successfully"
+      , NotifierService.error

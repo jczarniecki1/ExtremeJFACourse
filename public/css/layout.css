@@ -1385,6 +1385,9 @@ a:focus {
   border-radius: 0;
   z-index: 1030; }
 
+.with-spanner {
+  border-top: 1px solid rgba(0, 0, 0, 0.2); }
+
 .navbar-header {
   height: 50px; }
   .navbar-header .navbar-brand {
