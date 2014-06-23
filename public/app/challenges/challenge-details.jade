@@ -16,6 +16,17 @@
         button#hint Podpowiedź
         br
 
+    script#automaton-template(type='text/x-handlebars-template')
+        h3 {{title}}
+        p {{{instruction}}}
+        canvas#cnvs(width='320', height='320')
+        br
+        input#input(type='text', placeholder='Wpisz słowo')
+        button#hint Podpowiedź
+        br
+        p {{quizTitle}}
+        p#quizQuestion
+
     .row.first-row
         .col-md-12
             a.btn.btn-sm.btn-default(href="/courses/{{ courseId }}")
