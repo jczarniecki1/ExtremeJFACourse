@@ -14,6 +14,15 @@
     description: {
       type: String
     },
+    localFilePath: {
+      type: String
+    },
+    localFileName: {
+      type: String
+    },
+    presentationUrl: {
+      type: String
+    },
     featured: {
       type: Boolean,
       "default": false

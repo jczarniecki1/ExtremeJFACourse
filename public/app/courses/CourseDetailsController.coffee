@@ -1,9 +1,15 @@
 angular.module 'app'
-.controller 'CourseDetailsController', ($scope, CachedCourse, CachedRating, $routeParams, IdentityService, NotifierService, $location, $dialogs, FeedbackMessage) ->
+.controller 'CourseDetailsController', ($scope, $sce, CachedCourse, CachedRating, $routeParams, IdentityService, NotifierService, $location, $dialogs, FeedbackMessage) ->
   $scope.identity = IdentityService
   existingRating = null
   savingRating = null
   courseId = $routeParams.id
+
+  $scope.getFileUrl = ->
+    "http://#{location.host}/#{$scope.course?.localFilePath}"
+
+  $scope.trustSrc = (src) ->
+    $sce.trustAsResourceUrl(src)
 
   $scope.start = ->
     $scope.course.$start({id:courseId})

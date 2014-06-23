@@ -8,6 +8,18 @@
                     .col-md-10
                         input.form-control(name="title", type="text", placeholder="Title", ng-model="title", required)
                 .form-group
+                    label.col-md-2.control-label(for="localFilePath") File Path
+                    .col-md-10
+                        input.form-control(name="localFilePath", type="text", ng-model="localFilePath")
+                .form-group
+                    label.col-md-2.control-label(for="localFileName") File Name
+                    .col-md-10
+                        input.form-control(name="localFileName", type="text", ng-model="localFileName")
+                .form-group
+                    label.col-md-2.control-label(for="presentationUrl") Presentation Url
+                    .col-md-10
+                        input.form-control(name="presentationUrl", type="text", ng-model="presentationUrl")
+                .form-group
                     label.col-md-2.control-label(for="description") Description
                     .col-md-10
                         textarea.form-control(name="description", placeholder="Description", ng-model="description")

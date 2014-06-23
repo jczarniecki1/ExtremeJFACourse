@@ -6,6 +6,9 @@ angular.module 'app'
     collection.findById courseId, (course) ->
       $scope.course = course
       $scope.title = course.title
+      $scope.localFilePath = course.localFilePath
+      $scope.localFileName = course.localFileName
+      $scope.presentationUrl = course.presentationUrl
       $scope.description = course.description
       $scope.featured = course.featured
       $scope.tags = course.tags.join(', ')
@@ -13,10 +16,13 @@ angular.module 'app'
   $scope.submit = ->
 
     updatedCourseData =
-      title:    $scope.title
-      description: $scope.description
-      featured: $scope.featured
-      tags:     ($scope.tags or "")
+      title:           $scope.title
+      localFilePath:   $scope.localFilePath
+      localFileName:   $scope.localFileName
+      presentationUrl: $scope.presentationUrl
+      description:     $scope.description
+      featured:        $scope.featured
+      tags:           ($scope.tags or "")
         .replace(/[^a-zA-Z]*/,' ')
         .split(' ')[1..]
         .filter (x)-> x.length > 0

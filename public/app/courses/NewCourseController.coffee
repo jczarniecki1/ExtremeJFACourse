@@ -3,10 +3,13 @@ angular.module 'app'
   $scope.submit = ->
 
     newCourseData =
-      title:    $scope.title
-      description: $scope.description
-      featured: $scope.featured
-      tags:     ($scope.tags or "")
+      title:           $scope.title
+      localFilePath:   $scope.localFilePath
+      localFileName:   $scope.localFileName
+      presentationUrl: $scope.presentationUrl
+      description:     $scope.description
+      featured:        $scope.featured
+      tags:           ($scope.tags or "")
         .replace(/[^a-zA-Z]*/,' ')
         .split(' ')[1..]
         .filter (x)-> x.length > 0

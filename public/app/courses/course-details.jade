@@ -1,6 +1,6 @@
 .container
 
-    .row(ng-show="identity.currentUser.isAdmin()")
+    .row.admin-row(ng-show="identity.currentUser.isAdmin()")
         .col-md-12
             a.btn.btn-sm.btn-success(href="/courses/{{ course._id }}/challenge/new")
                 i.icon.icon-plus
@@ -22,20 +22,28 @@
             | &nbsp;
             button.btn.btn-sm.btn-default(ng-disabled="course.published", ng-click="edit()")
                 i.icon.icon-pencil2
+
             button.btn.btn-sm.btn-danger.right(ng-disabled="course.published", ng-click="delete()")
                 i.icon.icon-remove2
 
-    .row(ng-show="!identity.currentUser.isAdmin()")
+    .row
         .col-md-12
             a.btn.btn-sm.btn-default(href="/courses")
                 i.icon.icon-arrow-left3
                 | &nbsp; List of courses
 
-            .right(ng-show="!course.started && !isAdmin()")
+            .right(ng-show="!course.started && !identity.currentUser.isAdmin()")
                 .label.label-default(ng-show="!identity.isAuthenticated()")
                     | Log in to start the course
                 button.btn.btn-sm.btn-success(ng-show="identity.isAuthenticated()", ng-click="start()")
-                    | Start this course
+                    | START NOW!
+            .right(ng-show="course.started || identity.currentUser.isAdmin()")
+                script(src='https://apis.google.com/js/platform.js')
+                .g-savetodrive(data-src='{{ getFileUrl() }}', data-filename='{{ course.localFileName }}', data-sitename='Extreme-JFA-Course')
+                | &nbsp;
+                a.btn.btn-sm.btn-primary(href="{{ getFileUrl() }}", target="_self", download='{{ course.localFileName }}')
+                    i.icon.icon-download3
+                    | &nbsp; Materials
 
     .row
         .col-md-10
@@ -56,6 +64,12 @@
             p.right Published on {{ course.publishDate | date }}
             br.clear
             p.right Last update on {{ course.lastUpdate | date }}
+
+    .row.presentation(ng-show="course.started || identity.currentUser.isAdmin()")
+        .col-md-12
+            iframe(src="https://docs.google.com/a/pjwstk.edu.pl/file/d/0BwxxWo9sXY9LbXVFdjBELTdtQ3c/preview", width="100%", height="480")
+            //iframe(src="{{ trustSrc(course.presentationUrl) }}", width="100%", height="480")
+
 
     .row.challenges
         .col-md-12(ng-include="'/partials/challenges/challenge-list'")

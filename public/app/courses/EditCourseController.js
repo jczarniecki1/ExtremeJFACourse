@@ -7,6 +7,9 @@
       return collection.findById(courseId, function(course) {
         $scope.course = course;
         $scope.title = course.title;
+        $scope.localFilePath = course.localFilePath;
+        $scope.localFileName = course.localFileName;
+        $scope.presentationUrl = course.presentationUrl;
         $scope.description = course.description;
         $scope.featured = course.featured;
         return $scope.tags = course.tags.join(', ');
@@ -16,6 +19,9 @@
       var clone, updatedCourseData;
       updatedCourseData = {
         title: $scope.title,
+        localFilePath: $scope.localFilePath,
+        localFileName: $scope.localFileName,
+        presentationUrl: $scope.presentationUrl,
         description: $scope.description,
         featured: $scope.featured,
         tags: ($scope.tags || "").replace(/[^a-zA-Z]*/, ' ').split(' ').slice(1).filter(function(x) {

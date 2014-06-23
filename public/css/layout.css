@@ -1620,6 +1620,12 @@ footer {
   *zoom: 1;
   *display: inline; }
 
+.admin-row {
+  margin-bottom: 10px; }
+
+.presentation {
+  margin-bottom: 20px; }
+
 .tags-wrapper .tags {
   display: inline-block;
   vertical-align: top;

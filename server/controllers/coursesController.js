@@ -124,6 +124,9 @@
         return res.SendError("Course not found");
       }
       course.title = courseData.title;
+      course.localFilePath = courseData.localFilePath;
+      course.localFileName = courseData.localFileName;
+      course.presentationUrl = courseData.presentationUrl;
       course.description = courseData.description;
       course.tags = courseData.tags;
       course.featured = courseData.featured;
